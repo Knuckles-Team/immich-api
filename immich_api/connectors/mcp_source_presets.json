@@ -1,1 +1,32 @@
-{}
+{
+  "_comment": "Opt-in bounded pilot sample; never a complete library sweep. Bind an existing scoped account and distinct source identity before use. No scheduler or reconciliation is enabled.",
+  "immich_album_metadata_sample": {
+    "server": "Immich Api",
+    "tool": "album_metadata_sample",
+    "params_style": "args",
+    "params": {
+      "limit": 1
+    },
+    "records_path": "records",
+    "id_field": "id",
+    "title_field": "albumName",
+    "text_field": "",
+    "updated_field": "updatedAt",
+    "doc_type": "ImmichAlbum",
+    "record_mode": "typed_entities",
+    "node_type_field": "node_type",
+    "pagination": "none",
+    "max_pages": 1,
+    "strict_schema": true,
+    "metadata_fields": [
+      "id",
+      "node_type",
+      "albumName",
+      "assetCount",
+      "shared",
+      "hasSharedLink",
+      "createdAt",
+      "updatedAt"
+    ]
+  }
+}

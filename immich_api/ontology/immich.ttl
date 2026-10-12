@@ -2,28 +2,118 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 
-# TODO: replace this stub with the real domain model. Classes/properties live in the
-# SHARED : (kg#) namespace; only the owl:Ontology node gets the per-package IRI. Do NOT
-# redefine classes another package owns (:MediaAsset/:Blob/:Document/:Person) — reuse them.
 
-:ImmichResource a owl:Class ;
-    rdfs:label "Immich Api Resource" ;
-    rdfs:comment "A primary object managed by Immich Api (STUB — rename/expand)." .
+<urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b> a prov:Entity ; rdfs:label "Immich 3.2.2 OpenAPI source bytes" .
 
-:managedBy a owl:ObjectProperty ;
-    rdfs:label "managed by" ;
-    rdfs:comment "Links a Immich Api resource to the Person responsible (STUB)." ;
-    rdfs:domain :ImmichResource ;
-    rdfs:range :Person .
+<http://knuckles.team/kg/immich> a owl:Ontology ; owl:imports <http://knuckles.team/kg> ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b> ; rdfs:comment "Selected structural DTO model. No live ingestion or identity equivalence is asserted." .
 
-:immichId a owl:DatatypeProperty ;
-    rdfs:label "immich id" ;
-    rdfs:comment "External identifier of the Immich Api resource (STUB)." ;
-    rdfs:domain :ImmichResource ;
-    rdfs:range xsd:string .
+:ImmichAsset a owl:Class ; rdfs:comment "Structural projection of AssetResponseDto." ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AssetResponseDto> .
 
-<http://knuckles.team/kg/immich> a owl:Ontology ;
-    rdfs:label "Immich Api Ontology" ;
-    rdfs:comment "Immich Api domain extensions federated into the KG hub. STUB." ;
-    owl:imports <http://knuckles.team/kg> .
+:immichAssetId a owl:DatatypeProperty ; rdfs:domain :ImmichAsset ; rdfs:range xsd:string ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AssetResponseDto/properties/id> .
+
+:immichAssetType a owl:DatatypeProperty ; rdfs:domain :ImmichAsset ; rdfs:range xsd:string ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AssetResponseDto/properties/type> .
+
+:immichAssetOriginalMimeType a owl:DatatypeProperty ; rdfs:domain :ImmichAsset ; rdfs:range xsd:string ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AssetResponseDto/properties/originalMimeType> .
+
+:immichAssetDuration a owl:DatatypeProperty ; rdfs:domain :ImmichAsset ; rdfs:range xsd:integer ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AssetResponseDto/properties/duration> .
+
+:immichAssetWidth a owl:DatatypeProperty ; rdfs:domain :ImmichAsset ; rdfs:range xsd:integer ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AssetResponseDto/properties/width> .
+
+:immichAssetHeight a owl:DatatypeProperty ; rdfs:domain :ImmichAsset ; rdfs:range xsd:integer ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AssetResponseDto/properties/height> .
+
+:immichAssetFileCreatedAt a owl:DatatypeProperty ; rdfs:domain :ImmichAsset ; rdfs:range xsd:dateTime ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AssetResponseDto/properties/fileCreatedAt> .
+
+:immichAssetUpdatedAt a owl:DatatypeProperty ; rdfs:domain :ImmichAsset ; rdfs:range xsd:dateTime ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AssetResponseDto/properties/updatedAt> .
+
+:immichAssetIsFavorite a owl:DatatypeProperty ; rdfs:domain :ImmichAsset ; rdfs:range xsd:boolean ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AssetResponseDto/properties/isFavorite> .
+
+:immichAssetIsArchived a owl:DatatypeProperty ; rdfs:domain :ImmichAsset ; rdfs:range xsd:boolean ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AssetResponseDto/properties/isArchived> .
+
+:immichAssetIsTrashed a owl:DatatypeProperty ; rdfs:domain :ImmichAsset ; rdfs:range xsd:boolean ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AssetResponseDto/properties/isTrashed> .
+
+:immichAssetVisibility a owl:DatatypeProperty ; rdfs:domain :ImmichAsset ; rdfs:range xsd:string ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AssetResponseDto/properties/visibility> .
+
+:immichAssetOwner a owl:ObjectProperty ; rdfs:domain :ImmichAsset ; rdfs:range :ImmichUser ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AssetResponseDto/properties/owner> .
+
+:immichAssetPeople a owl:ObjectProperty ; rdfs:domain :ImmichAsset ; rdfs:range :ImmichPersonRecord ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AssetResponseDto/properties/people> .
+
+:immichAssetTags a owl:ObjectProperty ; rdfs:domain :ImmichAsset ; rdfs:range :ImmichTag ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AssetResponseDto/properties/tags> .
+
+:immichAssetStack a owl:ObjectProperty ; rdfs:domain :ImmichAsset ; rdfs:range :ImmichAssetStack ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AssetResponseDto/properties/stack> .
+
+:ImmichAlbum a owl:Class ; rdfs:comment "Structural projection of AlbumResponseDto." ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AlbumResponseDto> .
+
+:immichAlbumId a owl:DatatypeProperty ; rdfs:domain :ImmichAlbum ; rdfs:range xsd:string ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AlbumResponseDto/properties/id> .
+
+:immichAlbumAlbumName a owl:DatatypeProperty ; rdfs:domain :ImmichAlbum ; rdfs:range xsd:string ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AlbumResponseDto/properties/albumName> .
+
+:immichAlbumAssetCount a owl:DatatypeProperty ; rdfs:domain :ImmichAlbum ; rdfs:range xsd:integer ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AlbumResponseDto/properties/assetCount> .
+
+:immichAlbumShared a owl:DatatypeProperty ; rdfs:domain :ImmichAlbum ; rdfs:range xsd:boolean ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AlbumResponseDto/properties/shared> .
+
+:immichAlbumHasSharedLink a owl:DatatypeProperty ; rdfs:domain :ImmichAlbum ; rdfs:range xsd:boolean ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AlbumResponseDto/properties/hasSharedLink> .
+
+:immichAlbumCreatedAt a owl:DatatypeProperty ; rdfs:domain :ImmichAlbum ; rdfs:range xsd:dateTime ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AlbumResponseDto/properties/createdAt> .
+
+:immichAlbumUpdatedAt a owl:DatatypeProperty ; rdfs:domain :ImmichAlbum ; rdfs:range xsd:dateTime ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AlbumResponseDto/properties/updatedAt> .
+
+:immichAlbumAlbumUsers a owl:ObjectProperty ; rdfs:domain :ImmichAlbum ; rdfs:range :ImmichAlbumMembership ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AlbumResponseDto/properties/albumUsers> .
+
+:immichAlbumAlbumThumbnailAssetId a owl:DatatypeProperty ; rdfs:domain :ImmichAlbum ; rdfs:range xsd:string ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AlbumResponseDto/properties/albumThumbnailAssetId> .
+
+:ImmichPersonRecord a owl:Class ; rdfs:comment "Structural projection of PersonResponseDto. A vendor person record; no equivalence to a verified real-world Person is inferred." ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/PersonResponseDto> .
+
+:immichPersonRecordId a owl:DatatypeProperty ; rdfs:domain :ImmichPersonRecord ; rdfs:range xsd:string ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/PersonResponseDto/properties/id> .
+
+:immichPersonRecordName a owl:DatatypeProperty ; rdfs:domain :ImmichPersonRecord ; rdfs:range xsd:string ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/PersonResponseDto/properties/name> .
+
+:immichPersonRecordIsHidden a owl:DatatypeProperty ; rdfs:domain :ImmichPersonRecord ; rdfs:range xsd:boolean ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/PersonResponseDto/properties/isHidden> .
+
+:immichPersonRecordIsFavorite a owl:DatatypeProperty ; rdfs:domain :ImmichPersonRecord ; rdfs:range xsd:boolean ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/PersonResponseDto/properties/isFavorite> .
+
+:immichPersonRecordUpdatedAt a owl:DatatypeProperty ; rdfs:domain :ImmichPersonRecord ; rdfs:range xsd:dateTime ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/PersonResponseDto/properties/updatedAt> .
+
+:ImmichUser a owl:Class ; rdfs:comment "Structural projection of UserResponseDto." ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/UserResponseDto> .
+
+:immichUserId a owl:DatatypeProperty ; rdfs:domain :ImmichUser ; rdfs:range xsd:string ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/UserResponseDto/properties/id> .
+
+:immichUserName a owl:DatatypeProperty ; rdfs:domain :ImmichUser ; rdfs:range xsd:string ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/UserResponseDto/properties/name> .
+
+:ImmichLibrary a owl:Class ; rdfs:comment "Structural projection of LibraryResponseDto." ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/LibraryResponseDto> .
+
+:immichLibraryId a owl:DatatypeProperty ; rdfs:domain :ImmichLibrary ; rdfs:range xsd:string ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/LibraryResponseDto/properties/id> .
+
+:immichLibraryName a owl:DatatypeProperty ; rdfs:domain :ImmichLibrary ; rdfs:range xsd:string ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/LibraryResponseDto/properties/name> .
+
+:immichLibraryAssetCount a owl:DatatypeProperty ; rdfs:domain :ImmichLibrary ; rdfs:range xsd:integer ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/LibraryResponseDto/properties/assetCount> .
+
+:immichLibraryCreatedAt a owl:DatatypeProperty ; rdfs:domain :ImmichLibrary ; rdfs:range xsd:dateTime ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/LibraryResponseDto/properties/createdAt> .
+
+:immichLibraryUpdatedAt a owl:DatatypeProperty ; rdfs:domain :ImmichLibrary ; rdfs:range xsd:dateTime ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/LibraryResponseDto/properties/updatedAt> .
+
+:ImmichAlbumMembership a owl:Class ; rdfs:comment "Structural projection of AlbumUserResponseDto." ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AlbumUserResponseDto> .
+
+:immichAlbumMembershipRole a owl:DatatypeProperty ; rdfs:domain :ImmichAlbumMembership ; rdfs:range xsd:string ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AlbumUserResponseDto/properties/role> .
+
+:immichAlbumMembershipUser a owl:ObjectProperty ; rdfs:domain :ImmichAlbumMembership ; rdfs:range :ImmichUser ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AlbumUserResponseDto/properties/user> .
+
+:ImmichTag a owl:Class ; rdfs:comment "Structural projection of TagResponseDto." ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/TagResponseDto> .
+
+:immichTagId a owl:DatatypeProperty ; rdfs:domain :ImmichTag ; rdfs:range xsd:string ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/TagResponseDto/properties/id> .
+
+:immichTagName a owl:DatatypeProperty ; rdfs:domain :ImmichTag ; rdfs:range xsd:string ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/TagResponseDto/properties/name> .
+
+:immichTagCreatedAt a owl:DatatypeProperty ; rdfs:domain :ImmichTag ; rdfs:range xsd:dateTime ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/TagResponseDto/properties/createdAt> .
+
+:immichTagUpdatedAt a owl:DatatypeProperty ; rdfs:domain :ImmichTag ; rdfs:range xsd:dateTime ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/TagResponseDto/properties/updatedAt> .
+
+:ImmichAssetStack a owl:Class ; rdfs:comment "Structural projection of AssetStackResponseDto." ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AssetStackResponseDto> .
+
+:immichAssetStackId a owl:DatatypeProperty ; rdfs:domain :ImmichAssetStack ; rdfs:range xsd:string ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AssetStackResponseDto/properties/id> .
+
+:immichAssetStackAssetCount a owl:DatatypeProperty ; rdfs:domain :ImmichAssetStack ; rdfs:range xsd:integer ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AssetStackResponseDto/properties/assetCount> .
+
+:immichAssetStackPrimaryAssetId a owl:DatatypeProperty ; rdfs:domain :ImmichAssetStack ; rdfs:range xsd:string ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AssetStackResponseDto/properties/primaryAssetId> .

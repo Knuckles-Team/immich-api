@@ -1,0 +1,192 @@
+{
+  "source_schema_sha256": "7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b",
+  "sdk_revision": "5babc4cc48ad73928468b243842f219f51e2cca1",
+  "eg_python_revision": "d33abec1e09b63cdcde01f8e8e4fe810d91cd43d",
+  "structural_content": {
+    "classes": 8,
+    "properties": 46,
+    "reference_relations": 6,
+    "project_skills": 4,
+    "project_prompts": 5
+  },
+  "focused_checks": {
+    "passed": 12,
+    "seconds": 4.66,
+    "serial_total_seconds": 19.83,
+    "test_files": [
+      "tests/test_album_metadata.py",
+      "tests/test_kg_ingest.py",
+      "tests/test_immich_content.py"
+    ],
+    "warnings": [
+      "Two deprecated MCP annotation aliases in assertions; no skips."
+    ],
+    "environment": "Existing GR1080 Python 3.12 environment; pinned Python source overlays; no installs or native builds."
+  },
+  "earlier_failure": {
+    "process_exit": 124,
+    "test": "test_native_prompt_skill_shapes_and_tool_discovery",
+    "call": "prompts/get",
+    "test_timeout_seconds": 60,
+    "process_timeout_seconds": 120,
+    "following_case_unfinished": "test_bounded_sample_tool_and_sdk_preset_omit_private_values",
+    "diagnosis": "Restricted execution sandbox stalled AnyIO worker callbacks, reproduced with a trivial worker. Same source/dependencies outside that sandbox passed."
+  },
+  "native_capture": {
+    "sdk_revision": "5babc4cc48ad73928468b243842f219f51e2cca1",
+    "eg_python_revision": "d33abec1e09b63cdcde01f8e8e4fe810d91cd43d",
+    "tools": [
+      "activities_operations",
+      "album_metadata_sample",
+      "albums_operations",
+      "api_keys_operations",
+      "asset_files_operations",
+      "assets_operations",
+      "authentication_admin_operations",
+      "authentication_operations",
+      "cluster_groups_operations",
+      "config_admin_operations",
+      "config_public_operations",
+      "config_user_operations",
+      "database_backups_admin_operations",
+      "download_operations",
+      "duplicates_operations",
+      "faces_operations",
+      "jobs_operations",
+      "libraries_operations",
+      "maintenance_admin_operations",
+      "map_operations",
+      "memories_operations",
+      "notifications_admin_operations",
+      "notifications_operations",
+      "partners_operations",
+      "people_operations",
+      "plugins_operations",
+      "queues_operations",
+      "search_operations",
+      "server_operations",
+      "sessions_operations",
+      "shared_links_operations",
+      "stacks_operations",
+      "sync_operations",
+      "system_config_operations",
+      "system_metadata_operations",
+      "tags_operations",
+      "timeline_operations",
+      "trash_operations",
+      "users_admin_operations",
+      "users_operations",
+      "views_operations",
+      "workflows_operations"
+    ],
+    "prompts": {
+      "connector-status": {
+        "sha256": "4abc8cae7c17eafbc03230fd87f74054ff1db674ce2512359749b3c724309a09",
+        "bytes": 65
+      },
+      "immich_album_review": {
+        "sha256": "37896b8a796be533301b12af58e60bd00078a6434e16dbac342a99ae7d32caee",
+        "bytes": 1232
+      },
+      "immich_asset_metadata": {
+        "sha256": "7a4a3520d8f0a174e4c8b35e67347cc8e624fd1cb3ebfdb7f5d85ddc6cf50b22",
+        "bytes": 928
+      },
+      "immich_person_record": {
+        "sha256": "109d8e55fc964abf93d3612fb85f606337f57420c3b7bb5747f00f6b1bcec757",
+        "bytes": 842
+      },
+      "immich_specialist": {
+        "sha256": "714bda38580048b246a8907dfd81d19bf23b5104dad7a36841e2f19ecf315d52",
+        "bytes": 625
+      },
+      "main_agent": {
+        "sha256": "cc6d11c360af66fe38df2f36913e645b34e1dbce53ad917a997280f1c020e000",
+        "bytes": 829
+      }
+    },
+    "resources": {
+      "connector://status": {
+        "sha256": "b354e2d4bc5fd0d3ab88bb7556620bdf0786214b1455ef58aa44baa2484fe389",
+        "bytes": 40
+      },
+      "ontology://immich-api/immich.ttl": {
+        "sha256": "c68d2270fcfbcacb40369011d3f65fdf625e6ea1eabba10bf4309f7c007e391d",
+        "bytes": 14540
+      },
+      "shapes://immich-api/immich.ttl": {
+        "sha256": "9c3b95c0dfd49fa4b406ec7c09ea5867d94bf85e277f0983352adcaf042c777a",
+        "bytes": 6562
+      },
+      "manifest://connector": {
+        "sha256": "8b4aa10a1a9a14fcce02ee0e392d418a69e97dda71a5ffc15d713cac3f989ef5",
+        "bytes": 6456
+      },
+      "skill://immich-person-record/SKILL.md": {
+        "sha256": "c887dba2b1163a9e2ae94ae4c1834da656dae55b3800ab862d287c24d31199e3",
+        "bytes": 1289
+      },
+      "skill://immich-person-record/_manifest": {
+        "sha256": "c7388e5a95658405ddfb505fa5ef1f0444e6f150da225acb2d2799ca18bcd335",
+        "bytes": 201
+      },
+      "skill://immich-asset-metadata/SKILL.md": {
+        "sha256": "5d6e48645b8458b8871d97831b05016be4aa074debfc3d5ca5cdac372747949f",
+        "bytes": 1343
+      },
+      "skill://immich-asset-metadata/_manifest": {
+        "sha256": "5481dbe21363628fdac8a92fae13a4dd8e3f79a0eb4eb6b39bf8a329d8ce6b4a",
+        "bytes": 202
+      },
+      "skill://immich-album-review/SKILL.md": {
+        "sha256": "8eeb2a2796bde85cd627dd726e518c33be258ec9969dee25a11f312213cde149",
+        "bytes": 1664
+      },
+      "skill://immich-album-review/_manifest": {
+        "sha256": "ead3a01f49a9c7a5d03d96c3b5b9dcd85a07351421c2720ad57aeca23203ce94",
+        "bytes": 200
+      },
+      "skill://immich-health/SKILL.md": {
+        "sha256": "7efeb61c1cc8921eb1e9234631524fb17bc036a4199dfeb97e62edf5fc1530f1",
+        "bytes": 1023
+      },
+      "skill://immich-health/_manifest": {
+        "sha256": "3f0d8230c8e6a2cfbfd41b1c503dbfe16c531320b31b86a91326e75aea49a98a",
+        "bytes": 194
+      }
+    },
+    "pack_entries": 55,
+    "pack_kinds": [
+      "manifest",
+      "ontology",
+      "prompt",
+      "shapes",
+      "skill",
+      "tool"
+    ],
+    "pack_archive_sha256": "fef352e8574efe18a4dcedfc49875984d1667829ded4cde97e53a175788dd772",
+    "provider_calls": 0,
+    "engine_calls": 0,
+    "fleet_registration": false,
+    "status": "native SDK source-content capture; no semantic EG receipt"
+  },
+  "static_checks": [
+    "Ruff on edited Python",
+    "git diff --check",
+    "SDK dependency/import contract",
+    "Turtle parse",
+    "structural generator --check",
+    "native tool schema generator --check",
+    "documentation provenance refresh"
+  ],
+  "pending": [
+    "Independent semantic/security review",
+    "Final-source full quality checks and image packaging",
+    "Authenticated live provider reads",
+    "Fleet registration with explicit SDK registry",
+    "Bounded EG receipt and readback"
+  ],
+  "source_after_test_notes": [
+    "README/evidence/readiness refresh and an explicit registrar re-export/import ordering cleanup followed the focused tests; runtime tool implementation and served content bytes were unchanged."
+  ]
+}

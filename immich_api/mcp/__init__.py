@@ -1,5 +1,7 @@
-from ..openapi_runtime import register_domain
 from ..auth import get_client
+from ..openapi_runtime import register_domain
+from .album_sample import register_album_sample_tools as register_album_sample_tools
+
 
 def register_activities_tools(mcp):
     register_domain(mcp, 'activities', get_client)

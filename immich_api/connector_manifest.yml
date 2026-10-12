@@ -4,44 +4,252 @@
   "schema_version": "1",
   "resources": [
     {
-      "name": "ImmichResource"
+      "name": "ImmichAsset",
+      "relations": [
+        {
+          "name": "immichAssetOwner",
+          "target": "ImmichUser",
+          "label": "owner"
+        },
+        {
+          "name": "immichAssetPeople",
+          "target": "ImmichPersonRecord",
+          "label": "people"
+        },
+        {
+          "name": "immichAssetTags",
+          "target": "ImmichTag",
+          "label": "tags"
+        },
+        {
+          "name": "immichAssetStack",
+          "target": "ImmichAssetStack",
+          "label": "stack"
+        }
+      ]
     },
     {
-      "name": "Document"
+      "name": "ImmichAlbum",
+      "relations": [
+        {
+          "name": "immichAlbumAlbumUsers",
+          "target": "ImmichAlbumMembership",
+          "label": "albumUsers"
+        }
+      ]
     },
     {
-      "name": "MediaAsset"
+      "name": "ImmichPersonRecord",
+      "relations": []
+    },
+    {
+      "name": "ImmichUser",
+      "relations": []
+    },
+    {
+      "name": "ImmichLibrary",
+      "relations": []
+    },
+    {
+      "name": "ImmichAlbumMembership",
+      "relations": [
+        {
+          "name": "immichAlbumMembershipUser",
+          "target": "ImmichUser",
+          "label": "user"
+        }
+      ]
+    },
+    {
+      "name": "ImmichTag",
+      "relations": []
+    },
+    {
+      "name": "ImmichAssetStack",
+      "relations": []
     }
   ],
   "identity": {
     "id_field": {
-      "ImmichResource": "id"
+      "ImmichAsset": "id",
+      "ImmichAlbum": "id",
+      "ImmichPersonRecord": "id",
+      "ImmichUser": "id",
+      "ImmichLibrary": "id",
+      "ImmichTag": "id",
+      "ImmichAssetStack": "id"
     },
     "title_field": {
-      "ImmichResource": "name"
+      "ImmichAlbum": "albumName",
+      "ImmichPersonRecord": "name",
+      "ImmichUser": "name",
+      "ImmichLibrary": "name",
+      "ImmichTag": "name"
+    },
+    "updated_field": {
+      "ImmichAlbum": "updatedAt",
+      "ImmichAsset": "updatedAt"
     }
   },
   "schema_mappings": {
-    "ImmichResource": {
+    "ImmichAsset": {
+      "ontology_class": "ImmichAsset",
       "fields": {
+        "id": "xsd:string",
+        "type": "xsd:string",
+        "originalMimeType": "xsd:string",
+        "duration": "xsd:integer",
+        "width": "xsd:integer",
+        "height": "xsd:integer",
+        "fileCreatedAt": "xsd:dateTime",
+        "updatedAt": "xsd:dateTime",
+        "isFavorite": "xsd:boolean",
+        "isArchived": "xsd:boolean",
+        "isTrashed": "xsd:boolean",
+        "visibility": "xsd:string"
+      }
+    },
+    "ImmichAlbum": {
+      "ontology_class": "ImmichAlbum",
+      "fields": {
+        "id": "xsd:string",
+        "albumName": "xsd:string",
+        "assetCount": "xsd:integer",
+        "shared": "xsd:boolean",
+        "hasSharedLink": "xsd:boolean",
+        "createdAt": "xsd:dateTime",
+        "updatedAt": "xsd:dateTime",
+        "albumThumbnailAssetId": "xsd:string"
+      }
+    },
+    "ImmichPersonRecord": {
+      "ontology_class": "ImmichPersonRecord",
+      "fields": {
+        "id": "xsd:string",
+        "name": "xsd:string",
+        "isHidden": "xsd:boolean",
+        "isFavorite": "xsd:boolean",
+        "updatedAt": "xsd:dateTime"
+      }
+    },
+    "ImmichUser": {
+      "ontology_class": "ImmichUser",
+      "fields": {
+        "id": "xsd:string",
         "name": "xsd:string"
+      }
+    },
+    "ImmichLibrary": {
+      "ontology_class": "ImmichLibrary",
+      "fields": {
+        "id": "xsd:string",
+        "name": "xsd:string",
+        "assetCount": "xsd:integer",
+        "createdAt": "xsd:dateTime",
+        "updatedAt": "xsd:dateTime"
+      }
+    },
+    "ImmichAlbumMembership": {
+      "ontology_class": "ImmichAlbumMembership",
+      "fields": {
+        "role": "xsd:string"
+      }
+    },
+    "ImmichTag": {
+      "ontology_class": "ImmichTag",
+      "fields": {
+        "id": "xsd:string",
+        "name": "xsd:string",
+        "createdAt": "xsd:dateTime",
+        "updatedAt": "xsd:dateTime"
+      }
+    },
+    "ImmichAssetStack": {
+      "ontology_class": "ImmichAssetStack",
+      "fields": {
+        "id": "xsd:string",
+        "assetCount": "xsd:integer",
+        "primaryAssetId": "xsd:string"
       }
     }
   },
-  "sync": [],
+  "sync": [
+    {
+      "preset": "immich_album_metadata_sample",
+      "server": "Immich Api",
+      "tool": "album_metadata_sample",
+      "records_path": "records",
+      "id_field": "id",
+      "title_field": "albumName",
+      "text_field": "",
+      "updated_field": "updatedAt",
+      "doc_type": "ImmichAlbum",
+      "pagination": "none",
+      "raw": {
+        "server": "Immich Api",
+        "tool": "album_metadata_sample",
+        "params_style": "args",
+        "params": {
+          "limit": 1
+        },
+        "records_path": "records",
+        "id_field": "id",
+        "title_field": "albumName",
+        "text_field": "",
+        "updated_field": "updatedAt",
+        "doc_type": "ImmichAlbum",
+        "record_mode": "typed_entities",
+        "node_type_field": "node_type",
+        "pagination": "none",
+        "max_pages": 1,
+        "strict_schema": true,
+        "metadata_fields": [
+          "id",
+          "node_type",
+          "albumName",
+          "assetCount",
+          "shared",
+          "hasSharedLink",
+          "createdAt",
+          "updatedAt"
+        ]
+      },
+      "tool_schema_sha256": "abae009fa425c690d7c19d3efe93d53b2e49133dd6facf01ae1e7bc51d0a2cef"
+    }
+  ],
   "provenance": {
-    "generated_by": "mcp-builder/scripts/scaffold_package.py",
+    "generated_by": "scripts/generate_immich_content.py",
     "source_artifacts": [
-      "ontology/immich.ttl"
+      "openapi_contract.json",
+      "ontology/schema-provenance.json",
+      "ontology/immich.ttl",
+      "ontology/shapes/immich.ttl"
     ],
     "integrity": {
       "algorithm": "sha256",
-      "hash": "5d5526fc8583b9233959d7ac6f220bdd74d879d6a5d99dbc22ebe4cd0cd10502"
+      "hash": "c68d2270fcfbcacb40369011d3f65fdf625e6ea1eabba10bf4309f7c007e391d"
     }
   },
   "review_todos": [
-    "Replace the starter resource mapping with the reviewed source model.",
-    "Declare real source presets and matching sync entries before certification.",
-    "Integrity is an ontology byte hash, not canonical RDF or release certification."
-  ]
+    "Structural schema declarations are not evidence of live EG capture or semantic identity alignment.",
+    "Only the bounded album metadata projection is implemented for ingestion; remaining DTO classes are structural declarations.",
+    "Require explicit source/account binding, existing scoped credentials and a verified EG receipt/readback before enabling ingestion.",
+    "Ontology integrity is a byte SHA256, not canonical RDF or release certification."
+  ],
+  "policy": {
+    "pii_fields": {
+      "ImmichAlbum": [
+        "albumName"
+      ],
+      "ImmichPersonRecord": [
+        "name"
+      ],
+      "ImmichUser": [
+        "name"
+      ],
+      "ImmichTag": [
+        "name"
+      ]
+    }
+  }
 }

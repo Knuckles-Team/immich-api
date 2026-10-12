@@ -59,6 +59,7 @@
     "llms-sections/installation/llms.txt",
     "llms-sections/deployment/llms.txt",
     "llms-sections/usage-api-cli-mcp/llms.txt",
+    "llms-sections/immich-capabilities-and-evidence/llms.txt",
     "llms-sections/backing-platform-immich-api/llms.txt",
     "llms-sections/concepts/llms.txt",
     "llms-sections/glossary/llms.txt",
@@ -75,7 +76,7 @@
   },
   "provenance": {
     "applicability_sha256": "bc4c3ebc8f2437439a86931eded34fe6eb4492cef88084a9239fc2ada1cd2308",
-    "mkdocs_sha256": "72b8040a5a978b8eb1b1d5a4f24dfbadd1dc5fa7db684bf7c9dbf4d94a83b2a3",
+    "mkdocs_sha256": "89c41a1863f17b9ca13089af240df052f6a99c07f89766ed0a3a96d3c8d733b0",
     "pages": [
       {
         "bytes": 1585,
@@ -103,9 +104,14 @@
         "source": "docs/deployment.md"
       },
       {
-        "bytes": 1365,
-        "sha256": "a407d1b64ff213082a93afb4443cc0f73a4b2fac7f61d2baa5fe40ad8a491a05",
+        "bytes": 1420,
+        "sha256": "fb5749119d3bab02fb1d2d39b93078acfd555471126bfe1173a666042a43be3b",
         "source": "docs/usage.md"
+      },
+      {
+        "bytes": 6378,
+        "sha256": "210a9561d982865be7f122557feec25ecdeceed03cb542ad5bf481c2b3436b71",
+        "source": "docs/immich-capabilities.md"
       },
       {
         "bytes": 711,

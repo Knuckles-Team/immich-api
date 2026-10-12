@@ -7,8 +7,10 @@
 > auth cases. Final-source full tests, packaging and deployment remain pending.
 > Earlier converted-source tests had six auth-interface failures and one cold
 > import timeout; do not treat the isolated follow-up result as a full-suite pass.
-> Read-only SDK validation captured 41 tools, 3 prompts, 5 resources and 47
-> content-pack entries. Only public ping/version were called live, using
+> The content follow-up passed 12 focused cases. Native SDK capture now finds
+> 42 tools, 6 prompts, 12 resources and 55 content-pack entries, including the
+> schema-derived ontology/shapes and four read skills. The new content has not
+> been ingested into EG. Earlier public ping/version calls passed live using
 > verified HTTPS and explicit HTTP opt-in. Writes remain disabled by default.
 > Provider endpoints and credentials are supplied privately at runtime.
 
@@ -36,7 +38,8 @@
 Immich Api API + MCP Server
 
 The [documentation site](https://knuckles-team.github.io/immich-api/) contains the
-full API, deployment, security, and operational reference. This README is the concise
+planned API, deployment, security, and operational reference. Pages publication is
+not configured yet; use the local documentation links below for this pilot. This README is the concise
 entry point for installation and the supported runtime surfaces.
 
 ## Overview
@@ -51,14 +54,21 @@ private endpoints are never committed.
   explicit and validate it before it reaches an agent or graph.
 - **One package, shared policy** — authentication, telemetry, action routing, and
   error handling follow the `agent-connector-sdk` contracts.
-- **Graph-ready content** — skills, prompts, ontology, and connector presets are
-  packaged as discoverable data for the epistemic graph.
+- **Schema-grounded content** — read skills, prompts, ontology, shapes and an opt-in
+  bounded album preset are packaged; graph capture remains unverified.
 - **Operational safety** — TLS profiles, bounded responses, loopback defaults, and
   immutable container references are part of the generated deployment contract.
 
 ## Quick start
 
-Install the package and run its generated entry points:
+This pilot is not published on PyPI. For source validation in an approved environment:
+
+```bash
+python -m pip install ".[mcp]"
+immich-mcp
+```
+
+After a release is published, the distribution entry points will be:
 
 ```bash
 python -m pip install "immich-api[mcp]"
@@ -86,8 +96,9 @@ client → MCP entry point → typed tool module → API client → provider
                                   └── skills, prompts, ontology, connector presets
 ```
 
-The MCP surface uses action-routed tools. Pass an `action` and a JSON `params_json`
-payload. Regenerate `schemas/mcp_tools.json` with `python scripts/generate_tool_schemas.py`
+The OpenAPI tools take an `action` plus typed `path`, `query`, or `body` objects
+when the selected operation requires them. For example, call `server_operations`
+with `{"action":"pingServer"}`. The bounded `album_metadata_sample` tool takes `limit`. Regenerate `schemas/mcp_tools.json` with `python scripts/generate_tool_schemas.py`
 after changing a tool contract, and keep the examples below aligned with that schema.
 
 <!-- MCP-TOOLS-TABLE:START -->
@@ -154,6 +165,7 @@ and the concept registry. The concise local references remain available at:
 
 - [Installation](docs/installation.md)
 - [Usage](docs/usage.md)
+- [Immich capabilities and evidence](docs/immich-capabilities.md)
 - [Deployment](docs/deployment.md)
 - [Platform](docs/platform.md)
 - [Concept registry](docs/concepts.md)

@@ -5,7 +5,7 @@
 
 ## Usage (API / CLI / MCP)
 
-- [Usage (API / CLI / MCP)](https://knuckles-team.github.io/immich-api/usage/) — immich-api exposes the same capability three ways: as MCP tools an agent calls, as a Python API you import, and as a CLI.
+- [Usage (API / CLI / MCP)](https://knuckles-team.github.io/immich-api/usage/) — The pilot provides a Python client and the immich-mcp server entry point. Its OpenAPI domain tools take typed operation arguments, not a free-form URL or method. Read the capability and evidence guide first.
 
 ## Standards maturity
 

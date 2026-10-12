@@ -1,0 +1,483 @@
+{
+  "contract_sha256": "ef625a52b1a83aa7534f8d10fcdd27e1f1ea58989243c0889a79c86017a602fe",
+  "excluded_by_policy": [
+    "paths",
+    "email",
+    "EXIF",
+    "GPS",
+    "birth dates",
+    "face geometry",
+    "share keys/passwords",
+    "credentials"
+  ],
+  "inferences_not_made": [
+    "album contains assets",
+    "person record equals a verified real-world person",
+    "shared permission inherited by related objects"
+  ],
+  "properties": [
+    {
+      "array": false,
+      "class": "ImmichAsset",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichAssetId",
+      "range": "xsd:string",
+      "source_pointer": "#/components/schemas/AssetResponseDto/properties/id",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichAsset",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichAssetType",
+      "range": "xsd:string",
+      "source_pointer": "#/components/schemas/AssetResponseDto/properties/type",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichAsset",
+      "nullable": false,
+      "presence_enforced": false,
+      "property": "immichAssetOriginalMimeType",
+      "range": "xsd:string",
+      "source_pointer": "#/components/schemas/AssetResponseDto/properties/originalMimeType",
+      "source_required": false
+    },
+    {
+      "array": false,
+      "class": "ImmichAsset",
+      "nullable": true,
+      "presence_enforced": false,
+      "property": "immichAssetDuration",
+      "range": "xsd:integer",
+      "source_pointer": "#/components/schemas/AssetResponseDto/properties/duration",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichAsset",
+      "nullable": true,
+      "presence_enforced": false,
+      "property": "immichAssetWidth",
+      "range": "xsd:integer",
+      "source_pointer": "#/components/schemas/AssetResponseDto/properties/width",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichAsset",
+      "nullable": true,
+      "presence_enforced": false,
+      "property": "immichAssetHeight",
+      "range": "xsd:integer",
+      "source_pointer": "#/components/schemas/AssetResponseDto/properties/height",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichAsset",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichAssetFileCreatedAt",
+      "range": "xsd:dateTime",
+      "source_pointer": "#/components/schemas/AssetResponseDto/properties/fileCreatedAt",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichAsset",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichAssetUpdatedAt",
+      "range": "xsd:dateTime",
+      "source_pointer": "#/components/schemas/AssetResponseDto/properties/updatedAt",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichAsset",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichAssetIsFavorite",
+      "range": "xsd:boolean",
+      "source_pointer": "#/components/schemas/AssetResponseDto/properties/isFavorite",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichAsset",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichAssetIsArchived",
+      "range": "xsd:boolean",
+      "source_pointer": "#/components/schemas/AssetResponseDto/properties/isArchived",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichAsset",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichAssetIsTrashed",
+      "range": "xsd:boolean",
+      "source_pointer": "#/components/schemas/AssetResponseDto/properties/isTrashed",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichAsset",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichAssetVisibility",
+      "range": "xsd:string",
+      "source_pointer": "#/components/schemas/AssetResponseDto/properties/visibility",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichAsset",
+      "nullable": false,
+      "presence_enforced": false,
+      "property": "immichAssetOwner",
+      "range": "ImmichUser",
+      "source_pointer": "#/components/schemas/AssetResponseDto/properties/owner",
+      "source_required": false
+    },
+    {
+      "array": true,
+      "class": "ImmichAsset",
+      "nullable": false,
+      "presence_enforced": false,
+      "property": "immichAssetPeople",
+      "range": "ImmichPersonRecord",
+      "source_pointer": "#/components/schemas/AssetResponseDto/properties/people",
+      "source_required": false
+    },
+    {
+      "array": true,
+      "class": "ImmichAsset",
+      "nullable": false,
+      "presence_enforced": false,
+      "property": "immichAssetTags",
+      "range": "ImmichTag",
+      "source_pointer": "#/components/schemas/AssetResponseDto/properties/tags",
+      "source_required": false
+    },
+    {
+      "array": false,
+      "class": "ImmichAsset",
+      "nullable": true,
+      "presence_enforced": false,
+      "property": "immichAssetStack",
+      "range": "ImmichAssetStack",
+      "source_pointer": "#/components/schemas/AssetResponseDto/properties/stack",
+      "source_required": false
+    },
+    {
+      "array": false,
+      "class": "ImmichAlbum",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichAlbumId",
+      "range": "xsd:string",
+      "source_pointer": "#/components/schemas/AlbumResponseDto/properties/id",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichAlbum",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichAlbumAlbumName",
+      "range": "xsd:string",
+      "source_pointer": "#/components/schemas/AlbumResponseDto/properties/albumName",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichAlbum",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichAlbumAssetCount",
+      "range": "xsd:integer",
+      "source_pointer": "#/components/schemas/AlbumResponseDto/properties/assetCount",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichAlbum",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichAlbumShared",
+      "range": "xsd:boolean",
+      "source_pointer": "#/components/schemas/AlbumResponseDto/properties/shared",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichAlbum",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichAlbumHasSharedLink",
+      "range": "xsd:boolean",
+      "source_pointer": "#/components/schemas/AlbumResponseDto/properties/hasSharedLink",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichAlbum",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichAlbumCreatedAt",
+      "range": "xsd:dateTime",
+      "source_pointer": "#/components/schemas/AlbumResponseDto/properties/createdAt",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichAlbum",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichAlbumUpdatedAt",
+      "range": "xsd:dateTime",
+      "source_pointer": "#/components/schemas/AlbumResponseDto/properties/updatedAt",
+      "source_required": true
+    },
+    {
+      "array": true,
+      "class": "ImmichAlbum",
+      "nullable": false,
+      "presence_enforced": false,
+      "property": "immichAlbumAlbumUsers",
+      "range": "ImmichAlbumMembership",
+      "source_pointer": "#/components/schemas/AlbumResponseDto/properties/albumUsers",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichAlbum",
+      "nullable": true,
+      "presence_enforced": false,
+      "property": "immichAlbumAlbumThumbnailAssetId",
+      "range": "xsd:string",
+      "source_pointer": "#/components/schemas/AlbumResponseDto/properties/albumThumbnailAssetId",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichPersonRecord",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichPersonRecordId",
+      "range": "xsd:string",
+      "source_pointer": "#/components/schemas/PersonResponseDto/properties/id",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichPersonRecord",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichPersonRecordName",
+      "range": "xsd:string",
+      "source_pointer": "#/components/schemas/PersonResponseDto/properties/name",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichPersonRecord",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichPersonRecordIsHidden",
+      "range": "xsd:boolean",
+      "source_pointer": "#/components/schemas/PersonResponseDto/properties/isHidden",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichPersonRecord",
+      "nullable": false,
+      "presence_enforced": false,
+      "property": "immichPersonRecordIsFavorite",
+      "range": "xsd:boolean",
+      "source_pointer": "#/components/schemas/PersonResponseDto/properties/isFavorite",
+      "source_required": false
+    },
+    {
+      "array": false,
+      "class": "ImmichPersonRecord",
+      "nullable": false,
+      "presence_enforced": false,
+      "property": "immichPersonRecordUpdatedAt",
+      "range": "xsd:dateTime",
+      "source_pointer": "#/components/schemas/PersonResponseDto/properties/updatedAt",
+      "source_required": false
+    },
+    {
+      "array": false,
+      "class": "ImmichUser",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichUserId",
+      "range": "xsd:string",
+      "source_pointer": "#/components/schemas/UserResponseDto/properties/id",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichUser",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichUserName",
+      "range": "xsd:string",
+      "source_pointer": "#/components/schemas/UserResponseDto/properties/name",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichLibrary",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichLibraryId",
+      "range": "xsd:string",
+      "source_pointer": "#/components/schemas/LibraryResponseDto/properties/id",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichLibrary",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichLibraryName",
+      "range": "xsd:string",
+      "source_pointer": "#/components/schemas/LibraryResponseDto/properties/name",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichLibrary",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichLibraryAssetCount",
+      "range": "xsd:integer",
+      "source_pointer": "#/components/schemas/LibraryResponseDto/properties/assetCount",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichLibrary",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichLibraryCreatedAt",
+      "range": "xsd:dateTime",
+      "source_pointer": "#/components/schemas/LibraryResponseDto/properties/createdAt",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichLibrary",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichLibraryUpdatedAt",
+      "range": "xsd:dateTime",
+      "source_pointer": "#/components/schemas/LibraryResponseDto/properties/updatedAt",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichAlbumMembership",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichAlbumMembershipRole",
+      "range": "xsd:string",
+      "source_pointer": "#/components/schemas/AlbumUserResponseDto/properties/role",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichAlbumMembership",
+      "nullable": false,
+      "presence_enforced": false,
+      "property": "immichAlbumMembershipUser",
+      "range": "ImmichUser",
+      "source_pointer": "#/components/schemas/AlbumUserResponseDto/properties/user",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichTag",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichTagId",
+      "range": "xsd:string",
+      "source_pointer": "#/components/schemas/TagResponseDto/properties/id",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichTag",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichTagName",
+      "range": "xsd:string",
+      "source_pointer": "#/components/schemas/TagResponseDto/properties/name",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichTag",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichTagCreatedAt",
+      "range": "xsd:dateTime",
+      "source_pointer": "#/components/schemas/TagResponseDto/properties/createdAt",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichTag",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichTagUpdatedAt",
+      "range": "xsd:dateTime",
+      "source_pointer": "#/components/schemas/TagResponseDto/properties/updatedAt",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichAssetStack",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichAssetStackId",
+      "range": "xsd:string",
+      "source_pointer": "#/components/schemas/AssetStackResponseDto/properties/id",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichAssetStack",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichAssetStackAssetCount",
+      "range": "xsd:integer",
+      "source_pointer": "#/components/schemas/AssetStackResponseDto/properties/assetCount",
+      "source_required": true
+    },
+    {
+      "array": false,
+      "class": "ImmichAssetStack",
+      "nullable": false,
+      "presence_enforced": true,
+      "property": "immichAssetStackPrimaryAssetId",
+      "range": "xsd:string",
+      "source_pointer": "#/components/schemas/AssetStackResponseDto/properties/primaryAssetId",
+      "source_required": true
+    }
+  ],
+  "source_sha256": "7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b",
+  "source_version": "3.2.2",
+  "status": "schema-derived; live ingestion unverified"
+}

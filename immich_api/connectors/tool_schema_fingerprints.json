@@ -1,5 +1,7 @@
 {
-  "connector": "immich-api",
   "algorithm": "agent-connector-sdk:mcp-tool-contract-compat:v2",
-  "tools": {}
+  "connector": "immich-api",
+  "tools": {
+    "album_metadata_sample": "abae009fa425c690d7c19d3efe93d53b2e49133dd6facf01ae1e7bc51d0a2cef"
+  }
 }
