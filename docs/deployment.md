@@ -2,6 +2,35 @@
 
 This page covers running `immich-api` as long-lived servers.
 
+## Build from a reviewed source commit
+
+The production Dockerfile installs the local package and its selected runtime
+extra from the repository root. It does not download `immich-api` from an
+index. The build copies the complete `immich_api/` directory, including generated
+OpenAPI contracts, prompts, skills, ontology and connector data. Runtime images
+contain the installed package; source tooling remains outside the final stage.
+
+Use an exact reviewed commit as the build context:
+
+```bash
+SOURCE_COMMIT=$(git rev-parse --verify 'HEAD^{commit}')
+git archive --format=tar "$SOURCE_COMMIT" | docker build \
+  --file docker/Dockerfile --target mcp \
+  --label "org.opencontainers.image.revision=$SOURCE_COMMIT" \
+  --tag immich-api:mcp-local -
+```
+
+The shared
+[container workflow](https://github.com/Knuckles-Team/pipelines/blob/7b3d18d72b5622d455ece3bbe45a9482bc6e8b5e/.github/workflows/container_pipeline.yml)
+also checks out the exact workflow commit. Build only on an approved image-build
+host. Publish through the repository's approved process, then deploy the returned
+image manifest digest through `MCP_IMAGE` (and `AGENT_IMAGE` when enabled).
+A source commit does not freeze the index-resolved dependency closure. For a
+qualified offline wheel build, use the shared
+[runtime artifact contract](https://github.com/Knuckles-Team/pipelines/blob/7b3d18d72b5622d455ece3bbe45a9482bc6e8b5e/reference/container-runtime.md)
+with its producer receipts and full hashes. This scaffold does not claim that
+qualification or provision a producer, registry credentials or deployment.
+
 > `immich-api` ships an **MCP server** (console script `immich-mcp`).
 
 <!-- BEGIN GENERATED: deployment-options -->

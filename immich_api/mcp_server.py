@@ -1,5 +1,5 @@
-from pathlib import Path
 import sys
+from pathlib import Path
 
 from agent_connector_sdk.config import load_config
 from agent_connector_sdk.mcp.content import ConnectorContent
@@ -40,7 +40,9 @@ def build_server(*, command_args=None):
 def mcp_server():
     mcp, args, _ = get_mcp_instance()
     print("Starting Immich Api MCP", file=sys.stderr)
-    options = {} if args.transport == "stdio" else {"host": args.host, "port": args.port}
+    options = (
+        {} if args.transport == "stdio" else {"host": args.host, "port": args.port}
+    )
     mcp.run(transport=args.transport, **options)
 
 

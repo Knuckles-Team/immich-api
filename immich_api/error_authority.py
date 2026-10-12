@@ -14,11 +14,11 @@ import html
 import json
 import math
 import re
+from collections.abc import Mapping
 from dataclasses import dataclass
-from typing import Any, Mapping
+from typing import Any
 
 from agent_connector_sdk.privacy import sanitize_for_persistence
-
 
 PROBLEM_JSON_MEDIA_TYPE = "application/problem+json"
 STRUCTURED_MARKDOWN_MEDIA_TYPE = "text/markdown"
@@ -128,9 +128,7 @@ class ProblemDetails:
             fallback="The request could not be completed.",
         )
         retryable = bool(self.retryable) and not denied
-        retry_after_s = (
-            _bounded_retry_after(self.retry_after_s) if retryable else None
-        )
+        retry_after_s = _bounded_retry_after(self.retry_after_s) if retryable else None
 
         object.__setattr__(self, "status", status)
         object.__setattr__(self, "code", code)
@@ -185,24 +183,22 @@ class ProblemDetails:
                 "## Detail",
             ]
         )
-        lines.extend(
-            f"> {line}" if line else ">" for line in self.detail.splitlines()
-        )
+        lines.extend(f"> {line}" if line else ">" for line in self.detail.splitlines())
         return "\n".join(lines) + "\n"
 
     def to_html(self) -> str:
         """Render the retained browser surface with escaped bounded fields."""
         metadata = self.metadata()
         attrs = " ".join(
-            "data-error-{}=\"{}\"".format(
+            'data-error-{}="{}"'.format(
                 field.replace("_", "-"), html.escape(str(value), quote=True)
             )
             for field, value in metadata.items()
         )
         detail = html.escape(self.detail, quote=False).replace("\n", "<br>")
         return (
-            "<!doctype html>\n<html lang=\"en\"><head>"
-            f"<meta name=\"error-status\" content=\"{self.status}\">"
+            '<!doctype html>\n<html lang="en"><head>'
+            f'<meta name="error-status" content="{self.status}">'
             f"<title>{html.escape(self.title)}</title></head>\n"
             f"<body><main {attrs}><h1>{html.escape(self.title)}</h1>"
             f"<p>{detail}</p></main></body></html>\n"

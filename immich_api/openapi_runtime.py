@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import quote, urlsplit
 
+import regex
 from agent_connector_sdk.http.client import create_http_client
 from agent_connector_sdk.http.options import HttpClientOptions
 from agent_connector_sdk.http.retry import RetryPolicy
@@ -19,7 +20,6 @@ from fastmcp.tools import Tool, ToolResult
 from jsonschema import Draft202012Validator, FormatChecker
 from jsonschema.exceptions import ValidationError
 from jsonschema.validators import extend
-import regex
 from mcp.types import ToolAnnotations
 from pydantic import Field
 

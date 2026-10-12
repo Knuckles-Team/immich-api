@@ -45,7 +45,7 @@
       "artifact_sha256": "603ffa561c6aa00eac432f3a1b63f708b90eacb38cc371a197e883b5811a0a09",
       "http_transport": "true",
       "source": "immich_api/mcp_server.py",
-      "source_sha256": "5963c4042949f96ab09f6e41b0e52aeb07aa9a99d0e4b673188f05a0a8a9d052"
+      "source_sha256": "e8efb314b785d06fb57d9498bf9f514ec454ba448d8f6683739f782f327145f0"
     }
   },
   "content_signals": {
@@ -99,8 +99,8 @@
         "source": "docs/installation.md"
       },
       {
-        "bytes": 2828,
-        "sha256": "b9d0f0b4b90c353aecee26be4c5afede0fea3ace3c154d1fae361f23d4f33b25",
+        "bytes": 4406,
+        "sha256": "8cd07442df48816d65222571586f9e4db1c02a6ed23524c05055773e2393b224",
         "source": "docs/deployment.md"
       },
       {

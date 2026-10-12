@@ -34,10 +34,10 @@
       "url": "https://knuckles-team.github.io/immich-api/installation/"
     },
     {
-      "bytes": 2828,
+      "bytes": 4406,
       "canonical_url": "https://knuckles-team.github.io/immich-api/deployment/",
       "markdown_url": "https://knuckles-team.github.io/immich-api/deployment/index.md",
-      "sha256": "b9d0f0b4b90c353aecee26be4c5afede0fea3ace3c154d1fae361f23d4f33b25",
+      "sha256": "8cd07442df48816d65222571586f9e4db1c02a6ed23524c05055773e2393b224",
       "source": "docs/deployment.md",
       "url": "https://knuckles-team.github.io/immich-api/deployment/"
     },

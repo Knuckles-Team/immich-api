@@ -1,0 +1,14 @@
+{
+  "reviewed_generator_revision": "a12145337192d33307aacb88234679431d7f1790",
+  "merged_revision": "00b1a5c859df098c43e80f8753c96028b89e9888",
+  "generation_date": "2026-10-12",
+  "local_generation": true,
+  "external_template_access": false,
+  "exact_generated_files": {
+    "docker/Dockerfile": "c49846748bcad21c2ea0dda3642c69a78476d404221fd4f2b51241628eb02b26",
+    ".bumpversion.cfg": "8722bcac5dd070e6d597af17351ce0d36d4fea6239a3a469c2251d0499ccab76",
+    "docs/deployment.md": "8cd07442df48816d65222571586f9e4db1c02a6ed23524c05055773e2393b224"
+  },
+  "image_built": false,
+  "dependency_closure_verified": false
+}

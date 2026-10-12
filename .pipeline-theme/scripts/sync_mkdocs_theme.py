@@ -34,7 +34,9 @@ THEME_FILES = (
         "assets/brands/agent-utilities-logo-v1.png",
         "assets/brands/agent-utilities-logo-v1.png",
     ),
-    ThemeFile("assets/brands/graph-os-logo-v1.png", "assets/brands/graph-os-logo-v1.png"),
+    ThemeFile(
+        "assets/brands/graph-os-logo-v1.png", "assets/brands/graph-os-logo-v1.png"
+    ),
     ThemeFile(
         "assets/brands/agent-connector-sdk-logo-v1.png",
         "assets/brands/agent-connector-sdk-logo-v1.png",
@@ -43,7 +45,9 @@ THEME_FILES = (
         "assets/brands/agent-webui-logo-v1.png",
         "assets/brands/agent-webui-logo-v1.png",
     ),
-    ThemeFile("assets/brands/geniusbot-logo-v1.png", "assets/brands/geniusbot-logo-v1.png"),
+    ThemeFile(
+        "assets/brands/geniusbot-logo-v1.png", "assets/brands/geniusbot-logo-v1.png"
+    ),
     ThemeFile(
         "assets/brands/agent-terminal-ui-logo-v1.png",
         "assets/brands/agent-terminal-ui-logo-v1.png",
@@ -69,7 +73,11 @@ class ThemeSyncError(Exception):
 
 def _safe_relative_path(value: str, label: str) -> Path:
     path = Path(value)
-    if path.is_absolute() or not path.parts or any(part in {".", ".."} for part in path.parts):
+    if (
+        path.is_absolute()
+        or not path.parts
+        or any(part in {".", ".."} for part in path.parts)
+    ):
         raise ThemeSyncError(f"{label} must be a contained relative path")
     return path
 
@@ -142,7 +150,9 @@ def sync_theme(
         if not source_file.is_file():
             raise ThemeSyncError(f"canonical theme file does not exist: {source_file}")
         destination_root = content_root if item.content_relative else repository
-        destination = _contained(destination_root, Path(item.destination), item.destination)
+        destination = _contained(
+            destination_root, Path(item.destination), item.destination
+        )
         expected = _expected_content(item, source_file, destination)
         if mode == "check":
             mismatch = _check_file(destination, expected, repository)
@@ -159,7 +169,9 @@ def sync_theme(
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("mode", choices=("sync", "check"))
-    parser.add_argument("--root", type=Path, default=Path.cwd(), help="consumer repository root")
+    parser.add_argument(
+        "--root", type=Path, default=Path.cwd(), help="consumer repository root"
+    )
     parser.add_argument(
         "--content-source",
         default="docs",

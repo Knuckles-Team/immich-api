@@ -32,7 +32,6 @@ from pathlib import PurePosixPath
 from typing import Any, Protocol
 from urllib.parse import urlsplit
 
-
 TCK_SCHEMA_VERSION = "agent-readiness-tck/v1"
 TCK_CONTRACT_VERSION = "agent-readiness-tck/v1"
 TCK_MATURITY = "experimental"
@@ -115,9 +114,7 @@ _SECRET_PATTERN = re.compile(
 )
 _BEARER_PATTERN = re.compile(r"(?i)\bbearer\s+[A-Za-z0-9._~+/=-]{12,}")
 _URL_PATTERN = re.compile(r"https?://[^\s<>'\"]+")
-_LINK_PATTERN = re.compile(
-    r"<([^<>]+)>\s*;\s*([^,]+)(?:,|$)", re.IGNORECASE
-)
+_LINK_PATTERN = re.compile(r"<([^<>]+)>\s*;\s*([^,]+)(?:,|$)", re.IGNORECASE)
 
 
 class TckConfigurationError(ValueError):
@@ -167,8 +164,7 @@ class TckTransport(Protocol):
 
     def fetch(
         self, path: str, accept: str, *, timeout: float, max_bytes: int
-    ) -> TckResponse:
-        ...
+    ) -> TckResponse: ...
 
 
 def _local_host(host: str) -> bool:
@@ -331,7 +327,9 @@ def _body_evidence(response: TckResponse, *, max_bytes: int) -> dict[str, Any]:
     }
 
 
-def _check(identifier: str, status: str, *, reason: str = "", **evidence: Any) -> dict[str, Any]:
+def _check(
+    identifier: str, status: str, *, reason: str = "", **evidence: Any
+) -> dict[str, Any]:
     if status not in CHECK_STATUSES:
         raise ValueError("invalid TCK check status")
     result: dict[str, Any] = {"id": identifier, "status": status}
@@ -386,8 +384,8 @@ def _same_metadata(left: Mapping[str, Any], right: Mapping[str, Any]) -> bool:
 def _problem_from_json(value: object, *, local_fixture: bool) -> dict[str, Any]:
     if not isinstance(value, Mapping):
         raise TckViolation("problem-json-invalid")
-    for field in _PROBLEM_FIELDS:
-        if field not in value:
+    for property_name in _PROBLEM_FIELDS:
+        if property_name not in value:
             raise TckViolation("problem-metadata-incomplete")
     if (
         not isinstance(value["status"], int)
@@ -531,11 +529,16 @@ class TckConfig:
             raise TckConfigurationError("timeout-boundary-invalid") from exc
         if not 0.1 <= timeout <= MAX_TIMEOUT_SECONDS:
             raise TckConfigurationError("timeout-boundary-invalid")
-        if not isinstance(self.max_response_bytes, int) or not 1 <= self.max_response_bytes <= MAX_RESPONSE_BYTES:
+        if (
+            not isinstance(self.max_response_bytes, int)
+            or not 1 <= self.max_response_bytes <= MAX_RESPONSE_BYTES
+        ):
             raise TckConfigurationError("response-boundary-invalid")
         if not isinstance(self.max_links, int) or not 1 <= self.max_links <= MAX_LINKS:
             raise TckConfigurationError("link-boundary-invalid")
-        if not isinstance(self.applicable, bool) or not isinstance(self.auth_sensitive, bool):
+        if not isinstance(self.applicable, bool) or not isinstance(
+            self.auth_sensitive, bool
+        ):
             raise TckConfigurationError("applicability-invalid")
         object.__setattr__(self, "origin", origin)
         object.__setattr__(self, "allowed_origins", origins)
@@ -617,7 +620,9 @@ class UrllibTransport:
                 addresses.add(str(ipaddress.ip_address(answer[4][0])))
             except (IndexError, TypeError, ValueError) as exc:
                 raise TckViolation("dns-answer-invalid") from exc
-        if not addresses or any(not ipaddress.ip_address(item).is_global for item in addresses):
+        if not addresses or any(
+            not ipaddress.ip_address(item).is_global for item in addresses
+        ):
             raise TckViolation("private-destination")
 
     def fetch(
@@ -690,19 +695,27 @@ def _content_checks(
     config: TckConfig, transport: TckTransport
 ) -> tuple[list[dict[str, Any]], TckResponse | None, TckResponse | None]:
     checks: list[dict[str, Any]] = []
-    markdown, markdown_status = _fetch(transport, config.markdown_path, MARKDOWN, config)
+    markdown, markdown_status = _fetch(
+        transport, config.markdown_path, MARKDOWN, config
+    )
     if markdown is None:
         checks.append(
             _check(
                 "markdown-negotiation",
                 markdown_status or UNAVAILABLE,
-                reason="target-unavailable" if markdown_status == UNAVAILABLE else "response-rejected",
+                reason="target-unavailable"
+                if markdown_status == UNAVAILABLE
+                else "response-rejected",
             )
         )
     else:
         try:
             evidence = _body_evidence(markdown, max_bytes=config.max_response_bytes)
-            _body_text(markdown, max_bytes=config.max_response_bytes, local_fixture=config.local_fixture)
+            _body_text(
+                markdown,
+                max_bytes=config.max_response_bytes,
+                local_fixture=config.local_fixture,
+            )
             if not 200 <= markdown.status < 300 or _media_type(markdown) != MARKDOWN:
                 raise TckViolation("content-negotiation-mismatch")
             checks.append(_check("markdown-negotiation", PASS, **evidence))
@@ -715,14 +728,25 @@ def _content_checks(
             _check(
                 "html-negotiation",
                 html_status or UNAVAILABLE,
-                reason="target-unavailable" if html_status == UNAVAILABLE else "response-rejected",
+                reason="target-unavailable"
+                if html_status == UNAVAILABLE
+                else "response-rejected",
             )
         )
     else:
         try:
-            evidence = _body_evidence(html_response, max_bytes=config.max_response_bytes)
-            _body_text(html_response, max_bytes=config.max_response_bytes, local_fixture=config.local_fixture)
-            if not 200 <= html_response.status < 300 or _media_type(html_response) != HTML:
+            evidence = _body_evidence(
+                html_response, max_bytes=config.max_response_bytes
+            )
+            _body_text(
+                html_response,
+                max_bytes=config.max_response_bytes,
+                local_fixture=config.local_fixture,
+            )
+            if (
+                not 200 <= html_response.status < 300
+                or _media_type(html_response) != HTML
+            ):
                 raise TckViolation("content-negotiation-mismatch")
             checks.append(_check("html-negotiation", PASS, **evidence))
         except TckViolation as exc:
@@ -731,11 +755,17 @@ def _content_checks(
     if markdown is None:
         status = markdown_status or UNAVAILABLE
         for identifier in ("vary-accept", "cache-policy", "link-header"):
-            checks.append(_check(identifier, status, reason="markdown-response-unavailable"))
+            checks.append(
+                _check(identifier, status, reason="markdown-response-unavailable")
+            )
         return checks, markdown, html_response
 
     try:
-        vary = {item.strip().lower() for item in _header(markdown, "vary").split(",") if item.strip()}
+        vary = {
+            item.strip().lower()
+            for item in _header(markdown, "vary").split(",")
+            if item.strip()
+        }
         _scan_safe_text(" ".join(sorted(vary)), local_fixture=config.local_fixture)
         if "accept" not in vary:
             raise TckViolation("vary-accept-missing")
@@ -748,14 +778,12 @@ def _content_checks(
         if not cache:
             raise TckViolation("cache-control-missing")
         _scan_safe_text(cache, local_fixture=config.local_fixture)
-        if config.auth_sensitive and not any(token in cache for token in ("private", "no-store")):
+        if config.auth_sensitive and not any(
+            token in cache for token in ("private", "no-store")
+        ):
             raise TckViolation("authenticated-cache-not-private")
         directives = sorted(
-            {
-                item.strip().split("=", 1)[0]
-                for item in cache.split(",")
-                if item.strip()
-            }
+            {item.strip().split("=", 1)[0] for item in cache.split(",") if item.strip()}
         )
         checks.append(_check("cache-policy", PASS, directives=directives))
     except TckViolation as exc:
@@ -777,10 +805,14 @@ def _content_checks(
                 relations=sorted({link["rel"] for link in links}),
             )
         )
-        checks.append(_check("link-budget", PASS, count=len(links), maximum=config.max_links))
+        checks.append(
+            _check("link-budget", PASS, count=len(links), maximum=config.max_links)
+        )
     except TckViolation as exc:
         checks.append(_check("link-header", FAIL, reason=str(exc)))
-        checks.append(_check("link-budget", FAIL, reason=str(exc), maximum=config.max_links))
+        checks.append(
+            _check("link-budget", FAIL, reason=str(exc), maximum=config.max_links)
+        )
     return checks, markdown, html_response
 
 
@@ -817,7 +849,9 @@ def _discovery_check(
                     for link in links:
                         if not isinstance(link, Mapping) or "href" not in link:
                             raise TckViolation("api-catalog-link-invalid")
-                        _safe_reference(link["href"], local_fixture=config.local_fixture)
+                        _safe_reference(
+                            link["href"], local_fixture=config.local_fixture
+                        )
                         if field_name == "item" and not str(link["href"]).startswith(
                             ("/.well-known", ".well-known")
                         ):
@@ -841,7 +875,9 @@ def _discovery_check(
             if not isinstance(skills, list) or len(skills) > config.max_links:
                 raise TckViolation("agent-skills-budget-invalid")
             for skill in skills:
-                if not isinstance(skill, Mapping) or not isinstance(skill.get("path"), str):
+                if not isinstance(skill, Mapping) or not isinstance(
+                    skill.get("path"), str
+                ):
                     raise TckViolation("agent-skills-entry-invalid")
                 _safe_reference(skill["path"], local_fixture=config.local_fixture)
         elif name == "a2a_card":
@@ -857,13 +893,13 @@ def _discovery_check(
         return _check(name.replace("_", "-"), FAIL, reason=str(exc))
 
 
-def _run_discovery(
-    config: TckConfig, transport: TckTransport
-) -> list[dict[str, Any]]:
+def _run_discovery(config: TckConfig, transport: TckTransport) -> list[dict[str, Any]]:
     checks: list[dict[str, Any]] = []
     for name, setting in config.discovery.items():
         if setting is False:
-            checks.append(_check(name.replace("_", "-"), NOT_APPLICABLE, reason="disabled"))
+            checks.append(
+                _check(name.replace("_", "-"), NOT_APPLICABLE, reason="disabled")
+            )
             continue
         path = _DEFAULT_DISCOVERY_PATHS[name] if setting is True else setting
         response, status = _fetch(transport, path, _DISCOVERY_MEDIA_TYPES[name], config)
@@ -872,7 +908,9 @@ def _run_discovery(
                 _check(
                     name.replace("_", "-"),
                     status or UNAVAILABLE,
-                    reason="target-unavailable" if status == UNAVAILABLE else "response-rejected",
+                    reason="target-unavailable"
+                    if status == UNAVAILABLE
+                    else "response-rejected",
                 )
             )
         else:
@@ -880,11 +918,17 @@ def _run_discovery(
     return checks
 
 
-def _run_error_parity(config: TckConfig, transport: TckTransport) -> list[dict[str, Any]]:
+def _run_error_parity(
+    config: TckConfig, transport: TckTransport
+) -> list[dict[str, Any]]:
     if config.error_path is None:
         return [_check("error-parity", NOT_APPLICABLE, reason="no-error-surface-bound")]
-    json_response, json_status = _fetch(transport, config.error_path, PROBLEM_JSON, config)
-    markdown_response, markdown_status = _fetch(transport, config.error_path, MARKDOWN, config)
+    json_response, json_status = _fetch(
+        transport, config.error_path, PROBLEM_JSON, config
+    )
+    markdown_response, markdown_status = _fetch(
+        transport, config.error_path, MARKDOWN, config
+    )
     if json_response is None or markdown_response is None:
         status = UNAVAILABLE if UNAVAILABLE in {json_status, markdown_status} else FAIL
         return [_check("error-parity", status, reason="error-surface-unavailable")]
@@ -894,22 +938,33 @@ def _run_error_parity(config: TckConfig, transport: TckTransport) -> list[dict[s
             max_bytes=config.max_response_bytes,
             local_fixture=config.local_fixture,
         )
-        json_metadata = _problem_from_json(json_value, local_fixture=config.local_fixture)
+        json_metadata = _problem_from_json(
+            json_value, local_fixture=config.local_fixture
+        )
         markdown_text = _body_text(
             markdown_response,
             max_bytes=config.max_response_bytes,
             local_fixture=config.local_fixture,
         )
-        if not 400 <= markdown_response.status <= 599 or _media_type(markdown_response) != MARKDOWN:
+        if (
+            not 400 <= markdown_response.status <= 599
+            or _media_type(markdown_response) != MARKDOWN
+        ):
             raise TckViolation("structured-markdown-error-invalid")
         markdown_metadata = _problem_from_markdown(
             markdown_text, local_fixture=config.local_fixture
         )
-        if json_response.status != json_metadata["status"] or json_response.status != markdown_metadata["status"]:
+        if (
+            json_response.status != json_metadata["status"]
+            or json_response.status != markdown_metadata["status"]
+        ):
             raise TckViolation("problem-status-mismatch")
         if not _same_metadata(json_metadata, markdown_metadata):
             raise TckViolation("problem-metadata-parity-mismatch")
-        if json_metadata["status"] in {401, 403} or json_metadata["code"] in _DENIAL_CODES:
+        if (
+            json_metadata["status"] in {401, 403}
+            or json_metadata["code"] in _DENIAL_CODES
+        ):
             if json_metadata["retryable"] or json_metadata["retry_after_s"] is not None:
                 raise TckViolation("denial-marked-retryable")
         return [
@@ -917,7 +972,9 @@ def _run_error_parity(config: TckConfig, transport: TckTransport) -> list[dict[s
                 "error-parity",
                 PASS,
                 json=json_evidence,
-                markdown=_body_evidence(markdown_response, max_bytes=config.max_response_bytes),
+                markdown=_body_evidence(
+                    markdown_response, max_bytes=config.max_response_bytes
+                ),
                 denial_non_retryable=json_metadata["status"] in {401, 403}
                 or json_metadata["code"] in _DENIAL_CODES,
             )
@@ -930,7 +987,9 @@ def _run_security_negatives(
     config: TckConfig, transport: TckTransport
 ) -> list[dict[str, Any]]:
     if not config.security_paths:
-        return [_check("auth-security", NOT_APPLICABLE, reason="no-negative-surface-bound")]
+        return [
+            _check("auth-security", NOT_APPLICABLE, reason="no-negative-surface-bound")
+        ]
     results: list[dict[str, Any]] = []
     for path in config.security_paths:
         response, status = _fetch(transport, path, PROBLEM_JSON, config)
@@ -951,7 +1010,10 @@ def _run_security_negatives(
                 local_fixture=config.local_fixture,
             )
             metadata = _problem_from_json(value, local_fixture=config.local_fixture)
-            if response.status not in {401, 403} or metadata["status"] != response.status:
+            if (
+                response.status not in {401, 403}
+                or metadata["status"] != response.status
+            ):
                 raise TckViolation("negative-not-denied")
             if metadata["retryable"] or metadata["retry_after_s"] is not None:
                 raise TckViolation("denial-marked-retryable")
@@ -985,7 +1047,10 @@ class TckResult:
         }
 
     def to_json(self) -> str:
-        return json.dumps(self.to_dict(), ensure_ascii=False, sort_keys=True, indent=2) + "\n"
+        return (
+            json.dumps(self.to_dict(), ensure_ascii=False, sort_keys=True, indent=2)
+            + "\n"
+        )
 
 
 def _overall_status(checks: list[dict[str, Any]]) -> str:
@@ -1003,7 +1068,9 @@ def run_tck(config: TckConfig, *, transport: TckTransport | None = None) -> TckR
     """Run only explicitly applicable checks and return structured evidence."""
 
     if not config.applicable:
-        checks = [_check("agent-readiness-tck", NOT_APPLICABLE, reason="surface-disabled")]
+        checks = [
+            _check("agent-readiness-tck", NOT_APPLICABLE, reason="surface-disabled")
+        ]
     else:
         active_transport = transport or UrllibTransport(config)
         checks, _, _ = _content_checks(config, active_transport)
@@ -1035,7 +1102,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--markdown-path", default="/")
     parser.add_argument("--error-path")
     parser.add_argument("--negative-path", action="append", default=[])
-    parser.add_argument("--discover", action="append", choices=sorted(_DEFAULT_DISCOVERY_PATHS))
+    parser.add_argument(
+        "--discover", action="append", choices=sorted(_DEFAULT_DISCOVERY_PATHS)
+    )
     parser.add_argument("--auth-sensitive", action="store_true")
     parser.add_argument("--require-api-endpoint", action="store_true")
     parser.add_argument("--timeout", type=float, default=5.0)

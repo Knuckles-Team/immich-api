@@ -39,7 +39,9 @@ def get_client():
         credential_scheme = None
         if delegation.enabled:
             if not is_bearer:
-                raise ValueError("Delegation requires a declared HTTP bearer auth scheme")
+                raise ValueError(
+                    "Delegation requires a declared HTTP bearer auth scheme"
+                )
             token_tls = resolve_tls_profile("oidc")
             resources.callback(token_tls.cleanup)
             token_client = create_http_client(
@@ -52,7 +54,10 @@ def get_client():
             reference = setting("IMMICH_API_TOKEN_REF", "")
             auth = httpx.Auth()
             if reference:
-                if definition.get("type") == "apiKey" and definition.get("in") == "header":
+                if (
+                    definition.get("type") == "apiKey"
+                    and definition.get("in") == "header"
+                ):
                     auth = api_key_auth(reference, header=definition["name"])
                 elif is_bearer:
                     auth = bearer_auth(reference)

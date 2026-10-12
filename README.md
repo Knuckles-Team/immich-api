@@ -1,24 +1,18 @@
 > **Work in progress — not released or deployment-ready.**
 >
-> This pilot converts the Immich 3.2.2 OpenAPI contract into 41 domain tools
-> covering 276 declared operations. The initial scaffold provenance is recorded;
-> the auth adapter follow-up remains under integration.
-> An isolated 13-case auth run passed, including the six unchanged canonical
-> auth cases. Final-source full tests, packaging and deployment remain pending.
-> Earlier converted-source tests had six auth-interface failures and one cold
-> import timeout; do not treat the isolated follow-up result as a full-suite pass.
-> The content follow-up passed 12 focused cases. Native SDK capture now finds
-> 42 tools, 6 prompts, 12 resources and 55 content-pack entries at that revision, including the
-> schema-derived ontology/shapes and four read skills. The new content has not
-> been ingested into EG. Earlier public ping/version calls passed live using
-> verified HTTPS and explicit HTTP opt-in. Writes remain disabled by default.
-> Review corrections disable the unscoped ingestion preset, map submitted fields
-> to ontology predicates and remove obsolete scaffold paths. All 33 focused review
-> cases passed; schema checks and native capture completed in 21.96 seconds total.
-> Evidence: [review corrections](validation/review-corrections-2026-10-12.json).
-> Windows report-only success ran zero tests because
-> the SDK dependency was unavailable in its package index.
-> Provider endpoints and credentials are supplied privately at runtime.
+> Immich 3.2.2 supplies 276 declared operations in 41 domain tools, plus a
+> bounded album metadata read tool. Writes default off; ingestion presets are
+> disabled pending provider/account stream binding.
+> The final local quality batch completed in 26.91 seconds: all 57 tests,
+> basic hooks, Ruff, SDK contracts, schema freshness and strict MkDocs passed.
+> Native SDK capture returned 42 tools, 6 prompts, 12 resources and 55 content
+> entries with no provider, graph or fleet calls. Five pipeline checks remain
+> failed or unable to run; see [final quality evidence](validation/final-quality-2026-10-12.json).
+> Docker now installs this source checkout. No image build, dependency closure,
+> fleet enrollment or graph receipt is claimed. Windows report-only success ran
+> zero tests because the SDK dependency was unavailable in its package index.
+> Earlier public ping/version calls passed with verified HTTPS and explicit
+> HTTP opt-in. Private endpoints and credentials remain runtime inputs.
 
 # Immich Api
 
@@ -99,6 +93,16 @@ The networked server binds to loopback by default:
 immich-mcp --transport streamable-http --host 127.0.0.1 --port 8000
 ```
 
+Container builds install this checkout, so the connector need not be published
+first. Use the repository root as the context on an approved image-build host:
+
+```bash
+docker build --file docker/Dockerfile --target mcp -t immich-api:mcp-local .
+```
+
+See [deployment](docs/deployment.md) for an exact-commit build context and the
+remaining dependency-closure requirements. No image build is claimed here.
+
 ## Architecture
 
 The provider keeps the boundary between transport and domain code explicit:
@@ -162,7 +166,7 @@ it is documentation-only and is never contacted by the generator.
 Container builds use immutable, least-privilege runtime stages:
 
 ```bash
-docker build --target mcp -t immich-api:mcp-local docker/
+docker build --file docker/Dockerfile --target mcp -t immich-api:mcp-local .
 ```
 
 Deploy reviewed images by digest (`immich-api@sha256:<digest>`) and include
