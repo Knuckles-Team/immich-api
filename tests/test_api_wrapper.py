@@ -8,7 +8,7 @@ from agent_connector_sdk.auth.static import bearer_auth
 from agent_connector_sdk.tls.errors import TransportSecurityError
 from agent_connector_sdk.tls.resolve import resolve_tls_profile
 
-from immich_api import openapi_runtime
+from immich_api import openapi_response, openapi_runtime
 from immich_api.api import ApiClientSystem
 
 
@@ -195,7 +195,9 @@ def test_oversized_and_chunked_responses_rejected(client_factory, monkeypatch):
 def test_response_deadline_enforced(client_factory, monkeypatch):
     class SlowChunk(httpx.SyncByteStream):
         def __iter__(self):
-            monkeypatch.setattr(openapi_runtime.time, "monotonic", lambda: float("inf"))
+            monkeypatch.setattr(
+                openapi_response.time, "monotonic", lambda: float("inf")
+            )
             yield b"late"
 
     with pytest.raises(RuntimeError, match="response limit"):

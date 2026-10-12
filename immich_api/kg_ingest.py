@@ -47,6 +47,13 @@ async def ingest_album_metadata(
         tool="album_metadata_sample",
         strict_schema=True,
     )
+    changes = _album_changes(projected)
+    _validate_privacy(binding, changes)
+    service = ingest if ingest is not None else current_ingest()
+    return await service.submit(binding, changes)
+
+
+def _album_changes(projected):
     entities = tuple(
         Entity(
             id=record["id"],
@@ -56,12 +63,13 @@ async def ingest_album_metadata(
         )
         for record in projected
     )
-    changes = ChangeSet(entities=entities, mode=SourceIngestionMode.DELTA)
+    return ChangeSet(entities=entities, mode=SourceIngestionMode.DELTA)
+
+
+def _validate_privacy(binding, changes):
     preview = build_request(binding, changes, previous=None)
     if any(
         record.payload.get("immichAlbumId") != record.record_id
         for record in preview.records
     ):
         raise ValueError("SDK privacy guard changed album identity; no submission")
-    service = ingest if ingest is not None else current_ingest()
-    return await service.submit(binding, changes)

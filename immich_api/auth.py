@@ -17,6 +17,45 @@ _client = None
 _resources = ExitStack()
 
 
+def _bearer_scheme(definition):
+    return (
+        definition.get("type") == "http"
+        and definition.get("scheme", "").lower() == "bearer"
+    )
+
+
+def _delegated_auth(delegation, resources):
+    token_tls = resolve_tls_profile("oidc")
+    resources.callback(token_tls.cleanup)
+    token_client = create_http_client(
+        HttpClientOptions(base_url=delegation.token_endpoint, tls=token_tls)
+    )
+    resources.callback(token_client.close)
+    return DelegatedTokenAuth(delegation, http_client=token_client)
+
+
+def _static_auth(reference, definition):
+    if definition.get("type") == "apiKey" and definition.get("in") == "header":
+        return api_key_auth(reference, header=definition["name"])
+    if _bearer_scheme(definition):
+        return bearer_auth(reference)
+    raise ValueError("Unsupported provider authentication scheme")
+
+
+def _resolve_auth(resources):
+    scheme = setting("IMMICH_API_AUTH_SCHEME", "api_key")
+    definition = CONTRACT["security_schemes"].get(scheme, {})
+    delegation = DelegationSettings.from_settings()
+    if delegation.enabled:
+        if not _bearer_scheme(definition):
+            raise ValueError("Delegation requires a declared HTTP bearer auth scheme")
+        return _delegated_auth(delegation, resources), scheme
+    reference = setting("IMMICH_API_TOKEN_REF", "")
+    if not reference:
+        return httpx.Auth(), None
+    return _static_auth(reference, definition), scheme
+
+
 def get_client():
     """Build one client; delegated auth resolves the verified caller per request."""
     global _client, _resources
@@ -26,50 +65,20 @@ def get_client():
     base_url = setting("IMMICH_API_BASE_URL", "")
     if not base_url:
         raise ValueError("Provider base URL is required")
-    scheme = setting("IMMICH_API_AUTH_SCHEME", "api_key")
-    definition = CONTRACT["security_schemes"].get(scheme, {})
-    is_bearer = (
-        definition.get("type") == "http"
-        and definition.get("scheme", "").lower() == "bearer"
-    )
     with ExitStack() as resources:
         tls = resolve_tls_profile("immich-api")
         resources.callback(tls.cleanup)
-        delegation = DelegationSettings.from_settings()
-        credential_scheme = None
-        if delegation.enabled:
-            if not is_bearer:
-                raise ValueError(
-                    "Delegation requires a declared HTTP bearer auth scheme"
-                )
-            token_tls = resolve_tls_profile("oidc")
-            resources.callback(token_tls.cleanup)
-            token_client = create_http_client(
-                HttpClientOptions(base_url=delegation.token_endpoint, tls=token_tls)
-            )
-            resources.callback(token_client.close)
-            auth = DelegatedTokenAuth(delegation, http_client=token_client)
-            credential_scheme = scheme
-        else:
-            reference = setting("IMMICH_API_TOKEN_REF", "")
-            auth = httpx.Auth()
-            if reference:
-                if (
-                    definition.get("type") == "apiKey"
-                    and definition.get("in") == "header"
-                ):
-                    auth = api_key_auth(reference, header=definition["name"])
-                elif is_bearer:
-                    auth = bearer_auth(reference)
-                else:
-                    raise ValueError("Unsupported provider authentication scheme")
-                credential_scheme = scheme
+        auth, credential_scheme = _resolve_auth(resources)
         client = ApiClientSystem(
             base_url=base_url,
             auth=auth,
             tls_profile=tls,
             credential_scheme=credential_scheme,
-            allow_writes=setting("IMMICH_API_ALLOW_WRITES", False),
+            write_mode=(
+                "read-write"
+                if setting("IMMICH_API_ALLOW_WRITES", False)
+                else "read-only"
+            ),
             allow_plaintext=setting("IMMICH_API_ALLOW_PLAINTEXT", False),
         )
         resources.callback(client.close)

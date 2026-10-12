@@ -3,11 +3,13 @@
 > Immich 3.2.2 supplies 276 declared operations in 41 domain tools, plus a
 > bounded album metadata read tool. Writes default off; ingestion presets are
 > disabled pending provider/account stream binding.
-> The final local quality batch completed in 26.91 seconds: all 57 tests,
-> basic hooks, Ruff, SDK contracts, schema freshness and strict MkDocs passed.
-> Native SDK capture returned 42 tools, 6 prompts, 12 resources and 55 content
-> entries with no provider, graph or fleet calls. Five pipeline checks remain
-> failed or unable to run; see [final quality evidence](validation/final-quality-2026-10-12.json).
+> Quality follow-up: complexity and KISS report zero findings, duplication has
+> no new pairs against the real PR base, and stdout, schemas, native content,
+> Ruff and strict MkDocs pass. All 58 repository cases passed across bounded
+> regression runs; 32 canonical converter behavior cases also passed.
+> The supply-chain gate still rejects retained immutable pipeline pins because
+> its policy requires mutable `main`; that change was not approved.
+> See [quality evidence](validation/final-quality-2026-10-12.json).
 > Docker now installs this source checkout. No image build, dependency closure,
 > fleet enrollment or graph receipt is claimed. Windows report-only success ran
 > zero tests because the SDK dependency was unavailable in its package index.
@@ -67,7 +69,10 @@ repository is not required. The canonical scaffold belongs entirely to the
 ordinary repository creation. The pilot's original template commit remains
 historical provenance in [validation/scaffold-origin.json](validation/scaffold-origin.json).
 
-This pilot is not published on PyPI. For source validation in an approved environment:
+This pilot and its required SDK/EG dependency versions are not available from the
+checked package index. The source-based development lock records exact tested
+revisions; it does not supply native wheels. Once dependencies are provisioned
+in an approved environment:
 
 ```bash
 python -m pip install ".[mcp]"

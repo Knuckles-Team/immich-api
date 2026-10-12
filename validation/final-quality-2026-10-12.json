@@ -1,299 +1,230 @@
 {
-  "local_candidate": "af447f93a31cd44eec80dd33974a680e9a17eadc",
-  "local_comparison_base": "4e4331ecc7684adc6ca74d5c3eb80124a53f5582",
-  "remote_history_equivalence": false,
-  "pipeline_revision": "7b3d18d72b5622d455ece3bbe45a9482bc6e8b5e",
-  "pipeline_invocation": "exact pinned CLI entrypoints in compatible existing Python; staged gates have no staged source; full census is substantive",
+  "candidate": "2828582b6a2f8dc0a69a3aaa2966fbb85d5476a3",
+  "actual_pr_base": "1ca4d5cf89cb5a9c9d6cd0d3bd634b176c0a7867",
   "checks": [
     {
-      "check": "scanner-versions",
-      "exit_code": 0,
-      "seconds": 0.36
-    },
-    {
-      "check": "complexity-staged",
-      "exit_code": 0,
-      "seconds": 0.11
-    },
-    {
-      "check": "kiss-staged",
-      "exit_code": 0,
-      "seconds": 0.12
-    },
-    {
-      "check": "dupehound-changed",
-      "exit_code": 0,
-      "seconds": 0.31
-    },
-    {
       "check": "complexity-census",
-      "exit_code": 1,
+      "exit_code": 0,
       "seconds": 0.11
     },
     {
       "check": "kiss-census",
-      "exit_code": 2,
-      "seconds": 0.11
+      "exit_code": 0,
+      "seconds": 0.31
     },
     {
       "check": "jscpd-differential",
-      "exit_code": 1,
-      "seconds": 0.92
-    },
-    {
-      "check": "jscpd-census",
-      "exit_code": 0,
-      "seconds": 0.62
-    },
-    {
-      "check": "public-surface",
-      "exit_code": 0,
-      "seconds": 0.06
-    },
-    {
-      "check": "security-sanitizer",
       "exit_code": 0,
       "seconds": 0.87
     },
     {
-      "check": "secret-history",
+      "check": "stdout-writes",
       "exit_code": 0,
-      "seconds": 0.87
+      "seconds": 0.11
     },
     {
       "check": "supply-chain",
       "exit_code": 1,
-      "seconds": 0.37
+      "seconds": 0.42
     },
     {
-      "check": "import-cycles",
+      "check": "ruff",
       "exit_code": 0,
-      "seconds": 0.32
+      "seconds": 0.03
     },
     {
-      "check": "env-sprawl",
-      "exit_code": 0,
-      "seconds": 0.06
-    },
-    {
-      "check": "stdout-writes",
-      "exit_code": 2,
-      "seconds": 0.06
-    },
-    {
-      "check": "swallowed-errors",
-      "exit_code": 0,
-      "seconds": 0.11
-    },
-    {
-      "check": "event-loop-blocking",
-      "exit_code": 0,
-      "seconds": 0.17
-    },
-    {
-      "check": "no-stub",
-      "exit_code": 0,
-      "seconds": 0.11
-    },
-    {
-      "check": "spec-decomposition",
+      "check": "format",
       "exit_code": 0,
       "seconds": 0.06
     },
     {
-      "check": "spec-standard",
+      "check": "error-integration",
       "exit_code": 0,
-      "seconds": 0.06
+      "seconds": 2.57
     },
     {
-      "check": "spec-status",
+      "check": "schema-freshness",
       "exit_code": 0,
-      "seconds": 0.11
+      "seconds": 3.12
     },
     {
-      "check": "basic-runtime-contract",
+      "check": "native-content",
       "exit_code": 0,
-      "seconds": 20.02
+      "seconds": 9.74
     },
     {
-      "check": "mkdocs-strict",
+      "check": "docs",
       "exit_code": 0,
       "seconds": 0.97
     }
   ],
-  "seconds": 26.91,
-  "passed": false,
-  "native_compilation": false,
-  "deployment": false,
-  "scope": "Local source checks. This receipt is not remote CI certification or a passing release gate.",
-  "python_tests": {
-    "passed": 57,
-    "seconds": 4.58,
-    "skips": 0
+  "seconds": 18.33,
+  "scope": "Affected gates and integration; SDK owns the full serial slot; one worker, no native builds",
+  "pipeline_revision": "7b3d18d72b5622d455ece3bbe45a9482bc6e8b5e",
+  "previous_receipt": {
+    "commit": "cf25ef638a7c5158a7e71d77bd8ccec325cfd159",
+    "path": "validation/final-quality-2026-10-12.json",
+    "sha256": "02de565c09d2ca178a44304e8b881b4020e93881ab38e848afe251b57946026d"
   },
-  "basic_checks": [
-    {
-      "check": "check_ast",
-      "exit_code": 0
+  "status": "Four failed quality gates fixed; supply-chain reference-policy conflict remains. Not release certification.",
+  "regressions": {
+    "pilot_focused": {
+      "passed": 47,
+      "seconds": 4.33
     },
-    {
-      "check": "check_yaml",
-      "exit_code": 0
+    "canonical_error_startup_image": {
+      "passed": 6,
+      "seconds": 1.62
     },
-    {
-      "check": "check_toml",
-      "exit_code": 0
+    "remaining_cases": {
+      "passed": 5,
+      "seconds": 1.74
     },
-    {
-      "check": "check_json",
-      "exit_code": 0
-    },
-    {
-      "check": "check_merge_conflict",
-      "exit_code": 0
-    },
-    {
-      "check": "detect_private_key",
-      "exit_code": 0
-    },
-    {
-      "check": "trailing_whitespace_fixer",
-      "exit_code": 0
-    },
-    {
-      "check": "end_of_file_fixer",
-      "exit_code": 0
-    },
-    {
-      "check": "ruff-check",
-      "exit_code": 0
-    },
-    {
-      "check": "ruff-format",
-      "exit_code": 0
-    },
-    {
-      "check": "connector-contract",
-      "exit_code": 0
-    },
-    {
-      "check": "structural-content",
-      "exit_code": 0
-    },
-    {
-      "check": "documentation-provenance",
-      "exit_code": 0
-    },
-    {
-      "check": "full-pytest",
-      "exit_code": 0
-    },
-    {
-      "check": "live-tool-contract",
-      "exit_code": 0
-    },
-    {
-      "check": "native-content-capture",
-      "exit_code": 0
+    "coverage_note": "58 repository cases across separate bounded runs, not a new full-suite batch; final canonical error integration received its own targeted checks.",
+    "converter_behavior": {
+      "passed": 32,
+      "seconds": 2.69,
+      "includes": "GET/POST/PUT/DELETE/PATCH/HEAD/OPTIONS/TRACE and native scaffold tool call"
     }
-  ],
-  "runtime_revisions": {
-    "sdk": "5babc4cc48ad73928468b243842f219f51e2cca1",
-    "eg_python": "d33abec1e09b63cdcde01f8e8e4fe810d91cd43d"
   },
-  "native_capture": {
+  "native_content": {
     "tools": 42,
     "prompts": 6,
     "resources": 12,
     "pack_entries": 55,
-    "pack_sha256": "6227e9a0ec860ed2eaee3636274dd09dd62c542b02f475fb2952abc1b35233ac",
+    "sha256": "6227e9a0ec860ed2eaee3636274dd09dd62c542b02f475fb2952abc1b35233ac",
     "provider_calls": 0,
-    "engine_calls": 0,
+    "graph_calls": 0,
     "fleet_registration": false
   },
-  "remaining_gate_findings": {
-    "complexity-census": [
-      "album_metadata.project_album: cyclomatic 12, cognitive 13",
-      "album_metadata.album_sample: cyclomatic 11, cognitive 10",
-      "error_authority._accept_quality: cyclomatic 11, cognitive 19",
-      "openapi_runtime._parameters: cyclomatic 19, cognitive 44",
-      "openapi_runtime.execute: cyclomatic 15, cognitive 16",
-      "openapi_runtime._send: cyclomatic 14, cognitive 18"
+  "remaining_policy_findings": {
+    "rule_ids": [
+      "SC-GHA-010",
+      "SC-HOOK-003"
     ],
-    "kiss-census": "Missing hand-authored .config/kiss.toml; no clean result claimed.",
-    "jscpd-differential": "Seven new clone pairs against local snapshot baseline: four historical receipt fragments, one spec fragment, one test fragment, and one generated documentation fragment.",
-    "supply-chain": "Pinned policy requires pipelines main for two workflows and hooks, while source retains reviewed SHAs; resolver lock is also absent. No policy override applied.",
-    "stdout-writes": "Missing tool.pipelines_hooks.stdout_writes.served_paths; no clean result claimed."
+    "files": [
+      ".github/workflows/pages.yml",
+      ".github/workflows/pipeline.yml",
+      ".pre-commit-config.yaml"
+    ],
+    "reason": "Pinned pipelines policy requires mutable main. Automatic approval review rejected replacing the reviewed immutable SHA as an unauthorized persistent supply-chain weakening; parent directed retaining pins.",
+    "action": "No reference changes, gate exceptions, threshold changes or bypass applied."
   },
-  "log_sha256": {
-    "immich-final-quality-basic-runtime-contract.log": "ab7026b1faf0655cc59471edf68182aed2aa6f480bc2900780217d427603ccb7",
-    "immich-final-quality-batch.log": "ffb373a1cff6251cdbc5964ef6db2158b04cf7977fdbbec97c550150cc48093c",
-    "immich-final-quality-complexity-census.log": "1e7af0c87050f59451b789395e1e67eae5ae7bfa8148de78539a5541e85bec7e",
-    "immich-final-quality-complexity-staged.log": "08b4d26bfd27e01894ce8bfbd8253148c485825715b4697c6148189064f4ea7c",
-    "immich-final-quality-dupehound-changed.log": "fb4fd14837bb29c24bc5f6d3c9b41ae9069067c983e614e8e5630d695a2acc56",
-    "immich-final-quality-env-sprawl.log": "80536161f34be4dd1a4e5fc48ceaf5a9bc49c5e8bebf19373ee9cf293187839f",
-    "immich-final-quality-event-loop-blocking.log": "61d2dd7698d45a7b4add5f28ac50806ceb348871091a6dbe5450e9cd8e72ab81",
-    "immich-final-quality-import-cycles.log": "a871e4ab392f5aae5080857ec4a260e7be085c4bcb6a3866d2813f4627227337",
-    "immich-final-quality-jscpd-census.log": "13bdf53872d70d72678175831f44ddee11ca2737218d163bb346073532dfcede",
-    "immich-final-quality-jscpd-differential.log": "d98281d6ab6df6f73de8e7bd2ed034c5b8b95de0dcb2286fcd8c23a6611245ea",
-    "immich-final-quality-kiss-census.log": "b75ea6420ce7d7e1bfe02eb5f524063397fb713e164114338e0cf28e210bc8d8",
-    "immich-final-quality-kiss-staged.log": "d3f9b45fcbb4657d52545c8b8f2646e42b7e440de96460826f5f2db03bad5dd5",
-    "immich-final-quality-mkdocs-strict.log": "182a99de6ecd0d90e64d32b51e1c973b28d4ac14ee2c98d7d6943664399e03a9",
-    "immich-final-quality-no-stub.log": "baa7adc1a567e9dd78dee9d73be2530b851e83241561030fbe61853f482de3e2",
-    "immich-final-quality-public-surface.log": "951798e70c020c9e9cc7550231585e7d602aff91bb595f7378e37d750d75a4ae",
-    "immich-final-quality-scanner-versions.log": "02edfab0bcf754740dbeeadd38fdbb3061aae108d90f2e350fa719552cd857cf",
-    "immich-final-quality-secret-history.log": "9e08ee5304dc4bd587eda447ee84d0b8a4b66acb6c96690a9b8fd8454bcad742",
-    "immich-final-quality-security-sanitizer.log": "a4b5dd3a063ac75709fc660f58a3209be0a286b32ed956e76515214bbff85bb4",
-    "immich-final-quality-spec-decomposition.log": "abd0cf3d58e2fc0a809b582a31fda358b0010b1a8a2743b10041d33dbde5ee60",
-    "immich-final-quality-spec-standard.log": "770dbd5064b478379dca862b0813a48290c0ca42f1b1286dcbc230396835ea7e",
-    "immich-final-quality-spec-status.log": "a22813a92a290ac6d61ae021398b93c0f412b8d8444c6cbbcbe1c2e91ad71559",
-    "immich-final-quality-stdout-writes.log": "5577bc968c2357055ac8d5acf1b5565989cf9a7ab518e8583a3feac3e47c6ca3",
-    "immich-final-quality-supply-chain.log": "10081ec30bb1e5490bfbc18dbf41c0572045308088c4feed49f6833be2978631",
-    "immich-final-quality-swallowed-errors.log": "f96a166e6a99f76a9016bc60b319ec058e8bb6157aa53fd069aa74cd1788e5ef"
+  "canonical_handoff": {
+    "base": "814b486b5fbc0e23440bac99b5d1e8884f19fc0e",
+    "state": "uncommitted canonical consolidation candidate",
+    "files": {
+      "error_rendering.py": "0d2748bfdbace11277460804c0a2826eaeff19d8967268e635a596fd9c699008",
+      "error_authority.py": "29b95a9fc715259c66e346eea03d4e2c693fe69ca9a72229830dcd0191260a2e",
+      "kiss.toml": "a6f2b9171123503522092aec416eaea7ad29ea98a26eb7283f02156c9c3d5c3a",
+      "readiness-footer.patch": "a515fc4364223689bf6a9401139b722525c982f2b2d82e890a6c0efd4a3ad12b"
+    },
+    "validation": {
+      "focused": "74 passed in 1.69s",
+      "kiss": "0.4.12: both error modules NO VIOLATIONS, unchanged fleet config",
+      "cccc": {
+        "version": "1.6.0",
+        "max_cyclomatic": 7,
+        "max_cognitive": 7
+      }
+    },
+    "instructions": [
+      "Copy error_authority.py and new error_rendering.py into the provider package; public imports from error_authority remain compatible.",
+      "Apply readiness-footer.patch to the equivalent scripts/generate_agent_readiness.py; regenerate readiness manifests normally.",
+      "KISS policy bytes are unchanged from pipelines 7b3d18 .config/kiss.toml.",
+      "Pipeline reference changes are held pending the reported explicit approval; immutable pins remain active."
+    ]
   },
-  "tested_source_sha256": {
+  "runtime_source_sha256": {
     "immich_api/__init__.py": "6f6baae3fbe8d01c661421eba83ce5b168fa470f22e57ca991fcc1ade067f256",
     "immich_api/__main__.py": "12095458babc08379990c9057906328adc04fb2a977921d48727883dac3bb130",
-    "immich_api/album_metadata.py": "392693ff5704d93bc19da1fa30ee9d25a244df26e1aac57b11cbfb2904ab3812",
+    "immich_api/album_metadata.py": "5d7cc8373ae152e2028e7d099a99574cd48b74c8edf94faf98b7a2af66dee725",
     "immich_api/api/__init__.py": "60c4220046512ee8606075ae97b3393bc301fb562f3c5cb9d19c3b51ec117544",
     "immich_api/api/api_client_system.py": "66bd8a148df7a642372d3d87b3027ad9a8bdc8370b68be50ab4f353a5d679f94",
-    "immich_api/auth.py": "53f84329cf3fb242fff25c9cd97ba90c56afecbd422a977f72247d97e6ca2dca",
+    "immich_api/auth.py": "9dd131b00402ea6e791227df3b9430eeded74a4f4af68b8e98e14d13ad58427b",
     "immich_api/connectors/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "immich_api/error_authority.py": "04affc9e382d3bc5614821a16c42d91d12c0f9926c495689f961f6a0d323c741",
+    "immich_api/error_authority.py": "29b95a9fc715259c66e346eea03d4e2c693fe69ca9a72229830dcd0191260a2e",
+    "immich_api/error_rendering.py": "0d2748bfdbace11277460804c0a2826eaeff19d8967268e635a596fd9c699008",
     "immich_api/immich_input_models.py": "383938cc6dd1c5e6c7cdad4cc72eff0058a45f5cd571aebd8394f2c97256dc5d",
     "immich_api/immich_response_models.py": "8e4df3e72255d479f61410dbd222263b37dfa5f8d0d87a35f0958c32fa94eb65",
-    "immich_api/kg_ingest.py": "a81cc2e5e09bed5ddf5bb6a2099bd00f814c6fd2da45fbdccf19df3c7c27912c",
-    "immich_api/mcp/__init__.py": "52d175a441506ce808fa149f0b4467209ae8d04daa1c636461a2dc1d15a08504",
+    "immich_api/kg_ingest.py": "f43e00c99eb07e2069e3edf1d4b840f944f9b95d1ecda5b0abc0e67e14f7f329",
+    "immich_api/mcp/__init__.py": "fa045fdfa4938c33b8cb5d6a9e7ada5891f534288b6ad4164e4f6434ca3fdfa9",
     "immich_api/mcp/album_sample.py": "f02516259f04b9ee93f40c8272d0a5eadadebd7c626d827edb1993423276393f",
     "immich_api/mcp_server.py": "e8efb314b785d06fb57d9498bf9f514ec454ba448d8f6683739f782f327145f0",
     "immich_api/ontology/__init__.py": "6a0710dfd5c89e6ea7f71343486c6fae9d1b7b96661d46885032a69bbedeb93c",
-    "immich_api/openapi_runtime.py": "d9bbb79ee3a624e5e93eda6a67549b205bca0747c2a916329f23c9a4f5f70075",
+    "immich_api/openapi_request.py": "d37f5f10a3fc3e08ee853e2fe5417b4da91eadb45f4b0365753a4570045628fc",
+    "immich_api/openapi_response.py": "0f459fb87c65787c02faf0334ef7b493195b0f75ba3d77f74b01801b7b025eb0",
+    "immich_api/openapi_runtime.py": "ca29fc548e308497c545465a54053e73b3617a9c1d216bb3417fb7980fe8ba83",
     "immich_api/prompts/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "immich_api/skills/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "scripts/agent_readiness_tck.py": "2be87775964be202d2793e9eea7ac2d2798dc8272a3810359f60ad417c90d1dd",
-    "scripts/check_connector_contract.py": "6a2fe0fc71c7fcc03b1bbf15432ccebcbb421253b5285481ab3e6ec44187622c",
-    "scripts/check_import_safety.py": "e2043046e606ba70c596cd1cc81a21138e7986bc85fca3bd6b49da74c6f599f2",
-    "scripts/check_workspace_source_drift.py": "b90529828d398cdff4788e4356b39b9de334b72b78db7731bf6e70b0cbd89883",
-    "scripts/generate_agent_readiness.py": "089aad942a27681b870c8ce812806b56677827c63e122b40406d8e4d6212ce45",
-    "scripts/generate_immich_content.py": "8bfb92333d867333225dc7f0be4a0d9eb93c895b98a3989fcb39d248b7380e3e",
-    "scripts/generate_tool_schemas.py": "1fd35289e11d692aa0b7abbf3e495acb829c66726d78f337910499c586132461",
-    "scripts/security_sanitizer.py": "4b44dd78edf91e012668cf8c96066c9986be642554bbbe468cbe46c0c413d737",
-    "scripts/verify_api_integration.py": "fc02c5ff0bb9fe3c9e837e6b9addd400b44415876fdfb5437de4fb0dd5587338",
-    "scripts/workspace_sources.py": "28fa4f1344afaecb5ff1815f9fa7f4d11dfbaa44ab52a14cbab7e1c13a94d5b7",
-    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "tests/conftest.py": "fa93ecc6203ecd455ac4ac9482b4999a1994e8a55ad27b3c8bb70e8145d6d4ff",
-    "tests/test_album_metadata.py": "1ab5e8f14de453d2aa9c7d5648a63101cafcd2a980ddfa81a7f6f9f141506b19",
-    "tests/test_api_wrapper.py": "8b330e49dee85d252ce673cb1efdbf023532c0b6b3502bf449f4fafcc8aaa630",
-    "tests/test_auth.py": "ba9cbc4c0f8858cebf4363778b54e8c8699cc380ae5b411081eb9ce8cd841bdf",
-    "tests/test_concept_parity.py": "930e3b24036585a9108fadd2ee602c19158fe74c2fcbbbe42a8b8a55ed88d781",
-    "tests/test_error_authority.py": "90c6ab92cd3b6ca8767f1579acffe4495fdd255ea679f70e7e46d371f41e48ed",
-    "tests/test_immich_content.py": "397850b7151a4d2245a407c010a8989d2ecfaa814bae56ccf3fd3fc9f0130640",
-    "tests/test_immich_mcp_validation.py": "51c2fe15b0a33824c76d9b0395d5412593c7858700bb872a0dcad7b883fd486b",
-    "tests/test_init_dynamics.py": "f022c31182e9285d6afdf1aee4a17707c728e590792dcbbcd4d2fc6ece238c03",
-    "tests/test_kg_ingest.py": "4c938f70a270c70ce1c5baee3afd50c7837d1f77304f88dafde892720e57fe5f",
-    "tests/test_openapi_auth_provider.py": "c620691f5c8bc8ed29858b895ac98167af9687851b5847bfa7ad52125dfca335",
-    "tests/test_source_image.py": "8f43a97a65cba3908fbf67f765f62ff7aed0381f44b17c2684c0d0946f30953d",
-    "tests/test_startup.py": "1dc403e5d256687c24a928139fe328302b8148baefcaa320e13ae106c1dc3dcf"
+    "immich_api/skills/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   },
-  "followup_changes": "After checks: README status/build context correction and this evidence receipt only."
+  "log_sha256": {
+    "immich-fixed-checks.log": "cb073d2522a1e2104048d542702e4f4aaaf13b72c036ee105c15074634fa5400",
+    "immich-fixed-complexity-census.log": "3a5a15c7260d7096e68673c18fb7ce4b7afee02ba2500235fc94bc54c08fb9a6",
+    "immich-fixed-docs.log": "b4909e5d897070a224ba188da77a09db140a419f154d29fa5480a40416f2c8ae",
+    "immich-fixed-error-integration.log": "13dfddd98a0bcc8048bc0b49e67b05f6b6c0909c61d5954e2e215e8ad42931b7",
+    "immich-fixed-format.log": "0a58e773ebd237a787c4825d5193d68d291903617ffaed15dca58bff86fd78a5",
+    "immich-fixed-jscpd-differential.log": "f1eb295d8aa4efbe26980d4b4671e2ddb61ca6e654588435b46da18c19fa6b8a",
+    "immich-fixed-kiss-census.log": "27706deec7582102a543dc7742fb8ec9402fb864f01640a60c78a00fa62379b2",
+    "immich-fixed-native-content.log": "cd1af6fd776aed703df68631f06b7ab844b5b7299853351a3506818a5767a6c3",
+    "immich-fixed-remaining-regressions.log": "f246fe97191e208890ee54c333c739ea48b234c333cea8c1c988946a33d9799c",
+    "immich-fixed-ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "immich-fixed-schema-freshness.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "immich-fixed-stdout-writes.log": "37176d1aa295dbeb6e526668e737f29c6ffc19ca0672498df9d02ea9708e8af8",
+    "immich-fixed-supply-chain.log": "b0152056172f7a2c72120a3e5747f526e8ff6d0d5039b931249728a2022222ed"
+  },
+  "followup_changes": "After runtime checks: README status and this receipt only.",
+  "remaining_static_checks": {
+    "checks": [
+      {
+        "gate": "dupehound-changed",
+        "exit_code": 0
+      },
+      {
+        "gate": "security-sanitizer",
+        "exit_code": 0
+      },
+      {
+        "gate": "secret-history",
+        "exit_code": 0
+      },
+      {
+        "gate": "import-cycles",
+        "exit_code": 0
+      },
+      {
+        "gate": "env-sprawl",
+        "exit_code": 0
+      },
+      {
+        "gate": "swallowed-errors",
+        "exit_code": 0
+      },
+      {
+        "gate": "event-loop-blocking",
+        "exit_code": 0
+      },
+      {
+        "gate": "no-stub",
+        "exit_code": 0
+      },
+      {
+        "gate": "public-surface",
+        "exit_code": 0
+      },
+      {
+        "gate": "spec-decomposition",
+        "exit_code": 0
+      },
+      {
+        "gate": "spec-standard",
+        "exit_code": 0
+      },
+      {
+        "gate": "spec-status",
+        "exit_code": 0
+      }
+    ],
+    "seconds": 3.88
+  }
 }

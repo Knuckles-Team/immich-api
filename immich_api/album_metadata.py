@@ -49,38 +49,42 @@ def album_graph_properties(record: dict) -> dict[str, str | int | bool]:
     }
 
 
-def project_album(record: dict) -> AlbumMetadata:
-    """Retain only declared fields; private nested values never leave this function."""
-    record_id = record.get("id")
-    if not isinstance(record_id, str) or UUID(record_id).version != 4:
-        raise ValueError("album requires a stable UUID v4 identity")
+def _validate_timestamp(value):
+    try:
+        valid = (
+            isinstance(value, str)
+            and datetime.fromisoformat(value.replace("Z", "+00:00")).tzinfo is not None
+        )
+    except ValueError:
+        valid = False
+    if not valid:
+        raise ValueError("album metadata requires timestamps with time zones")
+
+
+def _validate_album_fields(record):
     name, count = record.get("albumName"), record.get("assetCount")
-    if (
-        not isinstance(name, str)
-        or type(count) is not int
-        or not 0 <= count <= 9007199254740991
-    ):
+    if not isinstance(name, str) or type(count) is not int:
+        raise ValueError("album metadata does not satisfy its source schema")
+    if not 0 <= count <= 9007199254740991:
         raise ValueError("album metadata does not satisfy its source schema")
     for key in ("shared", "hasSharedLink"):
         if type(record.get(key)) is not bool:
             raise ValueError("album metadata does not satisfy its source schema")
     for key in ("createdAt", "updatedAt"):
-        value = record.get(key)
-        try:
-            valid = (
-                isinstance(value, str)
-                and datetime.fromisoformat(value.replace("Z", "+00:00")).tzinfo
-                is not None
-            )
-        except ValueError:
-            valid = False
-        if not valid:
-            raise ValueError("album metadata requires timestamps with time zones")
+        _validate_timestamp(record.get(key))
+
+
+def project_album(record: dict) -> AlbumMetadata:
+    """Retain only declared fields; private nested values never leave this function."""
+    record_id = record.get("id")
+    if not isinstance(record_id, str) or UUID(record_id).version != 4:
+        raise ValueError("album requires a stable UUID v4 identity")
+    _validate_album_fields(record)
     return AlbumMetadata(
         id=record_id,
         node_type="ImmichAlbum",
-        albumName=name,
-        assetCount=count,
+        albumName=record["albumName"],
+        assetCount=record["assetCount"],
         shared=record["shared"],
         hasSharedLink=record["hasSharedLink"],
         createdAt=record["createdAt"],
@@ -88,19 +92,23 @@ def project_album(record: dict) -> AlbumMetadata:
     )
 
 
-def album_sample(records: list[dict], limit: int = 1) -> AlbumSample:
-    """Return a deterministic bounded sample, never an authoritative live set."""
-    if type(limit) is not int or not 1 <= limit <= 5:
-        raise ValueError("album sample limit must be between one and five")
+def _validate_source(records):
     if not isinstance(records, list) or any(
         not isinstance(record, dict) for record in records
     ):
         raise ValueError("album source must return a list of objects")
     identities = [record.get("id") for record in records]
-    if any(not isinstance(value, str) for value in identities) or len(
-        set(identities)
-    ) != len(identities):
+    if any(not isinstance(value, str) for value in identities):
         raise ValueError("album source identities must be unique strings")
+    if len(set(identities)) != len(identities):
+        raise ValueError("album source identities must be unique strings")
+
+
+def album_sample(records: list[dict], limit: int = 1) -> AlbumSample:
+    """Return a deterministic bounded sample, never an authoritative live set."""
+    if type(limit) is not int or not 1 <= limit <= 5:
+        raise ValueError("album sample limit must be between one and five")
+    _validate_source(records)
     selected = sorted(records, key=lambda record: record["id"])[:limit]
     return AlbumSample(
         records=[project_album(record) for record in selected],

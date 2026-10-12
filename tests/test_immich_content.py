@@ -125,15 +125,25 @@ def test_empty_sample_cannot_enter_sdk_source_ingestion(monkeypatch):
     assert load_tool_presets(PACKAGE / "connectors/mcp_source_presets.json") == {}
     assert require_valid_connector_package(PACKAGE).sync == []
 
-    async def check():
-        async with Client(
-            build_server(command_args=["--transport", "stdio", "--auth-type", "none"]),
-            timeout=5,
-            init_timeout=5,
-        ) as client:
-            body = (
-                await client.call_tool("album_metadata_sample", {"limit": 1})
-            ).structured_content
-            assert body["records"] == [] and body["authoritative"] is False
+    async def fetch_sample():
+        server = build_server(
+            command_args=["--transport", "stdio", "--auth-type", "none"]
+        )
+        async with Client(server, timeout=5, init_timeout=5) as client:
+            result = await client.call_tool("album_metadata_sample", {"limit": 1})
+            return result.structured_content
 
-    asyncio.run(check())
+    empty = asyncio.run(fetch_sample())
+    assert empty["records"] == [] and empty["authoritative"] is False
+
+
+def test_domain_registrar_retains_sdk_toggle(monkeypatch):
+    from agent_connector_sdk.mcp.tool_surface import registered_tools
+
+    monkeypatch.setenv("MCP_FLEET_REGISTRATION", "false")
+    monkeypatch.setenv("ALBUMSTOOL", "false")
+    server = build_server(command_args=["--transport", "stdio", "--auth-type", "none"])
+    tools = registered_tools(server)
+    assert "albums_operations" not in tools
+    assert "server_operations" in tools
+    assert "server" in tools["server_operations"].tags

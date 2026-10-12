@@ -101,3 +101,6 @@ trace.txt
 # against its own tracked lock instead of the outer ecosystem workspace. Never
 # tracked.
 .uv-workspace-siblings/
+
+# Local scanner scratch; never source artifacts.
+.kiss/
