@@ -1,0 +1,19 @@
+{
+  "status": "historical provenance only; not a dependency",
+  "initial_creation": {
+    "mechanism": "GitHub template-repository generation followed by deterministic local substitutions",
+    "template_repository": "Knuckles-Team/mcp-connector-template",
+    "template_revision": "93ba9204ce657aa7d1128da7f645f7cf36b7a670",
+    "template_files": 141,
+    "template_hidden_paths": 34,
+    "generator_revision": "a41b3ae9cb75c4e42a25a916eb1b3d97a28dff74"
+  },
+  "current_policy": {
+    "canonical_scaffold_owner": "mcp-builder skill code",
+    "required_repository_creation": "ordinary repository creation plus publication of locally generated files",
+    "external_template_repository_required": false,
+    "template_generation_api_allowed": false,
+    "preserve_existing_repository_and_history": true,
+    "replacement_bootstrap_validation": "pending skill owner integration; this provenance file does not certify that implementation"
+  }
+}

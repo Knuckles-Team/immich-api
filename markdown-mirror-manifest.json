@@ -18,18 +18,18 @@
       "url": "https://knuckles-team.github.io/immich-api/overview/"
     },
     {
-      "bytes": 1899,
+      "bytes": 2253,
       "canonical_url": "https://knuckles-team.github.io/immich-api/architecture/",
       "markdown_url": "https://knuckles-team.github.io/immich-api/architecture/index.md",
-      "sha256": "aa0ac59f821c03c955ebeb02de36669a016b208064779ba10e0ad090b4db1be4",
+      "sha256": "d9328c3b12f3afa895b2c57f806c9892a9d050ae5819ca0ca38a54bac331f66f",
       "source": "docs/architecture.md",
       "url": "https://knuckles-team.github.io/immich-api/architecture/"
     },
     {
-      "bytes": 730,
+      "bytes": 947,
       "canonical_url": "https://knuckles-team.github.io/immich-api/installation/",
       "markdown_url": "https://knuckles-team.github.io/immich-api/installation/index.md",
-      "sha256": "4fee4183dcd562219371b050c4cff5863dcad4b7394562a846a59ad8ce5c5d84",
+      "sha256": "752f91a61c3efeec47c92467424bfbd5ae6cee92e691f0515f33bdacf5e16727",
       "source": "docs/installation.md",
       "url": "https://knuckles-team.github.io/immich-api/installation/"
     },
@@ -50,10 +50,10 @@
       "url": "https://knuckles-team.github.io/immich-api/usage/"
     },
     {
-      "bytes": 6378,
+      "bytes": 6861,
       "canonical_url": "https://knuckles-team.github.io/immich-api/immich-capabilities/",
       "markdown_url": "https://knuckles-team.github.io/immich-api/immich-capabilities/index.md",
-      "sha256": "210a9561d982865be7f122557feec25ecdeceed03cb542ad5bf481c2b3436b71",
+      "sha256": "d08dd85c42eb33ad7e822cef52349962e034aa423584c1191c4ba878d985b853",
       "source": "docs/immich-capabilities.md",
       "url": "https://knuckles-team.github.io/immich-api/immich-capabilities/"
     },

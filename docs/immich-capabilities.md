@@ -68,21 +68,27 @@ selected source pointer. Regenerate with `python scripts/generate_immich_content
 and verify with `--check`. The source operation and schema hash accompany each
 sample. Provider URLs and credentials are runtime configuration.
 
-## Opt-in source preset and graph submission
+## Disabled extraction preset and explicit graph submission
 
-`immich_album_metadata_sample` is a typed-entity SDK preset using the real
-`album_metadata_sample` tool, `records_path=records`, `params_style=args`,
-`node_type_field=node_type`, and `max_pages=1`. Strict field validation applies
-after the adapter explicitly projects the response. SDK `metadata_fields` alone
-does not remove extra provider fields. There are no cursor, reconciliation,
-authoritative-live-set or withdrawal claims. This preset is not scheduled or
-fleet-enabled by its presence in the package.
+No MCP extraction preset is enabled. The reviewed SDK derives the stream from a
+preset's fixed name, so a shared preset cannot bind identity to the configured
+provider/account scope. It also defaults to FULL mode when neither an explicit
+mode parameter nor incremental watermark is provided. A tool's
+`authoritative=false` output does not change that SDK mode. Keeping the preset
+absent prevents both cross-scope identity collision and empty-FULL ingestion.
+The bounded read tool remains available without scheduling or ingestion.
 
 Use an operator-bound source instance/account identity with an existing scoped
 credential. The optional Python `ingest_album_metadata` helper requires an opaque
 `source_scope` label and submits one to five projected entities through the SDK.
-It returns the complete engine receipt and propagates refusal. It performs no
+It maps provider fields into the actual `immichAlbum*` predicate names before
+SDK submission, sends DELTA only, returns the complete engine receipt and
+propagates refusal. Empty inputs fail before submission. It performs no
 provider request, runs no import-time work, and is not exposed as a write tool.
+The SDK privacy guard remains enabled. A pure SDK request preflight rejects an
+identity changed by that guard before any submission; numeric-only UUIDs can
+trigger its credit-card detector. Other redactions and engine shape validation
+still require actual receipt/readback verification.
 The remaining ontology classes are schema declarations, without enabled ingestion
 mappings for live asset/person data. An ontology resource being served is not
 semantic ingestion evidence.
@@ -90,7 +96,7 @@ semantic ingestion evidence.
 ## Acceptance status and next gates
 
 Source-defined: deterministic OpenAPI dispatch, schema-grounded content,
-bounded album projection, safe read capabilities and opt-in preset. Earlier SDK
+bounded album projection, safe read capabilities and disabled extraction preset. Earlier SDK
 runtime validation discovered the original 41 tools and served starter content;
 public ping/version calls passed with HTTPS verification and explicit HTTP opt-in.
 Those earlier counts do not certify this content follow-up. See PR evidence for

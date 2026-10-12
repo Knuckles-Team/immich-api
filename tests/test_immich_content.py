@@ -5,9 +5,6 @@ import importlib.util
 import json
 from pathlib import Path
 
-from agent_connector_sdk.adapters.mcp_tool_paging import tool_arguments
-from agent_connector_sdk.adapters.mcp_tool_records import raw_records, source_record
-from agent_connector_sdk.manifest.live_contract import validate_preset_tool_contract
 from agent_connector_sdk.manifest.loader import (
     load_tool_presets,
     require_valid_connector_package,
@@ -60,8 +57,8 @@ def test_native_prompt_skill_shapes_and_tool_discovery(monkeypatch):
                 tool for tool in tools if tool.name == "album_metadata_sample"
             )
             assert (
-                sample.annotations.readOnlyHint
-                and not sample.annotations.destructiveHint
+                sample.annotations.read_only_hint
+                and not sample.annotations.destructive_hint
             )
             prompts = await client.list_prompts()
             for name in (
@@ -81,17 +78,15 @@ def test_native_prompt_skill_shapes_and_tool_discovery(monkeypatch):
             }
             assert "shapes://immich-api/immich.ttl" in resources
             assert "skill://immich-health/SKILL.md" in resources
-            preset = load_tool_presets(PACKAGE / "connectors/mcp_source_presets.json")[
-                "immich_album_metadata_sample"
-            ]
-            validate_preset_tool_contract(
-                tools, tool_name="album_metadata_sample", presets=[preset]
+            assert (
+                load_tool_presets(PACKAGE / "connectors/mcp_source_presets.json") == {}
             )
+            assert require_valid_connector_package(PACKAGE).sync == []
 
     asyncio.run(check())
 
 
-def test_bounded_sample_tool_and_sdk_preset_omit_private_values(monkeypatch):
+def test_bounded_sample_tool_omits_private_values_without_ingestion_preset(monkeypatch):
     calls = []
 
     class FakeClient:
@@ -100,10 +95,8 @@ def test_bounded_sample_tool_and_sdk_preset_omit_private_values(monkeypatch):
             return {"data": [album(2), album(1)]}
 
     monkeypatch.setattr(modules.album_sample, "get_client", lambda: FakeClient())
-    preset = load_tool_presets(PACKAGE / "connectors/mcp_source_presets.json")[
-        "immich_album_metadata_sample"
-    ]
-    manifest = require_valid_connector_package(PACKAGE)
+    assert load_tool_presets(PACKAGE / "connectors/mcp_source_presets.json") == {}
+    assert require_valid_connector_package(PACKAGE).sync == []
 
     async def check():
         async with Client(
@@ -111,24 +104,36 @@ def test_bounded_sample_tool_and_sdk_preset_omit_private_values(monkeypatch):
             timeout=5,
             init_timeout=5,
         ) as client:
-            result = await client.call_tool(
-                preset.tool, tool_arguments(preset, dict(preset.params))
-            )
+            result = await client.call_tool("album_metadata_sample", {"limit": 1})
             body = result.structured_content
             assert not body["authoritative"] and not body["complete"]
-            raw = raw_records(preset, body)
-            assert len(raw) == 1 and raw[0]["id"] == album(1)["id"]
-            assert "private" not in json.dumps(body)
-            pin = manifest.sync[0].tool_schema_sha256
-            record = source_record(
-                preset,
-                raw[0],
-                connector="immich-api",
-                schema_sha256=pin,
-                mapping_reference="manifest:immich-api#schema_mappings/ImmichAlbum",
+            assert (
+                len(body["records"]) == 1 and body["records"][0]["id"] == album(1)["id"]
             )
-            assert record.provenance.tool == "album_metadata_sample"
-            assert "albumUsers" not in record.payload
+            assert "private" not in json.dumps(body)
 
     asyncio.run(check())
     assert calls == [("albums", {"action": "getAllAlbums", "query": {"isOwned": True}})]
+
+
+def test_empty_sample_cannot_enter_sdk_source_ingestion(monkeypatch):
+    class EmptyClient:
+        def execute(self, domain, arguments):
+            return {"data": []}
+
+    monkeypatch.setattr(modules.album_sample, "get_client", lambda: EmptyClient())
+    assert load_tool_presets(PACKAGE / "connectors/mcp_source_presets.json") == {}
+    assert require_valid_connector_package(PACKAGE).sync == []
+
+    async def check():
+        async with Client(
+            build_server(command_args=["--transport", "stdio", "--auth-type", "none"]),
+            timeout=5,
+            init_timeout=5,
+        ) as client:
+            body = (
+                await client.call_tool("album_metadata_sample", {"limit": 1})
+            ).structured_content
+            assert body["records"] == [] and body["authoritative"] is False
+
+    asyncio.run(check())

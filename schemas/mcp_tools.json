@@ -531,7 +531,7 @@
       }
     },
     "album_metadata_sample": {
-      "compatibility_sha256": "abae009fa425c690d7c19d3efe93d53b2e49133dd6facf01ae1e7bc51d0a2cef",
+      "compatibility_sha256": "72af49a30e22f2b0e1e436b61db2704e172b829df3f47bc660ef8f1d221d9a0a",
       "inputSchema": {
         "additionalProperties": false,
         "properties": {
@@ -539,13 +539,6 @@
             "maximum": 5,
             "minimum": 1,
             "type": "integer"
-          },
-          "mode": {
-            "enum": [
-              "delta",
-              "full"
-            ],
-            "type": "string"
           }
         },
         "type": "object"

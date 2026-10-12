@@ -13,7 +13,7 @@ The shared pipelines repository owns quality gates and delivery rendering.
 
 Component: Connector integration
 References: [Connector SDK](https://github.com/Knuckles-Team/agent-connector-sdk/blob/5babc4cc48ad73928468b243842f219f51e2cca1/README.md)
-Code: ../../immich_api/auth.py ../../immich_api/api/api_client_base.py ../../immich_api/mcp_server.py ../../immich_api/mcp/mcp_system.py ../../immich_api/kg_ingest.py ../../tests/test_auth.py ../../tests/test_api_wrapper.py ../../tests/test_immich_mcp_validation.py ../../tests/test_kg_ingest.py ../../scripts/generate_tool_schemas.py
+Code: ../../immich_api/auth.py ../../immich_api/openapi_runtime.py ../../immich_api/mcp_server.py ../../immich_api/mcp/__init__.py ../../immich_api/kg_ingest.py ../../tests/test_auth.py ../../tests/test_api_wrapper.py ../../tests/test_immich_mcp_validation.py ../../tests/test_kg_ingest.py ../../scripts/generate_tool_schemas.py
 
 ## Non-goals
 

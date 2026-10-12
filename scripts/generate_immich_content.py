@@ -138,7 +138,7 @@ def artifacts():
                         "boolean": "boolean",
                     }[kind]
                 target_kind = "xsd:" + datatype
-                fields[field] = target_kind
+                fields[name] = target_kind
                 terms.append("sh:datatype " + target_kind)
                 for keyword, predicate in (
                     ("minimum", "minInclusive"),
@@ -186,27 +186,29 @@ def artifacts():
             "resources": resources,
             "identity": {
                 "id_field": {
-                    name: "id" for name in mappings if name != "ImmichAlbumMembership"
+                    name: "immich" + name.removeprefix("Immich") + "Id"
+                    for name in mappings
+                    if name != "ImmichAlbumMembership"
                 },
                 "title_field": {
-                    "ImmichAlbum": "albumName",
-                    "ImmichPersonRecord": "name",
-                    "ImmichUser": "name",
-                    "ImmichLibrary": "name",
-                    "ImmichTag": "name",
+                    "ImmichAlbum": "immichAlbumAlbumName",
+                    "ImmichPersonRecord": "immichPersonRecordName",
+                    "ImmichUser": "immichUserName",
+                    "ImmichLibrary": "immichLibraryName",
+                    "ImmichTag": "immichTagName",
                 },
                 "updated_field": {
-                    "ImmichAlbum": "updatedAt",
-                    "ImmichAsset": "updatedAt",
+                    "ImmichAlbum": "immichAlbumUpdatedAt",
+                    "ImmichAsset": "immichAssetUpdatedAt",
                 },
             },
             "schema_mappings": mappings,
             "policy": {
                 "pii_fields": {
-                    "ImmichAlbum": ["albumName"],
-                    "ImmichPersonRecord": ["name"],
-                    "ImmichUser": ["name"],
-                    "ImmichTag": ["name"],
+                    "ImmichAlbum": ["immichAlbumAlbumName"],
+                    "ImmichPersonRecord": ["immichPersonRecordName"],
+                    "ImmichUser": ["immichUserName"],
+                    "ImmichTag": ["immichTagName"],
                 }
             },
             "provenance": {

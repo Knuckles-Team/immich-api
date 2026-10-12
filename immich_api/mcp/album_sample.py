@@ -1,6 +1,6 @@
 """One bounded read-only capability built from an allowlisted OpenAPI operation."""
 
-from typing import Annotated, Literal
+from typing import Annotated
 
 from agent_connector_sdk.mcp.concurrency import run_blocking
 from fastmcp import FastMCP
@@ -22,13 +22,12 @@ def register_album_sample_tools(mcp: FastMCP):
     )
     async def album_metadata_sample(
         limit: Annotated[int, Field(ge=1, le=5)] = 1,
-        mode: Literal["full", "delta"] = "delta",
     ) -> AlbumSample:
         """Sample up to five owned albums; omit membership, paths and share secrets.
 
         Uses getAllAlbums with isOwned=true. The API has no server-side limit;
-        its existing response byte/time limits still apply. Both source modes
-        return a non-authoritative sample and never reconcile or withdraw.
+        its existing response byte/time limits still apply. This read capability
+        returns a non-authoritative sample and never ingests or withdraws.
         CONCEPT:IMMICH-001
         """
         response = await run_blocking(

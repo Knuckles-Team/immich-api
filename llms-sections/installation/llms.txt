@@ -5,7 +5,7 @@
 
 ## Installation
 
-- [Installation](https://knuckles-team.github.io/immich-api/installation/) — immich-api is a standard Python package and a prebuilt container image.
+- [Installation](https://knuckles-team.github.io/immich-api/installation/) — This pilot is available as source. A published Python distribution and prebuilt container image remain pending validation and release. Work from the connector repository; no separate template repository access is required.
 
 ## Standards maturity
 

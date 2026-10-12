@@ -12,8 +12,10 @@ from agent_connector_sdk.ingest import (
     KnowledgeIngest,
     current_ingest,
 )
+from agent_connector_sdk.ingest.request import build_request
+from epistemic_graph.generated.source_ingestion import SourceIngestionMode
 
-from .album_metadata import project_album
+from .album_metadata import album_graph_properties, project_album
 
 
 async def ingest_album_metadata(
@@ -49,12 +51,17 @@ async def ingest_album_metadata(
         Entity(
             id=record["id"],
             node_type="ImmichAlbum",
-            properties={
-                key: value for key, value in record.items() if key != "node_type"
-            },
+            properties=album_graph_properties(record),
             updated_at=record["updatedAt"],
         )
         for record in projected
     )
+    changes = ChangeSet(entities=entities, mode=SourceIngestionMode.DELTA)
+    preview = build_request(binding, changes, previous=None)
+    if any(
+        record.payload.get("immichAlbumId") != record.record_id
+        for record in preview.records
+    ):
+        raise ValueError("SDK privacy guard changed album identity; no submission")
     service = ingest if ingest is not None else current_ingest()
-    return await service.submit(binding, ChangeSet(entities=entities))
+    return await service.submit(binding, changes)

@@ -71,152 +71,109 @@
   ],
   "identity": {
     "id_field": {
-      "ImmichAsset": "id",
-      "ImmichAlbum": "id",
-      "ImmichPersonRecord": "id",
-      "ImmichUser": "id",
-      "ImmichLibrary": "id",
-      "ImmichTag": "id",
-      "ImmichAssetStack": "id"
+      "ImmichAsset": "immichAssetId",
+      "ImmichAlbum": "immichAlbumId",
+      "ImmichPersonRecord": "immichPersonRecordId",
+      "ImmichUser": "immichUserId",
+      "ImmichLibrary": "immichLibraryId",
+      "ImmichTag": "immichTagId",
+      "ImmichAssetStack": "immichAssetStackId"
     },
     "title_field": {
-      "ImmichAlbum": "albumName",
-      "ImmichPersonRecord": "name",
-      "ImmichUser": "name",
-      "ImmichLibrary": "name",
-      "ImmichTag": "name"
+      "ImmichAlbum": "immichAlbumAlbumName",
+      "ImmichPersonRecord": "immichPersonRecordName",
+      "ImmichUser": "immichUserName",
+      "ImmichLibrary": "immichLibraryName",
+      "ImmichTag": "immichTagName"
     },
     "updated_field": {
-      "ImmichAlbum": "updatedAt",
-      "ImmichAsset": "updatedAt"
+      "ImmichAlbum": "immichAlbumUpdatedAt",
+      "ImmichAsset": "immichAssetUpdatedAt"
     }
   },
   "schema_mappings": {
     "ImmichAsset": {
       "ontology_class": "ImmichAsset",
       "fields": {
-        "id": "xsd:string",
-        "type": "xsd:string",
-        "originalMimeType": "xsd:string",
-        "duration": "xsd:integer",
-        "width": "xsd:integer",
-        "height": "xsd:integer",
-        "fileCreatedAt": "xsd:dateTime",
-        "updatedAt": "xsd:dateTime",
-        "isFavorite": "xsd:boolean",
-        "isArchived": "xsd:boolean",
-        "isTrashed": "xsd:boolean",
-        "visibility": "xsd:string"
+        "immichAssetId": "xsd:string",
+        "immichAssetType": "xsd:string",
+        "immichAssetOriginalMimeType": "xsd:string",
+        "immichAssetDuration": "xsd:integer",
+        "immichAssetWidth": "xsd:integer",
+        "immichAssetHeight": "xsd:integer",
+        "immichAssetFileCreatedAt": "xsd:dateTime",
+        "immichAssetUpdatedAt": "xsd:dateTime",
+        "immichAssetIsFavorite": "xsd:boolean",
+        "immichAssetIsArchived": "xsd:boolean",
+        "immichAssetIsTrashed": "xsd:boolean",
+        "immichAssetVisibility": "xsd:string"
       }
     },
     "ImmichAlbum": {
       "ontology_class": "ImmichAlbum",
       "fields": {
-        "id": "xsd:string",
-        "albumName": "xsd:string",
-        "assetCount": "xsd:integer",
-        "shared": "xsd:boolean",
-        "hasSharedLink": "xsd:boolean",
-        "createdAt": "xsd:dateTime",
-        "updatedAt": "xsd:dateTime",
-        "albumThumbnailAssetId": "xsd:string"
+        "immichAlbumId": "xsd:string",
+        "immichAlbumAlbumName": "xsd:string",
+        "immichAlbumAssetCount": "xsd:integer",
+        "immichAlbumShared": "xsd:boolean",
+        "immichAlbumHasSharedLink": "xsd:boolean",
+        "immichAlbumCreatedAt": "xsd:dateTime",
+        "immichAlbumUpdatedAt": "xsd:dateTime",
+        "immichAlbumAlbumThumbnailAssetId": "xsd:string"
       }
     },
     "ImmichPersonRecord": {
       "ontology_class": "ImmichPersonRecord",
       "fields": {
-        "id": "xsd:string",
-        "name": "xsd:string",
-        "isHidden": "xsd:boolean",
-        "isFavorite": "xsd:boolean",
-        "updatedAt": "xsd:dateTime"
+        "immichPersonRecordId": "xsd:string",
+        "immichPersonRecordName": "xsd:string",
+        "immichPersonRecordIsHidden": "xsd:boolean",
+        "immichPersonRecordIsFavorite": "xsd:boolean",
+        "immichPersonRecordUpdatedAt": "xsd:dateTime"
       }
     },
     "ImmichUser": {
       "ontology_class": "ImmichUser",
       "fields": {
-        "id": "xsd:string",
-        "name": "xsd:string"
+        "immichUserId": "xsd:string",
+        "immichUserName": "xsd:string"
       }
     },
     "ImmichLibrary": {
       "ontology_class": "ImmichLibrary",
       "fields": {
-        "id": "xsd:string",
-        "name": "xsd:string",
-        "assetCount": "xsd:integer",
-        "createdAt": "xsd:dateTime",
-        "updatedAt": "xsd:dateTime"
+        "immichLibraryId": "xsd:string",
+        "immichLibraryName": "xsd:string",
+        "immichLibraryAssetCount": "xsd:integer",
+        "immichLibraryCreatedAt": "xsd:dateTime",
+        "immichLibraryUpdatedAt": "xsd:dateTime"
       }
     },
     "ImmichAlbumMembership": {
       "ontology_class": "ImmichAlbumMembership",
       "fields": {
-        "role": "xsd:string"
+        "immichAlbumMembershipRole": "xsd:string"
       }
     },
     "ImmichTag": {
       "ontology_class": "ImmichTag",
       "fields": {
-        "id": "xsd:string",
-        "name": "xsd:string",
-        "createdAt": "xsd:dateTime",
-        "updatedAt": "xsd:dateTime"
+        "immichTagId": "xsd:string",
+        "immichTagName": "xsd:string",
+        "immichTagCreatedAt": "xsd:dateTime",
+        "immichTagUpdatedAt": "xsd:dateTime"
       }
     },
     "ImmichAssetStack": {
       "ontology_class": "ImmichAssetStack",
       "fields": {
-        "id": "xsd:string",
-        "assetCount": "xsd:integer",
-        "primaryAssetId": "xsd:string"
+        "immichAssetStackId": "xsd:string",
+        "immichAssetStackAssetCount": "xsd:integer",
+        "immichAssetStackPrimaryAssetId": "xsd:string"
       }
     }
   },
-  "sync": [
-    {
-      "preset": "immich_album_metadata_sample",
-      "server": "Immich Api",
-      "tool": "album_metadata_sample",
-      "records_path": "records",
-      "id_field": "id",
-      "title_field": "albumName",
-      "text_field": "",
-      "updated_field": "updatedAt",
-      "doc_type": "ImmichAlbum",
-      "pagination": "none",
-      "raw": {
-        "server": "Immich Api",
-        "tool": "album_metadata_sample",
-        "params_style": "args",
-        "params": {
-          "limit": 1
-        },
-        "records_path": "records",
-        "id_field": "id",
-        "title_field": "albumName",
-        "text_field": "",
-        "updated_field": "updatedAt",
-        "doc_type": "ImmichAlbum",
-        "record_mode": "typed_entities",
-        "node_type_field": "node_type",
-        "pagination": "none",
-        "max_pages": 1,
-        "strict_schema": true,
-        "metadata_fields": [
-          "id",
-          "node_type",
-          "albumName",
-          "assetCount",
-          "shared",
-          "hasSharedLink",
-          "createdAt",
-          "updatedAt"
-        ]
-      },
-      "tool_schema_sha256": "abae009fa425c690d7c19d3efe93d53b2e49133dd6facf01ae1e7bc51d0a2cef"
-    }
-  ],
+  "sync": [],
   "provenance": {
     "generated_by": "scripts/generate_immich_content.py",
     "source_artifacts": [
@@ -239,16 +196,16 @@
   "policy": {
     "pii_fields": {
       "ImmichAlbum": [
-        "albumName"
+        "immichAlbumAlbumName"
       ],
       "ImmichPersonRecord": [
-        "name"
+        "immichPersonRecordName"
       ],
       "ImmichUser": [
-        "name"
+        "immichUserName"
       ],
       "ImmichTag": [
-        "name"
+        "immichTagName"
       ]
     }
   }

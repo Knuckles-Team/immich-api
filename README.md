@@ -1,17 +1,23 @@
 > **Work in progress — not released or deployment-ready.**
 >
 > This pilot converts the Immich 3.2.2 OpenAPI contract into 41 domain tools
-> covering 276 declared operations. The canonical scaffold and publication
-> bootstrap are reviewed; the auth adapter follow-up remains under integration.
+> covering 276 declared operations. The initial scaffold provenance is recorded;
+> the auth adapter follow-up remains under integration.
 > An isolated 13-case auth run passed, including the six unchanged canonical
 > auth cases. Final-source full tests, packaging and deployment remain pending.
 > Earlier converted-source tests had six auth-interface failures and one cold
 > import timeout; do not treat the isolated follow-up result as a full-suite pass.
 > The content follow-up passed 12 focused cases. Native SDK capture now finds
-> 42 tools, 6 prompts, 12 resources and 55 content-pack entries, including the
+> 42 tools, 6 prompts, 12 resources and 55 content-pack entries at that revision, including the
 > schema-derived ontology/shapes and four read skills. The new content has not
 > been ingested into EG. Earlier public ping/version calls passed live using
 > verified HTTPS and explicit HTTP opt-in. Writes remain disabled by default.
+> Review corrections disable the unscoped ingestion preset, map submitted fields
+> to ontology predicates and remove obsolete scaffold paths. All 33 focused review
+> cases passed; schema checks and native capture completed in 21.96 seconds total.
+> Evidence: [review corrections](validation/review-corrections-2026-10-12.json).
+> Windows report-only success ran zero tests because
+> the SDK dependency was unavailable in its package index.
 > Provider endpoints and credentials are supplied privately at runtime.
 
 # Immich Api
@@ -54,12 +60,18 @@ private endpoints are never committed.
   explicit and validate it before it reaches an agent or graph.
 - **One package, shared policy** — authentication, telemetry, action routing, and
   error handling follow the `agent-connector-sdk` contracts.
-- **Schema-grounded content** — read skills, prompts, ontology, shapes and an opt-in
-  bounded album preset are packaged; graph capture remains unverified.
+- **Schema-grounded content** — read skills, prompts, ontology and shapes are packaged; extraction presets remain disabled pending
+  provider/account stream binding. Graph capture remains unverified.
 - **Operational safety** — TLS profiles, bounded responses, loopback defaults, and
   immutable container references are part of the generated deployment contract.
 
 ## Quick start
+
+Build and run from this connector checkout. Access to a separate template
+repository is not required. The canonical scaffold belongs entirely to the
+`mcp-builder` skill; future scaffolding uses its locally generated files and
+ordinary repository creation. The pilot's original template commit remains
+historical provenance in [validation/scaffold-origin.json](validation/scaffold-origin.json).
 
 This pilot is not published on PyPI. For source validation in an approved environment:
 

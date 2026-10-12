@@ -1,0 +1,253 @@
+{
+  "parent_source": "74118db0aa601c5e265e3400810c49eb31edb46d",
+  "sdk_revision": "5babc4cc48ad73928468b243842f219f51e2cca1",
+  "eg_python_revision": "d33abec1e09b63cdcde01f8e8e4fe810d91cd43d",
+  "focused_checks": {
+    "passed": 33,
+    "failed": 0,
+    "skipped": 0,
+    "warnings": 0,
+    "seconds": 4.23,
+    "serial_total_seconds": 21.96,
+    "test_files": [
+      "tests/test_api_wrapper.py",
+      "tests/test_album_metadata.py",
+      "tests/test_kg_ingest.py",
+      "tests/test_immich_content.py"
+    ],
+    "environment": "Existing Python3.12 environment with immutable SDK/EG Python source overlays; no installs or native builds."
+  },
+  "earlier_attempt": {
+    "passed": 31,
+    "failed": 1,
+    "seconds": 4.32,
+    "reason": "SDK privacy guard redacted the synthetic numeric-only UUID as credit-card patterns. Guard remains enabled. Helper now preflights the actual SDK request and refuses before submission when album identity changes; regression proves refusal. Positive fixture uses mixed hexadecimal UUID."
+  },
+  "native_capture": {
+    "sdk_revision": "5babc4cc48ad73928468b243842f219f51e2cca1",
+    "eg_python_revision": "d33abec1e09b63cdcde01f8e8e4fe810d91cd43d",
+    "tools": [
+      "activities_operations",
+      "album_metadata_sample",
+      "albums_operations",
+      "api_keys_operations",
+      "asset_files_operations",
+      "assets_operations",
+      "authentication_admin_operations",
+      "authentication_operations",
+      "cluster_groups_operations",
+      "config_admin_operations",
+      "config_public_operations",
+      "config_user_operations",
+      "database_backups_admin_operations",
+      "download_operations",
+      "duplicates_operations",
+      "faces_operations",
+      "jobs_operations",
+      "libraries_operations",
+      "maintenance_admin_operations",
+      "map_operations",
+      "memories_operations",
+      "notifications_admin_operations",
+      "notifications_operations",
+      "partners_operations",
+      "people_operations",
+      "plugins_operations",
+      "queues_operations",
+      "search_operations",
+      "server_operations",
+      "sessions_operations",
+      "shared_links_operations",
+      "stacks_operations",
+      "sync_operations",
+      "system_config_operations",
+      "system_metadata_operations",
+      "tags_operations",
+      "timeline_operations",
+      "trash_operations",
+      "users_admin_operations",
+      "users_operations",
+      "views_operations",
+      "workflows_operations"
+    ],
+    "prompts": {
+      "connector-status": {
+        "sha256": "4abc8cae7c17eafbc03230fd87f74054ff1db674ce2512359749b3c724309a09",
+        "bytes": 65
+      },
+      "immich_album_review": {
+        "sha256": "4254821b0d96b5a232cbb349db0db913ced36bdc72d7d0af446810e41f96bb57",
+        "bytes": 1217
+      },
+      "immich_asset_metadata": {
+        "sha256": "7a4a3520d8f0a174e4c8b35e67347cc8e624fd1cb3ebfdb7f5d85ddc6cf50b22",
+        "bytes": 928
+      },
+      "immich_person_record": {
+        "sha256": "109d8e55fc964abf93d3612fb85f606337f57420c3b7bb5747f00f6b1bcec757",
+        "bytes": 842
+      },
+      "immich_specialist": {
+        "sha256": "714bda38580048b246a8907dfd81d19bf23b5104dad7a36841e2f19ecf315d52",
+        "bytes": 625
+      },
+      "main_agent": {
+        "sha256": "cc6d11c360af66fe38df2f36913e645b34e1dbce53ad917a997280f1c020e000",
+        "bytes": 829
+      }
+    },
+    "resources": {
+      "connector://status": {
+        "sha256": "b354e2d4bc5fd0d3ab88bb7556620bdf0786214b1455ef58aa44baa2484fe389",
+        "bytes": 40
+      },
+      "ontology://immich-api/immich.ttl": {
+        "sha256": "c68d2270fcfbcacb40369011d3f65fdf625e6ea1eabba10bf4309f7c007e391d",
+        "bytes": 14540
+      },
+      "shapes://immich-api/immich.ttl": {
+        "sha256": "9c3b95c0dfd49fa4b406ec7c09ea5867d94bf85e277f0983352adcaf042c777a",
+        "bytes": 6562
+      },
+      "manifest://connector": {
+        "sha256": "bf7c03c7b21a02b2e1e539dcca0f5878ff9e72722c8dd520488efb57bd2e07c3",
+        "bytes": 5976
+      },
+      "skill://immich-person-record/SKILL.md": {
+        "sha256": "c887dba2b1163a9e2ae94ae4c1834da656dae55b3800ab862d287c24d31199e3",
+        "bytes": 1289
+      },
+      "skill://immich-person-record/_manifest": {
+        "sha256": "c7388e5a95658405ddfb505fa5ef1f0444e6f150da225acb2d2799ca18bcd335",
+        "bytes": 201
+      },
+      "skill://immich-asset-metadata/SKILL.md": {
+        "sha256": "5d6e48645b8458b8871d97831b05016be4aa074debfc3d5ca5cdac372747949f",
+        "bytes": 1343
+      },
+      "skill://immich-asset-metadata/_manifest": {
+        "sha256": "5481dbe21363628fdac8a92fae13a4dd8e3f79a0eb4eb6b39bf8a329d8ce6b4a",
+        "bytes": 202
+      },
+      "skill://immich-album-review/SKILL.md": {
+        "sha256": "11aeb129607411daf599cc0af26848c2400a73c3960c6892f2b7aac26e2bab03",
+        "bytes": 1649
+      },
+      "skill://immich-album-review/_manifest": {
+        "sha256": "345218f326393e0fa3ee4e8852717c697dfb472823b5f80611fdca6a20c497f1",
+        "bytes": 200
+      },
+      "skill://immich-health/SKILL.md": {
+        "sha256": "7efeb61c1cc8921eb1e9234631524fb17bc036a4199dfeb97e62edf5fc1530f1",
+        "bytes": 1023
+      },
+      "skill://immich-health/_manifest": {
+        "sha256": "3f0d8230c8e6a2cfbfd41b1c503dbfe16c531320b31b86a91326e75aea49a98a",
+        "bytes": 194
+      }
+    },
+    "pack_entries": 55,
+    "pack_kinds": [
+      "manifest",
+      "ontology",
+      "prompt",
+      "shapes",
+      "skill",
+      "tool"
+    ],
+    "pack_archive_sha256": "076e9a77bc756a57a8b02d702dc3a352f74d0728af56f144ff4ba34e1d713423",
+    "provider_calls": 0,
+    "engine_calls": 0,
+    "fleet_registration": false,
+    "status": "native SDK source-content capture; no semantic EG receipt"
+  },
+  "runtime_test_schema_sha256": {
+    "immich_api/__init__.py": "63707e4a714118a56adc7030e69912b126f9950122856ead437eb53e8711edcc",
+    "immich_api/__main__.py": "9cec9a14dcd5f2a6451b3708a0c63699f238f4d596c264cc398bac71324d5a57",
+    "immich_api/album_metadata.py": "392693ff5704d93bc19da1fa30ee9d25a244df26e1aac57b11cbfb2904ab3812",
+    "immich_api/api/__init__.py": "60c4220046512ee8606075ae97b3393bc301fb562f3c5cb9d19c3b51ec117544",
+    "immich_api/api/api_client_system.py": "66bd8a148df7a642372d3d87b3027ad9a8bdc8370b68be50ab4f353a5d679f94",
+    "immich_api/auth.py": "e5a3f29bce4363a8bedb745ae88cc1a394e7a559126c7a9d3e6ffd45b499f752",
+    "immich_api/connector_manifest.yml": "bf7c03c7b21a02b2e1e539dcca0f5878ff9e72722c8dd520488efb57bd2e07c3",
+    "immich_api/connectors/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "immich_api/connectors/mcp_source_presets.json": "9e8f35ffb9970bb1e2f8eebe56e18203d47c23370dca05bb4b834383236e27e4",
+    "immich_api/connectors/tool_schema_fingerprints.json": "43dfd3b836a64f7d0e2cb9be2c2e0130f623977aab798471206f2dc60a63b4fc",
+    "immich_api/error_authority.py": "e58e58320da045f1390119e40ffffa8f4e553112393bdd6310f33c2931c52eb9",
+    "immich_api/immich_input_models.py": "d1ca0010942b23469a8e5da76db4b26b29468f74bbd594ae869eddc3917bf131",
+    "immich_api/immich_response_models.py": "0a5ebd7ded022e4b2aea120aa620a2e3370c5cb5d0f37d9768764d41ff3634ce",
+    "immich_api/kg_ingest.py": "a81cc2e5e09bed5ddf5bb6a2099bd00f814c6fd2da45fbdccf19df3c7c27912c",
+    "immich_api/mcp/__init__.py": "519773a2cad8f86ee5a5c8362f50059ee02c31677fcf947746d6ad79b41cf2bf",
+    "immich_api/mcp/album_sample.py": "f02516259f04b9ee93f40c8272d0a5eadadebd7c626d827edb1993423276393f",
+    "immich_api/mcp_config.json": "d8e397af03b5b032f21d0aa967086f0c78b33c87b76f2e9898ae0a144df7de02",
+    "immich_api/mcp_server.py": "5963c4042949f96ab09f6e41b0e52aeb07aa9a99d0e4b673188f05a0a8a9d052",
+    "immich_api/ontology/__init__.py": "6a0710dfd5c89e6ea7f71343486c6fae9d1b7b96661d46885032a69bbedeb93c",
+    "immich_api/ontology/immich.ttl": "c68d2270fcfbcacb40369011d3f65fdf625e6ea1eabba10bf4309f7c007e391d",
+    "immich_api/ontology/schema-provenance.json": "1bf845c28bccca43df6b6b840b07e6d7b2912fd5951730d6d131c4c6afbd6f8f",
+    "immich_api/ontology/shapes/immich.ttl": "9c3b95c0dfd49fa4b406ec7c09ea5867d94bf85e277f0983352adcaf042c777a",
+    "immich_api/openapi_contract.json": "ef625a52b1a83aa7534f8d10fcdd27e1f1ea58989243c0889a79c86017a602fe",
+    "immich_api/openapi_runtime.py": "58acc36419032a0ce27c5ba670d6d161f74448eb225aa0e22c952612524d2faf",
+    "immich_api/prompts/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "immich_api/prompts/immich_album_review.json": "2215ca24ff42c0f2751966594a812018e504afdaf25ab60a1680a3dd4223889f",
+    "immich_api/prompts/immich_asset_metadata.json": "87ad236facc25eebc05352425d1dd7255bb62658d05b68e269db74fe99f14dfc",
+    "immich_api/prompts/immich_person_record.json": "e97ed234c6107bd5c974286b506f8b45923eea3919f3bb22c94059158cce59ad",
+    "immich_api/prompts/immich_specialist.json": "3c54c2484a9f4fc167eb51f477da456ac1a96f6fcc1424503cdcbd0f3e66f9aa",
+    "immich_api/prompts/main_agent.json": "59c2bff19c9e6b297e300e010feebb9d63ba915c54111751e36f5323f008e877",
+    "immich_api/skills/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "immich_api/skills/immich-album-review/SKILL.md": "11aeb129607411daf599cc0af26848c2400a73c3960c6892f2b7aac26e2bab03",
+    "immich_api/skills/immich-asset-metadata/SKILL.md": "5d6e48645b8458b8871d97831b05016be4aa074debfc3d5ca5cdac372747949f",
+    "immich_api/skills/immich-health/SKILL.md": "7efeb61c1cc8921eb1e9234631524fb17bc036a4199dfeb97e62edf5fc1530f1",
+    "immich_api/skills/immich-person-record/SKILL.md": "c887dba2b1163a9e2ae94ae4c1834da656dae55b3800ab862d287c24d31199e3",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/conftest.py": "fa93ecc6203ecd455ac4ac9482b4999a1994e8a55ad27b3c8bb70e8145d6d4ff",
+    "tests/test_album_metadata.py": "1ab5e8f14de453d2aa9c7d5648a63101cafcd2a980ddfa81a7f6f9f141506b19",
+    "tests/test_api_wrapper.py": "8b330e49dee85d252ce673cb1efdbf023532c0b6b3502bf449f4fafcc8aaa630",
+    "tests/test_auth.py": "fb21319bd5343306659ab341430656d3058b36e23f3727e448740982573e73e0",
+    "tests/test_concept_parity.py": "930e3b24036585a9108fadd2ee602c19158fe74c2fcbbbe42a8b8a55ed88d781",
+    "tests/test_error_authority.py": "2be24d863bc595985105c6b88761e9ef5daf14ba169d826c2eb8da2601532128",
+    "tests/test_immich_content.py": "397850b7151a4d2245a407c010a8989d2ecfaa814bae56ccf3fd3fc9f0130640",
+    "tests/test_immich_mcp_validation.py": "51c2fe15b0a33824c76d9b0395d5412593c7858700bb872a0dcad7b883fd486b",
+    "tests/test_init_dynamics.py": "f022c31182e9285d6afdf1aee4a17707c728e590792dcbbcd4d2fc6ece238c03",
+    "tests/test_kg_ingest.py": "4c938f70a270c70ce1c5baee3afd50c7837d1f77304f88dafde892720e57fe5f",
+    "tests/test_openapi_auth_provider.py": "fc24fca577ede0f45ec13c062b1cb34588b8823d189c192936614cad8957cd6c",
+    "tests/test_startup.py": "1dc403e5d256687c24a928139fe328302b8148baefcaa320e13ae106c1dc3dcf",
+    "schemas/mcp_tools.json": "3857732a050b10e9847b8f2025e2c3c13d2e0c49858165bac0b9bc2a0a531dfa"
+  },
+  "verified_changes": [
+    "No source ingestion preset enabled; manifest sync and preset tool pins empty.",
+    "Explicit helper source_scope partitions provider/account identity; mode explicitly DELTA; empty records rejected.",
+    "Actual SDK request payload uses ontology predicate names.",
+    "Production ApiClientSystem(OpenApiClient) transport tests replace obsolete base-client tests.",
+    "Obsolete base client, system MCP wrapper and root AU starter prompt removed."
+  ],
+  "static_checks": [
+    "Edited-file Ruff and formatting",
+    "git diff --check",
+    "SDK dependency/import contract",
+    "structural content generator --check",
+    "native tool schema generator --check",
+    "documentation provenance regeneration and validation"
+  ],
+  "windows_evidence": {
+    "source": "74118db0aa601c5e265e3400810c49eb31edb46d",
+    "run": 38282512282,
+    "job": 114922932601,
+    "workflow_report_only_conclusion": "success",
+    "actual_tests_executed": 0,
+    "dependency_sync": "agent-connector-sdk unavailable in package index",
+    "import_safety": "skipped",
+    "unit_tests": "skipped"
+  },
+  "pending": [
+    "Final-source full quality gates: no eligible configured self-hosted runner; full-suite local run not admitted.",
+    "Windows dependency closure before a genuine test pass.",
+    "Source-built immutable image.",
+    "Existing scoped provider credential and authenticated album read.",
+    "Explicit SDK fleet composition and verified routable TLS endpoint.",
+    "Approved graph identity, matching pack registration and actual bounded EG receipt/readback."
+  ],
+  "source_after_test_notes": [
+    "README, engineering instructions, installation/architecture documentation, historical scaffold provenance and validation records were refreshed; tested runtime/tool/content bytes unchanged."
+  ],
+  "external_template_repository_required": false,
+  "semantic_graph_acceptance": false
+}

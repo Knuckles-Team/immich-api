@@ -7,7 +7,7 @@ from immich_api.album_metadata import album_sample, project_album
 
 def album(number=1):
     return {
-        "id": f"00000000-0000-4000-8000-{number:012d}",
+        "id": f"19abcde{number:x}-deff-4abd-91de-ffabcdabcdef",
         "albumName": "A test album",
         "assetCount": 2,
         "shared": False,

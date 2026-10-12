@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 
+import json
 from datetime import datetime
+from pathlib import Path
 from typing import TypedDict
 from uuid import UUID
 
@@ -27,6 +29,24 @@ class AlbumSample(TypedDict):
 
 
 SOURCE_SHA256 = "7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b"
+
+
+def album_graph_properties(record: dict) -> dict[str, str | int | bool]:
+    """Map selected provider fields to the actual ontology predicate keys."""
+    projected = project_album(record)
+    provenance = json.loads(
+        (Path(__file__).parent / "ontology/schema-provenance.json").read_text()
+    )
+    targets = {
+        item["source_pointer"].rsplit("/", 1)[1]: item["property"]
+        for item in provenance["properties"]
+        if item["class"] == "ImmichAlbum" and item["range"].startswith("xsd:")
+    }
+    return {
+        targets[field]: value
+        for field, value in projected.items()
+        if field != "node_type"
+    }
 
 
 def project_album(record: dict) -> AlbumMetadata:
