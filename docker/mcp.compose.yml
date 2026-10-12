@@ -1,11 +1,11 @@
 version: '3.8'
 
 services:
-  templateconnector-api-mcp:
+  immich-api-mcp:
     # MCP serving image (built with `--target mcp`).
     image: "${MCP_IMAGE:?set-MCP_IMAGE-to-image@sha256-digest}"
-    container_name: templateconnector-api-mcp
-    hostname: templateconnector-api-mcp
+    container_name: immich-api-mcp
+    hostname: immich-api-mcp
     restart: always
     volumes:
       - type: bind
@@ -19,7 +19,7 @@ services:
       - TRANSPORT=streamable-http
       - AUTH_TYPE=${AUTH_TYPE:?set-AUTH_TYPE-to-a-configured-auth-provider}
       - CONNECTOR_CONFIG_FILE=/etc/connector/config.json
-      - TEMPLATECONNECTOR_API_ALLOW_PLAINTEXT=${TEMPLATECONNECTOR_API_ALLOW_PLAINTEXT:-false}
+      - IMMICH_API_ALLOW_PLAINTEXT=${IMMICH_API_ALLOW_PLAINTEXT:-false}
     ports:
       - "127.0.0.1:8000:8000"
     healthcheck:

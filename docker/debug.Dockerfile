@@ -28,4 +28,4 @@ COPY . /app
 # Install the local MCP package for debugging.
 RUN uv pip install --system --upgrade --verbose --no-cache --break-system-packages --prerelease=allow .[mcp]
 
-CMD ["templateconnector-mcp"]
+CMD ["immich-mcp"]

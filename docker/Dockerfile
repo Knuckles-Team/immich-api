@@ -15,7 +15,7 @@ RUN apt-get update \
 # MCP serving dependency closure (including SDK graph client).
 FROM builder-base AS builder-mcp
 RUN --mount=type=cache,target=/root/.cache/uv \
-    uv pip install --system --upgrade --break-system-packages --prerelease=allow "templateconnector-api[mcp]>=0.1.0"
+    uv pip install --system --upgrade --break-system-packages --prerelease=allow "immich-api[mcp]>=0.1.0"
 
 FROM python:3.12-slim@sha256:57cd7c3a7a273101a6485ba99423ee568157882804b1124b4dd04266317710de AS runtime-base
 ARG HOST=127.0.0.1
@@ -36,6 +36,6 @@ ENV HOST=${HOST} \
 # MCP serving image.
 FROM runtime-base AS mcp
 COPY --from=builder-mcp /usr/local /usr/local
-CMD ["templateconnector-mcp"]
+CMD ["immich-mcp"]
 
 FROM mcp AS default

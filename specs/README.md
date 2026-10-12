@@ -7,11 +7,11 @@ Follow the [shared spec standard](https://github.com/Knuckles-Team/pipelines/blo
 | Prefix | Owner |
 |---|---|
 | `CONN` | This connector's external-system behavior |
-| `TEMPLATECONNECTOR` | This repository's concept registry |
+| `IMMICH` | This repository's concept registry |
 
-- [`CONN-TEMPLATECONNECTOR-API`](templateconnector-api/spec.md) — Integrate Templateconnector Api through the shared connector contracts.
+- [`CONN-IMMICH-API`](immich-api/spec.md) — Integrate Immich Api through the shared connector contracts.
 
 The lifecycle generator owns delivery receipts in `status.json`.
 Run `pipelines-hook spec-status --write` after reviewed source changes enter Git history.
 Run `pipelines-hook spec-standard` and `pipelines-hook spec-decomposition` before publishing source changes.
-See the [delivery dashboard](https://knuckles-team.github.io/templateconnector-api/spec-delivery/).
+See the [delivery dashboard](https://knuckles-team.github.io/immich-api/spec-delivery/).

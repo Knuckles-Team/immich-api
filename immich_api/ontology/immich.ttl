@@ -1,0 +1,29 @@
+@prefix : <http://knuckles.team/kg#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# TODO: replace this stub with the real domain model. Classes/properties live in the
+# SHARED : (kg#) namespace; only the owl:Ontology node gets the per-package IRI. Do NOT
+# redefine classes another package owns (:MediaAsset/:Blob/:Document/:Person) — reuse them.
+
+:ImmichResource a owl:Class ;
+    rdfs:label "Immich Api Resource" ;
+    rdfs:comment "A primary object managed by Immich Api (STUB — rename/expand)." .
+
+:managedBy a owl:ObjectProperty ;
+    rdfs:label "managed by" ;
+    rdfs:comment "Links a Immich Api resource to the Person responsible (STUB)." ;
+    rdfs:domain :ImmichResource ;
+    rdfs:range :Person .
+
+:immichId a owl:DatatypeProperty ;
+    rdfs:label "immich id" ;
+    rdfs:comment "External identifier of the Immich Api resource (STUB)." ;
+    rdfs:domain :ImmichResource ;
+    rdfs:range xsd:string .
+
+<http://knuckles.team/kg/immich> a owl:Ontology ;
+    rdfs:label "Immich Api Ontology" ;
+    rdfs:comment "Immich Api domain extensions federated into the KG hub. STUB." ;
+    owl:imports <http://knuckles.team/kg> .

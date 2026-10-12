@@ -1,14 +1,14 @@
 {
   "mcpServers": {
-    "templateconnector-api": {
+    "immich-api": {
       "command": "uv",
       "args": [
         "run",
-        "templateconnector-mcp"
+        "immich-mcp"
       ],
       "env": {
         "SYSTEMTOOL": "true",
-        "TEMPLATECONNECTOR_API_ALLOW_PLAINTEXT": "false"
+        "IMMICH_API_ALLOW_PLAINTEXT": "false"
       }
     }
   }

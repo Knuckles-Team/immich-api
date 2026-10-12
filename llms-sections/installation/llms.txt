@@ -1,11 +1,11 @@
-# templateconnector-api — Installation
+# immich-api — Installation
 
 > Current documentation index generated from the exact MkDocs navigation.
 > Capability and content-use claims are operator-scoped and provenance-bound.
 
 ## Installation
 
-- [Installation](https://knuckles-team.github.io/templateconnector-api/installation/) — templateconnector-api is a standard Python package and a prebuilt container image.
+- [Installation](https://knuckles-team.github.io/immich-api/installation/) — immich-api is a standard Python package and a prebuilt container image.
 
 ## Standards maturity
 

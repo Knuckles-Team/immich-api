@@ -6,7 +6,7 @@ __pycache__/
 .env
 scripts/
 tests/
-templateconnector_api.egg-info*
+immich_api.egg-info*
 models/
 .github/
 build/

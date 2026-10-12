@@ -1,11 +1,11 @@
-# templateconnector-api — Spec delivery
+# immich-api — Spec delivery
 
 > Current documentation index generated from the exact MkDocs navigation.
 > Capability and content-use claims are operator-scoped and provenance-bound.
 
 ## Spec delivery
 
-- [Spec delivery](https://knuckles-team.github.io/templateconnector-api/spec-delivery/) — Open the published delivery dashboard.
+- [Spec delivery](https://knuckles-team.github.io/immich-api/spec-delivery/) — Open the published delivery dashboard.
 
 ## Standards maturity
 

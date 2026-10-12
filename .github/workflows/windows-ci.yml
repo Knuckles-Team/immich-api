@@ -14,7 +14,7 @@ name: Cross-platform coverage
 on:
   pull_request:
     paths:
-      - 'templateconnector_api/**'
+      - 'immich_api/**'
       - 'scripts/**'
       - 'tests/**'
       - 'pyproject.toml'

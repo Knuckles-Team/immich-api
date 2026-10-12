@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from templateconnector_api.error_authority import (
+from immich_api.error_authority import (
     BROWSER_HTML_MEDIA_TYPE,
     MAX_DETAIL_CHARS,
     PROBLEM_JSON_MEDIA_TYPE,
@@ -12,7 +12,7 @@ from templateconnector_api.error_authority import (
 )
 
 
-@pytest.mark.concept("TEMPLATECONNECTOR-001")
+@pytest.mark.concept("IMMICH-001")
 def test_agent_representations_share_metadata():
     problem = ProblemDetails(
         status=503,

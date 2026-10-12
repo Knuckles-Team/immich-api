@@ -1,6 +1,6 @@
 {
   "schema_version": "agent-readiness/v1",
-  "project": {"name": "templateconnector-api", "kind": "package"},
+  "project": {"name": "immich-api", "kind": "package"},
   "applicability": {
     "content": true,
     "discoverability": true,
@@ -26,6 +26,6 @@
     "api": {"applicable": true, "artifact": "docs/capabilities/api.json"},
     "mcp": {"applicable": true, "artifact": "docs/capabilities/mcp.json"},
     "a2a": {"applicable": false},
-    "skills": {"applicable": true, "path": "templateconnector_api/skills"}
+    "skills": {"applicable": true, "path": "immich_api/skills"}
   }
 }

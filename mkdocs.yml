@@ -1,9 +1,9 @@
 INHERIT: .pipeline-theme/templates/mkdocs-theme/base.mkdocs.yml
-site_name: "templateconnector-api"
-site_description: "Templateconnector Api API + MCP Server"
-site_url: "https://knuckles-team.github.io/templateconnector-api/"
-repo_name: "Knuckles-Team/templateconnector-api"
-repo_url: "https://github.com/Knuckles-Team/templateconnector-api"
+site_name: "immich-api"
+site_description: "Immich Api API + MCP Server"
+site_url: "https://knuckles-team.github.io/immich-api/"
+repo_name: "Knuckles-Team/immich-api"
+repo_url: "https://github.com/Knuckles-Team/immich-api"
 edit_uri: "edit/main/docs/"
 copyright: "Copyright &copy; Knuckles-Team — MIT licensed"
 
@@ -12,7 +12,7 @@ plugins:
 
 extra:
   ecosystem:
-    current: "templateconnector-api"
+    current: "immich-api"
 
 nav:
   - Home: index.md
@@ -21,7 +21,7 @@ nav:
   - Installation: installation.md
   - Deployment: deployment.md
   - Usage (API / CLI / MCP): usage.md
-  - Backing Platform (Templateconnector Api): platform.md
+  - Backing Platform (Immich Api): platform.md
   - Concepts: concepts.md
   - Glossary: glossary.md
   - Spec delivery: spec-delivery.md

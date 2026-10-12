@@ -1,11 +1,11 @@
-# templateconnector-api — Home
+# immich-api — Home
 
 > Current documentation index generated from the exact MkDocs navigation.
 > Capability and content-use claims are operator-scoped and provenance-bound.
 
 ## Home
 
-- [Home](https://knuckles-team.github.io/templateconnector-api/) — Templateconnector Api API + MCP Server using the connector SDK — a typed, action-routed connector.
+- [Home](https://knuckles-team.github.io/immich-api/) — Immich Api API + MCP Server using the connector SDK — a typed, action-routed connector.
 
 ## Standards maturity
 

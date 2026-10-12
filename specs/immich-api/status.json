@@ -1,0 +1,50 @@
+{
+  "schema_version": 2,
+  "spec_id": "CONN-IMMICH-API",
+  "owner_repo": "immich-api",
+  "delivery_state": "SPECIFIED",
+  "requirement_ids": [
+    "CONN-IMMICH-API-R001",
+    "CONN-IMMICH-API-R002",
+    "CONN-IMMICH-API-R003",
+    "CONN-IMMICH-API-R004",
+    "CONN-IMMICH-API-R005"
+  ],
+  "requirements": [
+    {
+      "id": "CONN-IMMICH-API-R001",
+      "title": "Credential references",
+      "delivery_state": "SPECIFIED",
+      "landed_in": [],
+      "verified_by": []
+    },
+    {
+      "id": "CONN-IMMICH-API-R002",
+      "title": "Bounded API requests",
+      "delivery_state": "SPECIFIED",
+      "landed_in": [],
+      "verified_by": []
+    },
+    {
+      "id": "CONN-IMMICH-API-R003",
+      "title": "MCP registration",
+      "delivery_state": "SPECIFIED",
+      "landed_in": [],
+      "verified_by": []
+    },
+    {
+      "id": "CONN-IMMICH-API-R004",
+      "title": "Native content contracts",
+      "delivery_state": "SPECIFIED",
+      "landed_in": [],
+      "verified_by": []
+    },
+    {
+      "id": "CONN-IMMICH-API-R005",
+      "title": "Typed source observations",
+      "delivery_state": "SPECIFIED",
+      "landed_in": [],
+      "verified_by": []
+    }
+  ]
+}

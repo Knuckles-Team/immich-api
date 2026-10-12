@@ -1,33 +1,40 @@
-# Templateconnector Api
+> **Work in progress — scaffold only; not released or deployed.**
+>
+> This repository was created from the reviewed canonical MCP connector template.
+> The OpenAPI pilot, tested auth follow-up and acceptance evidence are preserved
+> in its open implementation pull request. Production packaging, fleet deployment
+> and bounded authenticated capture are pending. No package release is claimed.
 
-![GitHub Repo stars](https://img.shields.io/github/stars/Knuckles-Team/templateconnector-api)
-![GitHub forks](https://img.shields.io/github/forks/Knuckles-Team/templateconnector-api)
-![GitHub contributors](https://img.shields.io/github/contributors/Knuckles-Team/templateconnector-api)
-![GitHub license](https://img.shields.io/github/license/Knuckles-Team/templateconnector-api)
-![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/Knuckles-Team/templateconnector-api)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/Knuckles-Team/templateconnector-api)
-![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/Knuckles-Team/templateconnector-api)
-![GitHub issues](https://img.shields.io/github/issues/Knuckles-Team/templateconnector-api)
-![GitHub top language](https://img.shields.io/github/languages/top/Knuckles-Team/templateconnector-api)
-![GitHub language count](https://img.shields.io/github/languages/count/Knuckles-Team/templateconnector-api)
-![GitHub repo size](https://img.shields.io/github/repo-size/Knuckles-Team/templateconnector-api)
-![GitHub repo file count (file type)](https://img.shields.io/github/directory-file-count/Knuckles-Team/templateconnector-api)
-![PyPI - Version](https://img.shields.io/pypi/v/templateconnector-api)
-![PyPI - Downloads](https://img.shields.io/pypi/dd/templateconnector-api)
-![PyPI - License](https://img.shields.io/pypi/l/templateconnector-api)
-![PyPI - Wheel](https://img.shields.io/pypi/wheel/templateconnector-api)
-![PyPI - Implementation](https://img.shields.io/pypi/implementation/templateconnector-api)
+# Immich Api
+
+![GitHub Repo stars](https://img.shields.io/github/stars/Knuckles-Team/immich-api)
+![GitHub forks](https://img.shields.io/github/forks/Knuckles-Team/immich-api)
+![GitHub contributors](https://img.shields.io/github/contributors/Knuckles-Team/immich-api)
+![GitHub license](https://img.shields.io/github/license/Knuckles-Team/immich-api)
+![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/Knuckles-Team/immich-api)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/Knuckles-Team/immich-api)
+![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/Knuckles-Team/immich-api)
+![GitHub issues](https://img.shields.io/github/issues/Knuckles-Team/immich-api)
+![GitHub top language](https://img.shields.io/github/languages/top/Knuckles-Team/immich-api)
+![GitHub language count](https://img.shields.io/github/languages/count/Knuckles-Team/immich-api)
+![GitHub repo size](https://img.shields.io/github/repo-size/Knuckles-Team/immich-api)
+![GitHub repo file count (file type)](https://img.shields.io/github/directory-file-count/Knuckles-Team/immich-api)
+![PyPI - Version](https://img.shields.io/pypi/v/immich-api)
+![PyPI - Downloads](https://img.shields.io/pypi/dd/immich-api)
+![PyPI - License](https://img.shields.io/pypi/l/immich-api)
+![PyPI - Wheel](https://img.shields.io/pypi/wheel/immich-api)
+![PyPI - Implementation](https://img.shields.io/pypi/implementation/immich-api)
 ![MCP Server](https://badge.mcpx.dev?type=server 'MCP Server')
 
-Templateconnector Api API + MCP Server
+Immich Api API + MCP Server
 
-The [documentation site](https://knuckles-team.github.io/templateconnector-api/) contains the
+The [documentation site](https://knuckles-team.github.io/immich-api/) contains the
 full API, deployment, security, and operational reference. This README is the concise
 entry point for installation and the supported runtime surfaces.
 
 ## Overview
 
-`templateconnector-api` is a typed provider package for the agent ecosystem. It combines a
+`immich-api` is a typed provider package for the agent ecosystem. It combines a
 small Python client with a governed MCP entry point. Configuration uses runtime credential references; resolved credentials and
 private endpoints are never committed.
 
@@ -47,20 +54,20 @@ private endpoints are never committed.
 Install the package and run its generated entry points:
 
 ```bash
-python -m pip install "templateconnector-api[mcp]"
-templateconnector-mcp
+python -m pip install "immich-api[mcp]"
+immich-mcp
 ```
 
 For an on-demand run, use `uvx`:
 
 ```bash
-uvx --from "templateconnector-api[mcp]" templateconnector-mcp
+uvx --from "immich-api[mcp]" immich-mcp
 ```
 
 The networked server binds to loopback by default:
 
 ```bash
-templateconnector-mcp --transport streamable-http --host 127.0.0.1 --port 8000
+immich-mcp --transport streamable-http --host 127.0.0.1 --port 8000
 ```
 
 ## Architecture
@@ -88,8 +95,8 @@ resolved values in client configuration.
 ```json
 {
   "mcpServers": {
-    "templateconnector-mcp": {
-      "command": "templateconnector-mcp",
+    "immich-mcp": {
+      "command": "immich-mcp",
       "args": [],
       "env": {"SYSTEMTOOL": "true"}
     }
@@ -106,8 +113,8 @@ it is documentation-only and is never contacted by the generator.
 ```json
 {
   "mcpServers": {
-    "templateconnector-mcp": {
-      "command": "templateconnector-mcp",
+    "immich-mcp": {
+      "command": "immich-mcp",
       "args": ["--transport", "streamable-http", "--port", "8000"],
       "env": {
         "TRANSPORT": "streamable-http",
@@ -125,16 +132,16 @@ it is documentation-only and is never contacted by the generator.
 Container builds use immutable, least-privilege runtime stages:
 
 ```bash
-docker build --target mcp -t templateconnector-api:mcp-local docker/
+docker build --target mcp -t immich-api:mcp-local docker/
 ```
 
-Deploy reviewed images by digest (`templateconnector-api@sha256:<digest>`) and include
-`--cap-drop=ALL` in the runtime policy. The [deployment guide](https://knuckles-team.github.io/templateconnector-api/deployment/)
+Deploy reviewed images by digest (`immich-api@sha256:<digest>`) and include
+`--cap-drop=ALL` in the runtime policy. The [deployment guide](https://knuckles-team.github.io/immich-api/deployment/)
 contains the complete transport and container examples.
 
 ## Documentation
 
-Use the [Pages documentation](https://knuckles-team.github.io/templateconnector-api/) for
+Use the [Pages documentation](https://knuckles-team.github.io/immich-api/) for
 installation details, API capabilities, deployment profiles, platform integration,
 and the concept registry. The concise local references remain available at:
 

@@ -60,7 +60,7 @@ repos:
   hooks:
   - id: connector-sdk-contract
     name: SDK connector dependency and import contract
-    entry: python scripts/check_connector_contract.py . --package templateconnector_api
+    entry: python scripts/check_connector_contract.py . --package immich_api
     language: system
     pass_filenames: false
     always_run: true

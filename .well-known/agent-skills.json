@@ -3,8 +3,8 @@
   "skills": [
     {
       "description": ">-",
-      "name": "templateconnector-starter",
-      "path": "templateconnector_api/skills/templateconnector-starter/SKILL.md"
+      "name": "immich-starter",
+      "path": "immich_api/skills/immich-starter/SKILL.md"
     }
   ]
 }

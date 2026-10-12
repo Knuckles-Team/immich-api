@@ -1,11 +1,11 @@
-# templateconnector-api — Architecture
+# immich-api — Architecture
 
 > Current documentation index generated from the exact MkDocs navigation.
 > Capability and content-use claims are operator-scoped and provenance-bound.
 
 ## Architecture
 
-- [Architecture](https://knuckles-team.github.io/templateconnector-api/architecture/) — The templateconnector-api package owns external-system operations and source mappings. The shared connector SDK owns reusable runtime contracts.
+- [Architecture](https://knuckles-team.github.io/immich-api/architecture/) — The immich-api package owns external-system operations and source mappings. The shared connector SDK owns reusable runtime contracts.
 
 ## Standards maturity
 

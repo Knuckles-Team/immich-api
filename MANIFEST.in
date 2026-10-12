@@ -16,4 +16,4 @@ graft docker
 include mkdocs.yml pytest.ini .bumpversion.cfg
 include .config/spec-dashboard.json
 global-exclude __pycache__ *.py[cod]
-recursive-include templateconnector_api *.py *.json *.md *.yaml *.yml
+recursive-include immich_api *.py *.json *.md *.yaml *.yml

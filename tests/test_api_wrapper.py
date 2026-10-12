@@ -7,8 +7,8 @@ from agent_connector_sdk.auth.static import bearer_auth
 from agent_connector_sdk.tls.errors import TransportSecurityError
 from agent_connector_sdk.tls.resolve import resolve_tls_profile
 
-from templateconnector_api.api import ApiClientBase
-from templateconnector_api.api import api_client_base
+from immich_api.api import ApiClientBase
+from immich_api.api import api_client_base
 
 
 @pytest.fixture
@@ -31,7 +31,7 @@ def client_factory(monkeypatch):
         client.close()
 
 
-@pytest.mark.concept("TEMPLATECONNECTOR-001")
+@pytest.mark.concept("IMMICH-001")
 def test_request_returns_json_and_uses_sdk_auth(client_factory):
     def respond(request):
         assert request.url == httpx.URL("https://service.example.invalid/health")
@@ -124,8 +124,8 @@ def test_plaintext_opt_in_does_not_downgrade_https(client_factory):
 
 def test_tls_cannot_disable_verification():
     with pytest.raises(TransportSecurityError):
-        resolve_tls_profile("templateconnector", profile={"verify": False})
-    profile = resolve_tls_profile("templateconnector", profile={"trust_env": False})
+        resolve_tls_profile("immich", profile={"verify": False})
+    profile = resolve_tls_profile("immich", profile={"trust_env": False})
     try:
         assert profile.ssl_context.verify_mode == ssl.CERT_REQUIRED
         assert profile.ssl_context.check_hostname

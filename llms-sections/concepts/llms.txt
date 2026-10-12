@@ -1,11 +1,11 @@
-# templateconnector-api — Concepts
+# immich-api — Concepts
 
 > Current documentation index generated from the exact MkDocs navigation.
 > Capability and content-use claims are operator-scoped and provenance-bound.
 
 ## Concepts
 
-- [Concepts](https://knuckles-team.github.io/templateconnector-api/concepts/) — > Prefix: CONCEPT:TEMPLATECONNECTOR- > Version: 0.1.0 > Bridge: CONCEPT:ECO-4.0 (Unified Toolkit Ingestion)
+- [Concepts](https://knuckles-team.github.io/immich-api/concepts/) — > Prefix: CONCEPT:IMMICH- > Version: 0.1.0 > Bridge: CONCEPT:ECO-4.0 (Unified Toolkit Ingestion)
 
 ## Standards maturity
 

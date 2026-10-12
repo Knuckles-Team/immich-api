@@ -26,11 +26,11 @@ try:
         COMPATIBILITY_FINGERPRINT_ALGORITHM,
         canonical_input_schema, canonical_output_schema,
     )
-    from templateconnector_api.mcp_server import build_server
+    from immich_api.mcp_server import build_server
 except ImportError as exc:
     raise SystemExit("Install this project's declared dependencies before generating schemas") from exc
 
-PACKAGE = ROOT / "templateconnector_api"
+PACKAGE = ROOT / "immich_api"
 
 
 def _write_or_check(path: Path, value: dict, check: bool) -> None:
@@ -61,7 +61,7 @@ async def generate(check: bool) -> None:
         "algorithm": COMPATIBILITY_FINGERPRINT_ALGORITHM, "tools": contracts,
     }, check)
     _write_or_check(PACKAGE / "connectors/tool_schema_fingerprints.json", {
-        "connector": "templateconnector-api", "algorithm": COMPATIBILITY_FINGERPRINT_ALGORITHM,
+        "connector": "immich-api", "algorithm": COMPATIBILITY_FINGERPRINT_ALGORITHM,
         "tools": pinned,
     }, check)
     require_valid_connector_package(PACKAGE)

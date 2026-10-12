@@ -1,5 +1,0 @@
-{
-  "connector": "templateconnector-api",
-  "algorithm": "agent-connector-sdk:mcp-tool-contract-compat:v2",
-  "tools": {}
-}

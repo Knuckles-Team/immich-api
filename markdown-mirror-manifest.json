@@ -2,84 +2,84 @@
   "applicable": true,
   "entries": [
     {
-      "bytes": 1706,
-      "canonical_url": "https://knuckles-team.github.io/templateconnector-api/",
-      "markdown_url": "https://knuckles-team.github.io/templateconnector-api/index.md",
-      "sha256": "0e3f220ce29fb1bf4bc8297b0bdf1003a31d9eeedd77150ceda94995764e34a2",
+      "bytes": 1585,
+      "canonical_url": "https://knuckles-team.github.io/immich-api/",
+      "markdown_url": "https://knuckles-team.github.io/immich-api/index.md",
+      "sha256": "2e72b28589c2e47ddb9259b69acb913532725f3716d095fdf99b6ff43ec0b762",
       "source": "docs/index.md",
-      "url": "https://knuckles-team.github.io/templateconnector-api/"
+      "url": "https://knuckles-team.github.io/immich-api/"
     },
     {
-      "bytes": 1017,
-      "canonical_url": "https://knuckles-team.github.io/templateconnector-api/overview/",
-      "markdown_url": "https://knuckles-team.github.io/templateconnector-api/overview/index.md",
-      "sha256": "5752ef917a6940a04148aace0a4826e04d4c0f376ee0f89fcdfb39168a14af16",
+      "bytes": 995,
+      "canonical_url": "https://knuckles-team.github.io/immich-api/overview/",
+      "markdown_url": "https://knuckles-team.github.io/immich-api/overview/index.md",
+      "sha256": "e9a0b4a3f51ab26928eb1a4994bbeb30bf4af78b53017064bad3804751a779bf",
       "source": "docs/overview.md",
-      "url": "https://knuckles-team.github.io/templateconnector-api/overview/"
+      "url": "https://knuckles-team.github.io/immich-api/overview/"
     },
     {
-      "bytes": 2009,
-      "canonical_url": "https://knuckles-team.github.io/templateconnector-api/architecture/",
-      "markdown_url": "https://knuckles-team.github.io/templateconnector-api/architecture/index.md",
-      "sha256": "369d465bd09d7a3c3e986231a6c573440dfde7975f8501beb4915f518ec58727",
+      "bytes": 1899,
+      "canonical_url": "https://knuckles-team.github.io/immich-api/architecture/",
+      "markdown_url": "https://knuckles-team.github.io/immich-api/architecture/index.md",
+      "sha256": "aa0ac59f821c03c955ebeb02de36669a016b208064779ba10e0ad090b4db1be4",
       "source": "docs/architecture.md",
-      "url": "https://knuckles-team.github.io/templateconnector-api/architecture/"
+      "url": "https://knuckles-team.github.io/immich-api/architecture/"
     },
     {
-      "bytes": 807,
-      "canonical_url": "https://knuckles-team.github.io/templateconnector-api/installation/",
-      "markdown_url": "https://knuckles-team.github.io/templateconnector-api/installation/index.md",
-      "sha256": "e140f53f6732c76e966fe149d7e1481e29091dcad694dceaea26ff73bc6018ef",
+      "bytes": 730,
+      "canonical_url": "https://knuckles-team.github.io/immich-api/installation/",
+      "markdown_url": "https://knuckles-team.github.io/immich-api/installation/index.md",
+      "sha256": "4fee4183dcd562219371b050c4cff5863dcad4b7394562a846a59ad8ce5c5d84",
       "source": "docs/installation.md",
-      "url": "https://knuckles-team.github.io/templateconnector-api/installation/"
+      "url": "https://knuckles-team.github.io/immich-api/installation/"
     },
     {
-      "bytes": 2960,
-      "canonical_url": "https://knuckles-team.github.io/templateconnector-api/deployment/",
-      "markdown_url": "https://knuckles-team.github.io/templateconnector-api/deployment/index.md",
-      "sha256": "5a1a06ff4fc4d1ff9350efe1af7d00f6af5bde0fdc725028d2f33dc0dfcaba8f",
+      "bytes": 2828,
+      "canonical_url": "https://knuckles-team.github.io/immich-api/deployment/",
+      "markdown_url": "https://knuckles-team.github.io/immich-api/deployment/index.md",
+      "sha256": "b9d0f0b4b90c353aecee26be4c5afede0fea3ace3c154d1fae361f23d4f33b25",
       "source": "docs/deployment.md",
-      "url": "https://knuckles-team.github.io/templateconnector-api/deployment/"
+      "url": "https://knuckles-team.github.io/immich-api/deployment/"
     },
     {
-      "bytes": 1442,
-      "canonical_url": "https://knuckles-team.github.io/templateconnector-api/usage/",
-      "markdown_url": "https://knuckles-team.github.io/templateconnector-api/usage/index.md",
-      "sha256": "1e6cc4dd473831afcd1029bc426726c09b0294d35faa183dfbc01f25c67848cf",
+      "bytes": 1365,
+      "canonical_url": "https://knuckles-team.github.io/immich-api/usage/",
+      "markdown_url": "https://knuckles-team.github.io/immich-api/usage/index.md",
+      "sha256": "a407d1b64ff213082a93afb4443cc0f73a4b2fac7f61d2baa5fe40ad8a491a05",
       "source": "docs/usage.md",
-      "url": "https://knuckles-team.github.io/templateconnector-api/usage/"
+      "url": "https://knuckles-team.github.io/immich-api/usage/"
     },
     {
-      "bytes": 733,
-      "canonical_url": "https://knuckles-team.github.io/templateconnector-api/platform/",
-      "markdown_url": "https://knuckles-team.github.io/templateconnector-api/platform/index.md",
-      "sha256": "75c51d8aa8244beb7d27ebd7157ffbd1fa2837ac98b20686a23e1822cbe66b39",
+      "bytes": 711,
+      "canonical_url": "https://knuckles-team.github.io/immich-api/platform/",
+      "markdown_url": "https://knuckles-team.github.io/immich-api/platform/index.md",
+      "sha256": "c46a8b27f13b9d05292e45f461fb2e9a0fe3df77d3b872f05aeae7a567058dd4",
       "source": "docs/platform.md",
-      "url": "https://knuckles-team.github.io/templateconnector-api/platform/"
+      "url": "https://knuckles-team.github.io/immich-api/platform/"
     },
     {
-      "bytes": 801,
-      "canonical_url": "https://knuckles-team.github.io/templateconnector-api/concepts/",
-      "markdown_url": "https://knuckles-team.github.io/templateconnector-api/concepts/index.md",
-      "sha256": "d20b403652c2d7bd0239e470a35c3297b2e2b4cc74291afd946ee0008cc44513",
+      "bytes": 768,
+      "canonical_url": "https://knuckles-team.github.io/immich-api/concepts/",
+      "markdown_url": "https://knuckles-team.github.io/immich-api/concepts/index.md",
+      "sha256": "09c655b98b6a410d43c4772d05403f8dab6bb14eb3577774e86c94ff0974a460",
       "source": "docs/concepts.md",
-      "url": "https://knuckles-team.github.io/templateconnector-api/concepts/"
+      "url": "https://knuckles-team.github.io/immich-api/concepts/"
     },
     {
       "bytes": 1643,
-      "canonical_url": "https://knuckles-team.github.io/templateconnector-api/glossary/",
-      "markdown_url": "https://knuckles-team.github.io/templateconnector-api/glossary/index.md",
+      "canonical_url": "https://knuckles-team.github.io/immich-api/glossary/",
+      "markdown_url": "https://knuckles-team.github.io/immich-api/glossary/index.md",
       "sha256": "0c01322fff633a1d420fa3b0f4ee246124802f6b33bb0d4827b5d12fb9b56e09",
       "source": "docs/glossary.md",
-      "url": "https://knuckles-team.github.io/templateconnector-api/glossary/"
+      "url": "https://knuckles-team.github.io/immich-api/glossary/"
     },
     {
-      "bytes": 1146,
-      "canonical_url": "https://knuckles-team.github.io/templateconnector-api/spec-delivery/",
-      "markdown_url": "https://knuckles-team.github.io/templateconnector-api/spec-delivery/index.md",
-      "sha256": "df9accaec45a586a3d8f6d71660c4e19c203c800c19c5bf03f96dbda300aadc2",
+      "bytes": 1124,
+      "canonical_url": "https://knuckles-team.github.io/immich-api/spec-delivery/",
+      "markdown_url": "https://knuckles-team.github.io/immich-api/spec-delivery/index.md",
+      "sha256": "a3af1d55808fa4da82bede758ce1bbfb31ddb40721c6e656eb438818e3d3fadb",
       "source": "docs/spec-delivery.md",
-      "url": "https://knuckles-team.github.io/templateconnector-api/spec-delivery/"
+      "url": "https://knuckles-team.github.io/immich-api/spec-delivery/"
     }
   ],
   "schema_version": "agent-readiness/v1",

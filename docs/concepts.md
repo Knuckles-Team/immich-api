@@ -1,6 +1,6 @@
-# Concept Registry — templateconnector-api
+# Concept Registry — immich-api
 
-> **Prefix**: `CONCEPT:TEMPLATECONNECTOR-*`
+> **Prefix**: `CONCEPT:IMMICH-*`
 > **Version**: 0.1.0
 > **Bridge**: [`CONCEPT:ECO-4.0`](https://github.com/Knuckles-Team/agent-utilities/blob/main/docs/concepts.md) (Unified Toolkit Ingestion)
 
@@ -10,7 +10,7 @@
 
 | Concept ID | Name | Description |
 |------------|------|-------------|
-| `CONCEPT:TEMPLATECONNECTOR-001` | System Operations | MCP tool domain `system` — Action-routed dynamic tool registration |
+| `CONCEPT:IMMICH-001` | System Operations | MCP tool domain `system` — Action-routed dynamic tool registration |
 
 ## Cross-Project References (from agent-utilities)
 

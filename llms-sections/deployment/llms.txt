@@ -1,11 +1,11 @@
-# templateconnector-api — Deployment
+# immich-api — Deployment
 
 > Current documentation index generated from the exact MkDocs navigation.
 > Capability and content-use claims are operator-scoped and provenance-bound.
 
 ## Deployment
 
-- [Deployment](https://knuckles-team.github.io/templateconnector-api/deployment/) — This page covers running templateconnector-api as long-lived servers.
+- [Deployment](https://knuckles-team.github.io/immich-api/deployment/) — This page covers running immich-api as long-lived servers.
 
 ## Standards maturity
 

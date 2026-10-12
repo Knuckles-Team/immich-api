@@ -4,7 +4,7 @@ from types import SimpleNamespace
 
 import pytest
 
-from templateconnector_api import kg_ingest
+from immich_api import kg_ingest
 
 
 class FakeIngest:

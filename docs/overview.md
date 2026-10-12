@@ -1,11 +1,11 @@
-# templateconnector-api — Concept Overview
+# immich-api — Concept Overview
 
 > **Category**: Integration | **Ecosystem Role**: MCP Server
 > Built on [`agent-connector-sdk`](https://github.com/Knuckles-Team/agent-connector-sdk).
 
 ## Description
 
-Templateconnector Api API + MCP Server
+Immich Api API + MCP Server
 
 ## Architecture
 

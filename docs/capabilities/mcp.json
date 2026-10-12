@@ -1,1 +1,1 @@
-{"applicable": true, "surface": "mcp", "version": "capability/v1", "http_transport": true, "source": "templateconnector_api/mcp_server.py"}
+{"applicable": true, "surface": "mcp", "version": "capability/v1", "http_transport": true, "source": "immich_api/mcp_server.py"}

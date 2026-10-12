@@ -1,0 +1,47 @@
+{
+  "connector": "immich-api",
+  "ontology_source": "immich",
+  "schema_version": "1",
+  "resources": [
+    {
+      "name": "ImmichResource"
+    },
+    {
+      "name": "Document"
+    },
+    {
+      "name": "MediaAsset"
+    }
+  ],
+  "identity": {
+    "id_field": {
+      "ImmichResource": "id"
+    },
+    "title_field": {
+      "ImmichResource": "name"
+    }
+  },
+  "schema_mappings": {
+    "ImmichResource": {
+      "fields": {
+        "name": "xsd:string"
+      }
+    }
+  },
+  "sync": [],
+  "provenance": {
+    "generated_by": "mcp-builder/scripts/scaffold_package.py",
+    "source_artifacts": [
+      "ontology/immich.ttl"
+    ],
+    "integrity": {
+      "algorithm": "sha256",
+      "hash": "5d5526fc8583b9233959d7ac6f220bdd74d879d6a5d99dbc22ebe4cd0cd10502"
+    }
+  },
+  "review_todos": [
+    "Replace the starter resource mapping with the reviewed source model.",
+    "Declare real source presets and matching sync entries before certification.",
+    "Integrity is an ontology byte hash, not canonical RDF or release certification."
+  ]
+}

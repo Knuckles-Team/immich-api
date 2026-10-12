@@ -1,6 +1,6 @@
-# Backing Platform — Templateconnector Api
+# Backing Platform — Immich Api
 
-`templateconnector-api` is a **client** of a backing service instance. This page provides a
+`immich-api` is a **client** of a backing service instance. This page provides a
 Docker recipe for deploying one locally as an operator-selected provider endpoint.
 
 !!! note "Backing-system recipe"

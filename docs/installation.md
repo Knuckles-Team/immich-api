@@ -1,6 +1,6 @@
 # Installation
 
-`templateconnector-api` is a standard Python package and a prebuilt container image.
+`immich-api` is a standard Python package and a prebuilt container image.
 
 ## Requirements
 
@@ -10,27 +10,27 @@
 ## From PyPI (recommended)
 
 ```bash
-pip install templateconnector-api
+pip install immich-api
 ```
 
 ### Optional extras
 
 | Extra | Install | Pulls in |
 |---|---|---|
-| `mcp` | `pip install "templateconnector-api[mcp]"` | MCP runtime + SDK graph client |
-| `all` | `pip install "templateconnector-api[all]"` | Everything above |
+| `mcp` | `pip install "immich-api[mcp]"` | MCP runtime + SDK graph client |
+| `all` | `pip install "immich-api[all]"` | Everything above |
 
 ## From source
 
 ```bash
-git clone https://github.com/Knuckles-Team/templateconnector-api.git
-cd templateconnector-api
+git clone https://github.com/Knuckles-Team/immich-api.git
+cd immich-api
 pip install -e ".[mcp]"
 ```
 
 ## Docker
 
 ```bash
-IMAGE_REF='<registry>/templateconnector-api@sha256:<digest>'
+IMAGE_REF='<registry>/immich-api@sha256:<digest>'
 docker pull "$IMAGE_REF"
 ```

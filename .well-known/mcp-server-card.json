@@ -2,7 +2,7 @@
   "experimental": true,
   "schema_version": "mcp-server-card/v1-experimental",
   "server": {
-    "name": "templateconnector-api"
+    "name": "immich-api"
   },
   "source": "docs/capabilities/mcp.json",
   "transports": [
