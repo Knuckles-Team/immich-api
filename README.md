@@ -1,9 +1,16 @@
-> **Work in progress — scaffold only; not released or deployed.**
+> **Work in progress — not released or deployment-ready.**
 >
-> This repository was created from the reviewed canonical MCP connector template.
-> The OpenAPI pilot, tested auth follow-up and acceptance evidence are preserved
-> in its open implementation pull request. Production packaging, fleet deployment
-> and bounded authenticated capture are pending. No package release is claimed.
+> This pilot converts the Immich 3.2.2 OpenAPI contract into 41 domain tools
+> covering 276 declared operations. The canonical scaffold and publication
+> bootstrap are reviewed; the auth adapter follow-up remains under integration.
+> An isolated 13-case auth run passed, including the six unchanged canonical
+> auth cases. Final-source full tests, packaging and deployment remain pending.
+> Earlier converted-source tests had six auth-interface failures and one cold
+> import timeout; do not treat the isolated follow-up result as a full-suite pass.
+> Read-only SDK validation captured 41 tools, 3 prompts, 5 resources and 47
+> content-pack entries. Only public ping/version were called live, using
+> verified HTTPS and explicit HTTP opt-in. Writes remain disabled by default.
+> Provider endpoints and credentials are supplied privately at runtime.
 
 # Immich Api
 

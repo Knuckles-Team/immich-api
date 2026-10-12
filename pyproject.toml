@@ -10,6 +10,8 @@ readme = "README.md"
 classifiers = [ "Development Status :: 4 - Beta", "License :: OSI Approved :: MIT License", "Environment :: Console", "Operating System :: POSIX :: Linux", "Programming Language :: Python :: 3",]
 requires-python = ">=3.12, <3.15"
 dependencies = [
+    "jsonschema>=4.23,<5",
+    "regex>=2026.9.29",
     "agent-connector-sdk>=0.1.0,<1",
 ]
 [[project.authors]]
@@ -78,7 +80,7 @@ dev = [
 ]
 
 [tool.setuptools.package-data]
-immich_api = [ "mcp_config.json", "prompts/**", "skills/**", "ontology/**", "connectors/**", "connector_manifest.yml",]
+immich_api = [ "openapi_contract.json", "mcp_config.json", "prompts/**", "skills/**", "ontology/**", "connectors/**", "connector_manifest.yml",]
 
 [tool.ruff.lint]
 select = [ "E", "F", "I", "UP", "B",]
