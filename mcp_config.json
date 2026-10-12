@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "templateconnector-api": {
+      "command": "uv",
+      "args": [
+        "run",
+        "templateconnector-mcp"
+      ],
+      "env": {
+        "SYSTEMTOOL": "true",
+        "TEMPLATECONNECTOR_API_ALLOW_PLAINTEXT": "false"
+      }
+    }
+  }
+}

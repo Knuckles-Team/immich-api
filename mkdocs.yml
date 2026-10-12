@@ -1,0 +1,27 @@
+INHERIT: .pipeline-theme/templates/mkdocs-theme/base.mkdocs.yml
+site_name: "templateconnector-api"
+site_description: "Templateconnector Api API + MCP Server"
+site_url: "https://knuckles-team.github.io/templateconnector-api/"
+repo_name: "Knuckles-Team/templateconnector-api"
+repo_url: "https://github.com/Knuckles-Team/templateconnector-api"
+edit_uri: "edit/main/docs/"
+copyright: "Copyright &copy; Knuckles-Team — MIT licensed"
+
+plugins:
+  - search
+
+extra:
+  ecosystem:
+    current: "templateconnector-api"
+
+nav:
+  - Home: index.md
+  - Overview: overview.md
+  - Architecture: architecture.md
+  - Installation: installation.md
+  - Deployment: deployment.md
+  - Usage (API / CLI / MCP): usage.md
+  - Backing Platform (Templateconnector Api): platform.md
+  - Concepts: concepts.md
+  - Glossary: glossary.md
+  - Spec delivery: spec-delivery.md

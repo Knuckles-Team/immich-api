@@ -1,0 +1,31 @@
+name: Connector quality
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    # Use an approved runner with this project's Python test environment,
+    # pre-commit and the pinned pipeline scanner toolchain already provisioned.
+    # Missing tooling fails the checks; this workflow never builds scanners.
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Validate hooks
+        run: python -m pre_commit validate-config
+      - name: Commit checks
+        run: python -m pre_commit run --all-files --show-diff-on-failure
+      - name: Push checks and generated connector tests
+        env:
+          PRE_COMMIT_FROM_REF: ${{ github.event.pull_request.base.sha || github.event.before }}
+          PRE_COMMIT_TO_REF: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: python -m pre_commit run --all-files --hook-stage pre-push --show-diff-on-failure

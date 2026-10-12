@@ -1,0 +1,10 @@
+{
+  "schema_version": "agent-skills/v1",
+  "skills": [
+    {
+      "description": ">-",
+      "name": "templateconnector-starter",
+      "path": "templateconnector_api/skills/templateconnector-starter/SKILL.md"
+    }
+  ]
+}

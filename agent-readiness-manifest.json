@@ -1,0 +1,171 @@
+{
+  "applicability": {
+    "access_policy": true,
+    "capabilities": true,
+    "content": true,
+    "deployment": false,
+    "discoverability": true,
+    "errors": true,
+    "measurement": false,
+    "provenance": true
+  },
+  "budgets": {
+    "curated_chars": 24000,
+    "full_chars": 0,
+    "full_effective_chars": 0,
+    "full_requested": false,
+    "summary_chars": 800
+  },
+  "capabilities": {
+    "a2a": {
+      "applicable": false
+    },
+    "api": {
+      "applicable": true,
+      "artifact": "docs/capabilities/api.json"
+    },
+    "mcp": {
+      "applicable": true,
+      "artifact": "docs/capabilities/mcp.json"
+    },
+    "skills": {
+      "applicable": true,
+      "path": "templateconnector_api/skills"
+    }
+  },
+  "capability_evidence": {
+    "api": {
+      "artifact": "docs/capabilities/api.json",
+      "artifact_sha256": "eecff1a29a1a594e3260eeb81c0a2d5df0b37375744509015bdf25a6bfb614d2",
+      "source": "templateconnector_api/api/__init__.py",
+      "source_sha256": "163db5f8c42a0ba745518a06a434a7e2c9367c07fc8475203dc5b49a8b6b8e88"
+    },
+    "mcp": {
+      "artifact": "docs/capabilities/mcp.json",
+      "artifact_sha256": "bb3866b7c93d9c68ec283ca1f6565f46658f9306913314a538d76c31e468d006",
+      "http_transport": "true",
+      "source": "templateconnector_api/mcp_server.py",
+      "source_sha256": "160c813ebfdc253605ab3a9b0895bf67e329e78f9d3fb77fb3751b38644c745f"
+    }
+  },
+  "content_signals": {
+    "policy": "unset"
+  },
+  "generated": [
+    "llms.txt",
+    "llms-sections/home/llms.txt",
+    "llms-sections/overview/llms.txt",
+    "llms-sections/architecture/llms.txt",
+    "llms-sections/installation/llms.txt",
+    "llms-sections/deployment/llms.txt",
+    "llms-sections/usage-api-cli-mcp/llms.txt",
+    "llms-sections/backing-platform-templateconnector-api/llms.txt",
+    "llms-sections/concepts/llms.txt",
+    "llms-sections/glossary/llms.txt",
+    "llms-sections/spec-delivery/llms.txt",
+    "markdown-mirror-manifest.json",
+    ".well-known/agent-skills.json",
+    ".well-known/api-catalog",
+    ".well-known/mcp-server-card.json"
+  ],
+  "generator_version": "1.0.0",
+  "project": {
+    "kind": "package",
+    "name": "templateconnector-api"
+  },
+  "provenance": {
+    "applicability_sha256": "25c2faae51e060fccc2caf94528ffe0df7baf914ca4dc3d803aae4724f47005c",
+    "mkdocs_sha256": "1d879de4080264bc44893fdfc98e533aa3cfba1763b3397bf2b08fc8bfdf007e",
+    "pages": [
+      {
+        "bytes": 1706,
+        "sha256": "0e3f220ce29fb1bf4bc8297b0bdf1003a31d9eeedd77150ceda94995764e34a2",
+        "source": "docs/index.md"
+      },
+      {
+        "bytes": 1017,
+        "sha256": "5752ef917a6940a04148aace0a4826e04d4c0f376ee0f89fcdfb39168a14af16",
+        "source": "docs/overview.md"
+      },
+      {
+        "bytes": 2009,
+        "sha256": "369d465bd09d7a3c3e986231a6c573440dfde7975f8501beb4915f518ec58727",
+        "source": "docs/architecture.md"
+      },
+      {
+        "bytes": 807,
+        "sha256": "e140f53f6732c76e966fe149d7e1481e29091dcad694dceaea26ff73bc6018ef",
+        "source": "docs/installation.md"
+      },
+      {
+        "bytes": 2960,
+        "sha256": "5a1a06ff4fc4d1ff9350efe1af7d00f6af5bde0fdc725028d2f33dc0dfcaba8f",
+        "source": "docs/deployment.md"
+      },
+      {
+        "bytes": 1442,
+        "sha256": "1e6cc4dd473831afcd1029bc426726c09b0294d35faa183dfbc01f25c67848cf",
+        "source": "docs/usage.md"
+      },
+      {
+        "bytes": 733,
+        "sha256": "75c51d8aa8244beb7d27ebd7157ffbd1fa2837ac98b20686a23e1822cbe66b39",
+        "source": "docs/platform.md"
+      },
+      {
+        "bytes": 801,
+        "sha256": "d20b403652c2d7bd0239e470a35c3297b2e2b4cc74291afd946ee0008cc44513",
+        "source": "docs/concepts.md"
+      },
+      {
+        "bytes": 1643,
+        "sha256": "0c01322fff633a1d420fa3b0f4ee246124802f6b33bb0d4827b5d12fb9b56e09",
+        "source": "docs/glossary.md"
+      },
+      {
+        "bytes": 1146,
+        "sha256": "df9accaec45a586a3d8f6d71660c4e19c203c800c19c5bf03f96dbda300aadc2",
+        "source": "docs/spec-delivery.md"
+      }
+    ],
+    "url_contract": "mkdocs-static/v2"
+  },
+  "schema_version": "agent-readiness/v1",
+  "standards": [
+    {
+      "id": "RFC 3986",
+      "kind": "rfc",
+      "level": "normative"
+    },
+    {
+      "id": "RFC 9264",
+      "kind": "rfc",
+      "level": "normative"
+    },
+    {
+      "id": "RFC 9727",
+      "kind": "rfc",
+      "level": "normative"
+    },
+    {
+      "id": "RFC 8414",
+      "kind": "rfc",
+      "level": "normative"
+    },
+    {
+      "id": "RFC 9728",
+      "kind": "rfc",
+      "level": "normative"
+    },
+    {
+      "id": "Agent Documentation Standard vNext",
+      "kind": "draft",
+      "level": "draft"
+    },
+    {
+      "id": "Concept IDs and AGENTS",
+      "kind": "convention",
+      "level": "advisory"
+    }
+  ]
+}

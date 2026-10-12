@@ -1,0 +1,29 @@
+@prefix : <http://knuckles.team/kg#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# TODO: replace this stub with the real domain model. Classes/properties live in the
+# SHARED : (kg#) namespace; only the owl:Ontology node gets the per-package IRI. Do NOT
+# redefine classes another package owns (:MediaAsset/:Blob/:Document/:Person) — reuse them.
+
+:TemplateconnectorResource a owl:Class ;
+    rdfs:label "Templateconnector Api Resource" ;
+    rdfs:comment "A primary object managed by Templateconnector Api (STUB — rename/expand)." .
+
+:managedBy a owl:ObjectProperty ;
+    rdfs:label "managed by" ;
+    rdfs:comment "Links a Templateconnector Api resource to the Person responsible (STUB)." ;
+    rdfs:domain :TemplateconnectorResource ;
+    rdfs:range :Person .
+
+:templateconnectorId a owl:DatatypeProperty ;
+    rdfs:label "templateconnector id" ;
+    rdfs:comment "External identifier of the Templateconnector Api resource (STUB)." ;
+    rdfs:domain :TemplateconnectorResource ;
+    rdfs:range xsd:string .
+
+<http://knuckles.team/kg/templateconnector> a owl:Ontology ;
+    rdfs:label "Templateconnector Api Ontology" ;
+    rdfs:comment "Templateconnector Api domain extensions federated into the KG hub. STUB." ;
+    owl:imports <http://knuckles.team/kg> .

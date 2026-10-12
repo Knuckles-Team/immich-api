@@ -1,0 +1,18 @@
+# templateconnector-api — Usage (API / CLI / MCP)
+
+> Current documentation index generated from the exact MkDocs navigation.
+> Capability and content-use claims are operator-scoped and provenance-bound.
+
+## Usage (API / CLI / MCP)
+
+- [Usage (API / CLI / MCP)](https://knuckles-team.github.io/templateconnector-api/usage/) — templateconnector-api exposes the same capability three ways: as MCP tools an agent calls, as a Python API you import, and as a CLI.
+
+## Standards maturity
+
+- RFC 3986: rfc (normative)
+- RFC 9264: rfc (normative)
+- RFC 9727: rfc (normative)
+- RFC 8414: rfc (normative)
+- RFC 9728: rfc (normative)
+- Agent Documentation Standard vNext: draft (draft)
+- Concept IDs and AGENTS: convention (advisory)

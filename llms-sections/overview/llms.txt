@@ -1,0 +1,18 @@
+# templateconnector-api — Overview
+
+> Current documentation index generated from the exact MkDocs navigation.
+> Capability and content-use claims are operator-scoped and provenance-bound.
+
+## Overview
+
+- [Overview](https://knuckles-team.github.io/templateconnector-api/overview/) — > Category: Integration | Ecosystem Role: MCP Server > Built on agent-connector-sdk.
+
+## Standards maturity
+
+- RFC 3986: rfc (normative)
+- RFC 9264: rfc (normative)
+- RFC 9727: rfc (normative)
+- RFC 8414: rfc (normative)
+- RFC 9728: rfc (normative)
+- Agent Documentation Standard vNext: draft (draft)
+- Concept IDs and AGENTS: convention (advisory)

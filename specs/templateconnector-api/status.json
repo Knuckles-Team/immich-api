@@ -1,0 +1,50 @@
+{
+  "schema_version": 2,
+  "spec_id": "CONN-TEMPLATECONNECTOR-API",
+  "owner_repo": "templateconnector-api",
+  "delivery_state": "SPECIFIED",
+  "requirement_ids": [
+    "CONN-TEMPLATECONNECTOR-API-R001",
+    "CONN-TEMPLATECONNECTOR-API-R002",
+    "CONN-TEMPLATECONNECTOR-API-R003",
+    "CONN-TEMPLATECONNECTOR-API-R004",
+    "CONN-TEMPLATECONNECTOR-API-R005"
+  ],
+  "requirements": [
+    {
+      "id": "CONN-TEMPLATECONNECTOR-API-R001",
+      "title": "Credential references",
+      "delivery_state": "SPECIFIED",
+      "landed_in": [],
+      "verified_by": []
+    },
+    {
+      "id": "CONN-TEMPLATECONNECTOR-API-R002",
+      "title": "Bounded API requests",
+      "delivery_state": "SPECIFIED",
+      "landed_in": [],
+      "verified_by": []
+    },
+    {
+      "id": "CONN-TEMPLATECONNECTOR-API-R003",
+      "title": "MCP registration",
+      "delivery_state": "SPECIFIED",
+      "landed_in": [],
+      "verified_by": []
+    },
+    {
+      "id": "CONN-TEMPLATECONNECTOR-API-R004",
+      "title": "Native content contracts",
+      "delivery_state": "SPECIFIED",
+      "landed_in": [],
+      "verified_by": []
+    },
+    {
+      "id": "CONN-TEMPLATECONNECTOR-API-R005",
+      "title": "Typed source observations",
+      "delivery_state": "SPECIFIED",
+      "landed_in": [],
+      "verified_by": []
+    }
+  ]
+}

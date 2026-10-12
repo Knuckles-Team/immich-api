@@ -1,0 +1,47 @@
+{
+  "connector": "templateconnector-api",
+  "ontology_source": "templateconnector",
+  "schema_version": "1",
+  "resources": [
+    {
+      "name": "TemplateconnectorResource"
+    },
+    {
+      "name": "Document"
+    },
+    {
+      "name": "MediaAsset"
+    }
+  ],
+  "identity": {
+    "id_field": {
+      "TemplateconnectorResource": "id"
+    },
+    "title_field": {
+      "TemplateconnectorResource": "name"
+    }
+  },
+  "schema_mappings": {
+    "TemplateconnectorResource": {
+      "fields": {
+        "name": "xsd:string"
+      }
+    }
+  },
+  "sync": [],
+  "provenance": {
+    "generated_by": "mcp-builder/scripts/scaffold_package.py",
+    "source_artifacts": [
+      "ontology/templateconnector.ttl"
+    ],
+    "integrity": {
+      "algorithm": "sha256",
+      "hash": "59a0943f71b924c705b4463250005ac740d65ef3179eea25309810fc48da2f9f"
+    }
+  },
+  "review_todos": [
+    "Replace the starter resource mapping with the reviewed source model.",
+    "Declare real source presets and matching sync entries before certification.",
+    "Integrity is an ontology byte hash, not canonical RDF or release certification."
+  ]
+}

@@ -1,0 +1,18 @@
+# templateconnector-api — Installation
+
+> Current documentation index generated from the exact MkDocs navigation.
+> Capability and content-use claims are operator-scoped and provenance-bound.
+
+## Installation
+
+- [Installation](https://knuckles-team.github.io/templateconnector-api/installation/) — templateconnector-api is a standard Python package and a prebuilt container image.
+
+## Standards maturity
+
+- RFC 3986: rfc (normative)
+- RFC 9264: rfc (normative)
+- RFC 9727: rfc (normative)
+- RFC 8414: rfc (normative)
+- RFC 9728: rfc (normative)
+- Agent Documentation Standard vNext: draft (draft)
+- Concept IDs and AGENTS: convention (advisory)

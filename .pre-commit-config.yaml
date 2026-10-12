@@ -1,0 +1,79 @@
+default_language_version:
+  python: python3
+default_install_hook_types: [pre-commit, pre-push]
+default_stages: [pre-commit]
+
+repos:
+- repo: https://github.com/Knuckles-Team/pipelines
+  rev: 7b3d18d72b5622d455ece3bbe45a9482bc6e8b5e
+  hooks:
+  # Native scanner versions and policy belong to this pinned source.
+  # Use the reviewed, already-provisioned toolchain; hooks never install it.
+  - id: scanner-versions
+  - id: complexity-staged
+  - id: kiss-staged
+  - id: dupehound-changed
+  - id: complexity-census
+    stages: [pre-push]
+  - id: kiss-census
+    stages: [pre-push]
+  - id: jscpd-differential
+    stages: [pre-push]
+  - id: jscpd-census
+    stages: [pre-push]
+  - id: public-surface
+  - id: security-sanitizer
+  - id: secret-history
+  - id: supply-chain
+  - id: import-cycles
+  - id: env-sprawl
+  - id: stdout-writes
+  - id: swallowed-errors
+  - id: event-loop-blocking
+  - id: no-stub
+  - id: spec-decomposition
+  - id: spec-standard
+  - id: spec-status
+  # Inherit the upstream manual stage; ordinary code checks do not call it.
+  - id: dependency-readiness
+
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: 3e8a8703264a2f4a69428a0aa4dcb512790b2c8c
+  hooks:
+  - id: check-ast
+  - id: check-yaml
+    args: [--unsafe]
+  - id: check-toml
+  - id: check-json
+  - id: check-merge-conflict
+  - id: detect-private-key
+  - id: trailing-whitespace
+  - id: end-of-file-fixer
+
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  rev: 6fec9b7edb08fd9989088709d864a7826dc74e80
+  hooks:
+  - id: ruff-check
+  - id: ruff-format
+
+- repo: local
+  hooks:
+  - id: connector-sdk-contract
+    name: SDK connector dependency and import contract
+    entry: python scripts/check_connector_contract.py . --package templateconnector_api
+    language: system
+    pass_filenames: false
+    always_run: true
+  - id: connector-tool-schemas
+    name: Live SDK input and output schema contracts
+    entry: python scripts/generate_tool_schemas.py --check
+    language: system
+    pass_filenames: false
+    always_run: true
+  - id: pytest
+    name: Generated connector contracts
+    entry: python -m pytest tests -q
+    language: system
+    pass_filenames: false
+    always_run: true
+    stages: [pre-push]

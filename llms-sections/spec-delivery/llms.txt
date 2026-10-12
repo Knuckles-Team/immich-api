@@ -1,0 +1,18 @@
+# templateconnector-api — Spec delivery
+
+> Current documentation index generated from the exact MkDocs navigation.
+> Capability and content-use claims are operator-scoped and provenance-bound.
+
+## Spec delivery
+
+- [Spec delivery](https://knuckles-team.github.io/templateconnector-api/spec-delivery/) — Open the published delivery dashboard.
+
+## Standards maturity
+
+- RFC 3986: rfc (normative)
+- RFC 9264: rfc (normative)
+- RFC 9727: rfc (normative)
+- RFC 8414: rfc (normative)
+- RFC 9728: rfc (normative)
+- Agent Documentation Standard vNext: draft (draft)
+- Concept IDs and AGENTS: convention (advisory)
