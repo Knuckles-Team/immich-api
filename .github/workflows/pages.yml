@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   publish-pages:
-    uses: Knuckles-Team/pipelines/.github/workflows/pages_pipeline.yml@7b3d18d72b5622d455ece3bbe45a9482bc6e8b5e
+    uses: Knuckles-Team/pipelines/.github/workflows/pages_pipeline.yml@main
     with:
       content_source: docs
       shared_theme_enabled: true

@@ -1,139 +1,85 @@
 {
-  "candidate": "2828582b6a2f8dc0a69a3aaa2966fbb85d5476a3",
+  "parent": "aed9229ad9e927b2abde229ddfb9011efa1de576",
   "actual_pr_base": "1ca4d5cf89cb5a9c9d6cd0d3bd634b176c0a7867",
   "checks": [
     {
-      "check": "complexity-census",
+      "check": "pre-commit",
       "exit_code": 0,
-      "seconds": 0.11
+      "seconds": 23.88,
+      "log_sha256": "9f580ff264a484b666ba4f4446ba49fbac33785f80c236a17bb8332480a63164"
     },
     {
-      "check": "kiss-census",
+      "check": "pre-push",
       "exit_code": 0,
-      "seconds": 0.31
+      "seconds": 7.68,
+      "log_sha256": "6a7d364c9b847527ce35e68dfecc6249ea03f6b77f3aefb351ea209cf066924d"
     },
     {
-      "check": "jscpd-differential",
+      "check": "structural-content",
       "exit_code": 0,
-      "seconds": 0.87
+      "seconds": 0.06,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "check": "stdout-writes",
+      "check": "documentation-provenance",
       "exit_code": 0,
-      "seconds": 0.11
-    },
-    {
-      "check": "supply-chain",
-      "exit_code": 1,
-      "seconds": 0.42
-    },
-    {
-      "check": "ruff",
-      "exit_code": 0,
-      "seconds": 0.03
-    },
-    {
-      "check": "format",
-      "exit_code": 0,
-      "seconds": 0.06
-    },
-    {
-      "check": "error-integration",
-      "exit_code": 0,
-      "seconds": 2.57
-    },
-    {
-      "check": "schema-freshness",
-      "exit_code": 0,
-      "seconds": 3.12
+      "seconds": 0.16,
+      "log_sha256": "c78a77092f866d707d0dd725a749536cd02d74272aa964828f16a9dea5f8ab9a"
     },
     {
       "check": "native-content",
       "exit_code": 0,
-      "seconds": 9.74
+      "seconds": 9.49,
+      "log_sha256": "cd1af6fd776aed703df68631f06b7ab844b5b7299853351a3506818a5767a6c3"
     },
     {
-      "check": "docs",
+      "check": "mkdocs-strict",
       "exit_code": 0,
-      "seconds": 0.97
+      "seconds": 0.87,
+      "log_sha256": "262ec3bedf7303ae7375c7ba585b5a1a97e96cab0f990b0f7913953b86f782c7"
     }
   ],
-  "seconds": 18.33,
-  "scope": "Affected gates and integration; SDK owns the full serial slot; one worker, no native builds",
-  "pipeline_revision": "7b3d18d72b5622d455ece3bbe45a9482bc6e8b5e",
-  "previous_receipt": {
-    "commit": "cf25ef638a7c5158a7e71d77bd8ccec325cfd159",
-    "path": "validation/final-quality-2026-10-12.json",
-    "sha256": "02de565c09d2ca178a44304e8b881b4020e93881ab38e848afe251b57946026d"
-  },
-  "status": "Four failed quality gates fixed; supply-chain reference-policy conflict remains. Not release certification.",
-  "regressions": {
-    "pilot_focused": {
-      "passed": 47,
-      "seconds": 4.33
+  "seconds": 42.16,
+  "passed": true,
+  "hook_sources": [
+    {
+      "repo": "https://github.com/Knuckles-Team/pipelines",
+      "ref": "main",
+      "revision": "086337f211f0d2af5753bda1cb0f07cf23ac2cd2"
     },
-    "canonical_error_startup_image": {
-      "passed": 6,
-      "seconds": 1.62
+    {
+      "repo": "https://github.com/pre-commit/pre-commit-hooks",
+      "ref": "3e8a8703264a2f4a69428a0aa4dcb512790b2c8c",
+      "revision": "3e8a8703264a2f4a69428a0aa4dcb512790b2c8c"
     },
-    "remaining_cases": {
-      "passed": 5,
-      "seconds": 1.74
-    },
-    "coverage_note": "58 repository cases across separate bounded runs, not a new full-suite batch; final canonical error integration received its own targeted checks.",
-    "converter_behavior": {
-      "passed": 32,
-      "seconds": 2.69,
-      "includes": "GET/POST/PUT/DELETE/PATCH/HEAD/OPTIONS/TRACE and native scaffold tool call"
+    {
+      "repo": "https://github.com/astral-sh/ruff-pre-commit",
+      "ref": "6fec9b7edb08fd9989088709d864a7826dc74e80",
+      "revision": "6fec9b7edb08fd9989088709d864a7826dc74e80"
     }
+  ],
+  "native_compilation": false,
+  "provider_calls": 0,
+  "graph_calls": 0,
+  "fleet_registration": false,
+  "tooling": "Actual pre-commit and pre-push wrappers with fresh isolated cache; binary-only tool dependencies; existing exact native scanners; reviewed SDK/EG source overlays rather than a lock-installed environment",
+  "status": "All configured ordinary local gates pass after explicit approval of shared pipelines main references. Full operation transport-parity proof and release acceptance remain separate.",
+  "previous_receipt": {
+    "commit": "aed9229ad9e927b2abde229ddfb9011efa1de576",
+    "path": "validation/final-quality-2026-10-12.json",
+    "sha256": "2372b4a5341eb1974fe659127f5e703d0da113e3b01873ba2853f4e564c3fb7b"
   },
-  "native_content": {
-    "tools": 42,
-    "prompts": 6,
-    "resources": 12,
-    "pack_entries": 55,
-    "sha256": "6227e9a0ec860ed2eaee3636274dd09dd62c542b02f475fb2952abc1b35233ac",
-    "provider_calls": 0,
-    "graph_calls": 0,
-    "fleet_registration": false
-  },
-  "remaining_policy_findings": {
-    "rule_ids": [
-      "SC-GHA-010",
-      "SC-HOOK-003"
-    ],
-    "files": [
+  "approval": {
+    "scope": [
       ".github/workflows/pages.yml",
       ".github/workflows/pipeline.yml",
       ".pre-commit-config.yaml"
     ],
-    "reason": "Pinned pipelines policy requires mutable main. Automatic approval review rejected replacing the reviewed immutable SHA as an unauthorized persistent supply-chain weakening; parent directed retaining pins.",
-    "action": "No reference changes, gate exceptions, threshold changes or bypass applied."
-  },
-  "canonical_handoff": {
-    "base": "814b486b5fbc0e23440bac99b5d1e8884f19fc0e",
-    "state": "uncommitted canonical consolidation candidate",
-    "files": {
-      "error_rendering.py": "0d2748bfdbace11277460804c0a2826eaeff19d8967268e635a596fd9c699008",
-      "error_authority.py": "29b95a9fc715259c66e346eea03d4e2c693fe69ca9a72229830dcd0191260a2e",
-      "kiss.toml": "a6f2b9171123503522092aec416eaea7ad29ea98a26eb7283f02156c9c3d5c3a",
-      "readiness-footer.patch": "a515fc4364223689bf6a9401139b722525c982f2b2d82e890a6c0efd4a3ad12b"
-    },
-    "validation": {
-      "focused": "74 passed in 1.69s",
-      "kiss": "0.4.12: both error modules NO VIOLATIONS, unchanged fleet config",
-      "cccc": {
-        "version": "1.6.0",
-        "max_cyclomatic": 7,
-        "max_cognitive": 7
-      }
-    },
-    "instructions": [
-      "Copy error_authority.py and new error_rendering.py into the provider package; public imports from error_authority remain compatible.",
-      "Apply readiness-footer.patch to the equivalent scripts/generate_agent_readiness.py; regenerate readiness manifests normally.",
-      "KISS policy bytes are unchanged from pipelines 7b3d18 .config/kiss.toml.",
-      "Pipeline reference changes are held pending the reported explicit approval; immutable pins remain active."
-    ]
+    "prior_ref": "7b3d18d72b5622d455ece3bbe45a9482bc6e8b5e",
+    "approved_ref": "main",
+    "resolved_test_revision": "086337f211f0d2af5753bda1cb0f07cf23ac2cd2",
+    "context": "The user explicitly approved future shared pipeline and hook changes following main. The one authorized retry succeeded.",
+    "persistent_hook_cache": "pre-commit caches mutable refs after the first install; this validation used a fresh isolated cache."
   },
   "runtime_source_sha256": {
     "immich_api/__init__.py": "6f6baae3fbe8d01c661421eba83ce5b168fa470f22e57ca991fcc1ade067f256",
@@ -158,73 +104,29 @@
     "immich_api/prompts/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "immich_api/skills/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   },
-  "log_sha256": {
-    "immich-fixed-checks.log": "cb073d2522a1e2104048d542702e4f4aaaf13b72c036ee105c15074634fa5400",
-    "immich-fixed-complexity-census.log": "3a5a15c7260d7096e68673c18fb7ce4b7afee02ba2500235fc94bc54c08fb9a6",
-    "immich-fixed-docs.log": "b4909e5d897070a224ba188da77a09db140a419f154d29fa5480a40416f2c8ae",
-    "immich-fixed-error-integration.log": "13dfddd98a0bcc8048bc0b49e67b05f6b6c0909c61d5954e2e215e8ad42931b7",
-    "immich-fixed-format.log": "0a58e773ebd237a787c4825d5193d68d291903617ffaed15dca58bff86fd78a5",
-    "immich-fixed-jscpd-differential.log": "f1eb295d8aa4efbe26980d4b4671e2ddb61ca6e654588435b46da18c19fa6b8a",
-    "immich-fixed-kiss-census.log": "27706deec7582102a543dc7742fb8ec9402fb864f01640a60c78a00fa62379b2",
-    "immich-fixed-native-content.log": "cd1af6fd776aed703df68631f06b7ab844b5b7299853351a3506818a5767a6c3",
-    "immich-fixed-remaining-regressions.log": "f246fe97191e208890ee54c333c739ea48b234c333cea8c1c988946a33d9799c",
-    "immich-fixed-ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
-    "immich-fixed-schema-freshness.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "immich-fixed-stdout-writes.log": "37176d1aa295dbeb6e526668e737f29c6ffc19ca0672498df9d02ea9708e8af8",
-    "immich-fixed-supply-chain.log": "b0152056172f7a2c72120a3e5747f526e8ff6d0d5039b931249728a2022222ed"
+  "native_content": {
+    "tools": 42,
+    "prompts": 6,
+    "resources": 12,
+    "pack_entries": 55,
+    "sha256": "6227e9a0ec860ed2eaee3636274dd09dd62c542b02f475fb2952abc1b35233ac",
+    "provider_calls": 0,
+    "graph_calls": 0,
+    "fleet_registration": false
   },
-  "followup_changes": "After runtime checks: README status and this receipt only.",
-  "remaining_static_checks": {
-    "checks": [
-      {
-        "gate": "dupehound-changed",
-        "exit_code": 0
-      },
-      {
-        "gate": "security-sanitizer",
-        "exit_code": 0
-      },
-      {
-        "gate": "secret-history",
-        "exit_code": 0
-      },
-      {
-        "gate": "import-cycles",
-        "exit_code": 0
-      },
-      {
-        "gate": "env-sprawl",
-        "exit_code": 0
-      },
-      {
-        "gate": "swallowed-errors",
-        "exit_code": 0
-      },
-      {
-        "gate": "event-loop-blocking",
-        "exit_code": 0
-      },
-      {
-        "gate": "no-stub",
-        "exit_code": 0
-      },
-      {
-        "gate": "public-surface",
-        "exit_code": 0
-      },
-      {
-        "gate": "spec-decomposition",
-        "exit_code": 0
-      },
-      {
-        "gate": "spec-standard",
-        "exit_code": 0
-      },
-      {
-        "gate": "spec-status",
-        "exit_code": 0
-      }
-    ],
-    "seconds": 3.88
-  }
+  "source_dependencies": {
+    "sdk": "5babc4cc48ad73928468b243842f219f51e2cca1",
+    "eg": "d33abec1e09b63cdcde01f8e8e4fe810d91cd43d"
+  },
+  "suite": {
+    "passed": 58,
+    "evidence": "Configured pytest pre-push hook passed on unchanged runtime and test source. Prior receipt enumerates the same 58 collected cases."
+  },
+  "remaining_acceptance": [
+    "Complete pinned operation inventory and exhaustive API/MCP reachability evidence",
+    "Actual Windows import/unit execution: prior report-only job skipped both after EG fcntl build failure",
+    "Approved installable dependency artifacts and immutable source-built image",
+    "Credentialed least-privilege album read, explicit fleet composition, graph receipt and readback"
+  ],
+  "publication_followup": "After the normal batch, only README and this receipt were updated; runtime and tests are unchanged."
 }

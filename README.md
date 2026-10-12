@@ -5,14 +5,15 @@
 > disabled pending provider/account stream binding.
 > Quality follow-up: complexity and KISS report zero findings, duplication has
 > no new pairs against the real PR base, and stdout, schemas, native content,
-> Ruff and strict MkDocs pass. All 58 repository cases passed across bounded
-> regression runs; 32 canonical converter behavior cases also passed.
-> The supply-chain gate still rejects retained immutable pipeline pins because
-> its policy requires mutable `main`; that change was not approved.
+> Ruff and strict MkDocs pass. All 58 repository tests pass in the normal
+> pre-push gate; 32 canonical converter behavior cases passed previously.
+> The operator approved shared pipeline and hook references following `main`.
+> The normal gate batch passed in 42.16 seconds at pipelines `086337f211f0`.
+> Exhaustive operation transport-parity proof is tracked separately.
 > See [quality evidence](validation/final-quality-2026-10-12.json).
 > Docker now installs this source checkout. No image build, dependency closure,
 > fleet enrollment or graph receipt is claimed. Windows report-only success ran
-> zero tests because the SDK dependency was unavailable in its package index.
+> zero tests: the latest EG build failed on its POSIX `fcntl` dependency.
 > Earlier public ping/version calls passed with verified HTTPS and explicit
 > HTTP opt-in. Private endpoints and credentials remain runtime inputs.
 

@@ -5,9 +5,9 @@ default_stages: [pre-commit]
 
 repos:
 - repo: https://github.com/Knuckles-Team/pipelines
-  rev: 7b3d18d72b5622d455ece3bbe45a9482bc6e8b5e
+  rev: main
   hooks:
-  # Native scanner versions and policy belong to this pinned source.
+  # Native scanner versions and policy belong to the shared source.
   # Use the reviewed, already-provisioned toolchain; hooks never install it.
   - id: scanner-versions
   - id: complexity-staged
