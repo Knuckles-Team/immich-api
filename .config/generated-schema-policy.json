@@ -1,0 +1,30 @@
+{
+  "artifacts": {
+    "api-spec/immich.provider-evidence.json": "43f936578e5361b4400750ccb9e04747948eabe19baad0e78d90774c9c79c432",
+    "api-spec/provider-source/server/src/services/auth.service.ts": "58c8a233f7637785d2d0b1c10c16e75097041310167badebea5134d149526dd1",
+    "immich_api/openapi_inventory.json": "3c4e6794401941ece8fe4896ee01453700eada508cdb6df9c5664cdfbfe1696a",
+    "validation/canonical-parity-generation-16aec38-2026-10-13.json": "c191eca3eefce3d81fbaa6e0aeb5c0a77e7bfd73a49c51e8fa7d105ea0e980cb",
+    "validation/canonical-parity-generation-2026-10-12.json": "6ec9ed65ff0f24369f63fb60a76415aba1e06c1599217796d7a7cdcc6818b0c0",
+    "validation/canonical-parity-generation-2026-10-13.json": "12df3252b42f9a01a155319755e24de463b0b007d6d533faeb4759fb9d54293c",
+    "validation/canonical-parity-generation-8ae6027-2026-10-13.json": "cba4798a58b5fcbb3bc0226602a3f00f7eb9f91522f30b6e52077cb722137738",
+    "validation/exhaustive-native-proxy-2026-10-13.json": "befe726b7659d9ac911303522c6f808f6a9fa116ba1fe0d6bfee042b98c902f0",
+    "validation/full-operation-parity-16aec38-2026-10-13.json": "d31bac57c23eace8ee5458fa1429e15a4d4de72c22810dab407ab61fd2fc1e5c",
+    "validation/full-operation-parity-fastmcp-4.1.0-2026-10-12.json": "6589131bb83096132e275c4b4500efe5332be7239f080a6eedc242b5455a64e4",
+    "validation/full-operation-parity-overlay-2026-10-12.json": "173693b46c34ac387b3090379b3e1b1f193bb34c61db9010b9ef19bd990bae64",
+    "validation/immich-authorization-source-classification.json": "de8784e0c7fe507424725fd93ce8e8a972c96de53a6342f3f7c562be43b74c68",
+    "validation/native-content-landed-sdk-2026-10-13.json": "f2e9a376c8f8c7effd5fa61bac5d90f1ef2740c336a880bdfd882be9bb86b1cd",
+    "validation/native-content-overlay-2026-10-12.json": "5994faa3aced79bcd1323225e6fce78fb497c7cedfa96c81bec5d886f6d1f9d2"
+  },
+  "provenance": {
+    "builder_revision": "16aec3838c5908021a9a735ce62e8d6eaa3e83f6",
+    "generation_receipt": "validation/canonical-parity-generation-16aec38-2026-10-13.json",
+    "provider_overlay_sha256": "43f936578e5361b4400750ccb9e04747948eabe19baad0e78d90774c9c79c432",
+    "provider_revision": "60b51cb3bc909e72fe963f4dfb1947515cb9ab3b",
+    "raw_source_sha256": "7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b",
+    "runtime_receipt": "validation/full-operation-parity-16aec38-2026-10-13.json"
+  },
+  "regenerated_schemas": [
+    "immich_api/openapi_inventory.json"
+  ],
+  "version": 1
+}

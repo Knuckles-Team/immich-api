@@ -41,6 +41,26 @@ working-tree byte hashes. Security scanning remains unchanged, and all connector
 code stays in scope. Scope regressions reject changed bytes, missing index files,
 symlink replacements and broader filename matches. Final normal gates and
 publication remain pending.
+
+The separately approved clone policy admits only the 14 exact paths and hashes
+in `.config/generated-schema-policy.json`: the generated inventory, the diagnosed
+provenance/validation records, and the unchanged upstream `auth.service.ts`.
+The canonical wrapper scans complete Git-tree snapshots and removes a pair only
+when both members are verified artifacts. Every implementation-to-artifact and
+implementation-to-implementation pair remains. Historical trees without the
+manifest receive no exclusions. The verifier binds compiler/runtime provenance,
+regenerates the inventory twice, compares exact bytes, and checks the native MCP
+schemas without provider calls. It also verifies all evidence hashes and rejects
+any file or mode change during verification. This policy changes no scanner
+thresholds, source bytes, security checks, or pipeline `main` references.
+
+One separately reviewed security false positive is adjudicated before history
+scan deduplication: line 63 of the pinned maintenance-worker service is a public
+upstream mock value. The adapter requires the exact path, regular-file Git mode,
+Git blob, SHA-256 and literal. Every other added line goes to the shared detector
+unchanged, including other credentials in the same file and unknown historical
+blobs. Plain-text scanning, scanner self-checks and entropy reporting retain the
+shared behavior. Raw upstream files remain byte-identical.
 The following measurements belong to the earlier generator and SDK overlay;
 they do not validate the current tree or published PR head. The fresh source-only
 environment still does not establish full lock installation or live acceptance.

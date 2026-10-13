@@ -21,12 +21,15 @@ repos:
   - id: kiss-census
     stages: [pre-push]
   - id: jscpd-differential
+    entry: python scripts/generated_schema_clones.py differential
     stages: [pre-push]
   - id: jscpd-census
+    entry: python scripts/generated_schema_clones.py census
     stages: [pre-push]
   - id: public-surface
   - id: security-sanitizer
   - id: secret-history
+    entry: python scripts/reviewed_secret_history.py
   - id: supply-chain
   - id: import-cycles
   - id: env-sprawl

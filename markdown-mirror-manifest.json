@@ -58,10 +58,10 @@
       "url": "https://knuckles-team.github.io/immich-api/immich-capabilities/"
     },
     {
-      "bytes": 10986,
+      "bytes": 12394,
       "canonical_url": "https://knuckles-team.github.io/immich-api/openapi-parity/",
       "markdown_url": "https://knuckles-team.github.io/immich-api/openapi-parity/index.md",
-      "sha256": "3cd72232bca90351e409d00536a9a2f76ef2497fc6f02e82eda60d3afb40942d",
+      "sha256": "69398c5fe4c4bbf40b1bf7f561c9ad4917ba77e30845b61c9a899e72fdea5ed5",
       "source": "docs/openapi-parity.md",
       "url": "https://knuckles-team.github.io/immich-api/openapi-parity/"
     },
