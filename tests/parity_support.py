@@ -5,8 +5,11 @@ import hashlib
 import json
 import os
 import re
+from contextlib import asynccontextmanager
 from pathlib import Path
 from unittest.mock import patch
+
+from fastmcp import Client
 
 from immich_api.mcp_server import build_server
 from immich_api.openapi_runtime import CONTRACT
@@ -17,6 +20,10 @@ ROOT = Path(__file__).resolve().parents[1]
 OVERLAY_SHA256 = "bdd58565bd0ffa7383373ea32425147c6bcb343f135ebc5541a67411e9b7708b"
 BUDGET_PATH = ROOT / "tests/fixtures/native-client-budget.json"
 BUDGET = json.loads(BUDGET_PATH.read_text())
+TOOL_NAMES = sorted(
+    {f"{domain}_operations" for domain in CONTRACT["domains"]}
+    | {"album_metadata_sample"}
+)
 
 
 def source_inventory(**overrides):
@@ -46,29 +53,36 @@ def bounded_server():
     return server
 
 
-async def native_discovery(client):
+async def native_initial_discovery(client):
     listed = await client.list_tools()
     assert {tool.name for tool in listed} == {"search_tools", "call_tool"}
-    receipt = {"initial": require_schema_budget(listed, BUDGET), "retrievals": {}}
-    tools = []
-    names = {f"{domain}_operations" for domain in CONTRACT["domains"]}
-    names.add("album_metadata_sample")
-    for name in sorted(names):
-        await asyncio.sleep(0.12)
-        result = await client.call_tool(
-            "search_tools", {"pattern": "^" + re.escape(name) + r"(?:\s|$)"}
-        )
-        rows = result.data
-        if isinstance(rows, dict):
-            rows = rows.get("result")
-        assert isinstance(rows, list) and len(rows) == 1
-        assert rows[0]["name"] == name
-        receipt["retrievals"][name] = require_schema_budget(
-            rows, BUDGET, kind="search_result"
-        )
-        tools.extend(rows)
-    receipt["coverage"] = verify_mcp(CONTRACT, tools)
-    receipt["production_client_approval"] = False
+    return require_schema_budget(listed, BUDGET)
+
+
+async def native_discovery(client, name):
+    """Verify one complete tool so discovery has its own bounded test budget."""
+    await asyncio.sleep(0.12)
+    result = await client.call_tool(
+        "search_tools", {"pattern": "^" + re.escape(name) + r"(?:\s|$)"}
+    )
+    rows = result.data
+    if isinstance(rows, dict):
+        rows = rows.get("result")
+    assert isinstance(rows, list) and len(rows) == 1
+    assert rows[0]["name"] == name
+    receipt = require_schema_budget(rows, BUDGET, kind="search_result")
+    receipt["coverage"] = {"domains": 0, "exposed_operations": 0}
+    if name != "album_metadata_sample":
+        domain = name.removesuffix("_operations")
+        actions = CONTRACT["domains"][domain]
+        domain_contract = {
+            "domains": {domain: actions},
+            "operations": {
+                action: CONTRACT["operations"][action] for action in actions
+            },
+            "schemas": {domain: CONTRACT["schemas"][domain]},
+        }
+        receipt["coverage"] = verify_mcp(domain_contract, rows)
     return receipt
 
 
@@ -77,8 +91,36 @@ class DiscoveredClient:
 
     def __init__(self, native):
         self.native = native
+        self._pending = set()
 
     async def call_tool(self, name, arguments, **options):
-        return await self.native.call_tool(
-            "call_tool", {"name": name, "arguments": arguments}, **options
+        task = asyncio.create_task(
+            self.native.call_tool(
+                "call_tool", {"name": name, "arguments": arguments}, **options
+            )
         )
+        self._pending.add(task)
+        try:
+            return await task
+        finally:
+            self._pending.discard(task)
+
+    async def cancel_pending(self):
+        tasks = tuple(self._pending)
+        for task in tasks:
+            task.cancel()
+        await asyncio.gather(*tasks, return_exceptions=True)
+
+
+@asynccontextmanager
+async def isolated_native_client(server, elicitation_handler):
+    """Drain outstanding calls and close the protocol before the next provider."""
+    async with Client(
+        server, elicitation_handler=elicitation_handler, timeout=10
+    ) as native:
+        assert native.protocol_version == "2026-07-28"
+        client = DiscoveredClient(native)
+        try:
+            yield client
+        finally:
+            await client.cancel_pending()

@@ -7,7 +7,6 @@ from pathlib import Path
 
 import pytest
 import pytest_asyncio
-from fastmcp import Client
 from fastmcp.client.elicitation import ElicitResult
 from mcp.shared.exceptions import MCPError
 
@@ -17,9 +16,11 @@ from immich_api.parity import require_complete_coverage
 from immich_api.parity.openapi_parity import require_declared_authorization
 from tests.operation_fixtures import CASES, RecordingProvider
 from tests.parity_support import (
-    DiscoveredClient,
+    TOOL_NAMES,
     bounded_server,
+    isolated_native_client,
     native_discovery,
+    native_initial_discovery,
     source_inventory,
 )
 
@@ -110,8 +111,18 @@ def test_every_api_operation_dispatches(action, provider_factory, coverage):
     coverage["api"].append(action)
 
 
-@pytest_asyncio.fixture(scope="module", loop_scope="module")
-async def native_session():
+@pytest.fixture(scope="module")
+def native_server():
+    return bounded_server()
+
+
+@pytest.fixture(scope="module")
+def discovery():
+    return {"retrievals": {}, "production_client_approval": False}
+
+
+@pytest_asyncio.fixture(loop_scope="module")
+async def native_session(native_server):
     state = {"confirmations": [], "api": [], "mcp": [], "accept": True}
 
     async def consent(message, response_type, params, context):
@@ -120,11 +131,71 @@ async def native_session():
             return state["response"]
         return {"confirmed": state["accept"]}
 
-    server = bounded_server()
-    async with Client(server, elicitation_handler=consent, timeout=10) as client:
-        assert client.protocol_version == "2026-07-28"
-        state["discovery"] = await native_discovery(client)
-        yield DiscoveredClient(client), state
+    async with isolated_native_client(native_server, consent) as client:
+        yield client, state
+
+
+@pytest.mark.asyncio(loop_scope="module")
+async def test_native_initial_discovery(native_session, discovery):
+    client, _ = native_session
+    discovery["initial"] = await native_initial_discovery(client.native)
+
+
+@pytest.mark.asyncio(loop_scope="module")
+@pytest.mark.parametrize("name", TOOL_NAMES)
+async def test_every_native_tool_is_discoverable(name, native_session, discovery):
+    client, _ = native_session
+    discovery["retrievals"][name] = await native_discovery(client.native, name)
+
+
+@pytest.mark.asyncio(loop_scope="module")
+async def test_native_discovery_receipt(discovery):
+    assert "initial" in discovery
+    retrievals = discovery["retrievals"]
+    assert set(retrievals) == set(TOOL_NAMES)
+    coverage = {
+        key: sum(row["coverage"][key] for row in retrievals.values())
+        for key in ("domains", "exposed_operations")
+    }
+    assert coverage == {"domains": 41, "exposed_operations": 276}
+    discovery["coverage"] = coverage
+
+
+@pytest.mark.asyncio(loop_scope="module")
+async def test_pending_confirmation_cannot_reach_the_next_provider(
+    native_server, provider_factory, monkeypatch
+):
+    entered = asyncio.Event()
+    release = asyncio.Event()
+
+    async def delayed_consent(message, response_type, params, context):
+        entered.set()
+        await release.wait()
+        return {"confirmed": True}
+
+    async def consent(message, response_type, params, context):
+        return {"confirmed": True}
+
+    first = provider_factory("acceptClusterGroupRequest")
+    monkeypatch.setattr(auth, "_client", first.client)
+    async with isolated_native_client(native_server, delayed_consent) as client:
+        pending = asyncio.create_task(
+            client.call_tool("cluster_groups_operations", first.arguments)
+        )
+        await asyncio.wait_for(entered.wait(), timeout=10)
+        # Simulate an interrupted test leaving a live call for fixture teardown.
+    outcomes = await asyncio.gather(pending, return_exceptions=True)
+    assert isinstance(outcomes[0], asyncio.CancelledError)
+    assert not first.requests
+
+    second = provider_factory("addAssetsToAlbum")
+    monkeypatch.setattr(auth, "_client", second.client)
+    release.set()
+    async with isolated_native_client(native_server, consent) as client:
+        result = await client.call_tool("albums_operations", second.arguments)
+    assert result.structured_content == second.expected
+    assert len(second.requests) == 1
+    assert not first.requests
 
 
 @pytest.mark.asyncio(loop_scope="module")
