@@ -2,7 +2,7 @@
   "schema_version": 2,
   "spec_id": "CONN-IMMICH-API",
   "owner_repo": "immich-api",
-  "delivery_state": "SPECIFIED",
+  "delivery_state": "LANDED",
   "requirement_ids": [
     "CONN-IMMICH-API-R001",
     "CONN-IMMICH-API-R002",
@@ -15,43 +15,55 @@
     {
       "id": "CONN-IMMICH-API-R001",
       "title": "Credential references",
-      "delivery_state": "SPECIFIED",
-      "landed_in": [],
+      "delivery_state": "LANDED",
+      "landed_in": [
+        "47656ecb1833"
+      ],
       "verified_by": []
     },
     {
       "id": "CONN-IMMICH-API-R002",
       "title": "Bounded API requests",
-      "delivery_state": "SPECIFIED",
-      "landed_in": [],
+      "delivery_state": "LANDED",
+      "landed_in": [
+        "47656ecb1833"
+      ],
       "verified_by": []
     },
     {
       "id": "CONN-IMMICH-API-R003",
       "title": "MCP registration",
-      "delivery_state": "SPECIFIED",
-      "landed_in": [],
+      "delivery_state": "LANDED",
+      "landed_in": [
+        "47656ecb1833"
+      ],
       "verified_by": []
     },
     {
       "id": "CONN-IMMICH-API-R004",
       "title": "Native content contracts",
-      "delivery_state": "SPECIFIED",
-      "landed_in": [],
+      "delivery_state": "LANDED",
+      "landed_in": [
+        "47656ecb1833"
+      ],
       "verified_by": []
     },
     {
       "id": "CONN-IMMICH-API-R005",
       "title": "Typed source observations",
-      "delivery_state": "SPECIFIED",
-      "landed_in": [],
+      "delivery_state": "LANDED",
+      "landed_in": [
+        "47656ecb1833"
+      ],
       "verified_by": []
     },
     {
       "id": "CONN-IMMICH-API-R006",
       "title": "Complete source parity",
-      "delivery_state": "SPECIFIED",
-      "landed_in": [],
+      "delivery_state": "VERIFIED",
+      "landed_in": [
+        "47656ecb1833"
+      ],
       "verified_by": [
         "tests/test_generated_schema_policy.py:18",
         "tests/test_oauth_redirect_response.py:26",
