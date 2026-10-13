@@ -199,6 +199,23 @@ async def test_pending_confirmation_cannot_reach_the_next_provider(
 
 
 @pytest.mark.asyncio(loop_scope="module")
+async def test_fresh_sessions_preserve_protocol_and_rate_limit(
+    native_server, provider_factory, monkeypatch
+):
+    async def consent(message, response_type, params, context):
+        return {"confirmed": True}
+
+    for _ in range(16):
+        provider = provider_factory("getVersionCheck")
+        monkeypatch.setattr(auth, "_client", provider.client)
+        async with isolated_native_client(native_server, consent) as client:
+            await asyncio.sleep(0.12)
+            result = await client.call_tool("server_operations", provider.arguments)
+        assert result.structured_content == provider.expected
+        assert len(provider.requests) == 1
+
+
+@pytest.mark.asyncio(loop_scope="module")
 @pytest.mark.parametrize("action", ACTIONS)
 async def test_every_native_mcp_operation_dispatches(
     action, provider_factory, native_session, monkeypatch, coverage

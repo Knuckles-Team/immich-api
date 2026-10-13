@@ -115,6 +115,9 @@ class DiscoveredClient:
 @asynccontextmanager
 async def isolated_native_client(server, elicitation_handler):
     """Drain outstanding calls and close the protocol before the next provider."""
+    # Each fresh client adds server/discover and result-validation tools/list.
+    # Reserve those two requests at the unchanged SDK limit of 10 requests/s.
+    await asyncio.sleep(0.22)
     async with Client(
         server, elicitation_handler=elicitation_handler, timeout=10
     ) as native:
