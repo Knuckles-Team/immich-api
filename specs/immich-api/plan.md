@@ -34,6 +34,31 @@ flowchart LR
 `immich_api/kg_ingest.py` maps observations into SDK types and calls the configured service's `submit` method.
 The SDK owns engine transport and durable checkpoints.
 
+## Complete provider operation parity
+
+Keep the exact deployed OpenAPI bytes in `api-spec/immich.openapi.json` and
+compile the complete inventory through the canonical builder. Preserve vendor
+authorization extensions and unknown declarations; source omission alone does
+not establish public access. Reviewed provider source can explain those
+declarations without changing the original schema.
+
+Preserve the independently reviewed provider sidecar and its exact source files.
+Reverify file, operation and overlay hashes during admission. The sole provider
+correction adds the required asset file without removing other constraints.
+Configure bounded discovery through the normal server's named client-budget
+setting. Retrieve each complete domain schema through native exact search and
+exercise every action through FastMCP's proxy. Fixture budgets establish only
+the named synthetic client's test scope; production budgets need separate evidence.
+
+The exhaustive test fixture set must equal the source operation IDs. Each fixture
+executes once through `ApiClientSystem` and once through an actual FastMCP client,
+with only outbound HTTP replaced. The mock checks the method, path, query,
+headers and serialized body, and the test checks the structured response. MCP
+write approval must complete through the negotiated modern protocol; legacy
+negotiation and patched approval helpers are not acceptance evidence. Missing
+approval and provider errors must not cause a write retry. Source parity and
+mocked transport evidence remain separate from live provider validation.
+
 ## Content and contracts
 
 The server serves package prompts, skills, ontology, and `connector_manifest.yml` through native MCP primitives.

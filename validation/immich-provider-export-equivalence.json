@@ -1,0 +1,27 @@
+{
+  "changes": {
+    "removed_contentEncoding": 1,
+    "removed_propertyNames": 3,
+    "required_fields": [
+      {
+        "field": "assetData",
+        "schema": "AssetMediaCreateDto"
+      }
+    ]
+  },
+  "exact_object_equality": true,
+  "limit": "This explains exact schema object differences using provider source; it does not prove the deployed executable image's commit. These export transforms are diagnostic and are not a request to discard JSON Schema constraints in the connector. Any runtime normalization must be explicit and source-bound.",
+  "live_provider_requests": 0,
+  "normalized_official_object_sha256": "cbea3a261ae1534f6fe2bc78a7a14efc12024c6aec4583f451d1b629748383bb",
+  "normalized_source_object_sha256": "cbea3a261ae1534f6fe2bc78a7a14efc12024c6aec4583f451d1b629748383bb",
+  "official_sha256": "4932189f315a4cf8c175078d273d5845d03c763ef36b906086f27add30f49830",
+  "source_code": {
+    "normalization_url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/utils/misc.ts#L183-L315",
+    "path": "server/src/utils/misc.ts",
+    "served_vs_written_url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/utils/misc.ts#L350-L368",
+    "sha256": "55f456af4c6cbd12615e48588c92dd974aa0a721ccb321b5320bca6ab810c4ba"
+  },
+  "source_sha256": "7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b",
+  "status": "verified-provider-export-equivalence; no source or runtime policy changed",
+  "upstream_commit": "60b51cb3bc909e72fe963f4dfb1947515cb9ab3b"
+}

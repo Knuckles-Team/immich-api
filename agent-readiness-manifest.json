@@ -60,6 +60,7 @@
     "llms-sections/deployment/llms.txt",
     "llms-sections/usage-api-cli-mcp/llms.txt",
     "llms-sections/immich-capabilities-and-evidence/llms.txt",
+    "llms-sections/openapi-parity/llms.txt",
     "llms-sections/backing-platform-immich-api/llms.txt",
     "llms-sections/concepts/llms.txt",
     "llms-sections/glossary/llms.txt",
@@ -76,7 +77,7 @@
   },
   "provenance": {
     "applicability_sha256": "bc4c3ebc8f2437439a86931eded34fe6eb4492cef88084a9239fc2ada1cd2308",
-    "mkdocs_sha256": "89c41a1863f17b9ca13089af240df052f6a99c07f89766ed0a3a96d3c8d733b0",
+    "mkdocs_sha256": "81f0f0ba270ef724d3e645e408754d4c4cb720a91e86035b52549c0b47d901de",
     "pages": [
       {
         "bytes": 1585,
@@ -112,6 +113,11 @@
         "bytes": 6861,
         "sha256": "d08dd85c42eb33ad7e822cef52349962e034aa423584c1191c4ba878d985b853",
         "source": "docs/immich-capabilities.md"
+      },
+      {
+        "bytes": 10986,
+        "sha256": "3cd72232bca90351e409d00536a9a2f76ef2497fc6f02e82eda60d3afb40942d",
+        "source": "docs/openapi-parity.md"
       },
       {
         "bytes": 711,

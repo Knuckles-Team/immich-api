@@ -3,14 +3,31 @@
 > Immich 3.2.2 supplies 276 declared operations in 41 domain tools, plus a
 > bounded album metadata read tool. Writes default off; ingestion presets are
 > disabled pending provider/account stream binding.
-> Quality follow-up: complexity and KISS report zero findings, duplication has
-> no new pairs against the real PR base, and stdout, schemas, native content,
-> Ruff and strict MkDocs pass. All 58 repository tests pass in the normal
-> pre-push gate; 32 canonical converter behavior cases passed previously.
+> Historical mocked dispatch passed for **276 API and 276 native MCP operations**
+> under protocol `2026-07-28`: 552 HTTP mock requests and 153 explicit write
+> confirmations in 64.09 seconds on FastMCP 4.1.0. Eight confirmation controls
+> passed on 4.1.0; 194 denial, error and source controls passed on 4.0.11.
+> That historical run used a hash-verified, uncommitted SDK overlay. The current
+> candidate now pins landed SDK `04a68087dbd3867bbb20e6ce286ffdd654028183`
+> with resolver-generated development metadata. The preceding builder `8ae60277`
+> candidate passed **752 tests in 212.29 seconds**, including all 276 API and
+> 276 native proxy operations. Generator repairs from landed PR21 head `16aec383`
+> now pass **276 API + 276 native proxy operations in 195.63 seconds** and
+> **224 focused tests in 44.02 seconds**. Native schema freshness, sanitizer
+> positive/negative controls, stdout and Ruff pass. The pinned upstream evidence
+> uses an approved exception for two exact complexity paths and two EOF paths.
+> Their index and working-tree hashes are verified on commit and push; security
+> scanning and the existing pipeline `main` references remain unchanged.
+> Final normal gates and publication are in progress.
+> See [current parity evidence](validation/full-operation-parity-16aec38-2026-10-13.json).
+> The current candidate adds independently reviewed evidence for all 17 omitted
+> authorization declarations and bounded search discovery. Its new exhaustive
+> proxy tests preserve modern write confirmation. The checked-in
+> client budget is a test fixture; no production client budget is approved.
+> The prior 58-test normal gate result applies to published baseline
+> `b1cf24d7`; final gates for this follow-up remain pending.
 > The operator approved shared pipeline and hook references following `main`.
-> The normal gate batch passed in 42.16 seconds at pipelines `086337f211f0`.
-> Exhaustive operation transport-parity proof is tracked separately.
-> See [quality evidence](validation/final-quality-2026-10-12.json).
+> See [prior quality evidence](validation/final-quality-2026-10-12.json).
 > Docker now installs this source checkout. No image build, dependency closure,
 > fleet enrollment or graph receipt is claimed. Windows report-only success ran
 > zero tests: the latest EG build failed on its POSIX `fcntl` dependency.

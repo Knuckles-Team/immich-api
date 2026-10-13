@@ -11,6 +11,9 @@ repos:
   # Use the reviewed, already-provisioned toolchain; hooks never install it.
   - id: scanner-versions
   - id: complexity-staged
+    # Approved upstream bytes are verified before the shared per-file gate runs.
+    entry: python scripts/upstream_evidence.py
+    stages: [pre-commit, pre-push]
   - id: kiss-staged
   - id: dupehound-changed
   - id: complexity-census
@@ -49,6 +52,8 @@ repos:
   - id: detect-private-key
   - id: trailing-whitespace
   - id: end-of-file-fixer
+    # Exact immutable upstream artifacts only; the complexity adapter checks hashes.
+    exclude: '\A(?:api-spec/immich\.openapi\.json|api-spec/provider-source/LICENSE)\Z'
 
 - repo: https://github.com/astral-sh/ruff-pre-commit
   rev: 6fec9b7edb08fd9989088709d864a7826dc74e80

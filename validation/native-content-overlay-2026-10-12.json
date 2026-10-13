@@ -1,0 +1,140 @@
+{
+  "sdk_revision": "6b35633add03580a209bb8db7796b11a8994f2c5",
+  "sdk_overlay_sha256": "5221da1664693c28077e8542b06be33ba6acea215432282288d5221221864cf6",
+  "eg_python_revision": "d33abec1e09b63cdcde01f8e8e4fe810d91cd43d",
+  "protocol": "2026-07-28",
+  "tools": [
+    "activities_operations",
+    "album_metadata_sample",
+    "albums_operations",
+    "api_keys_operations",
+    "asset_files_operations",
+    "assets_operations",
+    "authentication_admin_operations",
+    "authentication_operations",
+    "cluster_groups_operations",
+    "config_admin_operations",
+    "config_public_operations",
+    "config_user_operations",
+    "database_backups_admin_operations",
+    "download_operations",
+    "duplicates_operations",
+    "faces_operations",
+    "jobs_operations",
+    "libraries_operations",
+    "maintenance_admin_operations",
+    "map_operations",
+    "memories_operations",
+    "notifications_admin_operations",
+    "notifications_operations",
+    "partners_operations",
+    "people_operations",
+    "plugins_operations",
+    "queues_operations",
+    "search_operations",
+    "server_operations",
+    "sessions_operations",
+    "shared_links_operations",
+    "stacks_operations",
+    "sync_operations",
+    "system_config_operations",
+    "system_metadata_operations",
+    "tags_operations",
+    "timeline_operations",
+    "trash_operations",
+    "users_admin_operations",
+    "users_operations",
+    "views_operations",
+    "workflows_operations"
+  ],
+  "prompts": {
+    "connector-status": {
+      "sha256": "4abc8cae7c17eafbc03230fd87f74054ff1db674ce2512359749b3c724309a09",
+      "bytes": 65
+    },
+    "immich_album_review": {
+      "sha256": "4254821b0d96b5a232cbb349db0db913ced36bdc72d7d0af446810e41f96bb57",
+      "bytes": 1217
+    },
+    "immich_asset_metadata": {
+      "sha256": "7a4a3520d8f0a174e4c8b35e67347cc8e624fd1cb3ebfdb7f5d85ddc6cf50b22",
+      "bytes": 928
+    },
+    "immich_person_record": {
+      "sha256": "109d8e55fc964abf93d3612fb85f606337f57420c3b7bb5747f00f6b1bcec757",
+      "bytes": 842
+    },
+    "immich_specialist": {
+      "sha256": "714bda38580048b246a8907dfd81d19bf23b5104dad7a36841e2f19ecf315d52",
+      "bytes": 625
+    },
+    "main_agent": {
+      "sha256": "cc6d11c360af66fe38df2f36913e645b34e1dbce53ad917a997280f1c020e000",
+      "bytes": 829
+    }
+  },
+  "resources": {
+    "connector://status": {
+      "sha256": "b354e2d4bc5fd0d3ab88bb7556620bdf0786214b1455ef58aa44baa2484fe389",
+      "bytes": 40
+    },
+    "ontology://immich-api/immich.ttl": {
+      "sha256": "c68d2270fcfbcacb40369011d3f65fdf625e6ea1eabba10bf4309f7c007e391d",
+      "bytes": 14540
+    },
+    "shapes://immich-api/immich.ttl": {
+      "sha256": "9c3b95c0dfd49fa4b406ec7c09ea5867d94bf85e277f0983352adcaf042c777a",
+      "bytes": 6562
+    },
+    "manifest://connector": {
+      "sha256": "bf7c03c7b21a02b2e1e539dcca0f5878ff9e72722c8dd520488efb57bd2e07c3",
+      "bytes": 5976
+    },
+    "skill://immich-person-record/SKILL.md": {
+      "sha256": "f2c32e0f0b4910dc07d7701d5fb1ded5863e14d049bc3f1ae8efb50fe04391bf",
+      "bytes": 1288
+    },
+    "skill://immich-person-record/_manifest": {
+      "sha256": "cb68d815ff769ef9dac05bfc0c2675b446814c63c9db814f59b05cd9595c1641",
+      "bytes": 201
+    },
+    "skill://immich-asset-metadata/SKILL.md": {
+      "sha256": "9e524b27bc84f46fc955419f8d562e6e9e16f576714f12c2ed0d2b0f68006a15",
+      "bytes": 1342
+    },
+    "skill://immich-asset-metadata/_manifest": {
+      "sha256": "1ee5ad0c8d3c0021a4b4e72540b68adb77641a13937297e940c580663160b651",
+      "bytes": 202
+    },
+    "skill://immich-album-review/SKILL.md": {
+      "sha256": "8247aad724e305b17f140b12d399370f83a5f6a447350aada8010ea3c3e6976e",
+      "bytes": 1648
+    },
+    "skill://immich-album-review/_manifest": {
+      "sha256": "d4e8a408e485954de443ccbaacb43d52b79035c6e74c73447d518d0df03f8cea",
+      "bytes": 200
+    },
+    "skill://immich-health/SKILL.md": {
+      "sha256": "cd0e4c90bb35901008be4b393cae46d3aa726dc9df552f0c0f3d2249958a2619",
+      "bytes": 1022
+    },
+    "skill://immich-health/_manifest": {
+      "sha256": "b7f7a69e3767fbe51b51b7d603c3192e7f8caa056915ca0d46347704da404917",
+      "bytes": 194
+    }
+  },
+  "pack_entries": 55,
+  "pack_kinds": [
+    "manifest",
+    "ontology",
+    "prompt",
+    "shapes",
+    "skill",
+    "tool"
+  ],
+  "pack_archive_sha256": "de5f4989c5c596871ba045dcec157e8de90c0a47d57805559772a99b76de018b",
+  "provider_calls": 0,
+  "engine_calls": 0,
+  "fleet_registration": false,
+  "status": "native SDK source-content capture; no semantic EG receipt"
+}

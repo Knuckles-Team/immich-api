@@ -6,24 +6,25 @@ import json
 import time
 from pathlib import Path
 from typing import Any
-from urllib.parse import urlsplit
 
 import regex
+from agent_connector_sdk.config import setting
 from agent_connector_sdk.http.client import create_http_client
 from agent_connector_sdk.http.options import HttpClientOptions
 from agent_connector_sdk.http.retry import RetryPolicy
 from agent_connector_sdk.mcp.concurrency import run_blocking
-from agent_connector_sdk.mcp.context import ctx_confirm_destructive
-from fastmcp.server.dependencies import get_context
 from fastmcp.tools import Tool, ToolResult
 from jsonschema import Draft202012Validator, FormatChecker
 from jsonschema.exceptions import ValidationError
 from jsonschema.validators import extend
-from mcp.types import ToolAnnotations
+from mcp.types import InputRequiredResult, ToolAnnotations
 from pydantic import Field
 
+from .openapi_auth_scheme import credential_headers
+from .openapi_execution import confirm_write, require_origin
 from .openapi_request import body_options, parameters
 from .openapi_response import decode_body, read_body
+from .parity.openapi_discovery import configure_discovery
 
 CONTRACT = json.loads(Path(__file__).with_name("openapi_contract.json").read_text())
 MAX_BYTES = 16 * 1024 * 1024
@@ -65,9 +66,11 @@ class OpenApiClient:
     ):
         if write_mode not in {"read-only", "read-write"}:
             raise ValueError("Unsupported OpenAPI write mode")
-        parsed = urlsplit(base_url)
-        if parsed.path not in {"", "/"} or parsed.query or parsed.fragment:
-            raise ValueError("Base URL must be the provider origin without a path")
+        require_origin(
+            base_url,
+            credential_scheme=credential_scheme,
+            allow_plaintext=allow_plaintext,
+        )
         self.session = create_http_client(
             HttpClientOptions(
                 base_url=base_url,
@@ -95,7 +98,11 @@ class OpenApiClient:
         if not operation["read_only"] and not self.allow_writes:
             raise PermissionError("Writes require explicit operator enablement")
         self._require_credentials(operation["security"])
-        path, query, headers = parameters(operation, arguments)
+        path, query, headers = parameters(
+            operation,
+            arguments,
+            credential_headers=credential_headers(CONTRACT["security_schemes"]),
+        )
         target = self.session.base_url.join(path)
         origin = self.session.base_url
         if (target.scheme, target.host, target.port) != (
@@ -108,14 +115,14 @@ class OpenApiClient:
             )
         options = {"params": query, "headers": headers, "follow_redirects": False}
         if "body" in arguments:
-            options.update(
-                body_options(
-                    operation,
-                    arguments["body"],
-                    definitions=CONTRACT["definitions"],
-                    max_bytes=MAX_BYTES,
-                )
+            body = body_options(
+                operation,
+                arguments["body"],
+                definitions=CONTRACT["definitions"],
+                max_bytes=MAX_BYTES,
             )
+            options["headers"].update(body.pop("headers", {}))
+            options.update(body)
         return self._send(operation, path, options)
 
     def _require_credentials(self, requirements):
@@ -154,16 +161,15 @@ class OpenApiTool(Tool):
         validate(arguments, self.parameters)
         operation = CONTRACT["operations"][arguments["action"]]
         client = self.client_factory()
-        if not operation["read_only"]:
-            if not client.allow_writes:
-                raise PermissionError("Writes require explicit operator enablement")
-            if not await ctx_confirm_destructive(get_context(), operation["action"]):
-                raise PermissionError("Write was not confirmed")
+        confirmation = await confirm_write(operation, arguments, client)
+        if isinstance(confirmation, InputRequiredResult):
+            return confirmation
         result = await run_blocking(client.execute, self.domain, arguments)
         return ToolResult(structured_content=result)
 
 
 def register_domain(mcp, domain, client_factory):
+    configure_discovery(mcp, setting("IMMICH_API_MCP_CLIENT_BUDGET"))
     operations = [
         CONTRACT["operations"][action] for action in CONTRACT["domains"][domain]
     ]

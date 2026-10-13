@@ -40,7 +40,16 @@ PACKAGE = ROOT / "immich_api"
 
 
 def _write_or_check(path: Path, value: dict, check: bool) -> None:
-    text = json.dumps(value, indent=2, sort_keys=True) + "\n"
+    text = (
+        json.dumps(
+            value,
+            ensure_ascii=False,
+            sort_keys=True,
+            separators=(",", ":"),
+            allow_nan=False,
+        )
+        + "\n"
+    )
     if check:
         if not path.is_file() or path.read_text(encoding="utf-8") != text:
             raise SystemExit(f"Stale generated contract: {path.relative_to(ROOT)}")
@@ -82,17 +91,6 @@ async def generate(check: bool) -> None:
         },
         check,
     )
-    # This project's manifest is deterministic JSON (also valid YAML). Keep its
-    # sync pins bound to the SDK's actual discovered input AND output schemas.
-    manifest_path = PACKAGE / "connector_manifest.yml"
-    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    for entry in manifest["sync"]:
-        pin = pinned[presets[entry["preset"]].tool]
-        if check and entry.get("tool_schema_sha256") != pin:
-            raise SystemExit("Stale manifest tool schema pin")
-        entry["tool_schema_sha256"] = pin
-    if not check:
-        manifest_path.write_text(json.dumps(manifest, indent=2) + "\n")
     require_valid_connector_package(PACKAGE)
 
 

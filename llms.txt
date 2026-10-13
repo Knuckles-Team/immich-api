@@ -31,6 +31,10 @@
 
 - [Immich capabilities and evidence](https://knuckles-team.github.io/immich-api/immich-capabilities/) — This package binds the Immich 3.2.2 OpenAPI contract to 41 domain tools covering 276 declared operations. Inputs discriminate by the exact action enum, and the client uses that action's fixed HTTP method and route. There is no arbitrary URL or method dispatch. Writes are disabled by default, require MCP confirmation when enabled, and are never automatically retried.
 
+## OpenAPI parity
+
+- [OpenAPI parity](https://knuckles-team.github.io/immich-api/openapi-parity/) — The pinned Immich 3.2.2 source declares 276 operations across 192 paths and 41 domains. The source bytes are retained in api-spec/immich.openapi.json with SHA256 7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b. The complete method inventory is 123 GET, 66 POST, 42 PUT, 43 DELETE and 2 PATCH.
+
 ## Backing Platform (Immich Api)
 
 - [Backing Platform (Immich Api)](https://knuckles-team.github.io/immich-api/platform/) — immich-api is a client of a backing service instance. This page provides a Docker recipe for deploying one locally as an operator-selected provider endpoint.

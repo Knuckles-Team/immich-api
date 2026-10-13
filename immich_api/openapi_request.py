@@ -32,8 +32,8 @@ def _query_parameter(parameter, value):
     return [(name, ",".join(rendered))]
 
 
-def _header_parameter(name, value):
-    if name.casefold() in {"authorization", "cookie", "host", "x-api-key"}:
+def _header_parameter(name, value, credential_headers):
+    if name.casefold() in credential_headers:
         raise ValueError("Authentication headers are controlled by credentials")
     rendered = _value(value)
     if any(c in rendered for c in "\r\n\x00"):
@@ -41,7 +41,7 @@ def _header_parameter(name, value):
     return rendered
 
 
-def parameters(operation, arguments):
+def parameters(operation, arguments, *, credential_headers):
     path, query, headers = operation["path"], [], {}
     for parameter in operation["parameters"]:
         name, location = parameter["name"], parameter["in"]
@@ -54,7 +54,7 @@ def parameters(operation, arguments):
         elif location == "query":
             query.extend(_query_parameter(parameter, value))
         elif location == "header":
-            headers[name] = _header_parameter(name, value)
+            headers[name] = _header_parameter(name, value, credential_headers)
     if "{" in path or "}" in path:
         raise ValueError("Missing path parameter")
     return path, query, headers
@@ -75,7 +75,20 @@ def _multipart(body, body_schema, *, definitions, max_bytes):
                 if isinstance(value, (dict, list))
                 else _value(value)
             )
-    return {"files": files, "data": data}
+    return _multipart_options(files, data)
+
+
+def _multipart_options(files, data):
+    # HTTPX selects form encoding when files is empty. Optional file fields
+    # must not silently change the operation's declared multipart media type.
+    if files:
+        return {"files": files, "data": data}
+    if data:
+        return {"files": {key: (None, value) for key, value in data.items()}}
+    return {
+        "content": b"--mcp-empty-body--\r\n",
+        "headers": {"Content-Type": "multipart/form-data; boundary=mcp-empty-body"},
+    }
 
 
 def body_options(operation, body, *, definitions, max_bytes):

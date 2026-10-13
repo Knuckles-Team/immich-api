@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "client": "fastmcp-native-test-client-4.1.0-fixture-only",
+  "discovery": "regex-search",
+  "max_input_schema_bytes": 1048576,
+  "max_output_schema_bytes": 1048576,
+  "max_tool_bytes": 1048576,
+  "max_listing_bytes": 16384,
+  "max_search_result_bytes": 1048576
+}

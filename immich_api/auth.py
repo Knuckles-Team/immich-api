@@ -11,6 +11,7 @@ from agent_connector_sdk.http.options import HttpClientOptions
 from agent_connector_sdk.tls.resolve import resolve_tls_profile
 
 from .api import ApiClientSystem
+from .openapi_auth_scheme import AuthKind, declared_scheme
 from .openapi_runtime import CONTRACT
 
 _client = None
@@ -18,10 +19,7 @@ _resources = ExitStack()
 
 
 def _bearer_scheme(definition):
-    return (
-        definition.get("type") == "http"
-        and definition.get("scheme", "").lower() == "bearer"
-    )
+    return definition is not None and definition.kind is AuthKind.BEARER
 
 
 def _delegated_auth(delegation, resources):
@@ -35,16 +33,16 @@ def _delegated_auth(delegation, resources):
 
 
 def _static_auth(reference, definition):
-    if definition.get("type") == "apiKey" and definition.get("in") == "header":
-        return api_key_auth(reference, header=definition["name"])
-    if _bearer_scheme(definition):
-        return bearer_auth(reference)
-    raise ValueError("Unsupported provider authentication scheme")
+    if definition is None:
+        raise ValueError("A credential requires a declared authentication scheme")
+    if definition.kind is AuthKind.HEADER:
+        return api_key_auth(reference, header=definition.header)
+    return bearer_auth(reference)
 
 
 def _resolve_auth(resources):
     scheme = setting("IMMICH_API_AUTH_SCHEME", "api_key")
-    definition = CONTRACT["security_schemes"].get(scheme, {})
+    definition = declared_scheme(scheme, CONTRACT["security_schemes"])
     delegation = DelegationSettings.from_settings()
     if delegation.enabled:
         if not _bearer_scheme(definition):

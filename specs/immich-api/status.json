@@ -8,7 +8,8 @@
     "CONN-IMMICH-API-R002",
     "CONN-IMMICH-API-R003",
     "CONN-IMMICH-API-R004",
-    "CONN-IMMICH-API-R005"
+    "CONN-IMMICH-API-R005",
+    "CONN-IMMICH-API-R006"
   ],
   "requirements": [
     {
@@ -45,6 +46,16 @@
       "delivery_state": "SPECIFIED",
       "landed_in": [],
       "verified_by": []
+    },
+    {
+      "id": "CONN-IMMICH-API-R006",
+      "title": "Complete source parity",
+      "delivery_state": "SPECIFIED",
+      "landed_in": [],
+      "verified_by": [
+        "tests/test_operation_parity.py:30",
+        "tests/test_upstream_evidence.py:14"
+      ]
     }
   ]
 }

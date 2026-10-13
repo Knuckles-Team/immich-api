@@ -1,0 +1,466 @@
+{
+  "all_file_changes": {
+    "immich_api/connectors/tool_schema_fingerprints.json": {
+      "after": {
+        "mode": "0o664",
+        "sha256": "e8cc1326d99a608e6aec9fa7fc3de21e34aacf0305c1bd1672cbf980866ebf8a"
+      },
+      "before": {
+        "mode": "0o664",
+        "sha256": "43dfd3b836a64f7d0e2cb9be2c2e0130f623977aab798471206f2dc60a63b4fc"
+      }
+    },
+    "immich_api/mcp/__init__.py": {
+      "after": {
+        "mode": "0o664",
+        "sha256": "fe83c703c11ea78ccbb5fa64703d59e09e37eae8ef692309af63f482bca7beb6"
+      },
+      "before": {
+        "mode": "0o664",
+        "sha256": "fa045fdfa4938c33b8cb5d6a9e7ada5891f534288b6ad4164e4f6434ca3fdfa9"
+      }
+    },
+    "immich_api/openapi_execution.py": {
+      "after": {
+        "mode": "0o664",
+        "sha256": "b36d3ca90d6ad8fde75ed2347378bea62a24f8327dca77c51071a0c4f70c3609"
+      },
+      "before": null
+    },
+    "immich_api/openapi_request.py": {
+      "after": {
+        "mode": "0o664",
+        "sha256": "6147c2284ddb82b71a5a98c7b206dbb5c4257f6bb32f9f1a95fa8b9db4aaa9df"
+      },
+      "before": {
+        "mode": "0o664",
+        "sha256": "63ec04ca705d26c301546e643483721197af909fc263ae86bf839cbc98f5c01f"
+      }
+    },
+    "immich_api/openapi_runtime.py": {
+      "after": {
+        "mode": "0o664",
+        "sha256": "cd719c5392e56421ae9afc390da790f3d3ed2557af83c9fc162ac00175f1771e"
+      },
+      "before": {
+        "mode": "0o664",
+        "sha256": "faccc6158f8ef8ca551530b0df3b80fe6dc6afdcbac058a955f7976ccc3b1875"
+      }
+    },
+    "immich_api/parity/check_openapi_parity.py": {
+      "after": {
+        "mode": "0o664",
+        "sha256": "230213bca8519bc9a622d104080e37e3e07e0c06c31728465e4aea21f79bc46c"
+      },
+      "before": {
+        "mode": "0o664",
+        "sha256": "4be641787acc51d1db546bf791b49a4e2fca2049aa9c78bd31d1e9d0324daf59"
+      }
+    },
+    "schemas/mcp_tools.json": {
+      "after": {
+        "mode": "0o664",
+        "sha256": "f19ea69c42e42e5fc8161d854c06fc7f4d01a505c96a37bf936c1f71eb17a37e"
+      },
+      "before": {
+        "mode": "0o664",
+        "sha256": "6ec46f4bcef1dec750c8a297d468aa3229df0bb53da0b829971b9386df70a61f"
+      }
+    },
+    "scripts/generate_tool_schemas.py": {
+      "after": {
+        "mode": "0o664",
+        "sha256": "5b5832214a47719b8ae8bef096ce1e29190fdf4e4902680770ebcd9e4cbd1f81"
+      },
+      "before": {
+        "mode": "0o664",
+        "sha256": "1fd35289e11d692aa0b7abbf3e495acb829c66726d78f337910499c586132461"
+      }
+    }
+  },
+  "allowed_substitutions": {
+    "default_auth_scheme": "api_key",
+    "package": "immich_api",
+    "package_environment": "IMMICH_API",
+    "service": "immich-api"
+  },
+  "builder_revision": "16aec3838c5908021a9a735ce62e8d6eaa3e83f6",
+  "catalog_preparation": "Existing catalog reserialized with the canonical pure writer; object preserved; native freshness not run",
+  "generated_files": {
+    "api/__init__.py": "60c4220046512ee8606075ae97b3393bc301fb562f3c5cb9d19c3b51ec117544",
+    "api/api_client_system.py": "66bd8a148df7a642372d3d87b3027ad9a8bdc8370b68be50ab4f353a5d679f94",
+    "auth.py": "277fec97c296e80d720f10b2236e4aff8a991a240505c9f2d3e885cc05f235a3",
+    "mcp/__init__.py": "fe83c703c11ea78ccbb5fa64703d59e09e37eae8ef692309af63f482bca7beb6",
+    "openapi_auth_scheme.py": "49234563d59cc77ab56fda8bf6e9dfd903e9924b288b88a593cee43a8027b64f",
+    "openapi_contract.json": "786b7126f55f24cfd2a40e1b45c8be6c68190e4e3b6b8d471fc1841cea5e92fb",
+    "openapi_execution.py": "b36d3ca90d6ad8fde75ed2347378bea62a24f8327dca77c51071a0c4f70c3609",
+    "openapi_inventory.json": "3c4e6794401941ece8fe4896ee01453700eada508cdb6df9c5664cdfbfe1696a",
+    "openapi_request.py": "6147c2284ddb82b71a5a98c7b206dbb5c4257f6bb32f9f1a95fa8b9db4aaa9df",
+    "openapi_response.py": "0f459fb87c65787c02faf0334ef7b493195b0f75ba3d77f74b01801b7b025eb0",
+    "openapi_runtime.py": "cd719c5392e56421ae9afc390da790f3d3ed2557af83c9fc162ac00175f1771e",
+    "parity/__init__.py": "4267d5090eb8d0bde3e9e143f00a17eac715679275aa97663fd271ab1cf2d659",
+    "parity/check_openapi_parity.py": "230213bca8519bc9a622d104080e37e3e07e0c06c31728465e4aea21f79bc46c",
+    "parity/openapi_discovery.py": "6c94f5df86c946d43dc0f4c31642a8b3af5f8cc76501264a9e102d91b7abe444",
+    "parity/openapi_parity.py": "7ad16d0bb5404cb2e9893d52c9b8a6303bcc0714be3a93f24d6925860def83b8",
+    "parity/openapi_provider_evidence.py": "8dea567ffe3027c15fca7272cf223e8d0958771fad024a15b98d200096f14321",
+    "parity/openapi_provider_overlay.py": "001cdcda06f1196069558839e376fdea289bc07a84080f930afa6f086376c52d",
+    "parity/openapi_schema.py": "45d7be9a51cb442faa37d0d2593cd2bbd4d13add610216630d415c94eea5b2f7",
+    "parity/openapi_schema_budget.py": "0157fd17d2aa55602f595b4d02b2976cfa285dfdca2cca3941e6da66fa2b00ce",
+    "parity/openapi_schema_inputs.py": "6da8e33c6ce591110f8ce44de1422ee6a764bbff16ff9d434bd59ccbf89913b5",
+    "parity/openapi_schema_types.py": "9e7ee4cd460841515bed8e9ce17ab0d6817279566ec225185d4fc33622f9cac6",
+    "parity/openapi_security.py": "526be16b99e4f17c82644d22b30aaa6c3506a13d8cf6ecc5d7500748737977a6",
+    "parity/openapi_source_parity.py": "3ce47d3145558a34b3e6f93c12b0269825ec36158e7a28dc611bc835c769135d",
+    "parity/openapi_transport_parity.py": "53aa634ed3116e7fae40394112839980adc53261156c4cd25e496d9b69aff00e",
+    "parity/unicode_patterns.py": "4b4b5d5ff591c619a9cc089ce72968d9e4ad2f2ee403ce8185b51ea607b5b526",
+    "parity/unicode_properties.json": "94085770ddb2cd6363e7030712be3d0b7a1f4f8cb54a2a6996dac4d03e3e17a4"
+  },
+  "generator_authority": {
+    "universal_skills/agent-tools/mcp-builder/DOCUMENTATION_STANDARD_VNEXT.md": {
+      "mode": "0o644",
+      "sha256": "44cb71c9cdf147c9536a3b1139b5f8c55a6e5095e489370a4df69d94fae8a6e8"
+    },
+    "universal_skills/agent-tools/mcp-builder/PARITY_MANIFEST.md": {
+      "mode": "0o644",
+      "sha256": "a9781838c0cef7a379cfa1d590a408eb6d6c7efa7e8a7ad5e064031c36cccea9"
+    },
+    "universal_skills/agent-tools/mcp-builder/SKILL.md": {
+      "mode": "0o644",
+      "sha256": "ad9bc4926497e1625a5fe89fc163cd91ed59360ddea4a36f95aa4047212dfdd7"
+    },
+    "universal_skills/agent-tools/mcp-builder/reference/backend_contracts.md": {
+      "mode": "0o644",
+      "sha256": "297f119d1955c3e480b8a3d9ad1b363d572fe46b19d9e33739e0d6daf701d255"
+    },
+    "universal_skills/agent-tools/mcp-builder/reference/connector_contracts.md": {
+      "mode": "0o644",
+      "sha256": "202813b754fe2a91302415837b4f9f84c3821e60f1466447a94553945a3403fc"
+    },
+    "universal_skills/agent-tools/mcp-builder/reference/ctx_helpers.md": {
+      "mode": "0o644",
+      "sha256": "e933b31405fed60287e72a0922ad31703240dd43078cbf27a85dfe766f1d4ea6"
+    },
+    "universal_skills/agent-tools/mcp-builder/reference/ctx_implementation_plan_phase_2.md": {
+      "mode": "0o644",
+      "sha256": "9258197c2c539d42acd3a39e6d6785a47b634f21ae3133dbc797c5667b574c89"
+    },
+    "universal_skills/agent-tools/mcp-builder/reference/evaluation.md": {
+      "mode": "0o644",
+      "sha256": "d98e1c22465b7bba03ad95c7132c8f03f5cf6fcf3c57289369e6b18cb0f25439"
+    },
+    "universal_skills/agent-tools/mcp-builder/reference/generated_schema_policy.md": {
+      "mode": "0o644",
+      "sha256": "7006bc7b3007c07f1d8176ad4776f70c898eb074d18df218ed7044d7d1e5611e"
+    },
+    "universal_skills/agent-tools/mcp-builder/reference/mcp_best_practices.md": {
+      "mode": "0o644",
+      "sha256": "13db3eeeb49751de4aa1617abc569b9933d4b7831339aae9c49e8fec469d35ec"
+    },
+    "universal_skills/agent-tools/mcp-builder/reference/openapi_bootstrap.md": {
+      "mode": "0o644",
+      "sha256": "fb7eb00883ddee9491ef6d951141113d782cf5ddc1e670c409395a51672decef"
+    },
+    "universal_skills/agent-tools/mcp-builder/reference/openapi_readiness.md": {
+      "mode": "0o644",
+      "sha256": "9f445da036ba16e6a8a7a1886a2951137067954da7104990c9507ef156930fb4"
+    },
+    "universal_skills/agent-tools/mcp-builder/reference/python_mcp_server.md": {
+      "mode": "0o644",
+      "sha256": "3b8004168d3d550fc0c8f33c9f2531eee6a38240deef7e1d6bc3fa4e13912fbb"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/agent_readiness.py": {
+      "mode": "0o644",
+      "sha256": "fcc40253e1f3637202eede95c5eae4f8b906e17607fbba3adc16ca46d8b7807e"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/agent_readiness_schema.json": {
+      "mode": "0o644",
+      "sha256": "2c47e8f49cdae81af504a4f525e5fe740ac5671f09773864a554aa8196be0fad"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/agent_readiness_tck.py": {
+      "mode": "0o644",
+      "sha256": "3a226a561855eaea4829a4bcfed00418dd884930cccb31588e99b5450d767a7c"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/backend_surfaces.py": {
+      "mode": "0o644",
+      "sha256": "7458e03c370999aaf07d6e2f2b776f332e1d0348940864904ccaa7ec10b5737b"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/check_connector_contract.py": {
+      "mode": "0o644",
+      "sha256": "6a2fe0fc71c7fcc03b1bbf15432ccebcbb421253b5285481ab3e6ec44187622c"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/check_openapi_parity.py": {
+      "mode": "0o644",
+      "sha256": "230213bca8519bc9a622d104080e37e3e07e0c06c31728465e4aea21f79bc46c"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/check_workspace_source_drift.py": {
+      "mode": "0o644",
+      "sha256": "b90529828d398cdff4788e4356b39b9de334b72b78db7731bf6e70b0cbd89883"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/cli_templates.py": {
+      "mode": "0o644",
+      "sha256": "52d6a07b50dfa2cfa4fe3cd4c04a9fa10a0e90b4d7fe71874dcdb88d79f959f5"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/connections.py": {
+      "mode": "0o644",
+      "sha256": "ce87ffcea31b4cc8a91fde2ac8ae0767c29f343f7f2d6fa78612ed3b61741033"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/connector_templates.py": {
+      "mode": "0o644",
+      "sha256": "229eba8525d8a9d933cbc3a0b53c90a78063f0b77414dff84fb5d0cc0231022b"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/docs_assets.py": {
+      "mode": "0o644",
+      "sha256": "cfaf70758456e1394600fb6a43b3a74647c888eaad30b6c985328ad8ff07861d"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/evaluation.py": {
+      "mode": "0o644",
+      "sha256": "7c5d33d1a6eb3423765b338d6654342e8ab2b029f743bca4a3ca87614fd80c89"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/example_evaluation.xml": {
+      "mode": "0o644",
+      "sha256": "9272b348ddcc4b06ba562367ccd0770e018158c0068ac5116d5e34aaeff8777a"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/github_publish.py": {
+      "mode": "0o644",
+      "sha256": "65e00ba468ab330d9946ff68f314f60600c8c35a032a07aa139983247da7a4f1"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/openapi_converter.py": {
+      "mode": "0o644",
+      "sha256": "edcce0281a8a1cf7934cea18a4af28004431f8bb6df497d6914be028859b916b"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/openapi_discovery.py": {
+      "mode": "0o644",
+      "sha256": "6c94f5df86c946d43dc0f4c31642a8b3af5f8cc76501264a9e102d91b7abe444"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/openapi_parity.py": {
+      "mode": "0o644",
+      "sha256": "7ad16d0bb5404cb2e9893d52c9b8a6303bcc0714be3a93f24d6925860def83b8"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/openapi_provider_evidence.py": {
+      "mode": "0o644",
+      "sha256": "8dea567ffe3027c15fca7272cf223e8d0958771fad024a15b98d200096f14321"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/openapi_provider_overlay.py": {
+      "mode": "0o644",
+      "sha256": "001cdcda06f1196069558839e376fdea289bc07a84080f930afa6f086376c52d"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/openapi_schema.py": {
+      "mode": "0o644",
+      "sha256": "45d7be9a51cb442faa37d0d2593cd2bbd4d13add610216630d415c94eea5b2f7"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/openapi_schema_budget.py": {
+      "mode": "0o644",
+      "sha256": "0157fd17d2aa55602f595b4d02b2976cfa285dfdca2cca3941e6da66fa2b00ce"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/openapi_schema_inputs.py": {
+      "mode": "0o644",
+      "sha256": "6da8e33c6ce591110f8ce44de1422ee6a764bbff16ff9d434bd59ccbf89913b5"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/openapi_schema_types.py": {
+      "mode": "0o644",
+      "sha256": "9e7ee4cd460841515bed8e9ce17ab0d6817279566ec225185d4fc33622f9cac6"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/openapi_security.py": {
+      "mode": "0o644",
+      "sha256": "526be16b99e4f17c82644d22b30aaa6c3506a13d8cf6ecc5d7500748737977a6"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/openapi_source_parity.py": {
+      "mode": "0o644",
+      "sha256": "3ce47d3145558a34b3e6f93c12b0269825ec36158e7a28dc611bc835c769135d"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/openapi_transport_parity.py": {
+      "mode": "0o644",
+      "sha256": "53aa634ed3116e7fae40394112839980adc53261156c4cd25e496d9b69aff00e"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/quality_templates.py": {
+      "mode": "0o644",
+      "sha256": "93ac7610159b1c0a875e141a952d7374942a9dddb44f31424dfbd6b6ed295edd"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/requirements.txt": {
+      "mode": "0o644",
+      "sha256": "0abc687a7e593f6dda3ee344b4aae46b56a2efcae922a72a799a3c67f44938df"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/scaffold_dates.py": {
+      "mode": "0o644",
+      "sha256": "e2d25e497f22f1061e8613a5bc966e0a5db4249590b40697446b7b8f8316b35a"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/scaffold_package.py": {
+      "mode": "0o644",
+      "sha256": "3f641ce50f2204306f3d5f0e50a8fa8a9f141cf57c49ecf6bdb5808509c5882e"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/spec_templates.py": {
+      "mode": "0o644",
+      "sha256": "87912ccb07cdd9bc05634634b9301ab7b1e562c608d47ad217ba63054bce5b90"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/surface_templates.py": {
+      "mode": "0o644",
+      "sha256": "eda8091cd142d515348f90aad108acd5d494ea83c42582af06a5668ac3a5815d"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/check_import_safety.py": {
+      "mode": "0o644",
+      "sha256": "ac8cc0e05bbc273a2d66ce50beed8b5ea1dc29ddf0ab22c7fff35c325cece66e"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/error_authority.py": {
+      "mode": "0o644",
+      "sha256": "29b95a9fc715259c66e346eea03d4e2c693fe69ca9a72229830dcd0191260a2e"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/error_rendering.py": {
+      "mode": "0o644",
+      "sha256": "0d2748bfdbace11277460804c0a2826eaeff19d8967268e635a596fd9c699008"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/generated_schema_clones.py": {
+      "mode": "0o644",
+      "sha256": "30941fa907bec49b8c82c36c22a10697680544346b9a1859504669593d13a781"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/kiss.toml": {
+      "mode": "0o644",
+      "sha256": "a6f2b9171123503522092aec416eaea7ad29ea98a26eb7283f02156c9c3d5c3a"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/openapi_auth.py": {
+      "mode": "0o644",
+      "sha256": "ce06579486b24934ee9c1c245a359ad9fd6f6e06b83246540b3468aaa921cc6f"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/openapi_auth_scheme.py": {
+      "mode": "0o644",
+      "sha256": "49234563d59cc77ab56fda8bf6e9dfd903e9924b288b88a593cee43a8027b64f"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/openapi_client_system.py": {
+      "mode": "0o644",
+      "sha256": "66bd8a148df7a642372d3d87b3027ad9a8bdc8370b68be50ab4f353a5d679f94"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/openapi_execution.py": {
+      "mode": "0o644",
+      "sha256": "b36d3ca90d6ad8fde75ed2347378bea62a24f8327dca77c51071a0c4f70c3609"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/openapi_registrars.py": {
+      "mode": "0o644",
+      "sha256": "fe83c703c11ea78ccbb5fa64703d59e09e37eae8ef692309af63f482bca7beb6"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/openapi_request.py": {
+      "mode": "0o644",
+      "sha256": "6147c2284ddb82b71a5a98c7b206dbb5c4257f6bb32f9f1a95fa8b9db4aaa9df"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/openapi_response.py": {
+      "mode": "0o644",
+      "sha256": "0f459fb87c65787c02faf0334ef7b493195b0f75ba3d77f74b01801b7b025eb0"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/openapi_runtime.py": {
+      "mode": "0o644",
+      "sha256": "b796d00dac74c3f562c03d6f36e5a245c8810948eb675ddea1261b740d1e333c"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/pipelines-theme/provenance.json": {
+      "mode": "0o644",
+      "sha256": "564f51ca6bebfc8f450211e541a4c87b82ed26d4f0c077461902e599ee839952"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/pipelines-theme/scripts/sync_mkdocs_theme.py": {
+      "mode": "0o644",
+      "sha256": "2c48e594035288b14dda106f3cbdc745f9485c84297e3e34db398a41d57c3d60"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/pipelines-theme/templates/mkdocs-theme/README.md": {
+      "mode": "0o644",
+      "sha256": "5e0e109a935ce3a0ffc0f425e7086cc60ba69a3611213451556dc851abfb38f3"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/pipelines-theme/templates/mkdocs-theme/assets/brands/agent-connector-sdk-logo-v1.png": {
+      "mode": "0o644",
+      "sha256": "6688810468a77118ee1960ac3872816c6ace4f750a849688d306d7a63132e1b1"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/pipelines-theme/templates/mkdocs-theme/assets/brands/agent-terminal-ui-logo-v1.png": {
+      "mode": "0o644",
+      "sha256": "d5e3c011066e2241c09c885f65d9a07c6ff32f4244b00dbe8e7550a3bab20dc8"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/pipelines-theme/templates/mkdocs-theme/assets/brands/agent-utilities-logo-v1.png": {
+      "mode": "0o644",
+      "sha256": "923319a3b89fa1fbd14ca14c27cf49d2e2d9f85bc45456e05b788692700f0103"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/pipelines-theme/templates/mkdocs-theme/assets/brands/agent-webui-logo-v1.png": {
+      "mode": "0o644",
+      "sha256": "3939a7324f134c520fd544aadd2a37c99abba9db78dd2bf3fd5003ffd62502ff"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/pipelines-theme/templates/mkdocs-theme/assets/brands/epistemic-graph-logo-v1.png": {
+      "mode": "0o644",
+      "sha256": "26671aef2c3b78ecdcca2ad13adfd266cebf8d7e666e614c2d83d166b853d272"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/pipelines-theme/templates/mkdocs-theme/assets/brands/geniusbot-logo-v1.png": {
+      "mode": "0o644",
+      "sha256": "c4a17404f234f677496197ac202ca8fb30b136c5a69243811bbfa6e5d5352b28"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/pipelines-theme/templates/mkdocs-theme/assets/brands/graph-os-logo-v1.png": {
+      "mode": "0o644",
+      "sha256": "bba183368e42927edea91013639311a5d64f5a9910ec2f1bdcc7f4cd32f9d230"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/pipelines-theme/templates/mkdocs-theme/assets/favicon.svg": {
+      "mode": "0o644",
+      "sha256": "aa606f9668a363bfe533f7d835700c246efaed0b8895cce5fe4398f36c35e7ba"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/pipelines-theme/templates/mkdocs-theme/assets/graph-mark.svg": {
+      "mode": "0o644",
+      "sha256": "d0c69cdc06aa51439b6ce04b4c6df4dbf02283329f01122a78e08f286186e25d"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/pipelines-theme/templates/mkdocs-theme/assets/runtime-architecture.mmd": {
+      "mode": "0o644",
+      "sha256": "7fcbaed9a8fa8acbc1c30cccf31035e0d7048db9db45a73467f2e8faef7bc3cc"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/pipelines-theme/templates/mkdocs-theme/assets/runtime-architecture.svg": {
+      "mode": "0o644",
+      "sha256": "2ecd201c6b7a170924195ce5578394f88365d3a539be4ece17aca15a439aef47"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/pipelines-theme/templates/mkdocs-theme/base.mkdocs.yml": {
+      "mode": "0o644",
+      "sha256": "e324b30874e57ebe09a2ee0e7ae4a303e52dce808be1e7075dc3b445ad1e6bad"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/pipelines-theme/templates/mkdocs-theme/extra.css": {
+      "mode": "0o644",
+      "sha256": "2cc17b7610b67c82895312e7e61cf84587a6fe291bbc154d3c83c59fba2ee843"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/pipelines-theme/templates/mkdocs-theme/glossary.md": {
+      "mode": "0o644",
+      "sha256": "0c01322fff633a1d420fa3b0f4ee246124802f6b33bb0d4827b5d12fb9b56e09"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/pipelines-theme/templates/mkdocs-theme/overrides/main.html": {
+      "mode": "0o644",
+      "sha256": "766234b5045a5815805bb2ce5223ddd93729f7854abc4b6cdf4fba9c7e0dab3b"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/security_sanitizer.py": {
+      "mode": "0o755",
+      "sha256": "4b44dd78edf91e012668cf8c96066c9986be642554bbbe468cbe46c0c413d737"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/validate_a2a_agent.py": {
+      "mode": "0o644",
+      "sha256": "b8c32c15b9209be26600802bc932f6723a60b4fd52e7b8152a2c95ecb897e8b0"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/verify_api_integration.py": {
+      "mode": "0o755",
+      "sha256": "02b71d8bba4dbe5a0efa72f699130d2428ae2ee7e637acfe8ef13bf327bac13c"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/transport_templates.py": {
+      "mode": "0o644",
+      "sha256": "e1616a7cb71e8108d48034e373c9b9dfffbfbebeb3bdd276f0f67713932218d1"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/unicode_patterns.py": {
+      "mode": "0o644",
+      "sha256": "4b4b5d5ff591c619a9cc089ce72968d9e4ad2f2ee403ce8185b51ea607b5b526"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/unicode_properties.json": {
+      "mode": "0o644",
+      "sha256": "94085770ddb2cd6363e7030712be3d0b7a1f4f8cb54a2a6996dac4d03e3e17a4"
+    },
+    "universal_skills/agent-tools/mcp-builder/scripts/workspace_sources.py": {
+      "mode": "0o644",
+      "sha256": "28fa4f1344afaecb5ff1815f9fa7f4d11dfbaa44ab52a14cbab7e1c13a94d5b7"
+    }
+  },
+  "idempotent": true,
+  "preserved_handwritten_change": {
+    "addition": "from .album_sample import register_album_sample_tools as register_album_sample_tools",
+    "path": "immich_api/mcp/__init__.py",
+    "reason": "Existing bounded album metadata adapter registration"
+  },
+  "provider_overlay_sha256": "43f936578e5361b4400750ccb9e04747948eabe19baad0e78d90774c9c79c432",
+  "provider_requests": 0,
+  "schema_generator_rendered": true,
+  "source_sha256": "7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b",
+  "tests_run": false,
+  "verification_script": {
+    "path": "scripts/verify_api_integration.py",
+    "sha256": "02b71d8bba4dbe5a0efa72f699130d2428ae2ee7e637acfe8ef13bf327bac13c"
+  }
+}
