@@ -12,6 +12,7 @@
     "validation/canonical-parity-generation-8ae6027-2026-10-13.json": "cba4798a58b5fcbb3bc0226602a3f00f7eb9f91522f30b6e52077cb722137738",
     "validation/canonical-parity-generation-cab8bbac-2026-10-13.json": "279bfcac164512b9e145ed058c5f2fc8af7eedaf5e620e78fba2010fb709c649",
     "validation/canonical-parity-generation-d4434275-2026-10-13.json": "eeb4b7231aaeff1f8630b791eebdfd6737b5fd1ba4dabe2366beb935bed05e3b",
+    "validation/canonical-parity-generation-f6881bf5-2026-10-13.json": "16112c66dc1616662e1fa155f673a81621a189563590c441974a9f21146e8168",
     "validation/exhaustive-native-proxy-2026-10-13.json": "befe726b7659d9ac911303522c6f808f6a9fa116ba1fe0d6bfee042b98c902f0",
     "validation/focused-merged-sdk-b9ee9ed-2026-10-13.json": "1cfe89dbb3073b1f5145cb2c136f3a0b6b4359e8d6f0df8f6b01d3881120c3e3",
     "validation/full-operation-parity-16aec38-2026-10-13.json": "d31bac57c23eace8ee5458fa1429e15a4d4de72c22810dab407ab61fd2fc1e5c",
@@ -22,8 +23,8 @@
     "validation/native-content-overlay-2026-10-12.json": "5994faa3aced79bcd1323225e6fce78fb497c7cedfa96c81bec5d886f6d1f9d2"
   },
   "provenance": {
-    "builder_revision": "d44342759644867da420e46e4cf7ec9b90e7b182",
-    "generation_receipt": "validation/canonical-parity-generation-d4434275-2026-10-13.json",
+    "builder_revision": "f6881bf5598f1d6a6a1f548ae4caa1a713a6d9d7",
+    "generation_receipt": "validation/canonical-parity-generation-f6881bf5-2026-10-13.json",
     "provider_overlay_path": "api-spec/immich.provider-response-evidence.json",
     "provider_overlay_sha256": "bdd58565bd0ffa7383373ea32425147c6bcb343f135ebc5541a67411e9b7708b",
     "provider_revision": "60b51cb3bc909e72fe963f4dfb1947515cb9ab3b",

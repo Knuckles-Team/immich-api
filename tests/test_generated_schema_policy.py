@@ -34,7 +34,7 @@ def snapshot(tmp_path):
 
 def test_allowlist_is_exact_and_has_no_implementation_paths():
     policy = verifier.load_policy(ROOT)
-    assert len(policy["artifacts"]) == 20
+    assert len(policy["artifacts"]) == 21
     assert policy["regenerated_schemas"] == [verifier.INVENTORY]
     assert all(
         path.endswith((".json", "/auth.service.ts")) for path in policy["artifacts"]

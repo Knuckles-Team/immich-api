@@ -5,7 +5,7 @@
 > callback to a 307 response with a validated Location value; redirects are never
 > followed. Merged SDK `b9ee9ed0a82f6ecd5ed23d6226ca5ab503f74f9c` prevents a
 > shared API-key client from retaining or forwarding login-session cookies.
-> Merged canonical builder `d44342759644867da420e46e4cf7ec9b90e7b182` supplies
+> Merged canonical builder `f6881bf5598f1d6a6a1f548ae4caa1a713a6d9d7` supplies
 > the deterministic compiler and frozen source-overlay bootstrap. The 21 focused
 > API/native redirect and cookie regressions passed in 5.81 seconds; see
 > [current evidence](validation/focused-merged-sdk-b9ee9ed-2026-10-13.json).
