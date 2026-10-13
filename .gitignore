@@ -104,3 +104,6 @@ trace.txt
 
 # Local scanner scratch; never source artifacts.
 .kiss/
+
+# Canonical local dependency bootstrap workspace.
+.ci/

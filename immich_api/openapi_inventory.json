@@ -15983,7 +15983,7 @@
         "source_file_sha256": "55f456af4c6cbd12615e48588c92dd974aa0a721ccb321b5320bca6ab810c4ba"
       }
     ],
-    "effective_source_sha256": "4733e4346a7c22cfdac9eb9cbb5298f42662c8b3f5b3cc450cfd2d4347e60e77",
+    "effective_source_sha256": "c41df1aafe4dbabd44eea20bf956b5182e10e3b93573ac2890dd3c98f17e75b8",
     "evidence_files": [
       {
         "git_blob": "b96ba4dee33eea160fc67ea244db79931a9a057b",
@@ -16062,15 +16062,67 @@
         "path": "server/src/utils/misc.ts",
         "sha256": "55f456af4c6cbd12615e48588c92dd974aa0a721ccb321b5320bca6ab810c4ba",
         "source_commit": "60b51cb3bc909e72fe963f4dfb1947515cb9ab3b"
+      },
+      {
+        "git_blob": "856a6ffc579e36cb3ac11817d7713fb1e15f4903",
+        "path": "server/src/constants.ts",
+        "sha256": "15ed3064fe4cde9d478104b990bc34b8a99dab5781189a210b89cd6237c93ab7",
+        "source_commit": "60b51cb3bc909e72fe963f4dfb1947515cb9ab3b"
       }
     ],
     "live_verified": false,
-    "overlay_sha256": "43f936578e5361b4400750ccb9e04747948eabe19baad0e78d90774c9c79c432",
+    "overlay_sha256": "bdd58565bd0ffa7383373ea32425147c6bcb343f135ebc5541a67411e9b7708b",
     "raw_source_sha256": "7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b",
     "ready": false,
     "remaining_unknown_operation_ids": [],
+    "response_corrections": [
+      {
+        "after_responses_sha256": "40da2d977f94dac85968663f6bba9f5354ed8ef746c2c1b81e1564a14709b061",
+        "before_responses_sha256": "ac1158aae75d08a5f9c64900453010d5bd0f1c31ed2101fe2d2ec5979d996e08",
+        "location_schema": {
+          "maxLength": 8192,
+          "minLength": 29,
+          "pattern": "^app\\.immich:///oauth-callback\\?[^\\s]*$",
+          "type": "string"
+        },
+        "method": "GET",
+        "op": "replace-empty-200-with-307",
+        "operation_id": "redirectOAuthToMobile",
+        "path": "/oauth/mobile-redirect",
+        "source_evidence": [
+          {
+            "git_blob": "54f5c1f10bdfb39070a913dc544ccd6c82f3a831",
+            "line_end": 38,
+            "line_start": 24,
+            "path": "server/src/controllers/oauth.controller.ts",
+            "sha256": "bfb11532d958f5c0824b17163c203fb3acf6b9e85a83ea219d008c191a586614",
+            "source_commit": "60b51cb3bc909e72fe963f4dfb1947515cb9ab3b",
+            "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/controllers/oauth.controller.ts#L24-L38"
+          },
+          {
+            "git_blob": "c6143d60db519c33bad3a62e02e946da93abeb44",
+            "line_end": 271,
+            "line_start": 269,
+            "path": "server/src/services/auth.service.ts",
+            "sha256": "58c8a233f7637785d2d0b1c10c16e75097041310167badebea5134d149526dd1",
+            "source_commit": "60b51cb3bc909e72fe963f4dfb1947515cb9ab3b",
+            "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/services/auth.service.ts#L269-L271"
+          },
+          {
+            "git_blob": "856a6ffc579e36cb3ac11817d7713fb1e15f4903",
+            "line_end": 61,
+            "line_start": 61,
+            "path": "server/src/constants.ts",
+            "sha256": "15ed3064fe4cde9d478104b990bc34b8a99dab5781189a210b89cd6237c93ab7",
+            "source_commit": "60b51cb3bc909e72fe963f4dfb1947515cb9ab3b",
+            "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/constants.ts#L61-L61"
+          }
+        ],
+        "source_operation_sha256": "0dc6a12fe48739dd988eebf1cd55223f826d3207dab21e4f7be4b85a5ed31fc4"
+      }
+    ],
     "transport_parity_verified": false,
-    "version": 1
+    "version": 2
   },
   "scope": "All operations in this pinned OpenAPI source; upstream suite completeness requires separate evidence.",
   "security_schemes": {

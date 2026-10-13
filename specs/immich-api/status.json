@@ -54,9 +54,10 @@
       "landed_in": [],
       "verified_by": [
         "tests/test_generated_schema_policy.py:18",
+        "tests/test_oauth_redirect_response.py:26",
         "tests/test_operation_parity.py:30",
         "tests/test_reviewed_secret_history.py:13",
-        "tests/test_upstream_evidence.py:14"
+        "tests/test_session_auth_isolation.py:17"
       ]
     }
   ]

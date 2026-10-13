@@ -31,3 +31,17 @@ set `IMMICH_API_ALLOW_PLAINTEXT=true`. The SDK permits this exact vendor origin
 only; redirects remain disabled. This never downgrades HTTPS, disables certificate
 verification, or changes the separate OIDC token client's TLS policy.
 Leave the flag false for HTTPS.
+
+## Reproduce the source test environment
+
+Run `python scripts/bootstrap_environment.py` from this checkout, then use
+`.ci/connector-venv/bin/python scripts/generate_tool_schemas.py --check` and
+`.ci/connector-venv/bin/python -m pytest tests -q`. The helper verifies the frozen
+lock, uses immutable SDK/EG source pins, refuses native builds, and records import
+origins in `.ci/connector-environment.json`. This source-overlay environment does
+not certify a complete release installation. Hosted checks use the same helper
+before invoking the runner's provisioned pre-commit and scanner tools.
+
+Mobile OAuth redirect responses expose the validated `location` as response data
+with status 307. The client never follows that URI. Shared API-key clients discard
+session cookies; subsequent requests retain the configured credential identity.

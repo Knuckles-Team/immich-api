@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 
 MANIFEST = ".config/generated-schema-policy.json"
-MANIFEST_SHA256 = "addf1a6c0f84ca2d0639568203bf1672e88f59de12306641d982e02534dd9416"
+MANIFEST_SHA256 = "ec4c6144c73acf8a274916533e402700c82610cc480bbede7e69c76f3c9a15d5"
 INVENTORY = "immich_api/openapi_inventory.json"
 
 
@@ -52,7 +52,7 @@ def verify_provenance(root, policy):
     require_hash(root, "api-spec/immich.openapi.json", provenance["raw_source_sha256"])
     require_hash(
         root,
-        "api-spec/immich.provider-evidence.json",
+        provenance["provider_overlay_path"],
         provenance["provider_overlay_sha256"],
     )
 
@@ -66,7 +66,7 @@ def regenerated_inventory(root, policy):
     document = json.loads(source)
     options = {
         "source_bytes": source,
-        "overlay_bytes": regular_bytes(root, "api-spec/immich.provider-evidence.json"),
+        "overlay_bytes": regular_bytes(root, provenance["provider_overlay_path"]),
         "expected_overlay_sha256": provenance["provider_overlay_sha256"],
         "evidence_root": root / "api-spec/provider-source",
     }

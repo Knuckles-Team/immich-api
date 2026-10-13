@@ -1,38 +1,21 @@
 > **Work in progress — not released or deployment-ready.**
 >
-> Immich 3.2.2 supplies 276 declared operations in 41 domain tools, plus a
-> bounded album metadata read tool. Writes default off; ingestion presets are
-> disabled pending provider/account stream binding.
-> Historical mocked dispatch passed for **276 API and 276 native MCP operations**
-> under protocol `2026-07-28`: 552 HTTP mock requests and 153 explicit write
-> confirmations in 64.09 seconds on FastMCP 4.1.0. Eight confirmation controls
-> passed on 4.1.0; 194 denial, error and source controls passed on 4.0.11.
-> That historical run used a hash-verified, uncommitted SDK overlay. The current
-> candidate now pins landed SDK `04a68087dbd3867bbb20e6ce286ffdd654028183`
-> with resolver-generated development metadata. The preceding builder `8ae60277`
-> candidate passed **752 tests in 212.29 seconds**, including all 276 API and
-> 276 native proxy operations. Generator repairs from landed PR21 head `16aec383`
-> now pass **276 API + 276 native proxy operations in 195.63 seconds** and
-> **224 focused tests in 44.02 seconds**. Native schema freshness, sanitizer
-> positive/negative controls, stdout and Ruff pass. The pinned upstream evidence
-> uses an approved exception for two exact complexity paths and two EOF paths.
-> Their index and working-tree hashes are verified on commit and push; security
-> scanning and the existing pipeline `main` references remain unchanged.
-> Final normal gates and publication are in progress.
-> See [current parity evidence](validation/full-operation-parity-16aec38-2026-10-13.json).
-> The current candidate adds independently reviewed evidence for all 17 omitted
-> authorization declarations and bounded search discovery. Its new exhaustive
-> proxy tests preserve modern write confirmation. The checked-in
-> client budget is a test fixture; no production client budget is approved.
-> The prior 58-test normal gate result applies to published baseline
-> `b1cf24d7`; final gates for this follow-up remain pending.
-> The operator approved shared pipeline and hook references following `main`.
-> See [prior quality evidence](validation/final-quality-2026-10-12.json).
-> Docker now installs this source checkout. No image build, dependency closure,
-> fleet enrollment or graph receipt is claimed. Windows report-only success ran
-> zero tests: the latest EG build failed on its POSIX `fcntl` dependency.
-> Earlier public ping/version calls passed with verified HTTPS and explicit
-> HTTP opt-in. Private endpoints and credentials remain runtime inputs.
+> Immich 3.2.2 supplies 276 operations in 41 domain tools plus the bounded album
+> metadata tool. Writes default off. Provider evidence corrects the mobile OAuth
+> callback to a 307 response with a validated Location value; redirects are never
+> followed. Merged SDK `b9ee9ed0a82f6ecd5ed23d6226ca5ab503f74f9c` prevents a
+> shared API-key client from retaining or forwarding login-session cookies.
+> Merged canonical builder `2ea1591a5706b37afc79f47168d059de05b4b601` supplies
+> the deterministic compiler and frozen source-overlay bootstrap. The 21 focused
+> API/native redirect and cookie regressions passed in 5.81 seconds; see
+> [current evidence](validation/focused-merged-sdk-b9ee9ed-2026-10-13.json).
+> Normal commit and push checks gate publication. Historical 276 API plus 276
+> native operation receipts remain under `validation/`; their revision bindings
+> are preserved. Mocked tests do not establish provider/account permissions or
+> production client discovery budgets. Ingestion presets remain disabled.
+> The bootstrap installs locked registry wheels and imports the connector, SDK
+> and EG from immutable source checkouts; it is not full release installation
+> certification. No deployment, image build, live write or graph receipt is claimed.
 
 # Immich Api
 

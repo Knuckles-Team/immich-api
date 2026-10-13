@@ -26,7 +26,7 @@ def snapshot(tmp_path):
         ROOT,
         target,
         ignore=shutil.ignore_patterns(
-            ".git", ".pytest_cache", "__pycache__", ".ruff_cache", ".kiss"
+            ".git", ".ci", ".pytest_cache", "__pycache__", ".ruff_cache", ".kiss"
         ),
     )
     return target
@@ -34,7 +34,7 @@ def snapshot(tmp_path):
 
 def test_allowlist_is_exact_and_has_no_implementation_paths():
     policy = verifier.load_policy(ROOT)
-    assert len(policy["artifacts"]) == 14
+    assert len(policy["artifacts"]) == 19
     assert policy["regenerated_schemas"] == [verifier.INVENTORY]
     assert all(
         path.endswith((".json", "/auth.service.ts")) for path in policy["artifacts"]

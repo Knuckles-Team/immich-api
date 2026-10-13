@@ -16,3 +16,13 @@ Native content listing is proved by the connector-owned SDK test; a source listi
 | `CONN-IMMICH-API-R006` | `tests/test_operation_parity.py` must independently verify the pinned source inventory and reviewed provider evidence, retrieve complete native schemas within the explicit fixture budget, and execute every operation through the API and native discovery proxy. It must check serialized parameters and bodies, typed responses, explicit write approval and denial, required asset-file refusal before effects, multipart media, and single-attempt HTTP errors for every declared method. Mocked dispatch does not establish production client budgets, provider permissions or live service behavior. |
 
 The owner must retain failure evidence and use canonical lifecycle tooling to regenerate `status.json`.
+
+## Reviewed redirect and identity regressions
+
+`tests/test_oauth_redirect_response.py` verifies the source-backed 307/Location
+contract, bounded validation, no redirect following, and native MCP behavior.
+`tests/test_session_auth_isolation.py` verifies login and OAuth responses cannot
+replace configured API-key identity through shared API or native MCP clients.
+The [merged SDK acceptance receipt](../../validation/focused-merged-sdk-b9ee9ed-2026-10-13.json)
+records 21 passing cases. Normal pre-push tests provide the full candidate check;
+source-overlay imports do not establish full release installation or live effects.

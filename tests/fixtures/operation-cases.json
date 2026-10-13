@@ -134,19 +134,19 @@
               "email": "fixture@example.invalid",
               "id": "00000000-0000-4000-8000-000000000000",
               "name": "00000000-0000-4000-8000-000000000000",
-              "profileChangedAt": "00000000-0000-4000-8000-000000000000",
+              "profileChangedAt": "2024-01-01T00:00:00Z",
               "profileImagePath": "00000000-0000-4000-8000-000000000000"
             }
           }
         ],
         "assetCount": 0,
-        "createdAt": "00000000-0000-4000-8000-000000000000",
+        "createdAt": "2024-01-01T00:00:00Z",
         "description": "00000000-0000-4000-8000-000000000000",
         "hasSharedLink": true,
         "id": "00000000-0000-4000-8000-000000000000",
         "isActivityEnabled": true,
         "shared": true,
-        "updatedAt": "00000000-0000-4000-8000-000000000000"
+        "updatedAt": "2024-01-01T00:00:00Z"
       },
       "status": 200
     }
@@ -199,7 +199,7 @@
         },
         "name": "00000000-0000-4000-8000-000000000000",
         "oauthId": "00000000-0000-4000-8000-000000000000",
-        "profileChangedAt": "00000000-0000-4000-8000-000000000000",
+        "profileChangedAt": "2024-01-01T00:00:00Z",
         "profileImagePath": "00000000-0000-4000-8000-000000000000",
         "quotaSizeInBytes": 0,
         "quotaUsageInBytes": 0,
@@ -310,7 +310,7 @@
           "email": "fixture@example.invalid",
           "id": "00000000-0000-4000-8000-000000000000",
           "name": "00000000-0000-4000-8000-000000000000",
-          "profileChangedAt": "00000000-0000-4000-8000-000000000000",
+          "profileChangedAt": "2024-01-01T00:00:00Z",
           "profileImagePath": "00000000-0000-4000-8000-000000000000"
         }
       },
@@ -348,19 +348,19 @@
               "email": "fixture@example.invalid",
               "id": "00000000-0000-4000-8000-000000000000",
               "name": "00000000-0000-4000-8000-000000000000",
-              "profileChangedAt": "00000000-0000-4000-8000-000000000000",
+              "profileChangedAt": "2024-01-01T00:00:00Z",
               "profileImagePath": "00000000-0000-4000-8000-000000000000"
             }
           }
         ],
         "assetCount": 0,
-        "createdAt": "00000000-0000-4000-8000-000000000000",
+        "createdAt": "2024-01-01T00:00:00Z",
         "description": "00000000-0000-4000-8000-000000000000",
         "hasSharedLink": true,
         "id": "00000000-0000-4000-8000-000000000000",
         "isActivityEnabled": true,
         "shared": true,
-        "updatedAt": "00000000-0000-4000-8000-000000000000"
+        "updatedAt": "2024-01-01T00:00:00Z"
       },
       "status": 201
     }
@@ -517,10 +517,10 @@
         "assets": [
           {
             "checksum": "00000000-0000-4000-8000-000000000000",
-            "createdAt": "00000000-0000-4000-8000-000000000000",
+            "createdAt": "2024-01-01T00:00:00Z",
             "duration": 0,
-            "fileCreatedAt": "00000000-0000-4000-8000-000000000000",
-            "fileModifiedAt": "00000000-0000-4000-8000-000000000000",
+            "fileCreatedAt": "2024-01-01T00:00:00Z",
+            "fileModifiedAt": "2024-01-01T00:00:00Z",
             "hasMetadata": true,
             "height": 0,
             "id": "00000000-0000-4000-8000-000000000000",
@@ -529,13 +529,13 @@
             "isFavorite": true,
             "isOffline": true,
             "isTrashed": true,
-            "localDateTime": "00000000-0000-4000-8000-000000000000",
+            "localDateTime": "2024-01-01T00:00:00Z",
             "originalFileName": "00000000-0000-4000-8000-000000000000",
             "originalPath": "00000000-0000-4000-8000-000000000000",
             "ownerId": "00000000-0000-4000-8000-000000000000",
             "thumbhash": "00000000-0000-4000-8000-000000000000",
             "type": "IMAGE",
-            "updatedAt": "00000000-0000-4000-8000-000000000000",
+            "updatedAt": "2024-01-01T00:00:00Z",
             "visibility": "archive",
             "width": 0
           }
@@ -595,7 +595,7 @@
         "email": "fixture@example.invalid",
         "id": "00000000-0000-4000-8000-000000000000",
         "name": "00000000-0000-4000-8000-000000000000",
-        "profileChangedAt": "00000000-0000-4000-8000-000000000000",
+        "profileChangedAt": "2024-01-01T00:00:00Z",
         "profileImagePath": "00000000-0000-4000-8000-000000000000"
       },
       "status": 201
@@ -616,7 +616,7 @@
         "email": "fixture@example.invalid",
         "id": "00000000-0000-4000-8000-000000000000",
         "name": "00000000-0000-4000-8000-000000000000",
-        "profileChangedAt": "00000000-0000-4000-8000-000000000000",
+        "profileChangedAt": "2024-01-01T00:00:00Z",
         "profileImagePath": "00000000-0000-4000-8000-000000000000"
       },
       "status": 201
@@ -717,10 +717,10 @@
         "assets": [
           {
             "checksum": "00000000-0000-4000-8000-000000000000",
-            "createdAt": "00000000-0000-4000-8000-000000000000",
+            "createdAt": "2024-01-01T00:00:00Z",
             "duration": 0,
-            "fileCreatedAt": "00000000-0000-4000-8000-000000000000",
-            "fileModifiedAt": "00000000-0000-4000-8000-000000000000",
+            "fileCreatedAt": "2024-01-01T00:00:00Z",
+            "fileModifiedAt": "2024-01-01T00:00:00Z",
             "hasMetadata": true,
             "height": 0,
             "id": "00000000-0000-4000-8000-000000000000",
@@ -729,13 +729,13 @@
             "isFavorite": true,
             "isOffline": true,
             "isTrashed": true,
-            "localDateTime": "00000000-0000-4000-8000-000000000000",
+            "localDateTime": "2024-01-01T00:00:00Z",
             "originalFileName": "00000000-0000-4000-8000-000000000000",
             "originalPath": "00000000-0000-4000-8000-000000000000",
             "ownerId": "00000000-0000-4000-8000-000000000000",
             "thumbhash": "00000000-0000-4000-8000-000000000000",
             "type": "IMAGE",
-            "updatedAt": "00000000-0000-4000-8000-000000000000",
+            "updatedAt": "2024-01-01T00:00:00Z",
             "visibility": "archive",
             "width": 0
           }
@@ -771,10 +771,10 @@
         "assets": [
           {
             "checksum": "00000000-0000-4000-8000-000000000000",
-            "createdAt": "00000000-0000-4000-8000-000000000000",
+            "createdAt": "2024-01-01T00:00:00Z",
             "duration": 0,
-            "fileCreatedAt": "00000000-0000-4000-8000-000000000000",
-            "fileModifiedAt": "00000000-0000-4000-8000-000000000000",
+            "fileCreatedAt": "2024-01-01T00:00:00Z",
+            "fileModifiedAt": "2024-01-01T00:00:00Z",
             "hasMetadata": true,
             "height": 0,
             "id": "00000000-0000-4000-8000-000000000000",
@@ -783,13 +783,13 @@
             "isFavorite": true,
             "isOffline": true,
             "isTrashed": true,
-            "localDateTime": "00000000-0000-4000-8000-000000000000",
+            "localDateTime": "2024-01-01T00:00:00Z",
             "originalFileName": "00000000-0000-4000-8000-000000000000",
             "originalPath": "00000000-0000-4000-8000-000000000000",
             "ownerId": "00000000-0000-4000-8000-000000000000",
             "thumbhash": "00000000-0000-4000-8000-000000000000",
             "type": "IMAGE",
-            "updatedAt": "00000000-0000-4000-8000-000000000000",
+            "updatedAt": "2024-01-01T00:00:00Z",
             "visibility": "archive",
             "width": 0
           }
@@ -813,10 +813,10 @@
       "action": "createTag",
       "content_type": "application/json",
       "data": {
-        "createdAt": "00000000-0000-4000-8000-000000000000",
+        "createdAt": "2024-01-01T00:00:00Z",
         "id": "00000000-0000-4000-8000-000000000000",
         "name": "00000000-0000-4000-8000-000000000000",
-        "updatedAt": "00000000-0000-4000-8000-000000000000",
+        "updatedAt": "2024-01-01T00:00:00Z",
         "value": "00000000-0000-4000-8000-000000000000"
       },
       "status": 201
@@ -856,7 +856,7 @@
         },
         "name": "00000000-0000-4000-8000-000000000000",
         "oauthId": "00000000-0000-4000-8000-000000000000",
-        "profileChangedAt": "00000000-0000-4000-8000-000000000000",
+        "profileChangedAt": "2024-01-01T00:00:00Z",
         "profileImagePath": "00000000-0000-4000-8000-000000000000",
         "quotaSizeInBytes": 0,
         "quotaUsageInBytes": 0,
@@ -1328,7 +1328,7 @@
         },
         "name": "00000000-0000-4000-8000-000000000000",
         "oauthId": "00000000-0000-4000-8000-000000000000",
-        "profileChangedAt": "00000000-0000-4000-8000-000000000000",
+        "profileChangedAt": "2024-01-01T00:00:00Z",
         "profileImagePath": "00000000-0000-4000-8000-000000000000",
         "quotaSizeInBytes": 0,
         "quotaUsageInBytes": 0,
@@ -1620,7 +1620,7 @@
             "email": "fixture@example.invalid",
             "id": "00000000-0000-4000-8000-000000000000",
             "name": "00000000-0000-4000-8000-000000000000",
-            "profileChangedAt": "00000000-0000-4000-8000-000000000000",
+            "profileChangedAt": "2024-01-01T00:00:00Z",
             "profileImagePath": "00000000-0000-4000-8000-000000000000"
           }
         }
@@ -1828,9 +1828,9 @@
           ]
         },
         "map": {
-          "darkStyle": "00000000-0000-4000-8000-000000000000",
+          "darkStyle": "https://example.invalid/resource",
           "enabled": true,
-          "lightStyle": "00000000-0000-4000-8000-000000000000"
+          "lightStyle": "https://example.invalid/resource"
         },
         "metadata": {
           "faces": {
@@ -2106,9 +2106,9 @@
           ]
         },
         "map": {
-          "darkStyle": "00000000-0000-4000-8000-000000000000",
+          "darkStyle": "https://example.invalid/resource",
           "enabled": true,
-          "lightStyle": "00000000-0000-4000-8000-000000000000"
+          "lightStyle": "https://example.invalid/resource"
         },
         "metadata": {
           "faces": {
@@ -2240,19 +2240,19 @@
               "email": "fixture@example.invalid",
               "id": "00000000-0000-4000-8000-000000000000",
               "name": "00000000-0000-4000-8000-000000000000",
-              "profileChangedAt": "00000000-0000-4000-8000-000000000000",
+              "profileChangedAt": "2024-01-01T00:00:00Z",
               "profileImagePath": "00000000-0000-4000-8000-000000000000"
             }
           }
         ],
         "assetCount": 0,
-        "createdAt": "00000000-0000-4000-8000-000000000000",
+        "createdAt": "2024-01-01T00:00:00Z",
         "description": "00000000-0000-4000-8000-000000000000",
         "hasSharedLink": true,
         "id": "00000000-0000-4000-8000-000000000000",
         "isActivityEnabled": true,
         "shared": true,
-        "updatedAt": "00000000-0000-4000-8000-000000000000"
+        "updatedAt": "2024-01-01T00:00:00Z"
       },
       "status": 200
     }
@@ -2325,19 +2325,19 @@
                 "email": "fixture@example.invalid",
                 "id": "00000000-0000-4000-8000-000000000000",
                 "name": "00000000-0000-4000-8000-000000000000",
-                "profileChangedAt": "00000000-0000-4000-8000-000000000000",
+                "profileChangedAt": "2024-01-01T00:00:00Z",
                 "profileImagePath": "00000000-0000-4000-8000-000000000000"
               }
             }
           ],
           "assetCount": 0,
-          "createdAt": "00000000-0000-4000-8000-000000000000",
+          "createdAt": "2024-01-01T00:00:00Z",
           "description": "00000000-0000-4000-8000-000000000000",
           "hasSharedLink": true,
           "id": "00000000-0000-4000-8000-000000000000",
           "isActivityEnabled": true,
           "shared": true,
-          "updatedAt": "00000000-0000-4000-8000-000000000000"
+          "updatedAt": "2024-01-01T00:00:00Z"
         }
       ],
       "status": 200
@@ -2418,10 +2418,10 @@
           "assets": [
             {
               "checksum": "00000000-0000-4000-8000-000000000000",
-              "createdAt": "00000000-0000-4000-8000-000000000000",
+              "createdAt": "2024-01-01T00:00:00Z",
               "duration": 0,
-              "fileCreatedAt": "00000000-0000-4000-8000-000000000000",
-              "fileModifiedAt": "00000000-0000-4000-8000-000000000000",
+              "fileCreatedAt": "2024-01-01T00:00:00Z",
+              "fileModifiedAt": "2024-01-01T00:00:00Z",
               "hasMetadata": true,
               "height": 0,
               "id": "00000000-0000-4000-8000-000000000000",
@@ -2430,13 +2430,13 @@
               "isFavorite": true,
               "isOffline": true,
               "isTrashed": true,
-              "localDateTime": "00000000-0000-4000-8000-000000000000",
+              "localDateTime": "2024-01-01T00:00:00Z",
               "originalFileName": "00000000-0000-4000-8000-000000000000",
               "originalPath": "00000000-0000-4000-8000-000000000000",
               "ownerId": "00000000-0000-4000-8000-000000000000",
               "thumbhash": "00000000-0000-4000-8000-000000000000",
               "type": "IMAGE",
-              "updatedAt": "00000000-0000-4000-8000-000000000000",
+              "updatedAt": "2024-01-01T00:00:00Z",
               "visibility": "archive",
               "width": 0
             }
@@ -2465,10 +2465,10 @@
       "content_type": "application/json",
       "data": [
         {
-          "createdAt": "00000000-0000-4000-8000-000000000000",
+          "createdAt": "2024-01-01T00:00:00Z",
           "id": "00000000-0000-4000-8000-000000000000",
           "name": "00000000-0000-4000-8000-000000000000",
-          "updatedAt": "00000000-0000-4000-8000-000000000000",
+          "updatedAt": "2024-01-01T00:00:00Z",
           "value": "00000000-0000-4000-8000-000000000000"
         }
       ],
@@ -2546,10 +2546,10 @@
           "assets": [
             {
               "checksum": "00000000-0000-4000-8000-000000000000",
-              "createdAt": "00000000-0000-4000-8000-000000000000",
+              "createdAt": "2024-01-01T00:00:00Z",
               "duration": 0,
-              "fileCreatedAt": "00000000-0000-4000-8000-000000000000",
-              "fileModifiedAt": "00000000-0000-4000-8000-000000000000",
+              "fileCreatedAt": "2024-01-01T00:00:00Z",
+              "fileModifiedAt": "2024-01-01T00:00:00Z",
               "hasMetadata": true,
               "height": 0,
               "id": "00000000-0000-4000-8000-000000000000",
@@ -2558,13 +2558,13 @@
               "isFavorite": true,
               "isOffline": true,
               "isTrashed": true,
-              "localDateTime": "00000000-0000-4000-8000-000000000000",
+              "localDateTime": "2024-01-01T00:00:00Z",
               "originalFileName": "00000000-0000-4000-8000-000000000000",
               "originalPath": "00000000-0000-4000-8000-000000000000",
               "ownerId": "00000000-0000-4000-8000-000000000000",
               "thumbhash": "00000000-0000-4000-8000-000000000000",
               "type": "IMAGE",
-              "updatedAt": "00000000-0000-4000-8000-000000000000",
+              "updatedAt": "2024-01-01T00:00:00Z",
               "visibility": "archive",
               "width": 0
             }
@@ -2645,10 +2645,10 @@
       "content_type": "application/json",
       "data": {
         "checksum": "00000000-0000-4000-8000-000000000000",
-        "createdAt": "00000000-0000-4000-8000-000000000000",
+        "createdAt": "2024-01-01T00:00:00Z",
         "duration": 0,
-        "fileCreatedAt": "00000000-0000-4000-8000-000000000000",
-        "fileModifiedAt": "00000000-0000-4000-8000-000000000000",
+        "fileCreatedAt": "2024-01-01T00:00:00Z",
+        "fileModifiedAt": "2024-01-01T00:00:00Z",
         "hasMetadata": true,
         "height": 0,
         "id": "00000000-0000-4000-8000-000000000000",
@@ -2657,13 +2657,13 @@
         "isFavorite": true,
         "isOffline": true,
         "isTrashed": true,
-        "localDateTime": "00000000-0000-4000-8000-000000000000",
+        "localDateTime": "2024-01-01T00:00:00Z",
         "originalFileName": "00000000-0000-4000-8000-000000000000",
         "originalPath": "00000000-0000-4000-8000-000000000000",
         "ownerId": "00000000-0000-4000-8000-000000000000",
         "thumbhash": "00000000-0000-4000-8000-000000000000",
         "type": "IMAGE",
-        "updatedAt": "00000000-0000-4000-8000-000000000000",
+        "updatedAt": "2024-01-01T00:00:00Z",
         "visibility": "archive",
         "width": 0
       },
@@ -2769,10 +2769,10 @@
       "data": [
         {
           "checksum": "00000000-0000-4000-8000-000000000000",
-          "createdAt": "00000000-0000-4000-8000-000000000000",
+          "createdAt": "2024-01-01T00:00:00Z",
           "duration": 0,
-          "fileCreatedAt": "00000000-0000-4000-8000-000000000000",
-          "fileModifiedAt": "00000000-0000-4000-8000-000000000000",
+          "fileCreatedAt": "2024-01-01T00:00:00Z",
+          "fileModifiedAt": "2024-01-01T00:00:00Z",
           "hasMetadata": true,
           "height": 0,
           "id": "00000000-0000-4000-8000-000000000000",
@@ -2781,13 +2781,13 @@
           "isFavorite": true,
           "isOffline": true,
           "isTrashed": true,
-          "localDateTime": "00000000-0000-4000-8000-000000000000",
+          "localDateTime": "2024-01-01T00:00:00Z",
           "originalFileName": "00000000-0000-4000-8000-000000000000",
           "originalPath": "00000000-0000-4000-8000-000000000000",
           "ownerId": "00000000-0000-4000-8000-000000000000",
           "thumbhash": "00000000-0000-4000-8000-000000000000",
           "type": "IMAGE",
-          "updatedAt": "00000000-0000-4000-8000-000000000000",
+          "updatedAt": "2024-01-01T00:00:00Z",
           "visibility": "archive",
           "width": 0
         }
@@ -2808,10 +2808,10 @@
       "data": [
         {
           "checksum": "00000000-0000-4000-8000-000000000000",
-          "createdAt": "00000000-0000-4000-8000-000000000000",
+          "createdAt": "2024-01-01T00:00:00Z",
           "duration": 0,
-          "fileCreatedAt": "00000000-0000-4000-8000-000000000000",
-          "fileModifiedAt": "00000000-0000-4000-8000-000000000000",
+          "fileCreatedAt": "2024-01-01T00:00:00Z",
+          "fileModifiedAt": "2024-01-01T00:00:00Z",
           "hasMetadata": true,
           "height": 0,
           "id": "00000000-0000-4000-8000-000000000000",
@@ -2820,13 +2820,13 @@
           "isFavorite": true,
           "isOffline": true,
           "isTrashed": true,
-          "localDateTime": "00000000-0000-4000-8000-000000000000",
+          "localDateTime": "2024-01-01T00:00:00Z",
           "originalFileName": "00000000-0000-4000-8000-000000000000",
           "originalPath": "00000000-0000-4000-8000-000000000000",
           "ownerId": "00000000-0000-4000-8000-000000000000",
           "thumbhash": "00000000-0000-4000-8000-000000000000",
           "type": "IMAGE",
-          "updatedAt": "00000000-0000-4000-8000-000000000000",
+          "updatedAt": "2024-01-01T00:00:00Z",
           "visibility": "archive",
           "width": 0
         }
@@ -2904,7 +2904,7 @@
           "email": "fixture@example.invalid",
           "id": "00000000-0000-4000-8000-000000000000",
           "name": "00000000-0000-4000-8000-000000000000",
-          "profileChangedAt": "00000000-0000-4000-8000-000000000000",
+          "profileChangedAt": "2024-01-01T00:00:00Z",
           "profileImagePath": "00000000-0000-4000-8000-000000000000"
         }
       ],
@@ -3093,9 +3093,9 @@
           ]
         },
         "map": {
-          "darkStyle": "00000000-0000-4000-8000-000000000000",
+          "darkStyle": "https://example.invalid/resource",
           "enabled": true,
-          "lightStyle": "00000000-0000-4000-8000-000000000000"
+          "lightStyle": "https://example.invalid/resource"
         },
         "metadata": {
           "faces": {
@@ -3371,9 +3371,9 @@
           ]
         },
         "map": {
-          "darkStyle": "00000000-0000-4000-8000-000000000000",
+          "darkStyle": "https://example.invalid/resource",
           "enabled": true,
-          "lightStyle": "00000000-0000-4000-8000-000000000000"
+          "lightStyle": "https://example.invalid/resource"
         },
         "metadata": {
           "faces": {
@@ -3514,10 +3514,10 @@
             {
               "data": {
                 "checksum": "00000000-0000-4000-8000-000000000000",
-                "createdAt": "00000000-0000-4000-8000-000000000000",
+                "createdAt": "2024-01-01T00:00:00Z",
                 "duration": 0,
-                "fileCreatedAt": "00000000-0000-4000-8000-000000000000",
-                "fileModifiedAt": "00000000-0000-4000-8000-000000000000",
+                "fileCreatedAt": "2024-01-01T00:00:00Z",
+                "fileModifiedAt": "2024-01-01T00:00:00Z",
                 "hasMetadata": true,
                 "height": 0,
                 "id": "00000000-0000-4000-8000-000000000000",
@@ -3526,13 +3526,13 @@
                 "isFavorite": true,
                 "isOffline": true,
                 "isTrashed": true,
-                "localDateTime": "00000000-0000-4000-8000-000000000000",
+                "localDateTime": "2024-01-01T00:00:00Z",
                 "originalFileName": "00000000-0000-4000-8000-000000000000",
                 "originalPath": "00000000-0000-4000-8000-000000000000",
                 "ownerId": "00000000-0000-4000-8000-000000000000",
                 "thumbhash": "00000000-0000-4000-8000-000000000000",
                 "type": "IMAGE",
-                "updatedAt": "00000000-0000-4000-8000-000000000000",
+                "updatedAt": "2024-01-01T00:00:00Z",
                 "visibility": "archive",
                 "width": 0
               },
@@ -3786,10 +3786,10 @@
         "assets": [
           {
             "checksum": "00000000-0000-4000-8000-000000000000",
-            "createdAt": "00000000-0000-4000-8000-000000000000",
+            "createdAt": "2024-01-01T00:00:00Z",
             "duration": 0,
-            "fileCreatedAt": "00000000-0000-4000-8000-000000000000",
-            "fileModifiedAt": "00000000-0000-4000-8000-000000000000",
+            "fileCreatedAt": "2024-01-01T00:00:00Z",
+            "fileModifiedAt": "2024-01-01T00:00:00Z",
             "hasMetadata": true,
             "height": 0,
             "id": "00000000-0000-4000-8000-000000000000",
@@ -3798,13 +3798,13 @@
             "isFavorite": true,
             "isOffline": true,
             "isTrashed": true,
-            "localDateTime": "00000000-0000-4000-8000-000000000000",
+            "localDateTime": "2024-01-01T00:00:00Z",
             "originalFileName": "00000000-0000-4000-8000-000000000000",
             "originalPath": "00000000-0000-4000-8000-000000000000",
             "ownerId": "00000000-0000-4000-8000-000000000000",
             "thumbhash": "00000000-0000-4000-8000-000000000000",
             "type": "IMAGE",
-            "updatedAt": "00000000-0000-4000-8000-000000000000",
+            "updatedAt": "2024-01-01T00:00:00Z",
             "visibility": "archive",
             "width": 0
           }
@@ -3943,10 +3943,10 @@
         "assets": [
           {
             "checksum": "00000000-0000-4000-8000-000000000000",
-            "createdAt": "00000000-0000-4000-8000-000000000000",
+            "createdAt": "2024-01-01T00:00:00Z",
             "duration": 0,
-            "fileCreatedAt": "00000000-0000-4000-8000-000000000000",
-            "fileModifiedAt": "00000000-0000-4000-8000-000000000000",
+            "fileCreatedAt": "2024-01-01T00:00:00Z",
+            "fileModifiedAt": "2024-01-01T00:00:00Z",
             "hasMetadata": true,
             "height": 0,
             "id": "00000000-0000-4000-8000-000000000000",
@@ -3955,13 +3955,13 @@
             "isFavorite": true,
             "isOffline": true,
             "isTrashed": true,
-            "localDateTime": "00000000-0000-4000-8000-000000000000",
+            "localDateTime": "2024-01-01T00:00:00Z",
             "originalFileName": "00000000-0000-4000-8000-000000000000",
             "originalPath": "00000000-0000-4000-8000-000000000000",
             "ownerId": "00000000-0000-4000-8000-000000000000",
             "thumbhash": "00000000-0000-4000-8000-000000000000",
             "type": "IMAGE",
-            "updatedAt": "00000000-0000-4000-8000-000000000000",
+            "updatedAt": "2024-01-01T00:00:00Z",
             "visibility": "archive",
             "width": 0
           }
@@ -4002,7 +4002,7 @@
         },
         "name": "00000000-0000-4000-8000-000000000000",
         "oauthId": "00000000-0000-4000-8000-000000000000",
-        "profileChangedAt": "00000000-0000-4000-8000-000000000000",
+        "profileChangedAt": "2024-01-01T00:00:00Z",
         "profileImagePath": "00000000-0000-4000-8000-000000000000",
         "quotaSizeInBytes": 0,
         "quotaUsageInBytes": 0,
@@ -4095,7 +4095,7 @@
           "email": "fixture@example.invalid",
           "id": "00000000-0000-4000-8000-000000000000",
           "name": "00000000-0000-4000-8000-000000000000",
-          "profileChangedAt": "00000000-0000-4000-8000-000000000000",
+          "profileChangedAt": "2024-01-01T00:00:00Z",
           "profileImagePath": "00000000-0000-4000-8000-000000000000"
         }
       ],
@@ -4818,10 +4818,10 @@
         "assets": [
           {
             "checksum": "00000000-0000-4000-8000-000000000000",
-            "createdAt": "00000000-0000-4000-8000-000000000000",
+            "createdAt": "2024-01-01T00:00:00Z",
             "duration": 0,
-            "fileCreatedAt": "00000000-0000-4000-8000-000000000000",
-            "fileModifiedAt": "00000000-0000-4000-8000-000000000000",
+            "fileCreatedAt": "2024-01-01T00:00:00Z",
+            "fileModifiedAt": "2024-01-01T00:00:00Z",
             "hasMetadata": true,
             "height": 0,
             "id": "00000000-0000-4000-8000-000000000000",
@@ -4830,13 +4830,13 @@
             "isFavorite": true,
             "isOffline": true,
             "isTrashed": true,
-            "localDateTime": "00000000-0000-4000-8000-000000000000",
+            "localDateTime": "2024-01-01T00:00:00Z",
             "originalFileName": "00000000-0000-4000-8000-000000000000",
             "originalPath": "00000000-0000-4000-8000-000000000000",
             "ownerId": "00000000-0000-4000-8000-000000000000",
             "thumbhash": "00000000-0000-4000-8000-000000000000",
             "type": "IMAGE",
-            "updatedAt": "00000000-0000-4000-8000-000000000000",
+            "updatedAt": "2024-01-01T00:00:00Z",
             "visibility": "archive",
             "width": 0
           }
@@ -4869,10 +4869,10 @@
         "assets": [
           {
             "checksum": "00000000-0000-4000-8000-000000000000",
-            "createdAt": "00000000-0000-4000-8000-000000000000",
+            "createdAt": "2024-01-01T00:00:00Z",
             "duration": 0,
-            "fileCreatedAt": "00000000-0000-4000-8000-000000000000",
-            "fileModifiedAt": "00000000-0000-4000-8000-000000000000",
+            "fileCreatedAt": "2024-01-01T00:00:00Z",
+            "fileModifiedAt": "2024-01-01T00:00:00Z",
             "hasMetadata": true,
             "height": 0,
             "id": "00000000-0000-4000-8000-000000000000",
@@ -4881,13 +4881,13 @@
             "isFavorite": true,
             "isOffline": true,
             "isTrashed": true,
-            "localDateTime": "00000000-0000-4000-8000-000000000000",
+            "localDateTime": "2024-01-01T00:00:00Z",
             "originalFileName": "00000000-0000-4000-8000-000000000000",
             "originalPath": "00000000-0000-4000-8000-000000000000",
             "ownerId": "00000000-0000-4000-8000-000000000000",
             "thumbhash": "00000000-0000-4000-8000-000000000000",
             "type": "IMAGE",
-            "updatedAt": "00000000-0000-4000-8000-000000000000",
+            "updatedAt": "2024-01-01T00:00:00Z",
             "visibility": "archive",
             "width": 0
           }
@@ -5018,10 +5018,10 @@
       "action": "getTagById",
       "content_type": "application/json",
       "data": {
-        "createdAt": "00000000-0000-4000-8000-000000000000",
+        "createdAt": "2024-01-01T00:00:00Z",
         "id": "00000000-0000-4000-8000-000000000000",
         "name": "00000000-0000-4000-8000-000000000000",
-        "updatedAt": "00000000-0000-4000-8000-000000000000",
+        "updatedAt": "2024-01-01T00:00:00Z",
         "value": "00000000-0000-4000-8000-000000000000"
       },
       "status": 200
@@ -5160,7 +5160,7 @@
         "email": "fixture@example.invalid",
         "id": "00000000-0000-4000-8000-000000000000",
         "name": "00000000-0000-4000-8000-000000000000",
-        "profileChangedAt": "00000000-0000-4000-8000-000000000000",
+        "profileChangedAt": "2024-01-01T00:00:00Z",
         "profileImagePath": "00000000-0000-4000-8000-000000000000"
       },
       "status": 200
@@ -5191,7 +5191,7 @@
         },
         "name": "00000000-0000-4000-8000-000000000000",
         "oauthId": "00000000-0000-4000-8000-000000000000",
-        "profileChangedAt": "00000000-0000-4000-8000-000000000000",
+        "profileChangedAt": "2024-01-01T00:00:00Z",
         "profileImagePath": "00000000-0000-4000-8000-000000000000",
         "quotaSizeInBytes": 0,
         "quotaUsageInBytes": 0,
@@ -5279,9 +5279,9 @@
           }
         },
         "map": {
-          "darkStyle": "00000000-0000-4000-8000-000000000000",
+          "darkStyle": "https://example.invalid/resource",
           "enabled": true,
-          "lightStyle": "00000000-0000-4000-8000-000000000000"
+          "lightStyle": "https://example.invalid/resource"
         },
         "oauth": {
           "autoLaunch": true,
@@ -5360,9 +5360,9 @@
           }
         },
         "map": {
-          "darkStyle": "00000000-0000-4000-8000-000000000000",
+          "darkStyle": "https://example.invalid/resource",
           "enabled": true,
-          "lightStyle": "00000000-0000-4000-8000-000000000000"
+          "lightStyle": "https://example.invalid/resource"
         },
         "oauth": {
           "autoLaunch": true,
@@ -5713,7 +5713,7 @@
         },
         "name": "00000000-0000-4000-8000-000000000000",
         "oauthId": "00000000-0000-4000-8000-000000000000",
-        "profileChangedAt": "00000000-0000-4000-8000-000000000000",
+        "profileChangedAt": "2024-01-01T00:00:00Z",
         "profileImagePath": "00000000-0000-4000-8000-000000000000",
         "quotaSizeInBytes": 0,
         "quotaUsageInBytes": 0,
@@ -5997,8 +5997,10 @@
     "result": {
       "action": "redirectOAuthToMobile",
       "content_type": "",
-      "data": null,
-      "status": 200
+      "data": {
+        "location": "app.immich:///oauth-callback?code=synthetic-code&state=synthetic-state"
+      },
+      "status": 307
     }
   },
   "removeAssetEdits": {
@@ -6245,7 +6247,7 @@
         },
         "name": "00000000-0000-4000-8000-000000000000",
         "oauthId": "00000000-0000-4000-8000-000000000000",
-        "profileChangedAt": "00000000-0000-4000-8000-000000000000",
+        "profileChangedAt": "2024-01-01T00:00:00Z",
         "profileImagePath": "00000000-0000-4000-8000-000000000000",
         "quotaSizeInBytes": 0,
         "quotaUsageInBytes": 0,
@@ -6541,19 +6543,19 @@
                     "email": "fixture@example.invalid",
                     "id": "00000000-0000-4000-8000-000000000000",
                     "name": "00000000-0000-4000-8000-000000000000",
-                    "profileChangedAt": "00000000-0000-4000-8000-000000000000",
+                    "profileChangedAt": "2024-01-01T00:00:00Z",
                     "profileImagePath": "00000000-0000-4000-8000-000000000000"
                   }
                 }
               ],
               "assetCount": 0,
-              "createdAt": "00000000-0000-4000-8000-000000000000",
+              "createdAt": "2024-01-01T00:00:00Z",
               "description": "00000000-0000-4000-8000-000000000000",
               "hasSharedLink": true,
               "id": "00000000-0000-4000-8000-000000000000",
               "isActivityEnabled": true,
               "shared": true,
-              "updatedAt": "00000000-0000-4000-8000-000000000000"
+              "updatedAt": "2024-01-01T00:00:00Z"
             }
           ],
           "total": 0
@@ -6574,10 +6576,10 @@
           "items": [
             {
               "checksum": "00000000-0000-4000-8000-000000000000",
-              "createdAt": "00000000-0000-4000-8000-000000000000",
+              "createdAt": "2024-01-01T00:00:00Z",
               "duration": 0,
-              "fileCreatedAt": "00000000-0000-4000-8000-000000000000",
-              "fileModifiedAt": "00000000-0000-4000-8000-000000000000",
+              "fileCreatedAt": "2024-01-01T00:00:00Z",
+              "fileModifiedAt": "2024-01-01T00:00:00Z",
               "hasMetadata": true,
               "height": 0,
               "id": "00000000-0000-4000-8000-000000000000",
@@ -6586,13 +6588,13 @@
               "isFavorite": true,
               "isOffline": true,
               "isTrashed": true,
-              "localDateTime": "00000000-0000-4000-8000-000000000000",
+              "localDateTime": "2024-01-01T00:00:00Z",
               "originalFileName": "00000000-0000-4000-8000-000000000000",
               "originalPath": "00000000-0000-4000-8000-000000000000",
               "ownerId": "00000000-0000-4000-8000-000000000000",
               "thumbhash": "00000000-0000-4000-8000-000000000000",
               "type": "IMAGE",
-              "updatedAt": "00000000-0000-4000-8000-000000000000",
+              "updatedAt": "2024-01-01T00:00:00Z",
               "visibility": "archive",
               "width": 0
             }
@@ -6654,10 +6656,10 @@
       "data": [
         {
           "checksum": "00000000-0000-4000-8000-000000000000",
-          "createdAt": "00000000-0000-4000-8000-000000000000",
+          "createdAt": "2024-01-01T00:00:00Z",
           "duration": 0,
-          "fileCreatedAt": "00000000-0000-4000-8000-000000000000",
-          "fileModifiedAt": "00000000-0000-4000-8000-000000000000",
+          "fileCreatedAt": "2024-01-01T00:00:00Z",
+          "fileModifiedAt": "2024-01-01T00:00:00Z",
           "hasMetadata": true,
           "height": 0,
           "id": "00000000-0000-4000-8000-000000000000",
@@ -6666,13 +6668,13 @@
           "isFavorite": true,
           "isOffline": true,
           "isTrashed": true,
-          "localDateTime": "00000000-0000-4000-8000-000000000000",
+          "localDateTime": "2024-01-01T00:00:00Z",
           "originalFileName": "00000000-0000-4000-8000-000000000000",
           "originalPath": "00000000-0000-4000-8000-000000000000",
           "ownerId": "00000000-0000-4000-8000-000000000000",
           "thumbhash": "00000000-0000-4000-8000-000000000000",
           "type": "IMAGE",
-          "updatedAt": "00000000-0000-4000-8000-000000000000",
+          "updatedAt": "2024-01-01T00:00:00Z",
           "visibility": "archive",
           "width": 0
         }
@@ -6703,10 +6705,10 @@
           "assets": [
             {
               "checksum": "00000000-0000-4000-8000-000000000000",
-              "createdAt": "00000000-0000-4000-8000-000000000000",
+              "createdAt": "2024-01-01T00:00:00Z",
               "duration": 0,
-              "fileCreatedAt": "00000000-0000-4000-8000-000000000000",
-              "fileModifiedAt": "00000000-0000-4000-8000-000000000000",
+              "fileCreatedAt": "2024-01-01T00:00:00Z",
+              "fileModifiedAt": "2024-01-01T00:00:00Z",
               "hasMetadata": true,
               "height": 0,
               "id": "00000000-0000-4000-8000-000000000000",
@@ -6715,13 +6717,13 @@
               "isFavorite": true,
               "isOffline": true,
               "isTrashed": true,
-              "localDateTime": "00000000-0000-4000-8000-000000000000",
+              "localDateTime": "2024-01-01T00:00:00Z",
               "originalFileName": "00000000-0000-4000-8000-000000000000",
               "originalPath": "00000000-0000-4000-8000-000000000000",
               "ownerId": "00000000-0000-4000-8000-000000000000",
               "thumbhash": "00000000-0000-4000-8000-000000000000",
               "type": "IMAGE",
-              "updatedAt": "00000000-0000-4000-8000-000000000000",
+              "updatedAt": "2024-01-01T00:00:00Z",
               "visibility": "archive",
               "width": 0
             }
@@ -6943,10 +6945,10 @@
       "data": [
         {
           "checksum": "00000000-0000-4000-8000-000000000000",
-          "createdAt": "00000000-0000-4000-8000-000000000000",
+          "createdAt": "2024-01-01T00:00:00Z",
           "duration": 0,
-          "fileCreatedAt": "00000000-0000-4000-8000-000000000000",
-          "fileModifiedAt": "00000000-0000-4000-8000-000000000000",
+          "fileCreatedAt": "2024-01-01T00:00:00Z",
+          "fileModifiedAt": "2024-01-01T00:00:00Z",
           "hasMetadata": true,
           "height": 0,
           "id": "00000000-0000-4000-8000-000000000000",
@@ -6955,13 +6957,13 @@
           "isFavorite": true,
           "isOffline": true,
           "isTrashed": true,
-          "localDateTime": "00000000-0000-4000-8000-000000000000",
+          "localDateTime": "2024-01-01T00:00:00Z",
           "originalFileName": "00000000-0000-4000-8000-000000000000",
           "originalPath": "00000000-0000-4000-8000-000000000000",
           "ownerId": "00000000-0000-4000-8000-000000000000",
           "thumbhash": "00000000-0000-4000-8000-000000000000",
           "type": "IMAGE",
-          "updatedAt": "00000000-0000-4000-8000-000000000000",
+          "updatedAt": "2024-01-01T00:00:00Z",
           "visibility": "archive",
           "width": 0
         }
@@ -7045,19 +7047,19 @@
                     "email": "fixture@example.invalid",
                     "id": "00000000-0000-4000-8000-000000000000",
                     "name": "00000000-0000-4000-8000-000000000000",
-                    "profileChangedAt": "00000000-0000-4000-8000-000000000000",
+                    "profileChangedAt": "2024-01-01T00:00:00Z",
                     "profileImagePath": "00000000-0000-4000-8000-000000000000"
                   }
                 }
               ],
               "assetCount": 0,
-              "createdAt": "00000000-0000-4000-8000-000000000000",
+              "createdAt": "2024-01-01T00:00:00Z",
               "description": "00000000-0000-4000-8000-000000000000",
               "hasSharedLink": true,
               "id": "00000000-0000-4000-8000-000000000000",
               "isActivityEnabled": true,
               "shared": true,
-              "updatedAt": "00000000-0000-4000-8000-000000000000"
+              "updatedAt": "2024-01-01T00:00:00Z"
             }
           ],
           "total": 0
@@ -7078,10 +7080,10 @@
           "items": [
             {
               "checksum": "00000000-0000-4000-8000-000000000000",
-              "createdAt": "00000000-0000-4000-8000-000000000000",
+              "createdAt": "2024-01-01T00:00:00Z",
               "duration": 0,
-              "fileCreatedAt": "00000000-0000-4000-8000-000000000000",
-              "fileModifiedAt": "00000000-0000-4000-8000-000000000000",
+              "fileCreatedAt": "2024-01-01T00:00:00Z",
+              "fileModifiedAt": "2024-01-01T00:00:00Z",
               "hasMetadata": true,
               "height": 0,
               "id": "00000000-0000-4000-8000-000000000000",
@@ -7090,13 +7092,13 @@
               "isFavorite": true,
               "isOffline": true,
               "isTrashed": true,
-              "localDateTime": "00000000-0000-4000-8000-000000000000",
+              "localDateTime": "2024-01-01T00:00:00Z",
               "originalFileName": "00000000-0000-4000-8000-000000000000",
               "originalPath": "00000000-0000-4000-8000-000000000000",
               "ownerId": "00000000-0000-4000-8000-000000000000",
               "thumbhash": "00000000-0000-4000-8000-000000000000",
               "type": "IMAGE",
-              "updatedAt": "00000000-0000-4000-8000-000000000000",
+              "updatedAt": "2024-01-01T00:00:00Z",
               "visibility": "archive",
               "width": 0
             }
@@ -7124,10 +7126,10 @@
           "assets": [
             {
               "checksum": "00000000-0000-4000-8000-000000000000",
-              "createdAt": "00000000-0000-4000-8000-000000000000",
+              "createdAt": "2024-01-01T00:00:00Z",
               "duration": 0,
-              "fileCreatedAt": "00000000-0000-4000-8000-000000000000",
-              "fileModifiedAt": "00000000-0000-4000-8000-000000000000",
+              "fileCreatedAt": "2024-01-01T00:00:00Z",
+              "fileModifiedAt": "2024-01-01T00:00:00Z",
               "hasMetadata": true,
               "height": 0,
               "id": "00000000-0000-4000-8000-000000000000",
@@ -7136,13 +7138,13 @@
               "isFavorite": true,
               "isOffline": true,
               "isTrashed": true,
-              "localDateTime": "00000000-0000-4000-8000-000000000000",
+              "localDateTime": "2024-01-01T00:00:00Z",
               "originalFileName": "00000000-0000-4000-8000-000000000000",
               "originalPath": "00000000-0000-4000-8000-000000000000",
               "ownerId": "00000000-0000-4000-8000-000000000000",
               "thumbhash": "00000000-0000-4000-8000-000000000000",
               "type": "IMAGE",
-              "updatedAt": "00000000-0000-4000-8000-000000000000",
+              "updatedAt": "2024-01-01T00:00:00Z",
               "visibility": "archive",
               "width": 0
             }
@@ -7167,7 +7169,7 @@
           "email": "fixture@example.invalid",
           "id": "00000000-0000-4000-8000-000000000000",
           "name": "00000000-0000-4000-8000-000000000000",
-          "profileChangedAt": "00000000-0000-4000-8000-000000000000",
+          "profileChangedAt": "2024-01-01T00:00:00Z",
           "profileImagePath": "00000000-0000-4000-8000-000000000000"
         }
       ],
@@ -7201,7 +7203,7 @@
           },
           "name": "00000000-0000-4000-8000-000000000000",
           "oauthId": "00000000-0000-4000-8000-000000000000",
-          "profileChangedAt": "00000000-0000-4000-8000-000000000000",
+          "profileChangedAt": "2024-01-01T00:00:00Z",
           "profileImagePath": "00000000-0000-4000-8000-000000000000",
           "quotaSizeInBytes": 0,
           "quotaUsageInBytes": 0,
@@ -7395,10 +7397,10 @@
         "assets": [
           {
             "checksum": "00000000-0000-4000-8000-000000000000",
-            "createdAt": "00000000-0000-4000-8000-000000000000",
+            "createdAt": "2024-01-01T00:00:00Z",
             "duration": 0,
-            "fileCreatedAt": "00000000-0000-4000-8000-000000000000",
-            "fileModifiedAt": "00000000-0000-4000-8000-000000000000",
+            "fileCreatedAt": "2024-01-01T00:00:00Z",
+            "fileModifiedAt": "2024-01-01T00:00:00Z",
             "hasMetadata": true,
             "height": 0,
             "id": "00000000-0000-4000-8000-000000000000",
@@ -7407,13 +7409,13 @@
             "isFavorite": true,
             "isOffline": true,
             "isTrashed": true,
-            "localDateTime": "00000000-0000-4000-8000-000000000000",
+            "localDateTime": "2024-01-01T00:00:00Z",
             "originalFileName": "00000000-0000-4000-8000-000000000000",
             "originalPath": "00000000-0000-4000-8000-000000000000",
             "ownerId": "00000000-0000-4000-8000-000000000000",
             "thumbhash": "00000000-0000-4000-8000-000000000000",
             "type": "IMAGE",
-            "updatedAt": "00000000-0000-4000-8000-000000000000",
+            "updatedAt": "2024-01-01T00:00:00Z",
             "visibility": "archive",
             "width": 0
           }
@@ -7459,7 +7461,7 @@
         },
         "name": "00000000-0000-4000-8000-000000000000",
         "oauthId": "00000000-0000-4000-8000-000000000000",
-        "profileChangedAt": "00000000-0000-4000-8000-000000000000",
+        "profileChangedAt": "2024-01-01T00:00:00Z",
         "profileImagePath": "00000000-0000-4000-8000-000000000000",
         "quotaSizeInBytes": 0,
         "quotaUsageInBytes": 0,
@@ -7557,7 +7559,7 @@
         },
         "name": "00000000-0000-4000-8000-000000000000",
         "oauthId": "00000000-0000-4000-8000-000000000000",
-        "profileChangedAt": "00000000-0000-4000-8000-000000000000",
+        "profileChangedAt": "2024-01-01T00:00:00Z",
         "profileImagePath": "00000000-0000-4000-8000-000000000000",
         "quotaSizeInBytes": 0,
         "quotaUsageInBytes": 0,
@@ -7786,9 +7788,9 @@
           ]
         },
         "map": {
-          "darkStyle": "00000000-0000-4000-8000-000000000000",
+          "darkStyle": "https://example.invalid/resource",
           "enabled": true,
-          "lightStyle": "00000000-0000-4000-8000-000000000000"
+          "lightStyle": "https://example.invalid/resource"
         },
         "metadata": {
           "faces": {
@@ -8058,9 +8060,9 @@
           ]
         },
         "map": {
-          "darkStyle": "00000000-0000-4000-8000-000000000000",
+          "darkStyle": "https://example.invalid/resource",
           "enabled": true,
-          "lightStyle": "00000000-0000-4000-8000-000000000000"
+          "lightStyle": "https://example.invalid/resource"
         },
         "metadata": {
           "faces": {
@@ -8196,19 +8198,19 @@
               "email": "fixture@example.invalid",
               "id": "00000000-0000-4000-8000-000000000000",
               "name": "00000000-0000-4000-8000-000000000000",
-              "profileChangedAt": "00000000-0000-4000-8000-000000000000",
+              "profileChangedAt": "2024-01-01T00:00:00Z",
               "profileImagePath": "00000000-0000-4000-8000-000000000000"
             }
           }
         ],
         "assetCount": 0,
-        "createdAt": "00000000-0000-4000-8000-000000000000",
+        "createdAt": "2024-01-01T00:00:00Z",
         "description": "00000000-0000-4000-8000-000000000000",
         "hasSharedLink": true,
         "id": "00000000-0000-4000-8000-000000000000",
         "isActivityEnabled": true,
         "shared": true,
-        "updatedAt": "00000000-0000-4000-8000-000000000000"
+        "updatedAt": "2024-01-01T00:00:00Z"
       },
       "status": 200
     }
@@ -8281,10 +8283,10 @@
       "content_type": "application/json",
       "data": {
         "checksum": "00000000-0000-4000-8000-000000000000",
-        "createdAt": "00000000-0000-4000-8000-000000000000",
+        "createdAt": "2024-01-01T00:00:00Z",
         "duration": 0,
-        "fileCreatedAt": "00000000-0000-4000-8000-000000000000",
-        "fileModifiedAt": "00000000-0000-4000-8000-000000000000",
+        "fileCreatedAt": "2024-01-01T00:00:00Z",
+        "fileModifiedAt": "2024-01-01T00:00:00Z",
         "hasMetadata": true,
         "height": 0,
         "id": "00000000-0000-4000-8000-000000000000",
@@ -8293,13 +8295,13 @@
         "isFavorite": true,
         "isOffline": true,
         "isTrashed": true,
-        "localDateTime": "00000000-0000-4000-8000-000000000000",
+        "localDateTime": "2024-01-01T00:00:00Z",
         "originalFileName": "00000000-0000-4000-8000-000000000000",
         "originalPath": "00000000-0000-4000-8000-000000000000",
         "ownerId": "00000000-0000-4000-8000-000000000000",
         "thumbhash": "00000000-0000-4000-8000-000000000000",
         "type": "IMAGE",
-        "updatedAt": "00000000-0000-4000-8000-000000000000",
+        "updatedAt": "2024-01-01T00:00:00Z",
         "visibility": "archive",
         "width": 0
       },
@@ -8565,9 +8567,9 @@
           ]
         },
         "map": {
-          "darkStyle": "00000000-0000-4000-8000-000000000000",
+          "darkStyle": "https://example.invalid/resource",
           "enabled": true,
-          "lightStyle": "00000000-0000-4000-8000-000000000000"
+          "lightStyle": "https://example.invalid/resource"
         },
         "metadata": {
           "faces": {
@@ -8837,9 +8839,9 @@
           ]
         },
         "map": {
-          "darkStyle": "00000000-0000-4000-8000-000000000000",
+          "darkStyle": "https://example.invalid/resource",
           "enabled": true,
-          "lightStyle": "00000000-0000-4000-8000-000000000000"
+          "lightStyle": "https://example.invalid/resource"
         },
         "metadata": {
           "faces": {
@@ -8989,10 +8991,10 @@
         "assets": [
           {
             "checksum": "00000000-0000-4000-8000-000000000000",
-            "createdAt": "00000000-0000-4000-8000-000000000000",
+            "createdAt": "2024-01-01T00:00:00Z",
             "duration": 0,
-            "fileCreatedAt": "00000000-0000-4000-8000-000000000000",
-            "fileModifiedAt": "00000000-0000-4000-8000-000000000000",
+            "fileCreatedAt": "2024-01-01T00:00:00Z",
+            "fileModifiedAt": "2024-01-01T00:00:00Z",
             "hasMetadata": true,
             "height": 0,
             "id": "00000000-0000-4000-8000-000000000000",
@@ -9001,13 +9003,13 @@
             "isFavorite": true,
             "isOffline": true,
             "isTrashed": true,
-            "localDateTime": "00000000-0000-4000-8000-000000000000",
+            "localDateTime": "2024-01-01T00:00:00Z",
             "originalFileName": "00000000-0000-4000-8000-000000000000",
             "originalPath": "00000000-0000-4000-8000-000000000000",
             "ownerId": "00000000-0000-4000-8000-000000000000",
             "thumbhash": "00000000-0000-4000-8000-000000000000",
             "type": "IMAGE",
-            "updatedAt": "00000000-0000-4000-8000-000000000000",
+            "updatedAt": "2024-01-01T00:00:00Z",
             "visibility": "archive",
             "width": 0
           }
@@ -9127,7 +9129,7 @@
         },
         "name": "00000000-0000-4000-8000-000000000000",
         "oauthId": "00000000-0000-4000-8000-000000000000",
-        "profileChangedAt": "00000000-0000-4000-8000-000000000000",
+        "profileChangedAt": "2024-01-01T00:00:00Z",
         "profileImagePath": "00000000-0000-4000-8000-000000000000",
         "quotaSizeInBytes": 0,
         "quotaUsageInBytes": 0,
@@ -9197,7 +9199,7 @@
         "email": "fixture@example.invalid",
         "id": "00000000-0000-4000-8000-000000000000",
         "name": "00000000-0000-4000-8000-000000000000",
-        "profileChangedAt": "00000000-0000-4000-8000-000000000000",
+        "profileChangedAt": "2024-01-01T00:00:00Z",
         "profileImagePath": "00000000-0000-4000-8000-000000000000"
       },
       "status": 200
@@ -9333,10 +9335,10 @@
         "assets": [
           {
             "checksum": "00000000-0000-4000-8000-000000000000",
-            "createdAt": "00000000-0000-4000-8000-000000000000",
+            "createdAt": "2024-01-01T00:00:00Z",
             "duration": 0,
-            "fileCreatedAt": "00000000-0000-4000-8000-000000000000",
-            "fileModifiedAt": "00000000-0000-4000-8000-000000000000",
+            "fileCreatedAt": "2024-01-01T00:00:00Z",
+            "fileModifiedAt": "2024-01-01T00:00:00Z",
             "hasMetadata": true,
             "height": 0,
             "id": "00000000-0000-4000-8000-000000000000",
@@ -9345,13 +9347,13 @@
             "isFavorite": true,
             "isOffline": true,
             "isTrashed": true,
-            "localDateTime": "00000000-0000-4000-8000-000000000000",
+            "localDateTime": "2024-01-01T00:00:00Z",
             "originalFileName": "00000000-0000-4000-8000-000000000000",
             "originalPath": "00000000-0000-4000-8000-000000000000",
             "ownerId": "00000000-0000-4000-8000-000000000000",
             "thumbhash": "00000000-0000-4000-8000-000000000000",
             "type": "IMAGE",
-            "updatedAt": "00000000-0000-4000-8000-000000000000",
+            "updatedAt": "2024-01-01T00:00:00Z",
             "visibility": "archive",
             "width": 0
           }
@@ -9387,10 +9389,10 @@
         "assets": [
           {
             "checksum": "00000000-0000-4000-8000-000000000000",
-            "createdAt": "00000000-0000-4000-8000-000000000000",
+            "createdAt": "2024-01-01T00:00:00Z",
             "duration": 0,
-            "fileCreatedAt": "00000000-0000-4000-8000-000000000000",
-            "fileModifiedAt": "00000000-0000-4000-8000-000000000000",
+            "fileCreatedAt": "2024-01-01T00:00:00Z",
+            "fileModifiedAt": "2024-01-01T00:00:00Z",
             "hasMetadata": true,
             "height": 0,
             "id": "00000000-0000-4000-8000-000000000000",
@@ -9399,13 +9401,13 @@
             "isFavorite": true,
             "isOffline": true,
             "isTrashed": true,
-            "localDateTime": "00000000-0000-4000-8000-000000000000",
+            "localDateTime": "2024-01-01T00:00:00Z",
             "originalFileName": "00000000-0000-4000-8000-000000000000",
             "originalPath": "00000000-0000-4000-8000-000000000000",
             "ownerId": "00000000-0000-4000-8000-000000000000",
             "thumbhash": "00000000-0000-4000-8000-000000000000",
             "type": "IMAGE",
-            "updatedAt": "00000000-0000-4000-8000-000000000000",
+            "updatedAt": "2024-01-01T00:00:00Z",
             "visibility": "archive",
             "width": 0
           }
@@ -9431,10 +9433,10 @@
       "action": "updateTag",
       "content_type": "application/json",
       "data": {
-        "createdAt": "00000000-0000-4000-8000-000000000000",
+        "createdAt": "2024-01-01T00:00:00Z",
         "id": "00000000-0000-4000-8000-000000000000",
         "name": "00000000-0000-4000-8000-000000000000",
-        "updatedAt": "00000000-0000-4000-8000-000000000000",
+        "updatedAt": "2024-01-01T00:00:00Z",
         "value": "00000000-0000-4000-8000-000000000000"
       },
       "status": 200
@@ -9476,7 +9478,7 @@
         },
         "name": "00000000-0000-4000-8000-000000000000",
         "oauthId": "00000000-0000-4000-8000-000000000000",
-        "profileChangedAt": "00000000-0000-4000-8000-000000000000",
+        "profileChangedAt": "2024-01-01T00:00:00Z",
         "profileImagePath": "00000000-0000-4000-8000-000000000000",
         "quotaSizeInBytes": 0,
         "quotaUsageInBytes": 0,
@@ -9672,10 +9674,10 @@
       "content_type": "application/json",
       "data": [
         {
-          "createdAt": "00000000-0000-4000-8000-000000000000",
+          "createdAt": "2024-01-01T00:00:00Z",
           "id": "00000000-0000-4000-8000-000000000000",
           "name": "00000000-0000-4000-8000-000000000000",
-          "updatedAt": "00000000-0000-4000-8000-000000000000",
+          "updatedAt": "2024-01-01T00:00:00Z",
           "value": "00000000-0000-4000-8000-000000000000"
         }
       ],

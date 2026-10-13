@@ -14,7 +14,7 @@ from immich_api.parity import verify_contract, verify_mcp
 from immich_api.parity.openapi_schema_budget import require_schema_budget
 
 ROOT = Path(__file__).resolve().parents[1]
-OVERLAY_SHA256 = "43f936578e5361b4400750ccb9e04747948eabe19baad0e78d90774c9c79c432"
+OVERLAY_SHA256 = "bdd58565bd0ffa7383373ea32425147c6bcb343f135ebc5541a67411e9b7708b"
 BUDGET_PATH = ROOT / "tests/fixtures/native-client-budget.json"
 BUDGET = json.loads(BUDGET_PATH.read_text())
 
@@ -24,7 +24,9 @@ def source_inventory(**overrides):
     source = (ROOT / "api-spec/immich.openapi.json").read_bytes()
     options = {
         "source_bytes": source,
-        "overlay_bytes": (ROOT / "api-spec/immich.provider-evidence.json").read_bytes(),
+        "overlay_bytes": (
+            ROOT / "api-spec/immich.provider-response-evidence.json"
+        ).read_bytes(),
         "expected_overlay_sha256": OVERLAY_SHA256,
         "evidence_root": ROOT / "api-spec/provider-source",
     }

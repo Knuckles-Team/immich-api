@@ -102,19 +102,27 @@ def check_request(request, operation, arguments):
     check_body(request, operation, arguments)
 
 
+def response_with_media(status, media, data, mode):
+    if mode == "json":
+        return httpx.Response(status, json=data, headers={"content-type": media})
+    content = base64.b64decode(data) if mode == "binary" else data.encode()
+    return httpx.Response(status, content=content, headers={"content-type": media})
+
+
 def response_for(operation, expected):
     status, media, data = (
         expected["status"],
         expected["content_type"],
         expected["data"],
     )
+    if str(status) in operation.get("redirect_responses", {}):
+        return httpx.Response(
+            status, headers={"location": data["location"]}, content=b"Redirecting"
+        )
     if not media:
         return httpx.Response(status)
     mode = operation["response_modes"][str(status)][media]
-    if mode == "json":
-        return httpx.Response(status, json=data, headers={"content-type": media})
-    content = base64.b64decode(data) if mode == "binary" else data.encode()
-    return httpx.Response(status, content=content, headers={"content-type": media})
+    return response_with_media(status, media, data, mode)
 
 
 class RecordingProvider:
