@@ -1,11 +1,7 @@
-from typing import Any, Dict
+"""Provider client with operation-bound OpenAPI dispatch."""
 
-from .api_client_base import ApiClientBase
+from ..openapi_runtime import OpenApiClient
 
 
-class ApiClientSystem(ApiClientBase):
-    """System status and monitoring API operations."""
-
-    def get_system_status(self) -> Dict[str, Any]:
-        """Retrieve the status of the target system."""
-        return self.request("GET", "/health")
+class ApiClientSystem(OpenApiClient):
+    """Use the canonical client factory with validated domain actions."""

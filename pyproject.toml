@@ -10,6 +10,10 @@ readme = "README.md"
 classifiers = [ "Development Status :: 4 - Beta", "License :: OSI Approved :: MIT License", "Environment :: Console", "Operating System :: POSIX :: Linux", "Programming Language :: Python :: 3",]
 requires-python = ">=3.12, <3.15"
 dependencies = [
+    "rfc3986-validator>=0.1.1,<0.2",
+    "rfc3339-validator>=0.1.4,<0.2",
+    "jsonschema>=4.23,<5",
+    "regex>=2026.9.29",
     "agent-connector-sdk>=0.1.0,<1",
 ]
 [[project.authors]]
@@ -74,11 +78,12 @@ mcp_server = true
 
 [dependency-groups]
 dev = [
+    "epistemic-graph>=2.27.0,<3",
     "pytest-timeout>=2.4.0",
 ]
 
 [tool.setuptools.package-data]
-immich_api = [ "mcp_config.json", "prompts/**", "skills/**", "ontology/**", "connectors/**", "connector_manifest.yml",]
+immich_api = [ "openapi_inventory.json", "parity/unicode_properties.json", "openapi_contract.json", "mcp_config.json", "prompts/**", "skills/**", "ontology/**", "connectors/**", "connector_manifest.yml",]
 
 [tool.ruff.lint]
 select = [ "E", "F", "I", "UP", "B",]
@@ -90,3 +95,25 @@ include = ["immich_api*"]
 
 [tool.vulture]
 ignore_names = ["request", "config"]
+
+[tool.pipelines_hooks.stdout_writes]
+served_paths = ["immich_api"]
+
+[tool.uv.sources]
+agent-connector-sdk = { git = "https://github.com/Knuckles-Team/agent-connector-sdk.git", rev = "b9ee9ed0a82f6ecd5ed23d6226ca5ab503f74f9c" }
+epistemic-graph = { git = "https://github.com/Knuckles-Team/epistemic-graph.git", rev = "d33abec1e09b63cdcde01f8e8e4fe810d91cd43d" }
+
+# Static resolver metadata from the exact SDK Git revision above; avoids executing
+# its dynamic-version build backend during lock resolution. Runtime source remains pinned.
+[[tool.uv.dependency-metadata]]
+name = "agent-connector-sdk"
+version = "0.1.0"
+requires-python = ">=3.12,<3.15"
+requires-dist = ["fastmcp>=4.0.11,<5", "epistemic-graph>=2.27.0,<3", "mcp>=2.3.0,<3", "pydantic>=2.13.4,<3", "PyYAML>=6.0.3", "httpx>=0.28.1", "httpx2>=2.12.0", "anyio>=4.13.0", "cryptography>=50.0.1"]
+
+# Development resolution metadata from the exact tested EG source, not a PyPI release claim.
+[[tool.uv.dependency-metadata]]
+name = "epistemic-graph"
+version = "2.27.0"
+requires-python = ">=3.10"
+requires-dist = ["msgpack>=1.2.1", "pydantic>=2,<3", "pyoxigraph>=0.3.22", "httpx>=0.24.0"]

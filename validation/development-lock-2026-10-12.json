@@ -1,0 +1,25 @@
+{
+  "purpose": "Source-based development resolution, not release or binary installation certification",
+  "resolver": "uv lock --no-build --no-python-downloads",
+  "offline_freshness": "uv lock --check --offline --no-build passed",
+  "resolved_packages": 90,
+  "lock_sha256": "741f3293063fd7042143e827bb714efe072927344c1302f31a899279a8c4b186",
+  "sdk": {
+    "revision": "5babc4cc48ad73928468b243842f219f51e2cca1",
+    "version": "0.1.0",
+    "pyproject_sha256": "392ceac32454d01d5a309266af3e3a4674378d3fbad6d83d9453589705ac4757",
+    "version_source_sha256": "8177603d25949f531ce883c637b2a5f8eee0e85de0cc0dc493cb5135e681e79b"
+  },
+  "eg": {
+    "revision": "d33abec1e09b63cdcde01f8e8e4fe810d91cd43d",
+    "version": "2.27.0",
+    "pyproject_sha256": "4cdeb201a8819361ec8573653eda0c2cf2011c83a44091e336ea5dabe5840680",
+    "cargo_sha256": "b3d20267d563cb3c4d4508a96275ba22527bc87ca57c579f892c49898d1c5678"
+  },
+  "metadata_scope": "Exact base dependencies and Python requirements; no SDK/EG extras requested",
+  "runtime_requirement_unchanged": "epistemic-graph>=2.27.0,<3",
+  "index_resolution_blocker": "Checked package index offers only epistemic-graph<=2.23.0 and no SDK release",
+  "native_builds": false,
+  "dependency_installation_verified": false,
+  "image_built": false
+}

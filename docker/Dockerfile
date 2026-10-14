@@ -12,10 +12,16 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends build-essential \
     && rm -rf /var/lib/apt/lists/*
 
+# Build the connector from this checkout, including generated runtime data.
+# Copy only the package and its wheel metadata, not credentials or local tooling.
+WORKDIR /src
+COPY pyproject.toml README.md LICENSE ./
+COPY immich_api/ ./immich_api/
+
 # MCP serving dependency closure (including SDK graph client).
 FROM builder-base AS builder-mcp
 RUN --mount=type=cache,target=/root/.cache/uv \
-    uv pip install --system --upgrade --break-system-packages --prerelease=allow "immich-api[mcp]>=0.1.0"
+    uv pip install --system --break-system-packages --prerelease=allow ".[mcp]"
 
 FROM python:3.12-slim@sha256:57cd7c3a7a273101a6485ba99423ee568157882804b1124b4dd04266317710de AS runtime-base
 ARG HOST=127.0.0.1

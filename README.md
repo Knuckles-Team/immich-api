@@ -1,9 +1,21 @@
-> **Work in progress — scaffold only; not released or deployed.**
+> **Work in progress — not released or deployment-ready.**
 >
-> This repository was created from the reviewed canonical MCP connector template.
-> The OpenAPI pilot, tested auth follow-up and acceptance evidence are preserved
-> in its open implementation pull request. Production packaging, fleet deployment
-> and bounded authenticated capture are pending. No package release is claimed.
+> Immich 3.2.2 supplies 276 operations in 41 domain tools plus the bounded album
+> metadata tool. Writes default off. Provider evidence corrects the mobile OAuth
+> callback to a 307 response with a validated Location value; redirects are never
+> followed. Merged SDK `b9ee9ed0a82f6ecd5ed23d6226ca5ab503f74f9c` prevents a
+> shared API-key client from retaining or forwarding login-session cookies.
+> Merged canonical builder `f6881bf5598f1d6a6a1f548ae4caa1a713a6d9d7` supplies
+> the deterministic compiler and frozen source-overlay bootstrap. The 21 focused
+> API/native redirect and cookie regressions passed in 5.81 seconds; see
+> [current evidence](validation/focused-merged-sdk-b9ee9ed-2026-10-13.json).
+> Normal commit and push checks gate publication. Historical 276 API plus 276
+> native operation receipts remain under `validation/`; their revision bindings
+> are preserved. Mocked tests do not establish provider/account permissions or
+> production client discovery budgets. Ingestion presets remain disabled.
+> The bootstrap installs locked registry wheels and imports the connector, SDK
+> and EG from immutable source checkouts; it is not full release installation
+> certification. No deployment, image build, live write or graph receipt is claimed.
 
 # Immich Api
 
@@ -29,7 +41,8 @@
 Immich Api API + MCP Server
 
 The [documentation site](https://knuckles-team.github.io/immich-api/) contains the
-full API, deployment, security, and operational reference. This README is the concise
+planned API, deployment, security, and operational reference. Pages publication is
+not configured yet; use the local documentation links below for this pilot. This README is the concise
 entry point for installation and the supported runtime surfaces.
 
 ## Overview
@@ -44,14 +57,30 @@ private endpoints are never committed.
   explicit and validate it before it reaches an agent or graph.
 - **One package, shared policy** — authentication, telemetry, action routing, and
   error handling follow the `agent-connector-sdk` contracts.
-- **Graph-ready content** — skills, prompts, ontology, and connector presets are
-  packaged as discoverable data for the epistemic graph.
+- **Schema-grounded content** — read skills, prompts, ontology and shapes are packaged; extraction presets remain disabled pending
+  provider/account stream binding. Graph capture remains unverified.
 - **Operational safety** — TLS profiles, bounded responses, loopback defaults, and
   immutable container references are part of the generated deployment contract.
 
 ## Quick start
 
-Install the package and run its generated entry points:
+Build and run from this connector checkout. Access to a separate template
+repository is not required. The canonical scaffold belongs entirely to the
+`mcp-builder` skill; future scaffolding uses its locally generated files and
+ordinary repository creation. The pilot's original template commit remains
+historical provenance in [validation/scaffold-origin.json](validation/scaffold-origin.json).
+
+This pilot and its required SDK/EG dependency versions are not available from the
+checked package index. The source-based development lock records exact tested
+revisions; it does not supply native wheels. Once dependencies are provisioned
+in an approved environment:
+
+```bash
+python -m pip install ".[mcp]"
+immich-mcp
+```
+
+After a release is published, the distribution entry points will be:
 
 ```bash
 python -m pip install "immich-api[mcp]"
@@ -70,6 +99,16 @@ The networked server binds to loopback by default:
 immich-mcp --transport streamable-http --host 127.0.0.1 --port 8000
 ```
 
+Container builds install this checkout, so the connector need not be published
+first. Use the repository root as the context on an approved image-build host:
+
+```bash
+docker build --file docker/Dockerfile --target mcp -t immich-api:mcp-local .
+```
+
+See [deployment](docs/deployment.md) for an exact-commit build context and the
+remaining dependency-closure requirements. No image build is claimed here.
+
 ## Architecture
 
 The provider keeps the boundary between transport and domain code explicit:
@@ -79,8 +118,9 @@ client → MCP entry point → typed tool module → API client → provider
                                   └── skills, prompts, ontology, connector presets
 ```
 
-The MCP surface uses action-routed tools. Pass an `action` and a JSON `params_json`
-payload. Regenerate `schemas/mcp_tools.json` with `python scripts/generate_tool_schemas.py`
+The OpenAPI tools take an `action` plus typed `path`, `query`, or `body` objects
+when the selected operation requires them. For example, call `server_operations`
+with `{"action":"pingServer"}`. The bounded `album_metadata_sample` tool takes `limit`. Regenerate `schemas/mcp_tools.json` with `python scripts/generate_tool_schemas.py`
 after changing a tool contract, and keep the examples below aligned with that schema.
 
 <!-- MCP-TOOLS-TABLE:START -->
@@ -132,7 +172,7 @@ it is documentation-only and is never contacted by the generator.
 Container builds use immutable, least-privilege runtime stages:
 
 ```bash
-docker build --target mcp -t immich-api:mcp-local docker/
+docker build --file docker/Dockerfile --target mcp -t immich-api:mcp-local .
 ```
 
 Deploy reviewed images by digest (`immich-api@sha256:<digest>`) and include
@@ -147,6 +187,7 @@ and the concept registry. The concise local references remain available at:
 
 - [Installation](docs/installation.md)
 - [Usage](docs/usage.md)
+- [Immich capabilities and evidence](docs/immich-capabilities.md)
 - [Deployment](docs/deployment.md)
 - [Platform](docs/platform.md)
 - [Concept registry](docs/concepts.md)

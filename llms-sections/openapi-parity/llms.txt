@@ -1,0 +1,10 @@
+# immich-api — OpenAPI parity
+
+> Current documentation index generated from the exact MkDocs navigation.
+> Capability and content-use claims are operator-scoped and provenance-bound.
+
+## OpenAPI parity
+
+- [OpenAPI parity](https://knuckles-team.github.io/immich-api/openapi-parity/) — The pinned Immich 3.2.2 source declares 276 operations across 192 paths and 41 domains. The source bytes are retained in api-spec/immich.openapi.json with SHA256 7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b. The complete method inventory is 123 GET, 66 POST, 42 PUT, 43 DELETE and 2 PATCH.
+
+Standards maturity and scope: [root documentation index](../../llms.txt).

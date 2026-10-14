@@ -1,0 +1,28 @@
+{
+  "source_commit": "64b738fe51d5c7ae89fb838fd7210b694291bdce",
+  "receipt_path": "validation/review-corrections-2026-10-12.json",
+  "immutable_receipt_sha256": "c4ce14cb99bf144d66571ff187ed7d1fbf10c7960a525ee82bcc118e61455699",
+  "focused_checks": {
+    "passed": 33,
+    "failed": 0,
+    "skipped": 0,
+    "warnings": 0,
+    "seconds": 4.23,
+    "serial_total_seconds": 21.96,
+    "test_files": [
+      "tests/test_api_wrapper.py",
+      "tests/test_album_metadata.py",
+      "tests/test_kg_ingest.py",
+      "tests/test_immich_content.py"
+    ],
+    "environment": "Existing Python3.12 environment with immutable SDK/EG Python source overlays; no installs or native builds."
+  },
+  "earlier_attempt": {
+    "passed": 31,
+    "failed": 1,
+    "seconds": 4.32,
+    "reason": "SDK privacy guard redacted the synthetic numeric-only UUID as credit-card patterns. Guard remains enabled. Helper now preflights the actual SDK request and refuses before submission when album identity changes; regression proves refusal. Positive fixture uses mixed hexadecimal UUID."
+  },
+  "capture_archive_sha256": "076e9a77bc756a57a8b02d702dc3a352f74d0728af56f144ff4ba34e1d713423",
+  "note": "Full historical source hashes, native capture and Windows evidence remain in the immutable Git receipt. Follow final-quality-2026-10-12.json for the later gate result."
+}

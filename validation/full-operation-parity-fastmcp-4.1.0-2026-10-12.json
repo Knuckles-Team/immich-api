@@ -1,0 +1,2469 @@
+{
+  "sdk_revision": "6b35633add03580a209bb8db7796b11a8994f2c5+overlay:14b906063f7032c2a1d15c40e78c6084018f9caf8faf6c975c260dd2e803003e",
+  "eg_python_revision": "d33abec1e09b63cdcde01f8e8e4fe810d91cd43d",
+  "runtime_versions": {
+    "fastmcp": "4.1.0",
+    "mcp": "2.3.0",
+    "pydantic": "2.13.5",
+    "httpx": "0.28.1",
+    "jsonschema": "4.26.0"
+  },
+  "builder_revision": "f8a1ded81b8565d048cacaaa10831964fd1b4a47",
+  "source_sha256": "7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b",
+  "source_operation_count": 276,
+  "path_count": 192,
+  "native_discovery": {
+    "domains": 41,
+    "exposed_operations": 276
+  },
+  "protocol": "2026-07-28",
+  "api_passed": 276,
+  "mcp_passed": 276,
+  "coverage": {
+    "api_operations": 276,
+    "mcp_operations": 276
+  },
+  "method_counts": {
+    "DELETE": 43,
+    "GET": 123,
+    "PATCH": 2,
+    "POST": 66,
+    "PUT": 42
+  },
+  "remaining_operations": [],
+  "remaining_method_counts": {},
+  "mock_http_requests": 552,
+  "confirmations": [
+    "acceptClusterGroupRequest",
+    "addAssetsToAlbum",
+    "addAssetsToAlbums",
+    "addMemoryAssets",
+    "addSharedLinkAssets",
+    "addUsersToAlbum",
+    "bulkTagAssets",
+    "changePassword",
+    "changePinCode",
+    "checkBulkUpload",
+    "clusterGroupRegeneratePeople",
+    "copyAsset",
+    "createActivity",
+    "createAlbum",
+    "createApiKey",
+    "createClusterGroupRequest",
+    "createFace",
+    "createJob",
+    "createLibrary",
+    "createMemory",
+    "createNotification",
+    "createPartner",
+    "createPartnerDeprecated",
+    "createPerson",
+    "createProfileImage",
+    "createSession",
+    "createSharedLink",
+    "createStack",
+    "createTag",
+    "createUserAdmin",
+    "createWorkflow",
+    "deleteActivity",
+    "deleteAlbum",
+    "deleteAllSessions",
+    "deleteApiKey",
+    "deleteAssetFile",
+    "deleteAssetMetadata",
+    "deleteAssets",
+    "deleteBulkAssetMetadata",
+    "deleteClusterGroupRequest",
+    "deleteDatabaseBackup",
+    "deleteDuplicate",
+    "deleteDuplicates",
+    "deleteFace",
+    "deleteIntegrityReport",
+    "deleteLibrary",
+    "deleteMemory",
+    "deleteNotification",
+    "deleteNotifications",
+    "deletePeople",
+    "deletePerson",
+    "deleteProfileImage",
+    "deleteServerLicense",
+    "deleteSession",
+    "deleteStack",
+    "deleteStacks",
+    "deleteSyncAck",
+    "deleteTag",
+    "deleteUserAdmin",
+    "deleteUserLicense",
+    "deleteUserOnboarding",
+    "deleteWorkflow",
+    "downloadArchive",
+    "editAsset",
+    "emptyQueue",
+    "emptyTrash",
+    "endSession",
+    "finishOAuth",
+    "getDownloadInfo",
+    "getNotificationTemplateAdmin",
+    "getSyncStream",
+    "leaveClusterGroup",
+    "linkOAuthAccount",
+    "lockAuthSession",
+    "lockSession",
+    "login",
+    "logout",
+    "logoutOAuth",
+    "maintenanceLogin",
+    "mergePeople",
+    "mergePersonLegacy",
+    "reassignFaces",
+    "reassignFacesById",
+    "removeAssetEdits",
+    "removeAssetFromAlbum",
+    "removeAssetFromStack",
+    "removeMemoryAssets",
+    "removePartner",
+    "removeSharedLink",
+    "removeSharedLinkAssets",
+    "removeUserFromAlbum",
+    "resetPinCode",
+    "resolveDuplicates",
+    "restoreAssets",
+    "restoreTrash",
+    "restoreUserAdmin",
+    "rotateApiKey",
+    "runAssetJobs",
+    "runQueueCommandLegacy",
+    "scanLibrary",
+    "searchAssetStatistics",
+    "searchAssets",
+    "searchLargeAssets",
+    "searchRandom",
+    "searchSmart",
+    "sendSyncAck",
+    "sendTestEmailAdmin",
+    "setMaintenanceMode",
+    "setServerLicense",
+    "setUserLicense",
+    "setUserOnboarding",
+    "setupPinCode",
+    "sharedLinkLogin",
+    "signUpAdmin",
+    "startDatabaseRestoreFlow",
+    "startOAuth",
+    "tagAssets",
+    "unlinkAllOAuthAccountsAdmin",
+    "unlinkOAuthAccount",
+    "unlockAuthSession",
+    "untagAssets",
+    "updateAdminConfig",
+    "updateAdminOnboarding",
+    "updateAlbumInfo",
+    "updateAlbumUser",
+    "updateApiKey",
+    "updateAsset",
+    "updateAssetMetadata",
+    "updateAssets",
+    "updateBulkAssetMetadata",
+    "updateConfig",
+    "updateLibrary",
+    "updateMemory",
+    "updateMyPreferences",
+    "updateMyUser",
+    "updateNotification",
+    "updateNotifications",
+    "updatePartner",
+    "updatePeople",
+    "updatePerson",
+    "updateQueue",
+    "updateSession",
+    "updateSharedLink",
+    "updateStack",
+    "updateTag",
+    "updateUserAdmin",
+    "updateUserPreferencesAdmin",
+    "updateWorkflow",
+    "uploadAsset",
+    "uploadDatabaseBackup",
+    "upsertTags",
+    "validate",
+    "validateAccessToken"
+  ],
+  "provider_requests": 0,
+  "passed": true,
+  "rows": [
+    {
+      "action": "acceptClusterGroupRequest",
+      "method": "POST",
+      "path": "/api/cluster-groups/requests/{id}/accept",
+      "domain": "cluster_groups",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "addAssetsToAlbum",
+      "method": "PUT",
+      "path": "/api/albums/{id}/assets",
+      "domain": "albums",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "addAssetsToAlbums",
+      "method": "PUT",
+      "path": "/api/albums/assets",
+      "domain": "albums",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "addMemoryAssets",
+      "method": "PUT",
+      "path": "/api/memories/{id}/assets",
+      "domain": "memories",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "addSharedLinkAssets",
+      "method": "PUT",
+      "path": "/api/shared-links/{id}/assets",
+      "domain": "shared_links",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "addUsersToAlbum",
+      "method": "PUT",
+      "path": "/api/albums/{id}/users",
+      "domain": "albums",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "bulkTagAssets",
+      "method": "PUT",
+      "path": "/api/tags/assets",
+      "domain": "tags",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "changePassword",
+      "method": "POST",
+      "path": "/api/auth/change-password",
+      "domain": "authentication",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "changePinCode",
+      "method": "PUT",
+      "path": "/api/auth/pin-code",
+      "domain": "authentication",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "checkBulkUpload",
+      "method": "POST",
+      "path": "/api/assets/bulk-upload-check",
+      "domain": "assets",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "clusterGroupRegeneratePeople",
+      "method": "POST",
+      "path": "/api/cluster-groups/{id}/regenerate-people",
+      "domain": "cluster_groups",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "copyAsset",
+      "method": "PUT",
+      "path": "/api/assets/copy",
+      "domain": "assets",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "createActivity",
+      "method": "POST",
+      "path": "/api/activities",
+      "domain": "activities",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "createAlbum",
+      "method": "POST",
+      "path": "/api/albums",
+      "domain": "albums",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "createApiKey",
+      "method": "POST",
+      "path": "/api/api-keys",
+      "domain": "api_keys",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "createClusterGroupRequest",
+      "method": "PUT",
+      "path": "/api/cluster-groups/{id}/requests",
+      "domain": "cluster_groups",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "createFace",
+      "method": "POST",
+      "path": "/api/faces",
+      "domain": "faces",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "createJob",
+      "method": "POST",
+      "path": "/api/jobs",
+      "domain": "jobs",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "createLibrary",
+      "method": "POST",
+      "path": "/api/libraries",
+      "domain": "libraries",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "createMemory",
+      "method": "POST",
+      "path": "/api/memories",
+      "domain": "memories",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "createNotification",
+      "method": "POST",
+      "path": "/api/admin/notifications",
+      "domain": "notifications_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "createPartner",
+      "method": "POST",
+      "path": "/api/partners",
+      "domain": "partners",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "createPartnerDeprecated",
+      "method": "POST",
+      "path": "/api/partners/{id}",
+      "domain": "partners",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "createPerson",
+      "method": "POST",
+      "path": "/api/people",
+      "domain": "people",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "createProfileImage",
+      "method": "POST",
+      "path": "/api/users/profile-image",
+      "domain": "users",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "createSession",
+      "method": "POST",
+      "path": "/api/sessions",
+      "domain": "sessions",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "createSharedLink",
+      "method": "POST",
+      "path": "/api/shared-links",
+      "domain": "shared_links",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "createStack",
+      "method": "POST",
+      "path": "/api/stacks",
+      "domain": "stacks",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "createTag",
+      "method": "POST",
+      "path": "/api/tags",
+      "domain": "tags",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "createUserAdmin",
+      "method": "POST",
+      "path": "/api/admin/users",
+      "domain": "users_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "createWorkflow",
+      "method": "POST",
+      "path": "/api/workflows",
+      "domain": "workflows",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deleteActivity",
+      "method": "DELETE",
+      "path": "/api/activities/{id}",
+      "domain": "activities",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deleteAlbum",
+      "method": "DELETE",
+      "path": "/api/albums/{id}",
+      "domain": "albums",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deleteAllSessions",
+      "method": "DELETE",
+      "path": "/api/sessions",
+      "domain": "sessions",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deleteApiKey",
+      "method": "DELETE",
+      "path": "/api/api-keys/{id}",
+      "domain": "api_keys",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deleteAssetFile",
+      "method": "DELETE",
+      "path": "/api/asset-files/{id}",
+      "domain": "asset_files",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deleteAssetMetadata",
+      "method": "DELETE",
+      "path": "/api/assets/{id}/metadata/{key}",
+      "domain": "assets",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deleteAssets",
+      "method": "DELETE",
+      "path": "/api/assets",
+      "domain": "assets",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deleteBulkAssetMetadata",
+      "method": "DELETE",
+      "path": "/api/assets/metadata",
+      "domain": "assets",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deleteClusterGroupRequest",
+      "method": "DELETE",
+      "path": "/api/cluster-groups/requests/{id}",
+      "domain": "cluster_groups",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deleteDatabaseBackup",
+      "method": "DELETE",
+      "path": "/api/admin/database-backups",
+      "domain": "database_backups_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deleteDuplicate",
+      "method": "DELETE",
+      "path": "/api/duplicates/{id}",
+      "domain": "duplicates",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deleteDuplicates",
+      "method": "DELETE",
+      "path": "/api/duplicates",
+      "domain": "duplicates",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deleteFace",
+      "method": "DELETE",
+      "path": "/api/faces/{id}",
+      "domain": "faces",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deleteIntegrityReport",
+      "method": "DELETE",
+      "path": "/api/admin/integrity/report/{id}",
+      "domain": "maintenance_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deleteLibrary",
+      "method": "DELETE",
+      "path": "/api/libraries/{id}",
+      "domain": "libraries",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deleteMemory",
+      "method": "DELETE",
+      "path": "/api/memories/{id}",
+      "domain": "memories",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deleteNotification",
+      "method": "DELETE",
+      "path": "/api/notifications/{id}",
+      "domain": "notifications",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deleteNotifications",
+      "method": "DELETE",
+      "path": "/api/notifications",
+      "domain": "notifications",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deletePeople",
+      "method": "DELETE",
+      "path": "/api/people",
+      "domain": "people",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deletePerson",
+      "method": "DELETE",
+      "path": "/api/people/{id}",
+      "domain": "people",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deleteProfileImage",
+      "method": "DELETE",
+      "path": "/api/users/profile-image",
+      "domain": "users",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deleteServerLicense",
+      "method": "DELETE",
+      "path": "/api/server/license",
+      "domain": "server",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deleteSession",
+      "method": "DELETE",
+      "path": "/api/sessions/{id}",
+      "domain": "sessions",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deleteStack",
+      "method": "DELETE",
+      "path": "/api/stacks/{id}",
+      "domain": "stacks",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deleteStacks",
+      "method": "DELETE",
+      "path": "/api/stacks",
+      "domain": "stacks",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deleteSyncAck",
+      "method": "DELETE",
+      "path": "/api/sync/ack",
+      "domain": "sync",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deleteTag",
+      "method": "DELETE",
+      "path": "/api/tags/{id}",
+      "domain": "tags",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deleteUserAdmin",
+      "method": "DELETE",
+      "path": "/api/admin/users/{id}",
+      "domain": "users_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deleteUserLicense",
+      "method": "DELETE",
+      "path": "/api/users/me/license",
+      "domain": "users",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deleteUserOnboarding",
+      "method": "DELETE",
+      "path": "/api/users/me/onboarding",
+      "domain": "users",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "deleteWorkflow",
+      "method": "DELETE",
+      "path": "/api/workflows/{id}",
+      "domain": "workflows",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "detectPriorInstall",
+      "method": "GET",
+      "path": "/api/admin/maintenance/detect-install",
+      "domain": "maintenance_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "downloadArchive",
+      "method": "POST",
+      "path": "/api/download/archive",
+      "domain": "download",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "downloadAsset",
+      "method": "GET",
+      "path": "/api/assets/{id}/original",
+      "domain": "assets",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "downloadAssetFile",
+      "method": "GET",
+      "path": "/api/asset-files/{id}/download",
+      "domain": "asset_files",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "downloadDatabaseBackup",
+      "method": "GET",
+      "path": "/api/admin/database-backups/{filename}",
+      "domain": "database_backups_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "editAsset",
+      "method": "PUT",
+      "path": "/api/assets/{id}/edits",
+      "domain": "assets",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "emptyQueue",
+      "method": "DELETE",
+      "path": "/api/queues/{name}/jobs",
+      "domain": "queues",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "emptyTrash",
+      "method": "POST",
+      "path": "/api/trash/empty",
+      "domain": "trash",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "endSession",
+      "method": "DELETE",
+      "path": "/api/assets/{id}/video/stream/{sessionId}",
+      "domain": "assets",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "finishOAuth",
+      "method": "POST",
+      "path": "/api/oauth/callback",
+      "domain": "authentication",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getAboutInfo",
+      "method": "GET",
+      "path": "/api/server/about",
+      "domain": "server",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getActivities",
+      "method": "GET",
+      "path": "/api/activities",
+      "domain": "activities",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getActivityStatistics",
+      "method": "GET",
+      "path": "/api/activities/statistics",
+      "domain": "activities",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getAdminConfig",
+      "method": "GET",
+      "path": "/api/admin/config",
+      "domain": "config_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getAdminConfigDefaults",
+      "method": "GET",
+      "path": "/api/admin/config/defaults",
+      "domain": "config_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getAdminOnboarding",
+      "method": "GET",
+      "path": "/api/system-metadata/admin-onboarding",
+      "domain": "system_metadata",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getAlbumInfo",
+      "method": "GET",
+      "path": "/api/albums/{id}",
+      "domain": "albums",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getAlbumMapMarkers",
+      "method": "GET",
+      "path": "/api/albums/{id}/map-markers",
+      "domain": "albums",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getAlbumStatistics",
+      "method": "GET",
+      "path": "/api/albums/statistics",
+      "domain": "albums",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getAllAlbums",
+      "method": "GET",
+      "path": "/api/albums",
+      "domain": "albums",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getAllLibraries",
+      "method": "GET",
+      "path": "/api/libraries",
+      "domain": "libraries",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getAllPeople",
+      "method": "GET",
+      "path": "/api/people",
+      "domain": "people",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getAllSharedLinks",
+      "method": "GET",
+      "path": "/api/shared-links",
+      "domain": "shared_links",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getAllTags",
+      "method": "GET",
+      "path": "/api/tags",
+      "domain": "tags",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getApiKey",
+      "method": "GET",
+      "path": "/api/api-keys/{id}",
+      "domain": "api_keys",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getApiKeys",
+      "method": "GET",
+      "path": "/api/api-keys",
+      "domain": "api_keys",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getApkLinks",
+      "method": "GET",
+      "path": "/api/server/apk-links",
+      "domain": "server",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getAssetDuplicates",
+      "method": "GET",
+      "path": "/api/duplicates",
+      "domain": "duplicates",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getAssetEdits",
+      "method": "GET",
+      "path": "/api/assets/{id}/edits",
+      "domain": "assets",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getAssetFile",
+      "method": "GET",
+      "path": "/api/asset-files/{id}",
+      "domain": "asset_files",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getAssetInfo",
+      "method": "GET",
+      "path": "/api/assets/{id}",
+      "domain": "assets",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getAssetMetadata",
+      "method": "GET",
+      "path": "/api/assets/{id}/metadata",
+      "domain": "assets",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getAssetMetadataByKey",
+      "method": "GET",
+      "path": "/api/assets/{id}/metadata/{key}",
+      "domain": "assets",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getAssetOcr",
+      "method": "GET",
+      "path": "/api/assets/{id}/ocr",
+      "domain": "assets",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getAssetStatistics",
+      "method": "GET",
+      "path": "/api/assets/statistics",
+      "domain": "assets",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getAssetsByCity",
+      "method": "GET",
+      "path": "/api/search/cities",
+      "domain": "search",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getAssetsByOriginalPath",
+      "method": "GET",
+      "path": "/api/view/folder",
+      "domain": "views",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getAuthStatus",
+      "method": "GET",
+      "path": "/api/auth/status",
+      "domain": "authentication",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getClusterGroupRequests",
+      "method": "GET",
+      "path": "/api/cluster-groups/requests",
+      "domain": "cluster_groups",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getClusterGroupRequestsForGroup",
+      "method": "GET",
+      "path": "/api/cluster-groups/{id}/requests",
+      "domain": "cluster_groups",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getClusterGroupUsers",
+      "method": "GET",
+      "path": "/api/cluster-groups/{id}/users",
+      "domain": "cluster_groups",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getConfig",
+      "method": "GET",
+      "path": "/api/system-config",
+      "domain": "system_config",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getConfigDefaults",
+      "method": "GET",
+      "path": "/api/system-config/defaults",
+      "domain": "system_config",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getDownloadInfo",
+      "method": "POST",
+      "path": "/api/download/info",
+      "domain": "download",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getExploreData",
+      "method": "GET",
+      "path": "/api/search/explore",
+      "domain": "search",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getFaces",
+      "method": "GET",
+      "path": "/api/faces",
+      "domain": "faces",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getIntegrityReport",
+      "method": "GET",
+      "path": "/api/admin/integrity/report",
+      "domain": "maintenance_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getIntegrityReportCsv",
+      "method": "GET",
+      "path": "/api/admin/integrity/report/{type}/csv",
+      "domain": "maintenance_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getIntegrityReportFile",
+      "method": "GET",
+      "path": "/api/admin/integrity/report/{id}/file",
+      "domain": "maintenance_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getIntegrityReportSummary",
+      "method": "GET",
+      "path": "/api/admin/integrity/summary",
+      "domain": "maintenance_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getLibrary",
+      "method": "GET",
+      "path": "/api/libraries/{id}",
+      "domain": "libraries",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getLibraryStatistics",
+      "method": "GET",
+      "path": "/api/libraries/{id}/statistics",
+      "domain": "libraries",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getMainPlaylist",
+      "method": "GET",
+      "path": "/api/assets/{id}/video/stream/main.m3u8",
+      "domain": "assets",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getMaintenanceStatus",
+      "method": "GET",
+      "path": "/api/admin/maintenance/status",
+      "domain": "maintenance_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getMapMarkers",
+      "method": "GET",
+      "path": "/api/map/markers",
+      "domain": "map",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getMediaPlaylist",
+      "method": "GET",
+      "path": "/api/assets/{id}/video/stream/{sessionId}/{variantIndex}/playlist.m3u8",
+      "domain": "assets",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getMemory",
+      "method": "GET",
+      "path": "/api/memories/{id}",
+      "domain": "memories",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getMyApiKey",
+      "method": "GET",
+      "path": "/api/api-keys/me",
+      "domain": "api_keys",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getMyCalendarHeatmap",
+      "method": "GET",
+      "path": "/api/users/me/calendar-heatmap",
+      "domain": "users",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getMyPreferences",
+      "method": "GET",
+      "path": "/api/users/me/preferences",
+      "domain": "users",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getMySharedLink",
+      "method": "GET",
+      "path": "/api/shared-links/me",
+      "domain": "shared_links",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getMyUser",
+      "method": "GET",
+      "path": "/api/users/me",
+      "domain": "users",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getNotification",
+      "method": "GET",
+      "path": "/api/notifications/{id}",
+      "domain": "notifications",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getNotificationTemplateAdmin",
+      "method": "POST",
+      "path": "/api/admin/notifications/templates/{name}",
+      "domain": "notifications_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getNotifications",
+      "method": "GET",
+      "path": "/api/notifications",
+      "domain": "notifications",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getPartners",
+      "method": "GET",
+      "path": "/api/partners",
+      "domain": "partners",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getPerson",
+      "method": "GET",
+      "path": "/api/people/{id}",
+      "domain": "people",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getPersonStatistics",
+      "method": "GET",
+      "path": "/api/people/{id}/statistics",
+      "domain": "people",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getPersonThumbnail",
+      "method": "GET",
+      "path": "/api/people/{id}/thumbnail",
+      "domain": "people",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getPlugin",
+      "method": "GET",
+      "path": "/api/plugins/{id}",
+      "domain": "plugins",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getProfileImage",
+      "method": "GET",
+      "path": "/api/users/{id}/profile-image",
+      "domain": "users",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getPublicConfig",
+      "method": "GET",
+      "path": "/api/public/config",
+      "domain": "config_public",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getPublicConfigDefaults",
+      "method": "GET",
+      "path": "/api/public/config/defaults",
+      "domain": "config_public",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getQueue",
+      "method": "GET",
+      "path": "/api/queues/{name}",
+      "domain": "queues",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getQueueJobs",
+      "method": "GET",
+      "path": "/api/queues/{name}/jobs",
+      "domain": "queues",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getQueues",
+      "method": "GET",
+      "path": "/api/queues",
+      "domain": "queues",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getQueuesLegacy",
+      "method": "GET",
+      "path": "/api/jobs",
+      "domain": "jobs",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getReverseGeocodingState",
+      "method": "GET",
+      "path": "/api/system-metadata/reverse-geocoding-state",
+      "domain": "system_metadata",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getSearchSuggestions",
+      "method": "GET",
+      "path": "/api/search/suggestions",
+      "domain": "search",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getSegment",
+      "method": "GET",
+      "path": "/api/assets/{id}/video/stream/{sessionId}/{variantIndex}/{filename}",
+      "domain": "assets",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getServerConfig",
+      "method": "GET",
+      "path": "/api/server/config",
+      "domain": "server",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getServerFeatures",
+      "method": "GET",
+      "path": "/api/server/features",
+      "domain": "server",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getServerLicense",
+      "method": "GET",
+      "path": "/api/server/license",
+      "domain": "server",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getServerStatistics",
+      "method": "GET",
+      "path": "/api/server/statistics",
+      "domain": "server",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getServerVersion",
+      "method": "GET",
+      "path": "/api/server/version",
+      "domain": "server",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getSessions",
+      "method": "GET",
+      "path": "/api/sessions",
+      "domain": "sessions",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getSharedLinkById",
+      "method": "GET",
+      "path": "/api/shared-links/{id}",
+      "domain": "shared_links",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getStack",
+      "method": "GET",
+      "path": "/api/stacks/{id}",
+      "domain": "stacks",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getStorage",
+      "method": "GET",
+      "path": "/api/server/storage",
+      "domain": "server",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getStorageTemplateOptions",
+      "method": "GET",
+      "path": "/api/system-config/storage-template-options",
+      "domain": "system_config",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getSupportedMediaTypes",
+      "method": "GET",
+      "path": "/api/server/media-types",
+      "domain": "server",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getSyncAck",
+      "method": "GET",
+      "path": "/api/sync/ack",
+      "domain": "sync",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getSyncStream",
+      "method": "POST",
+      "path": "/api/sync/stream",
+      "domain": "sync",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getTagById",
+      "method": "GET",
+      "path": "/api/tags/{id}",
+      "domain": "tags",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getTimeBucket",
+      "method": "GET",
+      "path": "/api/timeline/bucket",
+      "domain": "timeline",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getTimeBuckets",
+      "method": "GET",
+      "path": "/api/timeline/buckets",
+      "domain": "timeline",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getUniqueOriginalPaths",
+      "method": "GET",
+      "path": "/api/view/folder/unique-paths",
+      "domain": "views",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getUser",
+      "method": "GET",
+      "path": "/api/users/{id}",
+      "domain": "users",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getUserAdmin",
+      "method": "GET",
+      "path": "/api/admin/users/{id}",
+      "domain": "users_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getUserCalendarHeatmapAdmin",
+      "method": "GET",
+      "path": "/api/admin/users/{id}/calendar-heatmap",
+      "domain": "users_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getUserConfig",
+      "method": "GET",
+      "path": "/api/config",
+      "domain": "config_user",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getUserConfigDefaults",
+      "method": "GET",
+      "path": "/api/config/defaults",
+      "domain": "config_user",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getUserLicense",
+      "method": "GET",
+      "path": "/api/users/me/license",
+      "domain": "users",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getUserOnboarding",
+      "method": "GET",
+      "path": "/api/users/me/onboarding",
+      "domain": "users",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getUserPreferencesAdmin",
+      "method": "GET",
+      "path": "/api/admin/users/{id}/preferences",
+      "domain": "users_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getUserSessionsAdmin",
+      "method": "GET",
+      "path": "/api/admin/users/{id}/sessions",
+      "domain": "users_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getUserStatisticsAdmin",
+      "method": "GET",
+      "path": "/api/admin/users/{id}/statistics",
+      "domain": "users_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getVersionCheck",
+      "method": "GET",
+      "path": "/api/server/version-check",
+      "domain": "server",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getVersionCheckState",
+      "method": "GET",
+      "path": "/api/system-metadata/version-check-state",
+      "domain": "system_metadata",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getVersionHistory",
+      "method": "GET",
+      "path": "/api/server/version-history",
+      "domain": "server",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getWorkflow",
+      "method": "GET",
+      "path": "/api/workflows/{id}",
+      "domain": "workflows",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getWorkflowForShare",
+      "method": "GET",
+      "path": "/api/workflows/{id}/share",
+      "domain": "workflows",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getWorkflowLogs",
+      "method": "GET",
+      "path": "/api/workflows/{id}/logs",
+      "domain": "workflows",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "getWorkflowTriggers",
+      "method": "GET",
+      "path": "/api/workflows/triggers",
+      "domain": "workflows",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "leaveClusterGroup",
+      "method": "POST",
+      "path": "/api/cluster-groups/{id}/leave",
+      "domain": "cluster_groups",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "linkOAuthAccount",
+      "method": "POST",
+      "path": "/api/oauth/link",
+      "domain": "authentication",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "listDatabaseBackups",
+      "method": "GET",
+      "path": "/api/admin/database-backups",
+      "domain": "database_backups_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "lockAuthSession",
+      "method": "POST",
+      "path": "/api/auth/session/lock",
+      "domain": "authentication",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "lockSession",
+      "method": "POST",
+      "path": "/api/sessions/{id}/lock",
+      "domain": "sessions",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "login",
+      "method": "POST",
+      "path": "/api/auth/login",
+      "domain": "authentication",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "logout",
+      "method": "POST",
+      "path": "/api/auth/logout",
+      "domain": "authentication",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "logoutOAuth",
+      "method": "POST",
+      "path": "/api/oauth/backchannel-logout",
+      "domain": "authentication",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "maintenanceLogin",
+      "method": "POST",
+      "path": "/api/admin/maintenance/login",
+      "domain": "maintenance_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "memoriesStatistics",
+      "method": "GET",
+      "path": "/api/memories/statistics",
+      "domain": "memories",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "mergePeople",
+      "method": "POST",
+      "path": "/api/people/merge",
+      "domain": "people",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "mergePersonLegacy",
+      "method": "POST",
+      "path": "/api/people/{id}/merge",
+      "domain": "people",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "pingServer",
+      "method": "GET",
+      "path": "/api/server/ping",
+      "domain": "server",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "playAssetVideo",
+      "method": "GET",
+      "path": "/api/assets/{id}/video/playback",
+      "domain": "assets",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "reassignFaces",
+      "method": "PUT",
+      "path": "/api/people/{id}/reassign",
+      "domain": "people",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "reassignFacesById",
+      "method": "PUT",
+      "path": "/api/faces/{id}",
+      "domain": "faces",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "redirectOAuthToMobile",
+      "method": "GET",
+      "path": "/api/oauth/mobile-redirect",
+      "domain": "authentication",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "removeAssetEdits",
+      "method": "DELETE",
+      "path": "/api/assets/{id}/edits",
+      "domain": "assets",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "removeAssetFromAlbum",
+      "method": "DELETE",
+      "path": "/api/albums/{id}/assets",
+      "domain": "albums",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "removeAssetFromStack",
+      "method": "DELETE",
+      "path": "/api/stacks/{id}/assets/{assetId}",
+      "domain": "stacks",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "removeMemoryAssets",
+      "method": "DELETE",
+      "path": "/api/memories/{id}/assets",
+      "domain": "memories",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "removePartner",
+      "method": "DELETE",
+      "path": "/api/partners/{id}",
+      "domain": "partners",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "removeSharedLink",
+      "method": "DELETE",
+      "path": "/api/shared-links/{id}",
+      "domain": "shared_links",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "removeSharedLinkAssets",
+      "method": "DELETE",
+      "path": "/api/shared-links/{id}/assets",
+      "domain": "shared_links",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "removeUserFromAlbum",
+      "method": "DELETE",
+      "path": "/api/albums/{id}/user/{userId}",
+      "domain": "albums",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "resetPinCode",
+      "method": "DELETE",
+      "path": "/api/auth/pin-code",
+      "domain": "authentication",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "resolveDuplicates",
+      "method": "POST",
+      "path": "/api/duplicates/resolve",
+      "domain": "duplicates",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "restoreAssets",
+      "method": "POST",
+      "path": "/api/trash/restore/assets",
+      "domain": "trash",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "restoreTrash",
+      "method": "POST",
+      "path": "/api/trash/restore",
+      "domain": "trash",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "restoreUserAdmin",
+      "method": "POST",
+      "path": "/api/admin/users/{id}/restore",
+      "domain": "users_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "reverseGeocode",
+      "method": "GET",
+      "path": "/api/map/reverse-geocode",
+      "domain": "map",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "rotateApiKey",
+      "method": "POST",
+      "path": "/api/api-keys/{id}/rotate",
+      "domain": "api_keys",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "runAssetJobs",
+      "method": "POST",
+      "path": "/api/assets/jobs",
+      "domain": "assets",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "runQueueCommandLegacy",
+      "method": "PUT",
+      "path": "/api/jobs/{name}",
+      "domain": "jobs",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "scanLibrary",
+      "method": "POST",
+      "path": "/api/libraries/{id}/scan",
+      "domain": "libraries",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "searchAssetFiles",
+      "method": "GET",
+      "path": "/api/asset-files",
+      "domain": "asset_files",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "searchAssetStatistics",
+      "method": "POST",
+      "path": "/api/search/statistics",
+      "domain": "search",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "searchAssets",
+      "method": "POST",
+      "path": "/api/search/metadata",
+      "domain": "search",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "searchLargeAssets",
+      "method": "POST",
+      "path": "/api/search/large-assets",
+      "domain": "search",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "searchMemories",
+      "method": "GET",
+      "path": "/api/memories",
+      "domain": "memories",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "searchPerson",
+      "method": "GET",
+      "path": "/api/search/person",
+      "domain": "search",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "searchPlaces",
+      "method": "GET",
+      "path": "/api/search/places",
+      "domain": "search",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "searchPluginMethods",
+      "method": "GET",
+      "path": "/api/plugins/methods",
+      "domain": "plugins",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "searchPluginTemplates",
+      "method": "GET",
+      "path": "/api/plugins/templates",
+      "domain": "plugins",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "searchPlugins",
+      "method": "GET",
+      "path": "/api/plugins",
+      "domain": "plugins",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "searchRandom",
+      "method": "POST",
+      "path": "/api/search/random",
+      "domain": "search",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "searchSmart",
+      "method": "POST",
+      "path": "/api/search/smart",
+      "domain": "search",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "searchStacks",
+      "method": "GET",
+      "path": "/api/stacks",
+      "domain": "stacks",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "searchUsers",
+      "method": "GET",
+      "path": "/api/users",
+      "domain": "users",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "searchUsersAdmin",
+      "method": "GET",
+      "path": "/api/admin/users",
+      "domain": "users_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "searchWorkflows",
+      "method": "GET",
+      "path": "/api/workflows",
+      "domain": "workflows",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "sendSyncAck",
+      "method": "POST",
+      "path": "/api/sync/ack",
+      "domain": "sync",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "sendTestEmailAdmin",
+      "method": "POST",
+      "path": "/api/admin/notifications/test-email",
+      "domain": "notifications_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "setMaintenanceMode",
+      "method": "POST",
+      "path": "/api/admin/maintenance",
+      "domain": "maintenance_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "setServerLicense",
+      "method": "PUT",
+      "path": "/api/server/license",
+      "domain": "server",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "setUserLicense",
+      "method": "PUT",
+      "path": "/api/users/me/license",
+      "domain": "users",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "setUserOnboarding",
+      "method": "PUT",
+      "path": "/api/users/me/onboarding",
+      "domain": "users",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "setupPinCode",
+      "method": "POST",
+      "path": "/api/auth/pin-code",
+      "domain": "authentication",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "sharedLinkLogin",
+      "method": "POST",
+      "path": "/api/shared-links/login",
+      "domain": "shared_links",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "signUpAdmin",
+      "method": "POST",
+      "path": "/api/auth/admin-sign-up",
+      "domain": "authentication",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "startDatabaseRestoreFlow",
+      "method": "POST",
+      "path": "/api/admin/database-backups/start-restore",
+      "domain": "database_backups_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "startOAuth",
+      "method": "POST",
+      "path": "/api/oauth/authorize",
+      "domain": "authentication",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "tagAssets",
+      "method": "PUT",
+      "path": "/api/tags/{id}/assets",
+      "domain": "tags",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "unlinkAllOAuthAccountsAdmin",
+      "method": "POST",
+      "path": "/api/admin/auth/unlink-all",
+      "domain": "authentication_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "unlinkOAuthAccount",
+      "method": "POST",
+      "path": "/api/oauth/unlink",
+      "domain": "authentication",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "unlockAuthSession",
+      "method": "POST",
+      "path": "/api/auth/session/unlock",
+      "domain": "authentication",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "untagAssets",
+      "method": "DELETE",
+      "path": "/api/tags/{id}/assets",
+      "domain": "tags",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "updateAdminConfig",
+      "method": "PUT",
+      "path": "/api/admin/config",
+      "domain": "config_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "updateAdminOnboarding",
+      "method": "POST",
+      "path": "/api/system-metadata/admin-onboarding",
+      "domain": "system_metadata",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "updateAlbumInfo",
+      "method": "PATCH",
+      "path": "/api/albums/{id}",
+      "domain": "albums",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "updateAlbumUser",
+      "method": "PUT",
+      "path": "/api/albums/{id}/user/{userId}",
+      "domain": "albums",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "updateApiKey",
+      "method": "PUT",
+      "path": "/api/api-keys/{id}",
+      "domain": "api_keys",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "updateAsset",
+      "method": "PUT",
+      "path": "/api/assets/{id}",
+      "domain": "assets",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "updateAssetMetadata",
+      "method": "PUT",
+      "path": "/api/assets/{id}/metadata",
+      "domain": "assets",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "updateAssets",
+      "method": "PUT",
+      "path": "/api/assets",
+      "domain": "assets",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "updateBulkAssetMetadata",
+      "method": "PUT",
+      "path": "/api/assets/metadata",
+      "domain": "assets",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "updateConfig",
+      "method": "PUT",
+      "path": "/api/system-config",
+      "domain": "system_config",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "updateLibrary",
+      "method": "PUT",
+      "path": "/api/libraries/{id}",
+      "domain": "libraries",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "updateMemory",
+      "method": "PUT",
+      "path": "/api/memories/{id}",
+      "domain": "memories",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "updateMyPreferences",
+      "method": "PUT",
+      "path": "/api/users/me/preferences",
+      "domain": "users",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "updateMyUser",
+      "method": "PUT",
+      "path": "/api/users/me",
+      "domain": "users",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "updateNotification",
+      "method": "PUT",
+      "path": "/api/notifications/{id}",
+      "domain": "notifications",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "updateNotifications",
+      "method": "PUT",
+      "path": "/api/notifications",
+      "domain": "notifications",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "updatePartner",
+      "method": "PUT",
+      "path": "/api/partners/{id}",
+      "domain": "partners",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "updatePeople",
+      "method": "PUT",
+      "path": "/api/people",
+      "domain": "people",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "updatePerson",
+      "method": "PUT",
+      "path": "/api/people/{id}",
+      "domain": "people",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "updateQueue",
+      "method": "PUT",
+      "path": "/api/queues/{name}",
+      "domain": "queues",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "updateSession",
+      "method": "PUT",
+      "path": "/api/sessions/{id}",
+      "domain": "sessions",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "updateSharedLink",
+      "method": "PATCH",
+      "path": "/api/shared-links/{id}",
+      "domain": "shared_links",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "updateStack",
+      "method": "PUT",
+      "path": "/api/stacks/{id}",
+      "domain": "stacks",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "updateTag",
+      "method": "PUT",
+      "path": "/api/tags/{id}",
+      "domain": "tags",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "updateUserAdmin",
+      "method": "PUT",
+      "path": "/api/admin/users/{id}",
+      "domain": "users_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "updateUserPreferencesAdmin",
+      "method": "PUT",
+      "path": "/api/admin/users/{id}/preferences",
+      "domain": "users_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "updateWorkflow",
+      "method": "PUT",
+      "path": "/api/workflows/{id}",
+      "domain": "workflows",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "uploadAsset",
+      "method": "POST",
+      "path": "/api/assets",
+      "domain": "assets",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "uploadDatabaseBackup",
+      "method": "POST",
+      "path": "/api/admin/database-backups/upload",
+      "domain": "database_backups_admin",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "upsertTags",
+      "method": "PUT",
+      "path": "/api/tags",
+      "domain": "tags",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "validate",
+      "method": "POST",
+      "path": "/api/libraries/{id}/validate",
+      "domain": "libraries",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "validateAccessToken",
+      "method": "POST",
+      "path": "/api/auth/validateToken",
+      "domain": "authentication",
+      "api": "passed",
+      "mcp": "passed"
+    },
+    {
+      "action": "viewAsset",
+      "method": "GET",
+      "path": "/api/assets/{id}/thumbnail",
+      "domain": "assets",
+      "api": "passed",
+      "mcp": "passed"
+    }
+  ],
+  "seconds": 64.09,
+  "ready_authorization_unknown": [
+    "finishOAuth",
+    "getMaintenanceStatus",
+    "getPublicConfig",
+    "getPublicConfigDefaults",
+    "getServerConfig",
+    "getServerFeatures",
+    "getServerVersion",
+    "getSupportedMediaTypes",
+    "getVersionHistory",
+    "login",
+    "logoutOAuth",
+    "maintenanceLogin",
+    "pingServer",
+    "redirectOAuthToMobile",
+    "signUpAdmin",
+    "startDatabaseRestoreFlow",
+    "startOAuth"
+  ],
+  "runtime_source_sha256": {
+    "immich_api/__init__.py": "6f6baae3fbe8d01c661421eba83ce5b168fa470f22e57ca991fcc1ade067f256",
+    "immich_api/__main__.py": "12095458babc08379990c9057906328adc04fb2a977921d48727883dac3bb130",
+    "immich_api/album_metadata.py": "5d7cc8373ae152e2028e7d099a99574cd48b74c8edf94faf98b7a2af66dee725",
+    "immich_api/api/__init__.py": "60c4220046512ee8606075ae97b3393bc301fb562f3c5cb9d19c3b51ec117544",
+    "immich_api/api/api_client_system.py": "66bd8a148df7a642372d3d87b3027ad9a8bdc8370b68be50ab4f353a5d679f94",
+    "immich_api/auth.py": "277fec97c296e80d720f10b2236e4aff8a991a240505c9f2d3e885cc05f235a3",
+    "immich_api/connectors/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "immich_api/error_authority.py": "29b95a9fc715259c66e346eea03d4e2c693fe69ca9a72229830dcd0191260a2e",
+    "immich_api/error_rendering.py": "0d2748bfdbace11277460804c0a2826eaeff19d8967268e635a596fd9c699008",
+    "immich_api/immich_input_models.py": "383938cc6dd1c5e6c7cdad4cc72eff0058a45f5cd571aebd8394f2c97256dc5d",
+    "immich_api/immich_response_models.py": "8e4df3e72255d479f61410dbd222263b37dfa5f8d0d87a35f0958c32fa94eb65",
+    "immich_api/kg_ingest.py": "f43e00c99eb07e2069e3edf1d4b840f944f9b95d1ecda5b0abc0e67e14f7f329",
+    "immich_api/mcp/__init__.py": "fa045fdfa4938c33b8cb5d6a9e7ada5891f534288b6ad4164e4f6434ca3fdfa9",
+    "immich_api/mcp/album_sample.py": "f02516259f04b9ee93f40c8272d0a5eadadebd7c626d827edb1993423276393f",
+    "immich_api/mcp_server.py": "e8efb314b785d06fb57d9498bf9f514ec454ba448d8f6683739f782f327145f0",
+    "immich_api/ontology/__init__.py": "6a0710dfd5c89e6ea7f71343486c6fae9d1b7b96661d46885032a69bbedeb93c",
+    "immich_api/openapi_auth_scheme.py": "49234563d59cc77ab56fda8bf6e9dfd903e9924b288b88a593cee43a8027b64f",
+    "immich_api/openapi_request.py": "63ec04ca705d26c301546e643483721197af909fc263ae86bf839cbc98f5c01f",
+    "immich_api/openapi_response.py": "0f459fb87c65787c02faf0334ef7b493195b0f75ba3d77f74b01801b7b025eb0",
+    "immich_api/openapi_runtime.py": "5b732885265bb7d131d9471a6c7c31a90113ed9eabac88b1e633966fdff65016",
+    "immich_api/parity/__init__.py": "4267d5090eb8d0bde3e9e143f00a17eac715679275aa97663fd271ab1cf2d659",
+    "immich_api/parity/check_openapi_parity.py": "9aa28e45fff5fd6e21d654b0d64d6ceda04367dddfda18c47d0ea81c41dadcf6",
+    "immich_api/parity/openapi_parity.py": "aaf80630fe08ba14ef9cb8e7d362cde6474bf0070b1b45513e114b90e59553c0",
+    "immich_api/parity/openapi_schema.py": "45d7be9a51cb442faa37d0d2593cd2bbd4d13add610216630d415c94eea5b2f7",
+    "immich_api/parity/openapi_schema_inputs.py": "6da8e33c6ce591110f8ce44de1422ee6a764bbff16ff9d434bd59ccbf89913b5",
+    "immich_api/parity/openapi_schema_types.py": "0621584409c26dcfe8e2eaedccdefd9db817347257a3ad005f1eb94707c3a47a",
+    "immich_api/parity/openapi_security.py": "526be16b99e4f17c82644d22b30aaa6c3506a13d8cf6ecc5d7500748737977a6",
+    "immich_api/parity/openapi_source_parity.py": "3ce47d3145558a34b3e6f93c12b0269825ec36158e7a28dc611bc835c769135d",
+    "immich_api/parity/openapi_transport_parity.py": "394c7eac32e62cf9c69541f9a80c73babe0cecf8850e6e2ad7194d03cb22a68e",
+    "immich_api/parity/unicode_patterns.py": "4b4b5d5ff591c619a9cc089ce72968d9e4ad2f2ee403ce8185b51ea607b5b526",
+    "immich_api/prompts/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "immich_api/skills/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "status": "Complete API/nativeMCP consumer acceptance on hash-verified uncommitted SDK overlay and lock-selected FastMCP4.1.0 wheels; not full lock-installation proof",
+  "confirmation_count": 153,
+  "confirmation_controls": {
+    "passed": 8,
+    "seconds": 8.99
+  },
+  "limitations": [
+    "SDK remains uncommitted; normal hooks may resynchronize native EG and require canonical owner correction",
+    "EG consumer source remainsd33; new SDKlock pinsf17; full lock installation not tested",
+    "17source-absent authorization classifications and4.6MBnative catalog remain readiness holds"
+  ],
+  "receipt_sha256": "4cd4fb561146b528d685a69d604f7a2382949c076aa239c5a3740422d97b9811"
+}

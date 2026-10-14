@@ -7,9 +7,8 @@ Governing specification: [spec.md](spec.md).
 The connector reuses the SDK server factory, credential resolver, HTTP client, and typed ingest service.
 The connector owns operation arguments, external-system mappings, and package content.
 
-Component: Connector integration
-References: [Connector SDK](https://github.com/Knuckles-Team/agent-connector-sdk/blob/5babc4cc48ad73928468b243842f219f51e2cca1/README.md)
-Code: ../../immich_api/auth.py ../../immich_api/api/api_client_base.py ../../immich_api/mcp_server.py ../../immich_api/mcp/mcp_system.py ../../immich_api/kg_ingest.py ../../tests/test_auth.py ../../tests/test_api_wrapper.py ../../tests/test_immich_mcp_validation.py ../../tests/test_kg_ingest.py ../../scripts/generate_tool_schemas.py
+Ownership, component identity, SDK reference and implementation inventory are
+recorded in [the governing scope](spec.md#scope-and-owner).
 
 ## Architecture
 
@@ -29,22 +28,47 @@ flowchart LR
 
 `immich_api/mcp_server.py` exposes `build_server` and the console entry point.
 `get_mcp_instance` calls `create_mcp_server`, `register_tool_surface`, and the package tool registrars.
-`immich_api/mcp/mcp_system.py` routes selected operations through `get_client` and the API client.
+`immich_api/mcp/__init__.py` registers `OpenApiTool` domains from `openapi_runtime.py`; each operation uses `get_client` to obtain `ApiClientSystem(OpenApiClient)`. The bounded album sample registrar calls the same declared-operation client.
 `immich_api/auth.py` resolves references only when a caller requests a client.
-`immich_api/api/api_client_base.py` enforces transport and response limits before returning external data.
+`immich_api/openapi_runtime.py` enforces transport and response limits before returning external data.
 `immich_api/kg_ingest.py` maps observations into SDK types and calls the configured service's `submit` method.
 The SDK owns engine transport and durable checkpoints.
+
+## Complete provider operation parity
+
+Keep the exact deployed OpenAPI bytes in `api-spec/immich.openapi.json` and
+compile the complete inventory through the canonical builder. Preserve vendor
+authorization extensions and unknown declarations; source omission alone does
+not establish public access. Reviewed provider source can explain those
+declarations without changing the original schema.
+
+Preserve the independently reviewed provider sidecar and its exact source files.
+Reverify file, operation and overlay hashes during admission. The sole provider
+correction adds the required asset file without removing other constraints.
+Configure bounded discovery through the normal server's named client-budget
+setting. Retrieve each complete domain schema through native exact search and
+exercise every action through FastMCP's proxy. Fixture budgets establish only
+the named synthetic client's test scope; production budgets need separate evidence.
+
+The exhaustive test fixture set must equal the source operation IDs. Each fixture
+executes once through `ApiClientSystem` and once through an actual FastMCP client,
+with only outbound HTTP replaced. The mock checks the method, path, query,
+headers and serialized body, and the test checks the structured response. MCP
+write approval must complete through the negotiated modern protocol; legacy
+negotiation and patched approval helpers are not acceptance evidence. Missing
+approval and provider errors must not cause a write retry. Source parity and
+mocked transport evidence remain separate from live provider validation.
 
 ## Content and contracts
 
 The server serves package prompts, skills, ontology, and `connector_manifest.yml` through native MCP primitives.
 The schema generator reads `tools/list` without invoking vendor operations.
 It records both input and output schemas. Empty source presets declare no extraction integration.
-Native content listing acceptance remains pending until a connector-owned test exercises the production server.
+`tests/test_immich_content.py` exercises production native content discovery and prompt rendering. The extraction preset is disabled pending an SDK-supported provider/account stream binding; no default source mode is claimed.
 
 ## Dependencies and decisions
 
-No additional capability prerequisite has been established in this starter repository.
+The pinned SDK and the immutable OpenAPI contract govern runtime dispatch and content. Source mapping/graph acceptance remains pending; no ingestion preset is enabled.
 The SDK reference records a source dependency; it does not create a cross-repository delivery prerequisite.
 Reviewers must add `Depends-on:` declarations only for confirmed prerequisite requirements.
 Each source mapping must match the connector's actual external data before ingestion is enabled.
@@ -59,6 +83,6 @@ Source tests do not authorize release, deployment, or external effects.
 
 ## Risks and alternatives
 
-Starter operations and mappings require external-system validation before production use.
+Declared operations and mappings require authenticated external-system validation before production use.
 Missing credentials, rejected source observations, and failed transport checks must propagate as explicit failures.
 Duplicating shared SDK or pipeline logic would create conflicting owners.

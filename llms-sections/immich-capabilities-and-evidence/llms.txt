@@ -1,0 +1,10 @@
+# immich-api — Immich capabilities and evidence
+
+> Current documentation index generated from the exact MkDocs navigation.
+> Capability and content-use claims are operator-scoped and provenance-bound.
+
+## Immich capabilities and evidence
+
+- [Immich capabilities and evidence](https://knuckles-team.github.io/immich-api/immich-capabilities/) — This package binds the Immich 3.2.2 OpenAPI contract to 41 domain tools covering 276 declared operations. Inputs discriminate by the exact action enum, and the client uses that action's fixed HTTP method and route. There is no arbitrary URL or method dispatch. Writes are disabled by default, require MCP confirmation when enabled, and are never automatically retried.
+
+Standards maturity and scope: [root documentation index](../../llms.txt).

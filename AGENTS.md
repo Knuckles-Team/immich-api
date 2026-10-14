@@ -10,6 +10,11 @@ agent-utilities and must not become an MCP dependency.
 
 ## Setup and commands
 
+The canonical scaffold is owned entirely by the `mcp-builder` skill code.
+Generate locally and publish through ordinary repository creation; do not require
+a separate template repository or GitHub's template-generation API. Preserve the
+pilot's historical provenance and existing repository history.
+
 Use the repository's locked environment. Install its declared test dependencies
 and pre-commit before running `pre-commit run --all-files` and `pytest -q`.
 The shared pipelines hooks own scanner versions and gate policy; provision

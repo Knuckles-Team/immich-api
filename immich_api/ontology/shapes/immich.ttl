@@ -1,0 +1,69 @@
+@prefix : <http://knuckles.team/kg#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+
+:ImmichAssetShape a sh:NodeShape ; sh:targetClass :ImmichAsset ;
+    sh:property [ sh:path :immichAssetId ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:string ; sh:pattern "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12})$" ],
+    [ sh:path :immichAssetType ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:string ; sh:in ("IMAGE" "VIDEO" "AUDIO" "OTHER") ],
+    [ sh:path :immichAssetOriginalMimeType ; sh:maxCount 1 ; sh:datatype xsd:string ],
+    [ sh:path :immichAssetDuration ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 0 ; sh:maxInclusive 2147483647 ],
+    [ sh:path :immichAssetWidth ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 0 ; sh:maxInclusive 9007199254740991 ],
+    [ sh:path :immichAssetHeight ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 0 ; sh:maxInclusive 9007199254740991 ],
+    [ sh:path :immichAssetFileCreatedAt ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:dateTime ],
+    [ sh:path :immichAssetUpdatedAt ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:dateTime ],
+    [ sh:path :immichAssetIsFavorite ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:boolean ],
+    [ sh:path :immichAssetIsArchived ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:boolean ],
+    [ sh:path :immichAssetIsTrashed ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:boolean ],
+    [ sh:path :immichAssetVisibility ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:string ; sh:in ("archive" "timeline" "hidden" "locked") ],
+    [ sh:path :immichAssetOwner ; sh:maxCount 1 ; sh:class :ImmichUser ],
+    [ sh:path :immichAssetPeople ; sh:class :ImmichPersonRecord ],
+    [ sh:path :immichAssetTags ; sh:class :ImmichTag ],
+    [ sh:path :immichAssetStack ; sh:maxCount 1 ; sh:class :ImmichAssetStack ] .
+
+:ImmichAlbumShape a sh:NodeShape ; sh:targetClass :ImmichAlbum ;
+    sh:property [ sh:path :immichAlbumId ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:string ; sh:pattern "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12})$" ],
+    [ sh:path :immichAlbumAlbumName ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:string ],
+    [ sh:path :immichAlbumAssetCount ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 0 ; sh:maxInclusive 9007199254740991 ],
+    [ sh:path :immichAlbumShared ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:boolean ],
+    [ sh:path :immichAlbumHasSharedLink ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:boolean ],
+    [ sh:path :immichAlbumCreatedAt ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:dateTime ],
+    [ sh:path :immichAlbumUpdatedAt ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:dateTime ],
+    [ sh:path :immichAlbumAlbumUsers ; sh:class :ImmichAlbumMembership ],
+    [ sh:path :immichAlbumAlbumThumbnailAssetId ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:pattern "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12})$" ] .
+
+:ImmichPersonRecordShape a sh:NodeShape ; sh:targetClass :ImmichPersonRecord ;
+    sh:property [ sh:path :immichPersonRecordId ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:string ; sh:pattern "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12})$" ],
+    [ sh:path :immichPersonRecordName ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:string ],
+    [ sh:path :immichPersonRecordIsHidden ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:boolean ],
+    [ sh:path :immichPersonRecordIsFavorite ; sh:maxCount 1 ; sh:datatype xsd:boolean ],
+    [ sh:path :immichPersonRecordUpdatedAt ; sh:maxCount 1 ; sh:datatype xsd:dateTime ] .
+
+:ImmichUserShape a sh:NodeShape ; sh:targetClass :ImmichUser ;
+    sh:property [ sh:path :immichUserId ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:string ; sh:pattern "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12})$" ],
+    [ sh:path :immichUserName ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:string ] .
+
+:ImmichLibraryShape a sh:NodeShape ; sh:targetClass :ImmichLibrary ;
+    sh:property [ sh:path :immichLibraryId ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:string ; sh:pattern "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12})$" ],
+    [ sh:path :immichLibraryName ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:string ],
+    [ sh:path :immichLibraryAssetCount ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:integer ; sh:minInclusive -9007199254740991 ; sh:maxInclusive 9007199254740991 ],
+    [ sh:path :immichLibraryCreatedAt ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:dateTime ],
+    [ sh:path :immichLibraryUpdatedAt ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:dateTime ] .
+
+:ImmichAlbumMembershipShape a sh:NodeShape ; sh:targetClass :ImmichAlbumMembership ;
+    sh:property [ sh:path :immichAlbumMembershipRole ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:string ; sh:in ("editor" "owner" "viewer") ],
+    [ sh:path :immichAlbumMembershipUser ; sh:maxCount 1 ; sh:class :ImmichUser ] .
+
+:ImmichTagShape a sh:NodeShape ; sh:targetClass :ImmichTag ;
+    sh:property [ sh:path :immichTagId ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:string ; sh:pattern "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12})$" ],
+    [ sh:path :immichTagName ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:string ],
+    [ sh:path :immichTagCreatedAt ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:dateTime ],
+    [ sh:path :immichTagUpdatedAt ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:dateTime ] .
+
+:ImmichAssetStackShape a sh:NodeShape ; sh:targetClass :ImmichAssetStack ;
+    sh:property [ sh:path :immichAssetStackId ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:string ; sh:pattern "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12})$" ],
+    [ sh:path :immichAssetStackAssetCount ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 0 ; sh:maxInclusive 9007199254740991 ],
+    [ sh:path :immichAssetStackPrimaryAssetId ; sh:maxCount 1 ; sh:minCount 1 ; sh:datatype xsd:string ; sh:pattern "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12})$" ] .

@@ -1,1 +1,3 @@
-{}
+{
+  "_comment": "No ingestion preset is enabled. The pinned SDK uses the preset name as stream identity, so this package cannot bind a shared preset to a provider/account scope. The read-only album_metadata_sample tool remains available. Its authoritative=false flag does not govern SDK source mode; no FULL/DELTA sweep is configured."
+}

@@ -5,14 +5,6 @@
 
 ## Usage (API / CLI / MCP)
 
-- [Usage (API / CLI / MCP)](https://knuckles-team.github.io/immich-api/usage/) — immich-api exposes the same capability three ways: as MCP tools an agent calls, as a Python API you import, and as a CLI.
+- [Usage (API / CLI / MCP)](https://knuckles-team.github.io/immich-api/usage/) — The pilot provides a Python client and the immich-mcp server entry point. Its OpenAPI domain tools take typed operation arguments, not a free-form URL or method. Read the capability and evidence guide first.
 
-## Standards maturity
-
-- RFC 3986: rfc (normative)
-- RFC 9264: rfc (normative)
-- RFC 9727: rfc (normative)
-- RFC 8414: rfc (normative)
-- RFC 9728: rfc (normative)
-- Agent Documentation Standard vNext: draft (draft)
-- Concept IDs and AGENTS: convention (advisory)
+Standards maturity and scope: [root documentation index](../../llms.txt).

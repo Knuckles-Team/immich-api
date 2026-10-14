@@ -38,14 +38,14 @@
       "artifact": "docs/capabilities/api.json",
       "artifact_sha256": "378bcc94f19ead2f3078ee0a6335b2d0333254d5c03bdc6fba59896b29f5a3e9",
       "source": "immich_api/api/__init__.py",
-      "source_sha256": "163db5f8c42a0ba745518a06a434a7e2c9367c07fc8475203dc5b49a8b6b8e88"
+      "source_sha256": "60c4220046512ee8606075ae97b3393bc301fb562f3c5cb9d19c3b51ec117544"
     },
     "mcp": {
       "artifact": "docs/capabilities/mcp.json",
       "artifact_sha256": "603ffa561c6aa00eac432f3a1b63f708b90eacb38cc371a197e883b5811a0a09",
       "http_transport": "true",
       "source": "immich_api/mcp_server.py",
-      "source_sha256": "5963c4042949f96ab09f6e41b0e52aeb07aa9a99d0e4b673188f05a0a8a9d052"
+      "source_sha256": "e8efb314b785d06fb57d9498bf9f514ec454ba448d8f6683739f782f327145f0"
     }
   },
   "content_signals": {
@@ -59,6 +59,8 @@
     "llms-sections/installation/llms.txt",
     "llms-sections/deployment/llms.txt",
     "llms-sections/usage-api-cli-mcp/llms.txt",
+    "llms-sections/immich-capabilities-and-evidence/llms.txt",
+    "llms-sections/openapi-parity/llms.txt",
     "llms-sections/backing-platform-immich-api/llms.txt",
     "llms-sections/concepts/llms.txt",
     "llms-sections/glossary/llms.txt",
@@ -75,7 +77,7 @@
   },
   "provenance": {
     "applicability_sha256": "bc4c3ebc8f2437439a86931eded34fe6eb4492cef88084a9239fc2ada1cd2308",
-    "mkdocs_sha256": "72b8040a5a978b8eb1b1d5a4f24dfbadd1dc5fa7db684bf7c9dbf4d94a83b2a3",
+    "mkdocs_sha256": "81f0f0ba270ef724d3e645e408754d4c4cb720a91e86035b52549c0b47d901de",
     "pages": [
       {
         "bytes": 1585,
@@ -88,24 +90,34 @@
         "source": "docs/overview.md"
       },
       {
-        "bytes": 1899,
-        "sha256": "aa0ac59f821c03c955ebeb02de36669a016b208064779ba10e0ad090b4db1be4",
+        "bytes": 2253,
+        "sha256": "d9328c3b12f3afa895b2c57f806c9892a9d050ae5819ca0ca38a54bac331f66f",
         "source": "docs/architecture.md"
       },
       {
-        "bytes": 730,
-        "sha256": "4fee4183dcd562219371b050c4cff5863dcad4b7394562a846a59ad8ce5c5d84",
+        "bytes": 1946,
+        "sha256": "3a1c1e0bbcb34fbacb92b1319daef1907282476f8ba93e64e500c54af7112ab4",
         "source": "docs/installation.md"
       },
       {
-        "bytes": 2828,
-        "sha256": "b9d0f0b4b90c353aecee26be4c5afede0fea3ace3c154d1fae361f23d4f33b25",
+        "bytes": 4406,
+        "sha256": "8cd07442df48816d65222571586f9e4db1c02a6ed23524c05055773e2393b224",
         "source": "docs/deployment.md"
       },
       {
-        "bytes": 1365,
-        "sha256": "a407d1b64ff213082a93afb4443cc0f73a4b2fac7f61d2baa5fe40ad8a491a05",
+        "bytes": 2258,
+        "sha256": "0f63342bb7f6078ca1df86cb181cbee0a434dd1924a37345f02acf3ee5316c0c",
         "source": "docs/usage.md"
+      },
+      {
+        "bytes": 6861,
+        "sha256": "d08dd85c42eb33ad7e822cef52349962e034aa423584c1191c4ba878d985b853",
+        "source": "docs/immich-capabilities.md"
+      },
+      {
+        "bytes": 12394,
+        "sha256": "69398c5fe4c4bbf40b1bf7f561c9ad4917ba77e30845b61c9a899e72fdea5ed5",
+        "source": "docs/openapi-parity.md"
       },
       {
         "bytes": 711,

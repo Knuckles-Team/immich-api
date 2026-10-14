@@ -1,0 +1,46 @@
+{
+  "sdk_revision": "04a68087dbd3867bbb20e6ce286ffdd654028183",
+  "sdk_tree": "e55c87d6b56d40b0baf2f715b52fd1b288aa231c",
+  "source_archive_sha256": "c81b507cbdce5556bd687c4157a6969679d801a0f642facf269ca72559ebae2c",
+  "pyproject_sha256": "af0c165cddb4b41a9f4e17762306ac4391d0ce9a79fb5a29234eb1d18b44d3ab",
+  "version_source_sha256": "8177603d25949f531ce883c637b2a5f8eee0e85de0cc0dc493cb5135e681e79b",
+  "version": "0.1.0",
+  "requires_python": ">=3.12,<3.15",
+  "requires_dist": [
+    "fastmcp>=4.0.11,<5",
+    "epistemic-graph>=2.27.0,<3",
+    "mcp>=2.3.0,<3",
+    "pydantic>=2.13.4,<3",
+    "PyYAML>=6.0.3",
+    "httpx>=0.28.1",
+    "httpx2>=2.12.0",
+    "anyio>=4.13.0",
+    "cryptography>=50.0.1"
+  ],
+  "eg_consumer_revision": "d33abec1e09b63cdcde01f8e8e4fe810d91cd43d",
+  "validation_started": false,
+  "dependency_installation_verified": false,
+  "purpose": "Prepare the landed SDK consumer pin; no consumer validation started",
+  "resolver": "uv 0.12.21, uv lock --no-build --no-python-downloads",
+  "resolver_python": "CPython 3.14.7; universal project range >=3.12,<3.15",
+  "resolved_packages": 90,
+  "lock_sha256": "a7507377541c61c765dfc92176aa459f9f5dea8837a97761d8479c6ba9166bf4",
+  "lock_log_sha256": "644c0b4e5b9a24fa072a1a7bde33d024b08cb6d271fee1af70e71a404f5502d0",
+  "versions": {
+    "agent-connector-sdk": "0.1.0",
+    "epistemic-graph": "2.27.0",
+    "fastmcp": "4.1.0",
+    "mcp": "2.3.0"
+  },
+  "sdk_lock_source": {
+    "git": "https://github.com/Knuckles-Team/agent-connector-sdk.git?rev=04a68087dbd3867bbb20e6ce286ffdd654028183#04a68087dbd3867bbb20e6ce286ffdd654028183"
+  },
+  "eg_lock_source": {
+    "git": "https://github.com/Knuckles-Team/epistemic-graph.git?rev=d33abec1e09b63cdcde01f8e8e4fe810d91cd43d#d33abec1e09b63cdcde01f8e8e4fe810d91cd43d"
+  },
+  "lock_freshness_check_run": false,
+  "tests_run": false,
+  "hooks_run": false,
+  "native_builds": false,
+  "live_provider_calls": 0
+}

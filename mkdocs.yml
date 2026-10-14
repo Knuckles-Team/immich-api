@@ -21,6 +21,8 @@ nav:
   - Installation: installation.md
   - Deployment: deployment.md
   - Usage (API / CLI / MCP): usage.md
+  - Immich capabilities and evidence: immich-capabilities.md
+  - OpenAPI parity: openapi-parity.md
   - Backing Platform (Immich Api): platform.md
   - Concepts: concepts.md
   - Glossary: glossary.md

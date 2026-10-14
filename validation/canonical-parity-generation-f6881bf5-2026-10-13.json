@@ -1,0 +1,113 @@
+{
+  "all_file_changes": {
+    ".github/workflows/scanners.yml": {
+      "after": {
+        "sha256": "acc31a09153ca1f2c8dcab5928dd4badee319553cbf8c0753bfdffae4ef074d4"
+      },
+      "before": {
+        "sha256": "97f79a451f0f6d3e4cf44b778835530b3d2bb9a6fffc04a4db1a360dc1b427e5"
+      }
+    },
+    "scripts/bootstrap_environment.py": {
+      "after": {
+        "sha256": "7bf45a335f6cdca1fd2be8e7bdb9dde150492d5ebd2dd255e54e33cd8cab6c1b"
+      },
+      "before": {
+        "sha256": "8bf4b8c1c620341c43bb6308c517484c8ecc431dc8caacf257ce5fe22d78ac4c"
+      }
+    },
+    "scripts/generate_tool_schemas.py": {
+      "after": {
+        "sha256": "5b5832214a47719b8ae8bef096ce1e29190fdf4e4902680770ebcd9e4cbd1f81"
+      }
+    },
+    "scripts/select_python.py": {
+      "after": {
+        "sha256": "2a489eab98ede8f1cd03e1ac0c61f39b712fb450cdef4182e6baae57f940a313"
+      },
+      "before": null
+    }
+  },
+  "allowed_substitutions": {
+    "default_auth_scheme": "api_key",
+    "package": "immich_api",
+    "package_environment": "IMMICH_API",
+    "service": "immich-api"
+  },
+  "bootstrap_refactor": {
+    "baseline_revision": "cab8bbac2a3c610463825d3b88d7be70e12b17d6",
+    "focused_seconds": 0.94,
+    "focused_tests_passed": 34,
+    "predicates_and_messages_preserved": true,
+    "source_binding_complexity": 1,
+    "worst_cognitive": 7,
+    "worst_cyclomatic": 9
+  },
+  "builder_revision": "f6881bf5598f1d6a6a1f548ae4caa1a713a6d9d7",
+  "canonical_bootstrap_files": {
+    ".github/workflows/scanners.yml": "acc31a09153ca1f2c8dcab5928dd4badee319553cbf8c0753bfdffae4ef074d4",
+    "scripts/bootstrap_environment.py": "7bf45a335f6cdca1fd2be8e7bdb9dde150492d5ebd2dd255e54e33cd8cab6c1b",
+    "scripts/bootstrap_sources.py": "03652f931cf17d315db18b11c330bcb0426f5f27f1fa374c7862ee722cc8bed8",
+    "scripts/select_python.py": "2a489eab98ede8f1cd03e1ac0c61f39b712fb450cdef4182e6baae57f940a313"
+  },
+  "generated_files": {
+    "api/__init__.py": "60c4220046512ee8606075ae97b3393bc301fb562f3c5cb9d19c3b51ec117544",
+    "api/api_client_system.py": "66bd8a148df7a642372d3d87b3027ad9a8bdc8370b68be50ab4f353a5d679f94",
+    "auth.py": "277fec97c296e80d720f10b2236e4aff8a991a240505c9f2d3e885cc05f235a3",
+    "mcp/__init__.py": "fe83c703c11ea78ccbb5fa64703d59e09e37eae8ef692309af63f482bca7beb6",
+    "openapi_auth_scheme.py": "49234563d59cc77ab56fda8bf6e9dfd903e9924b288b88a593cee43a8027b64f",
+    "openapi_contract.json": "62d0741d6fe3063d6e0970664958df5f001d803655ba9667ee362b08f4799b62",
+    "openapi_execution.py": "b36d3ca90d6ad8fde75ed2347378bea62a24f8327dca77c51071a0c4f70c3609",
+    "openapi_inventory.json": "d873b9ecf75eace643173ccc0560a97c6c3caea56fea6b1e143603921e1e8f4b",
+    "openapi_request.py": "6147c2284ddb82b71a5a98c7b206dbb5c4257f6bb32f9f1a95fa8b9db4aaa9df",
+    "openapi_response.py": "1053276b4ef9d9eee730d547a5188280ded5f15d349009bf3c32219eff27c32a",
+    "openapi_runtime.py": "4117882a616c696fd74a4928746e371aab83e3721bfb8f0036ad53c450cf2110",
+    "parity/__init__.py": "4267d5090eb8d0bde3e9e143f00a17eac715679275aa97663fd271ab1cf2d659",
+    "parity/check_openapi_parity.py": "230213bca8519bc9a622d104080e37e3e07e0c06c31728465e4aea21f79bc46c",
+    "parity/openapi_discovery.py": "6c94f5df86c946d43dc0f4c31642a8b3af5f8cc76501264a9e102d91b7abe444",
+    "parity/openapi_parity.py": "64c7177d5df0d541fe5c09a42c8fc14b3f94cdbc0c1dee8fe63086bcaebec5bc",
+    "parity/openapi_provider_evidence.py": "8dea567ffe3027c15fca7272cf223e8d0958771fad024a15b98d200096f14321",
+    "parity/openapi_provider_overlay.py": "378b8e4e4600cf04a8da71037b13e7dfbf2b3bafc33375250ab9822acc332a48",
+    "parity/openapi_provider_responses.py": "acbf74f350c9855f26e5da301b1444a072cf901072b9c8e616772ecd904082cc",
+    "parity/openapi_schema.py": "ea2a329530711030f541d3240e6495f66d9c0c90d809b25a1dc5252d0b40cdba",
+    "parity/openapi_schema_budget.py": "0157fd17d2aa55602f595b4d02b2976cfa285dfdca2cca3941e6da66fa2b00ce",
+    "parity/openapi_schema_inputs.py": "6da8e33c6ce591110f8ce44de1422ee6a764bbff16ff9d434bd59ccbf89913b5",
+    "parity/openapi_schema_types.py": "9e7ee4cd460841515bed8e9ce17ab0d6817279566ec225185d4fc33622f9cac6",
+    "parity/openapi_security.py": "526be16b99e4f17c82644d22b30aaa6c3506a13d8cf6ecc5d7500748737977a6",
+    "parity/openapi_source_parity.py": "3ce47d3145558a34b3e6f93c12b0269825ec36158e7a28dc611bc835c769135d",
+    "parity/openapi_transport_parity.py": "53aa634ed3116e7fae40394112839980adc53261156c4cd25e496d9b69aff00e",
+    "parity/unicode_patterns.py": "4b4b5d5ff591c619a9cc089ce72968d9e4ad2f2ee403ce8185b51ea607b5b526",
+    "parity/unicode_properties.json": "94085770ddb2cd6363e7030712be3d0b7a1f4f8cb54a2a6996dac4d03e3e17a4"
+  },
+  "idempotent": true,
+  "merge_equivalence": {
+    "merged_revision": "f6881bf5598f1d6a6a1f548ae4caa1a713a6d9d7",
+    "validated_and_merged_tree": "4d6d5582650c9ec0129b3cb309d962262fb7c1d7",
+    "validated_head": "5b7aa6774312047575c04aae61e775f1b9df4005",
+    "verified_via": "Fetched Git objects"
+  },
+  "native_builds": false,
+  "parent_generation_receipt": "validation/canonical-parity-generation-d4434275-2026-10-13.json",
+  "preserved_handwritten_change": {
+    "addition": "from .album_sample import register_album_sample_tools as register_album_sample_tools",
+    "path": "immich_api/mcp/__init__.py"
+  },
+  "provider_overlay_sha256": "bdd58565bd0ffa7383373ea32425147c6bcb343f135ebc5541a67411e9b7708b",
+  "provider_requests": 0,
+  "source_sha256": "7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b",
+  "workflow_regeneration": {
+    "canonical_files_copied_byte_identically": {
+      ".github/workflows/scanners.yml": "acc31a09153ca1f2c8dcab5928dd4badee319553cbf8c0753bfdffae4ef074d4",
+      "scripts/bootstrap_environment.py": "7bf45a335f6cdca1fd2be8e7bdb9dde150492d5ebd2dd255e54e33cd8cab6c1b",
+      "scripts/select_python.py": "2a489eab98ede8f1cd03e1ac0c61f39b712fb450cdef4182e6baae57f940a313"
+    },
+    "connector_runtime_changed": false,
+    "lock_changed": false,
+    "prior_consumer_revision": "0b464021b2fad48273be3d0c3f2e8e5effd61a7f",
+    "prior_full_suite_passed": 892,
+    "prior_suite_reused_for": "Unchanged connector runtime; original receipts retain their revision bindings.",
+    "sdk_pin_changed": false,
+    "template_path": "universal_skills/agent-tools/mcp-builder/scripts/quality_templates.py",
+    "template_sha256": "3faebcb40474ff056b185523a9099d2aa7a81cc6d2576cc728afac2768c48d4e"
+  }
+}

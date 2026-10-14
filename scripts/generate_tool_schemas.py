@@ -5,36 +5,51 @@ Run from the project environment: python scripts/generate_tool_schemas.py [--che
 All tools retain both schemas in schemas/mcp_tools.json. Only tools in real
 extraction presets receive connector pins; an empty starter preset is valid.
 """
+
 from __future__ import annotations
 
 import argparse
 import asyncio
 import json
-from pathlib import Path
 import sys
+from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 try:
-    from fastmcp import Client
-    from agent_connector_sdk.manifest.loader import (
-        load_tool_presets, require_valid_connector_package,
-    )
     from agent_connector_sdk.manifest.live_contract import validate_live_tool_contract
+    from agent_connector_sdk.manifest.loader import (
+        load_tool_presets,
+        require_valid_connector_package,
+    )
     from agent_connector_sdk.manifest.tool_schema import (
         COMPATIBILITY_FINGERPRINT_ALGORITHM,
-        canonical_input_schema, canonical_output_schema,
+        canonical_input_schema,
+        canonical_output_schema,
     )
+    from fastmcp import Client
+
     from immich_api.mcp_server import build_server
 except ImportError as exc:
-    raise SystemExit("Install this project's declared dependencies before generating schemas") from exc
+    raise SystemExit(
+        "Install this project's declared dependencies before generating schemas"
+    ) from exc
 
 PACKAGE = ROOT / "immich_api"
 
 
 def _write_or_check(path: Path, value: dict, check: bool) -> None:
-    text = json.dumps(value, indent=2, sort_keys=True) + "\n"
+    text = (
+        json.dumps(
+            value,
+            ensure_ascii=False,
+            sort_keys=True,
+            separators=(",", ":"),
+            allow_nan=False,
+        )
+        + "\n"
+    )
     if check:
         if not path.is_file() or path.read_text(encoding="utf-8") != text:
             raise SystemExit(f"Stale generated contract: {path.relative_to(ROOT)}")
@@ -55,15 +70,27 @@ async def generate(check: bool) -> None:
             "compatibility_sha256": contract.compatibility_sha256,
         }
     presets = load_tool_presets(PACKAGE / "connectors/mcp_source_presets.json")
-    pinned = {preset.tool: contracts[preset.tool]["compatibility_sha256"]
-              for preset in presets.values()}
-    _write_or_check(ROOT / "schemas/mcp_tools.json", {
-        "algorithm": COMPATIBILITY_FINGERPRINT_ALGORITHM, "tools": contracts,
-    }, check)
-    _write_or_check(PACKAGE / "connectors/tool_schema_fingerprints.json", {
-        "connector": "immich-api", "algorithm": COMPATIBILITY_FINGERPRINT_ALGORITHM,
-        "tools": pinned,
-    }, check)
+    pinned = {
+        preset.tool: contracts[preset.tool]["compatibility_sha256"]
+        for preset in presets.values()
+    }
+    _write_or_check(
+        ROOT / "schemas/mcp_tools.json",
+        {
+            "algorithm": COMPATIBILITY_FINGERPRINT_ALGORITHM,
+            "tools": contracts,
+        },
+        check,
+    )
+    _write_or_check(
+        PACKAGE / "connectors/tool_schema_fingerprints.json",
+        {
+            "connector": "immich-api",
+            "algorithm": COMPATIBILITY_FINGERPRINT_ALGORITHM,
+            "tools": pinned,
+        },
+        check,
+    )
     require_valid_connector_package(PACKAGE)
 
 

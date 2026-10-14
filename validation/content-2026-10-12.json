@@ -1,0 +1,62 @@
+{
+  "source_schema_sha256": "7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b",
+  "sdk_revision": "5babc4cc48ad73928468b243842f219f51e2cca1",
+  "eg_python_revision": "d33abec1e09b63cdcde01f8e8e4fe810d91cd43d",
+  "structural_content": {
+    "classes": 8,
+    "properties": 46,
+    "reference_relations": 6,
+    "project_skills": 4,
+    "project_prompts": 5
+  },
+  "focused_checks": {
+    "passed": 12,
+    "seconds": 4.66,
+    "serial_total_seconds": 19.83,
+    "test_files": [
+      "tests/test_album_metadata.py",
+      "tests/test_kg_ingest.py",
+      "tests/test_immich_content.py"
+    ],
+    "warnings": [
+      "Two deprecated MCP annotation aliases in assertions; no skips."
+    ],
+    "environment": "Existing GR1080 Python 3.12 environment; pinned Python source overlays; no installs or native builds."
+  },
+  "earlier_failure": {
+    "process_exit": 124,
+    "test": "test_native_prompt_skill_shapes_and_tool_discovery",
+    "call": "prompts/get",
+    "test_timeout_seconds": 60,
+    "process_timeout_seconds": 120,
+    "following_case_unfinished": "test_bounded_sample_tool_and_sdk_preset_omit_private_values",
+    "diagnosis": "Restricted execution sandbox stalled AnyIO worker callbacks, reproduced with a trivial worker. Same source/dependencies outside that sandbox passed."
+  },
+  "static_checks": [
+    "Ruff on edited Python",
+    "git diff --check",
+    "SDK dependency/import contract",
+    "Turtle parse",
+    "structural generator --check",
+    "native tool schema generator --check",
+    "documentation provenance refresh"
+  ],
+  "pending": [
+    "Independent semantic/security review",
+    "Final-source full quality checks and image packaging",
+    "Authenticated live provider reads",
+    "Fleet registration with explicit SDK registry",
+    "Bounded EG receipt and readback"
+  ],
+  "source_after_test_notes": [
+    "README/evidence/readiness refresh and an explicit registrar re-export/import ordering cleanup followed the focused tests; runtime tool implementation and served content bytes were unchanged."
+  ],
+  "native_capture_reference": {
+    "source_commit": "74118db0aa601c5e265e3400810c49eb31edb46d",
+    "path": "validation/content-2026-10-12.json",
+    "json_pointer": "/native_capture",
+    "original_file_sha256": "7add200d304457e5e1a0cc8ff15f6c24c4170b33be8f3aa690bdde4cbdaa4148",
+    "archive_sha256": "fef352e8574efe18a4dcedfc49875984d1667829ded4cde97e53a175788dd772",
+    "note": "Full historical capture retained in this immutable Git object; current receipt owns the later capture."
+  }
+}

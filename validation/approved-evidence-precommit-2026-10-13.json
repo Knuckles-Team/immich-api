@@ -1,0 +1,41 @@
+{
+  "phase": "precommit",
+  "checks": [
+    {
+      "command": [
+        "/home/genius/.local/bin/pre-commit",
+        "run",
+        "--all-files",
+        "--show-diff-on-failure"
+      ],
+      "exit_code": 0,
+      "seconds": 10.34
+    }
+  ],
+  "seconds": 10.34,
+  "sdk_revision": "04a68087dbd3867bbb20e6ce286ffdd654028183",
+  "builder_revision": "16aec3838c5908021a9a735ce62e8d6eaa3e83f6",
+  "eg_python_revision": "d33abec1e09b63cdcde01f8e8e4fe810d91cd43d",
+  "source_environment": "Existing Python environment with exact source overlays; not a complete installed lock environment",
+  "passed": true,
+  "log_sha256": "35278797cb63eb8f855720f95029720b26b78f2c637523ade1b3cba68062728b",
+  "provider_calls": 0,
+  "native_builds": false,
+  "hook_sources": [
+    {
+      "repo": "https://github.com/Knuckles-Team/pipelines",
+      "ref": "main",
+      "revision": "086337f211f0d2af5753bda1cb0f07cf23ac2cd2"
+    },
+    {
+      "repo": "https://github.com/pre-commit/pre-commit-hooks",
+      "ref": "3e8a8703264a2f4a69428a0aa4dcb512790b2c8c",
+      "revision": "3e8a8703264a2f4a69428a0aa4dcb512790b2c8c"
+    },
+    {
+      "repo": "https://github.com/astral-sh/ruff-pre-commit",
+      "ref": "6fec9b7edb08fd9989088709d864a7826dc74e80",
+      "revision": "6fec9b7edb08fd9989088709d864a7826dc74e80"
+    }
+  ]
+}

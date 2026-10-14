@@ -1,3 +1,21 @@
-from .mcp_system import register_system_tools
+"""Catalog-bound registrars preserving the SDK's per-domain toggles."""
 
-__all__ = ["register_system_tools"]
+from functools import partial
+
+from ..auth import get_client
+from ..openapi_runtime import CONTRACT, register_domain
+from .album_sample import register_album_sample_tools as register_album_sample_tools
+
+
+def _domain_registrar(domain):
+    registrar = partial(register_domain, domain=domain, client_factory=get_client)
+    registrar.__name__ = f"register_{domain}_tools"
+    return registrar
+
+
+globals().update(
+    {
+        f"register_{domain}_tools": _domain_registrar(domain)
+        for domain in sorted(CONTRACT["domains"])
+    }
+)

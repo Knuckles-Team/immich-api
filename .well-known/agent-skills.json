@@ -2,9 +2,24 @@
   "schema_version": "agent-skills/v1",
   "skills": [
     {
-      "description": ">-",
-      "name": "immich-starter",
-      "path": "immich_api/skills/immich-starter/SKILL.md"
+      "description": "Review a bounded sample of album metadata belonging to the configured account.",
+      "name": "immich-album-review",
+      "path": "immich_api/skills/immich-album-review/SKILL.md"
+    },
+    {
+      "description": "Inspect metadata for one explicitly selected Immich asset ID.",
+      "name": "immich-asset-metadata",
+      "path": "immich_api/skills/immich-asset-metadata/SKILL.md"
+    },
+    {
+      "description": "Check Immich connectivity and the current API version without reading library data.",
+      "name": "immich-health",
+      "path": "immich_api/skills/immich-health/SKILL.md"
+    },
+    {
+      "description": "Inspect one explicitly selected Immich person record without identifying someone from an image.",
+      "name": "immich-person-record",
+      "path": "immich_api/skills/immich-person-record/SKILL.md"
     }
   ]
 }

@@ -1,0 +1,50 @@
+{
+  "phase": "focused",
+  "checks": [
+    {
+      "command": [
+        "/home/genius/Documents/Codex/2026-10-11/task-7/au-ci-gate-repair/.venv/bin/python",
+        "-m",
+        "pytest",
+        "tests/test_operation_parity.py",
+        "tests/test_api_wrapper.py",
+        "tests/test_openapi_auth_provider.py",
+        "-q",
+        "--tb=short",
+        "-x",
+        "-p",
+        "no:cacheprovider",
+        "-k",
+        "not every_api_operation_dispatches and not every_native_mcp_operation_dispatches and not complete_native_dispatch_receipt"
+      ],
+      "exit_code": 0,
+      "seconds": 45.13
+    },
+    {
+      "command": [
+        "/home/genius/Documents/Codex/2026-10-11/task-7/au-ci-gate-repair/.venv/bin/python",
+        "scripts/generate_tool_schemas.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "seconds": 3.17
+    },
+    {
+      "command": [
+        "/home/genius/Documents/Codex/2026-10-11/task-11/pipelines/.venv/bin/python",
+        "/home/genius/Documents/Codex/2026-10-12/task-8/check_immich_security_controls.py"
+      ],
+      "exit_code": 0,
+      "seconds": 1.47
+    }
+  ],
+  "seconds": 49.77,
+  "sdk_revision": "04a68087dbd3867bbb20e6ce286ffdd654028183",
+  "builder_revision": "16aec3838c5908021a9a735ce62e8d6eaa3e83f6",
+  "eg_python_revision": "d33abec1e09b63cdcde01f8e8e4fe810d91cd43d",
+  "source_environment": "Existing Python environment with exact source overlays; not a complete installed lock environment",
+  "passed": true,
+  "log_sha256": "1dc6ccbeaa1918a0675868652d5a838b2ba8d369cd01f9614019b2016348f541",
+  "provider_calls": 0,
+  "native_builds": false
+}

@@ -1,0 +1,570 @@
+{
+  "authorization_classifications": [
+    {
+      "method": "POST",
+      "operation_id": "startDatabaseRestoreFlow",
+      "path": "/admin/database-backups/start-restore",
+      "precondition_category": "setup",
+      "preconditions": "Setup must be enabled and no admin may exist. This starts the restore maintenance flow and issues a maintenance token; it remains a confirmation-gated write.",
+      "reviewed_guard_classification": "explicit-public-decorator",
+      "source_evidence": [
+        {
+          "git_blob": "4cb2092d1b1907bd0a51e7a6ba05800df22968d8",
+          "line_end": 75,
+          "line_start": 68,
+          "path": "server/src/controllers/database-backup.controller.ts",
+          "sha256": "5061b5a3793ef2e9074cdc51bc6d113bbef52ebcd78d0e04fdb6eae29a810039",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/controllers/database-backup.controller.ts#L68-L75"
+        },
+        {
+          "git_blob": "3c5dab1ed2ff2a177c836feb79ce9f4c32bc6c59",
+          "line_end": 301,
+          "line_start": 292,
+          "path": "server/src/services/base.service.ts",
+          "sha256": "188281db4169e1bbe90ef2b9fcb4de9e5dabf676ff8108f42d8bde0e71594c08",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/services/base.service.ts#L292-L301"
+        },
+        {
+          "git_blob": "bcd6f2e834c9c9c572c593cc2f2186c48d236ddd",
+          "line_end": 68,
+          "line_start": 61,
+          "path": "server/src/services/maintenance.service.ts",
+          "sha256": "cf7860e1cde29d499a8295cbefb308ec37415cea0cc8eea25ea52e292d3cb116",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/services/maintenance.service.ts#L61-L68"
+        }
+      ],
+      "source_operation_sha256": "2727f11872f5ca917ce396cf0bef23fa412b35a8babff48e3b7e96889a36300a"
+    },
+    {
+      "method": "POST",
+      "operation_id": "maintenanceLogin",
+      "path": "/admin/maintenance/login",
+      "precondition_category": "maintenance-token",
+      "preconditions": "Normal mode rejects this action. In maintenance mode the body token or maintenance cookie must contain a JWT that verifies with the maintenance secret.",
+      "reviewed_guard_classification": "explicit-public-decorator",
+      "source_evidence": [
+        {
+          "git_blob": "3d8c6c1194ed8bdcc4d603a370e32a7ac3329c99",
+          "line_end": 53,
+          "line_start": 46,
+          "path": "server/src/controllers/maintenance.controller.ts",
+          "sha256": "c8c038766c4ac8851797ea4e39d79cfdbef82fd67165ccc9cb663944b47bc83f",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/controllers/maintenance.controller.ts#L46-L53"
+        },
+        {
+          "git_blob": "3d8c6c1194ed8bdcc4d603a370e32a7ac3329c99",
+          "line_end": 55,
+          "line_start": 46,
+          "path": "server/src/controllers/maintenance.controller.ts",
+          "sha256": "c8c038766c4ac8851797ea4e39d79cfdbef82fd67165ccc9cb663944b47bc83f",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/controllers/maintenance.controller.ts#L46-L55"
+        },
+        {
+          "git_blob": "bf06853bf26377da5b1af2f1175e79e29b25e562",
+          "line_end": 136,
+          "line_start": 121,
+          "path": "server/src/maintenance/maintenance-worker.controller.ts",
+          "sha256": "de921033eadf9982233cbbbcdf7283024b9c0baf23cc829d25f1179d38e8bc62",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/maintenance/maintenance-worker.controller.ts#L121-L136"
+        },
+        {
+          "git_blob": "f088637a5758fac616f74fc7de84c679ba7c758e",
+          "line_end": 271,
+          "line_start": 260,
+          "path": "server/src/maintenance/maintenance-worker.service.ts",
+          "sha256": "5d612410938d1685a3c5b1496b20fc6a05105fa89489c4a15771badbcb49fed9",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/maintenance/maintenance-worker.service.ts#L260-L271"
+        }
+      ],
+      "source_operation_sha256": "5aeec9773b1e375933754d069d90aa92ea5e57c11a7b5a657eb22a51d1921c59"
+    },
+    {
+      "method": "GET",
+      "operation_id": "getMaintenanceStatus",
+      "path": "/admin/maintenance/status",
+      "precondition_category": "optional-maintenance-token",
+      "preconditions": "Normal mode returns public status. In maintenance mode a valid token enables detailed status, otherwise the service returns public status.",
+      "reviewed_guard_classification": "explicit-public-decorator",
+      "source_evidence": [
+        {
+          "git_blob": "3d8c6c1194ed8bdcc4d603a370e32a7ac3329c99",
+          "line_end": 31,
+          "line_start": 24,
+          "path": "server/src/controllers/maintenance.controller.ts",
+          "sha256": "c8c038766c4ac8851797ea4e39d79cfdbef82fd67165ccc9cb663944b47bc83f",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/controllers/maintenance.controller.ts#L24-L31"
+        },
+        {
+          "git_blob": "bf06853bf26377da5b1af2f1175e79e29b25e562",
+          "line_end": 114,
+          "line_start": 110,
+          "path": "server/src/maintenance/maintenance-worker.controller.ts",
+          "sha256": "de921033eadf9982233cbbbcdf7283024b9c0baf23cc829d25f1179d38e8bc62",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/maintenance/maintenance-worker.controller.ts#L110-L114"
+        },
+        {
+          "git_blob": "f088637a5758fac616f74fc7de84c679ba7c758e",
+          "line_end": 254,
+          "line_start": 247,
+          "path": "server/src/maintenance/maintenance-worker.service.ts",
+          "sha256": "5d612410938d1685a3c5b1496b20fc6a05105fa89489c4a15771badbcb49fed9",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/maintenance/maintenance-worker.service.ts#L247-L254"
+        }
+      ],
+      "source_operation_sha256": "070ca92c2930c00043cae9e2e3c1b1ace2b1e0f9a81a7c684aa06d44dad7bc04"
+    },
+    {
+      "method": "POST",
+      "operation_id": "signUpAdmin",
+      "path": "/auth/admin-sign-up",
+      "precondition_category": "setup",
+      "preconditions": "Setup must be enabled and no admin may exist. The guard enforces setup before admitting the public route.",
+      "reviewed_guard_classification": "explicit-public-decorator",
+      "source_evidence": [
+        {
+          "git_blob": "b96ba4dee33eea160fc67ea244db79931a9a057b",
+          "line_end": 60,
+          "line_start": 53,
+          "path": "server/src/controllers/auth.controller.ts",
+          "sha256": "a5debc220ae55f1e2bf61073e181822cc85011155b742a5914c12dffd399c6e7",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/controllers/auth.controller.ts#L53-L60"
+        },
+        {
+          "git_blob": "3c5dab1ed2ff2a177c836feb79ce9f4c32bc6c59",
+          "line_end": 301,
+          "line_start": 292,
+          "path": "server/src/services/base.service.ts",
+          "sha256": "188281db4169e1bbe90ef2b9fcb4de9e5dabf676ff8108f42d8bde0e71594c08",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/services/base.service.ts#L292-L301"
+        }
+      ],
+      "source_operation_sha256": "bbbfb425ba4f581d0dd0d4b484b7ab29652232f4fdb2a10fb4ad3ecf3311f181"
+    },
+    {
+      "method": "POST",
+      "operation_id": "login",
+      "path": "/auth/login",
+      "precondition_category": "password",
+      "preconditions": "Password login must be enabled; the body email/password are checked with bcrypt before a session is issued.",
+      "reviewed_guard_classification": "explicit-public-decorator",
+      "source_evidence": [
+        {
+          "git_blob": "b96ba4dee33eea160fc67ea244db79931a9a057b",
+          "line_end": 37,
+          "line_start": 30,
+          "path": "server/src/controllers/auth.controller.ts",
+          "sha256": "a5debc220ae55f1e2bf61073e181822cc85011155b742a5914c12dffd399c6e7",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/controllers/auth.controller.ts#L30-L37"
+        },
+        {
+          "git_blob": "c6143d60db519c33bad3a62e02e946da93abeb44",
+          "line_end": 76,
+          "line_start": 59,
+          "path": "server/src/services/auth.service.ts",
+          "sha256": "58c8a233f7637785d2d0b1c10c16e75097041310167badebea5134d149526dd1",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/services/auth.service.ts#L59-L76"
+        }
+      ],
+      "source_operation_sha256": "3972d4b8faedb19af16a6c9091c4c015bdb6ab12911b03f8ef4b228513b2ee7a"
+    },
+    {
+      "method": "POST",
+      "operation_id": "startOAuth",
+      "path": "/oauth/authorize",
+      "precondition_category": "oauth-enabled",
+      "preconditions": "OAuth must be enabled; the service forwards a resolved redirect URI and state/code challenge to the OAuth repository.",
+      "reviewed_guard_classification": "explicit-public-decorator",
+      "source_evidence": [
+        {
+          "git_blob": "54f5c1f10bdfb39070a913dc544ccd6c82f3a831",
+          "line_end": 47,
+          "line_start": 40,
+          "path": "server/src/controllers/oauth.controller.ts",
+          "sha256": "bfb11532d958f5c0824b17163c203fb3acf6b9e85a83ea219d008c191a586614",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/controllers/oauth.controller.ts#L40-L47"
+        },
+        {
+          "git_blob": "c6143d60db519c33bad3a62e02e946da93abeb44",
+          "line_end": 286,
+          "line_start": 273,
+          "path": "server/src/services/auth.service.ts",
+          "sha256": "58c8a233f7637785d2d0b1c10c16e75097041310167badebea5134d149526dd1",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/services/auth.service.ts#L273-L286"
+        }
+      ],
+      "source_operation_sha256": "88b87f5bafe287ac0342bd92c863f70f90f41a8a33624631d52e977ee1bb7c72"
+    },
+    {
+      "method": "POST",
+      "operation_id": "logoutOAuth",
+      "path": "/oauth/backchannel-logout",
+      "precondition_category": "oauth-logout-token",
+      "preconditions": "OAuth must be enabled; the logout token is validated by the OAuth repository and must yield sub or sid claims before sessions are invalidated.",
+      "reviewed_guard_classification": "explicit-public-decorator",
+      "source_evidence": [
+        {
+          "git_blob": "54f5c1f10bdfb39070a913dc544ccd6c82f3a831",
+          "line_end": 130,
+          "line_start": 120,
+          "path": "server/src/controllers/oauth.controller.ts",
+          "sha256": "bfb11532d958f5c0824b17163c203fb3acf6b9e85a83ea219d008c191a586614",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/controllers/oauth.controller.ts#L120-L130"
+        },
+        {
+          "git_blob": "c6143d60db519c33bad3a62e02e946da93abeb44",
+          "line_end": 121,
+          "line_start": 93,
+          "path": "server/src/services/auth.service.ts",
+          "sha256": "58c8a233f7637785d2d0b1c10c16e75097041310167badebea5134d149526dd1",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/services/auth.service.ts#L93-L121"
+        }
+      ],
+      "source_operation_sha256": "6de84beb8180a3afb222ee2515dbdc26a1db365b3b7ab3a9ad595894d62eebe2"
+    },
+    {
+      "method": "POST",
+      "operation_id": "finishOAuth",
+      "path": "/oauth/callback",
+      "precondition_category": "oauth-code-proof",
+      "preconditions": "OAuth must be enabled; state and a code verifier from the request or cookies must be nonempty, and the OAuth repository retrieves the verified profile from the supplied callback.",
+      "reviewed_guard_classification": "explicit-public-decorator",
+      "source_evidence": [
+        {
+          "git_blob": "54f5c1f10bdfb39070a913dc544ccd6c82f3a831",
+          "line_end": 73,
+          "line_start": 66,
+          "path": "server/src/controllers/oauth.controller.ts",
+          "sha256": "bfb11532d958f5c0824b17163c203fb3acf6b9e85a83ea219d008c191a586614",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/controllers/oauth.controller.ts#L66-L73"
+        },
+        {
+          "git_blob": "c6143d60db519c33bad3a62e02e946da93abeb44",
+          "line_end": 310,
+          "line_start": 288,
+          "path": "server/src/services/auth.service.ts",
+          "sha256": "58c8a233f7637785d2d0b1c10c16e75097041310167badebea5134d149526dd1",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/services/auth.service.ts#L288-L310"
+        }
+      ],
+      "source_operation_sha256": "965053217d2e79c1dd0854b62c306159e840a03501f3af7204956fc0d8182794"
+    },
+    {
+      "method": "GET",
+      "operation_id": "redirectOAuthToMobile",
+      "path": "/oauth/mobile-redirect",
+      "precondition_category": "public-route",
+      "preconditions": "The controller explicitly permits this route without the normal account authentication guard. No additional provider proof is inferred from this classification.",
+      "reviewed_guard_classification": "explicit-public-decorator",
+      "source_evidence": [
+        {
+          "git_blob": "54f5c1f10bdfb39070a913dc544ccd6c82f3a831",
+          "line_end": 33,
+          "line_start": 24,
+          "path": "server/src/controllers/oauth.controller.ts",
+          "sha256": "bfb11532d958f5c0824b17163c203fb3acf6b9e85a83ea219d008c191a586614",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/controllers/oauth.controller.ts#L24-L33"
+        }
+      ],
+      "source_operation_sha256": "0dc6a12fe48739dd988eebf1cd55223f826d3207dab21e4f7be4b85a5ed31fc4"
+    },
+    {
+      "method": "GET",
+      "operation_id": "getPublicConfig",
+      "path": "/public/config",
+      "precondition_category": "public-route",
+      "preconditions": "The controller explicitly permits this route without the normal account authentication guard. No additional provider proof is inferred from this classification.",
+      "reviewed_guard_classification": "explicit-public-decorator",
+      "source_evidence": [
+        {
+          "git_blob": "87f7bb14c817dcf4982ee0475a2a598004ede29c",
+          "line_end": 21,
+          "line_start": 14,
+          "path": "server/src/controllers/config-public.controller.ts",
+          "sha256": "5e7ac2fe1a711c793f256e5170e6c76e072a1b1676aedb8d3ebdab78bcc15afc",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/controllers/config-public.controller.ts#L14-L21"
+        }
+      ],
+      "source_operation_sha256": "ab91a47bafabd0bc0eb3520274409636ba501ae8bada5329859ac46b360f640b"
+    },
+    {
+      "method": "GET",
+      "operation_id": "getPublicConfigDefaults",
+      "path": "/public/config/defaults",
+      "precondition_category": "public-route",
+      "preconditions": "The controller explicitly permits this route without the normal account authentication guard. No additional provider proof is inferred from this classification.",
+      "reviewed_guard_classification": "explicit-public-decorator",
+      "source_evidence": [
+        {
+          "git_blob": "87f7bb14c817dcf4982ee0475a2a598004ede29c",
+          "line_end": 32,
+          "line_start": 25,
+          "path": "server/src/controllers/config-public.controller.ts",
+          "sha256": "5e7ac2fe1a711c793f256e5170e6c76e072a1b1676aedb8d3ebdab78bcc15afc",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/controllers/config-public.controller.ts#L25-L32"
+        }
+      ],
+      "source_operation_sha256": "3942e270756b614f5b4e88c8c8dcc9c5c3ac65c8a30d0c52faafed8dbc42ac38"
+    },
+    {
+      "method": "GET",
+      "operation_id": "getServerConfig",
+      "path": "/server/config",
+      "precondition_category": "public-route",
+      "preconditions": "The controller explicitly permits this route without the normal account authentication guard. No additional provider proof is inferred from this classification.",
+      "reviewed_guard_classification": "explicit-public-decorator",
+      "source_evidence": [
+        {
+          "git_blob": "ef9f408e8c3ea0efd32dc1e64d326226b9232be4",
+          "line_end": 125,
+          "line_start": 114,
+          "path": "server/src/controllers/server.controller.ts",
+          "sha256": "3842c852141446276fe558313c17a6f6a43ec455c7dd1a87ec1f4d61726046d1",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/controllers/server.controller.ts#L114-L125"
+        }
+      ],
+      "source_operation_sha256": "bca67aa48b16e67b10a99750124aca33978f0883aa3fc780ce9601a981dc13f8"
+    },
+    {
+      "method": "GET",
+      "operation_id": "getServerFeatures",
+      "path": "/server/features",
+      "precondition_category": "public-route",
+      "preconditions": "The controller explicitly permits this route without the normal account authentication guard. No additional provider proof is inferred from this classification.",
+      "reviewed_guard_classification": "explicit-public-decorator",
+      "source_evidence": [
+        {
+          "git_blob": "ef9f408e8c3ea0efd32dc1e64d326226b9232be4",
+          "line_end": 110,
+          "line_start": 99,
+          "path": "server/src/controllers/server.controller.ts",
+          "sha256": "3842c852141446276fe558313c17a6f6a43ec455c7dd1a87ec1f4d61726046d1",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/controllers/server.controller.ts#L99-L110"
+        }
+      ],
+      "source_operation_sha256": "3dc86320bb7d69ea7f55c0858fa6e49144fd18326c1be4a095d0c0fa9ddef981"
+    },
+    {
+      "method": "GET",
+      "operation_id": "getSupportedMediaTypes",
+      "path": "/server/media-types",
+      "precondition_category": "public-route",
+      "preconditions": "The controller explicitly permits this route without the normal account authentication guard. No additional provider proof is inferred from this classification.",
+      "reviewed_guard_classification": "explicit-public-decorator",
+      "source_evidence": [
+        {
+          "git_blob": "ef9f408e8c3ea0efd32dc1e64d326226b9232be4",
+          "line_end": 147,
+          "line_start": 140,
+          "path": "server/src/controllers/server.controller.ts",
+          "sha256": "3842c852141446276fe558313c17a6f6a43ec455c7dd1a87ec1f4d61726046d1",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/controllers/server.controller.ts#L140-L147"
+        }
+      ],
+      "source_operation_sha256": "c0f8ffd310226b455e554be8a1a4f991d9d931d347e311f755dc944425cd3531"
+    },
+    {
+      "method": "GET",
+      "operation_id": "pingServer",
+      "path": "/server/ping",
+      "precondition_category": "public-route",
+      "preconditions": "The controller explicitly permits this route without the normal account authentication guard. No additional provider proof is inferred from this classification.",
+      "reviewed_guard_classification": "explicit-public-decorator",
+      "source_evidence": [
+        {
+          "git_blob": "ef9f408e8c3ea0efd32dc1e64d326226b9232be4",
+          "line_end": 73,
+          "line_start": 66,
+          "path": "server/src/controllers/server.controller.ts",
+          "sha256": "3842c852141446276fe558313c17a6f6a43ec455c7dd1a87ec1f4d61726046d1",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/controllers/server.controller.ts#L66-L73"
+        }
+      ],
+      "source_operation_sha256": "2434d58ab04c90ee647c421962187d36fcaa51c104b384e59f932ed3a6aff993"
+    },
+    {
+      "method": "GET",
+      "operation_id": "getServerVersion",
+      "path": "/server/version",
+      "precondition_category": "public-route",
+      "preconditions": "The controller explicitly permits this route without the normal account authentication guard. No additional provider proof is inferred from this classification.",
+      "reviewed_guard_classification": "explicit-public-decorator",
+      "source_evidence": [
+        {
+          "git_blob": "ef9f408e8c3ea0efd32dc1e64d326226b9232be4",
+          "line_end": 84,
+          "line_start": 77,
+          "path": "server/src/controllers/server.controller.ts",
+          "sha256": "3842c852141446276fe558313c17a6f6a43ec455c7dd1a87ec1f4d61726046d1",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/controllers/server.controller.ts#L77-L84"
+        }
+      ],
+      "source_operation_sha256": "7d9d3307bda909efecab1e3af8c02e16b8c618b107b9f4075e853a1708396d1b"
+    },
+    {
+      "method": "GET",
+      "operation_id": "getVersionHistory",
+      "path": "/server/version-history",
+      "precondition_category": "public-route",
+      "preconditions": "The controller explicitly permits this route without the normal account authentication guard. No additional provider proof is inferred from this classification.",
+      "reviewed_guard_classification": "explicit-public-decorator",
+      "source_evidence": [
+        {
+          "git_blob": "ef9f408e8c3ea0efd32dc1e64d326226b9232be4",
+          "line_end": 95,
+          "line_start": 88,
+          "path": "server/src/controllers/server.controller.ts",
+          "sha256": "3842c852141446276fe558313c17a6f6a43ec455c7dd1a87ec1f4d61726046d1",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/controllers/server.controller.ts#L88-L95"
+        }
+      ],
+      "source_operation_sha256": "f2e5b4d5ceac61757662844ca1d430951d52f166494bf71543f33286d837a5aa"
+    }
+  ],
+  "corrections": [
+    {
+      "after_sha256": "ea6499fe7f975a86ec05398430f820b5c2eaa96697064ba8768b4ccd3db73870",
+      "before_sha256": "e47b4857499d5bcad21f1d0dfa66f9400f7fdb46dab44b6fb1d96f282a298fbd",
+      "op": "require-property",
+      "property": "assetData",
+      "schema_pointer": "/components/schemas/AssetMediaCreateDto",
+      "source_commit": "60b51cb3bc909e72fe963f4dfb1947515cb9ab3b",
+      "source_file": "server/src/utils/misc.ts",
+      "source_file_sha256": "55f456af4c6cbd12615e48588c92dd974aa0a721ccb321b5320bca6ab810c4ba"
+    }
+  ],
+  "effective_source_sha256": "c41df1aafe4dbabd44eea20bf956b5182e10e3b93573ac2890dd3c98f17e75b8",
+  "evidence_files": [
+    {
+      "git_blob": "b96ba4dee33eea160fc67ea244db79931a9a057b",
+      "path": "server/src/controllers/auth.controller.ts",
+      "sha256": "a5debc220ae55f1e2bf61073e181822cc85011155b742a5914c12dffd399c6e7",
+      "source_commit": "60b51cb3bc909e72fe963f4dfb1947515cb9ab3b"
+    },
+    {
+      "git_blob": "87f7bb14c817dcf4982ee0475a2a598004ede29c",
+      "path": "server/src/controllers/config-public.controller.ts",
+      "sha256": "5e7ac2fe1a711c793f256e5170e6c76e072a1b1676aedb8d3ebdab78bcc15afc",
+      "source_commit": "60b51cb3bc909e72fe963f4dfb1947515cb9ab3b"
+    },
+    {
+      "git_blob": "4cb2092d1b1907bd0a51e7a6ba05800df22968d8",
+      "path": "server/src/controllers/database-backup.controller.ts",
+      "sha256": "5061b5a3793ef2e9074cdc51bc6d113bbef52ebcd78d0e04fdb6eae29a810039",
+      "source_commit": "60b51cb3bc909e72fe963f4dfb1947515cb9ab3b"
+    },
+    {
+      "git_blob": "3d8c6c1194ed8bdcc4d603a370e32a7ac3329c99",
+      "path": "server/src/controllers/maintenance.controller.ts",
+      "sha256": "c8c038766c4ac8851797ea4e39d79cfdbef82fd67165ccc9cb663944b47bc83f",
+      "source_commit": "60b51cb3bc909e72fe963f4dfb1947515cb9ab3b"
+    },
+    {
+      "git_blob": "54f5c1f10bdfb39070a913dc544ccd6c82f3a831",
+      "path": "server/src/controllers/oauth.controller.ts",
+      "sha256": "bfb11532d958f5c0824b17163c203fb3acf6b9e85a83ea219d008c191a586614",
+      "source_commit": "60b51cb3bc909e72fe963f4dfb1947515cb9ab3b"
+    },
+    {
+      "git_blob": "ef9f408e8c3ea0efd32dc1e64d326226b9232be4",
+      "path": "server/src/controllers/server.controller.ts",
+      "sha256": "3842c852141446276fe558313c17a6f6a43ec455c7dd1a87ec1f4d61726046d1",
+      "source_commit": "60b51cb3bc909e72fe963f4dfb1947515cb9ab3b"
+    },
+    {
+      "git_blob": "bf06853bf26377da5b1af2f1175e79e29b25e562",
+      "path": "server/src/maintenance/maintenance-worker.controller.ts",
+      "sha256": "de921033eadf9982233cbbbcdf7283024b9c0baf23cc829d25f1179d38e8bc62",
+      "source_commit": "60b51cb3bc909e72fe963f4dfb1947515cb9ab3b"
+    },
+    {
+      "git_blob": "f088637a5758fac616f74fc7de84c679ba7c758e",
+      "path": "server/src/maintenance/maintenance-worker.service.ts",
+      "sha256": "5d612410938d1685a3c5b1496b20fc6a05105fa89489c4a15771badbcb49fed9",
+      "source_commit": "60b51cb3bc909e72fe963f4dfb1947515cb9ab3b"
+    },
+    {
+      "git_blob": "93bcfe26e76b752f6c6cf27c3afa9329b3a6c753",
+      "path": "server/src/middleware/auth.guard.ts",
+      "sha256": "1dea47aaa671bc98fbf6948d4a32019f361a3dc37f2f9076aee1855a261b89ab",
+      "source_commit": "60b51cb3bc909e72fe963f4dfb1947515cb9ab3b"
+    },
+    {
+      "git_blob": "c6143d60db519c33bad3a62e02e946da93abeb44",
+      "path": "server/src/services/auth.service.ts",
+      "sha256": "58c8a233f7637785d2d0b1c10c16e75097041310167badebea5134d149526dd1",
+      "source_commit": "60b51cb3bc909e72fe963f4dfb1947515cb9ab3b"
+    },
+    {
+      "git_blob": "3c5dab1ed2ff2a177c836feb79ce9f4c32bc6c59",
+      "path": "server/src/services/base.service.ts",
+      "sha256": "188281db4169e1bbe90ef2b9fcb4de9e5dabf676ff8108f42d8bde0e71594c08",
+      "source_commit": "60b51cb3bc909e72fe963f4dfb1947515cb9ab3b"
+    },
+    {
+      "git_blob": "bcd6f2e834c9c9c572c593cc2f2186c48d236ddd",
+      "path": "server/src/services/maintenance.service.ts",
+      "sha256": "cf7860e1cde29d499a8295cbefb308ec37415cea0cc8eea25ea52e292d3cb116",
+      "source_commit": "60b51cb3bc909e72fe963f4dfb1947515cb9ab3b"
+    },
+    {
+      "git_blob": "77c06c24407f3bb8353ed04863b683c22da37594",
+      "path": "server/src/utils/misc.ts",
+      "sha256": "55f456af4c6cbd12615e48588c92dd974aa0a721ccb321b5320bca6ab810c4ba",
+      "source_commit": "60b51cb3bc909e72fe963f4dfb1947515cb9ab3b"
+    },
+    {
+      "git_blob": "856a6ffc579e36cb3ac11817d7713fb1e15f4903",
+      "path": "server/src/constants.ts",
+      "sha256": "15ed3064fe4cde9d478104b990bc34b8a99dab5781189a210b89cd6237c93ab7",
+      "source_commit": "60b51cb3bc909e72fe963f4dfb1947515cb9ab3b"
+    }
+  ],
+  "raw_source_sha256": "7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b",
+  "response_corrections": [
+    {
+      "after_responses_sha256": "40da2d977f94dac85968663f6bba9f5354ed8ef746c2c1b81e1564a14709b061",
+      "before_responses_sha256": "ac1158aae75d08a5f9c64900453010d5bd0f1c31ed2101fe2d2ec5979d996e08",
+      "location_schema": {
+        "maxLength": 8192,
+        "minLength": 29,
+        "pattern": "^app\\.immich:///oauth-callback\\?[^\\s]*$",
+        "type": "string"
+      },
+      "method": "GET",
+      "op": "replace-empty-200-with-307",
+      "operation_id": "redirectOAuthToMobile",
+      "path": "/oauth/mobile-redirect",
+      "source_evidence": [
+        {
+          "git_blob": "54f5c1f10bdfb39070a913dc544ccd6c82f3a831",
+          "line_end": 38,
+          "line_start": 24,
+          "path": "server/src/controllers/oauth.controller.ts",
+          "sha256": "bfb11532d958f5c0824b17163c203fb3acf6b9e85a83ea219d008c191a586614",
+          "source_commit": "60b51cb3bc909e72fe963f4dfb1947515cb9ab3b",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/controllers/oauth.controller.ts#L24-L38"
+        },
+        {
+          "git_blob": "c6143d60db519c33bad3a62e02e946da93abeb44",
+          "line_end": 271,
+          "line_start": 269,
+          "path": "server/src/services/auth.service.ts",
+          "sha256": "58c8a233f7637785d2d0b1c10c16e75097041310167badebea5134d149526dd1",
+          "source_commit": "60b51cb3bc909e72fe963f4dfb1947515cb9ab3b",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/services/auth.service.ts#L269-L271"
+        },
+        {
+          "git_blob": "856a6ffc579e36cb3ac11817d7713fb1e15f4903",
+          "line_end": 61,
+          "line_start": 61,
+          "path": "server/src/constants.ts",
+          "sha256": "15ed3064fe4cde9d478104b990bc34b8a99dab5781189a210b89cd6237c93ab7",
+          "source_commit": "60b51cb3bc909e72fe963f4dfb1947515cb9ab3b",
+          "url": "https://github.com/immich-app/immich/blob/60b51cb3bc909e72fe963f4dfb1947515cb9ab3b/server/src/constants.ts#L61-L61"
+        }
+      ],
+      "source_operation_sha256": "0dc6a12fe48739dd988eebf1cd55223f826d3207dab21e4f7be4b85a5ed31fc4"
+    }
+  ],
+  "version": 2
+}

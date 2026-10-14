@@ -402,7 +402,9 @@ def _skill_entry(root: Path, skills_root: Path, directory: Path) -> dict[str, st
     lines = text.splitlines()
     if lines and lines[0].strip() == "---":
         try:
-            end = next(i for i, line in enumerate(lines[1:], 1) if line.strip() == "---")
+            end = next(
+                i for i, line in enumerate(lines[1:], 1) if line.strip() == "---"
+            )
         except StopIteration as exc:
             raise ReadinessError("skill-frontmatter-invalid") from exc
         for line in lines[1:end]:
@@ -439,14 +441,17 @@ def _render_agent_skills_index(root: Path, path: str) -> str:
             entries.append(_skill_entry(root, skills_root, directory))
     if not entries:
         _fail("skills-path-not-proven")
-    return json.dumps(
-        {
-            "schema_version": AGENT_SKILLS_VERSION,
-            "skills": entries,
-        },
-        indent=2,
-        sort_keys=True,
-    ) + "\n"
+    return (
+        json.dumps(
+            {
+                "schema_version": AGENT_SKILLS_VERSION,
+                "skills": entries,
+            },
+            indent=2,
+            sort_keys=True,
+        )
+        + "\n"
+    )
 
 
 def _discovery_link(
@@ -480,17 +485,20 @@ def _render_mcp_server_card(
     if not _publicly_discoverable(mcp) or evidence.get("http_transport") != "true":
         return None
     _scan_safe_text(project_name, "mcp-server-card")
-    return json.dumps(
-        {
-            "schema_version": MCP_SERVER_CARD_VERSION,
-            "experimental": True,
-            "server": {"name": project_name},
-            "transports": ["streamable-http", "sse"],
-            "source": "docs/capabilities/mcp.json",
-        },
-        indent=2,
-        sort_keys=True,
-    ) + "\n"
+    return (
+        json.dumps(
+            {
+                "schema_version": MCP_SERVER_CARD_VERSION,
+                "experimental": True,
+                "server": {"name": project_name},
+                "transports": ["streamable-http", "sse"],
+                "source": "docs/capabilities/mcp.json",
+            },
+            indent=2,
+            sort_keys=True,
+        )
+        + "\n"
+    )
 
 
 def _render_api_catalog(readiness: dict[str, Any]) -> str | None:
@@ -521,8 +529,10 @@ def _render_api_catalog(readiness: dict[str, Any]) -> str | None:
             )
         )
     if capabilities["skills"].get("applicable") is True:
-        links.append(_discovery_link(".well-known/agent-skills.json", title="Agent Skills"))
-    for field, rel in _OAUTH_METADATA_FIELDS.items():
+        links.append(
+            _discovery_link(".well-known/agent-skills.json", title="Agent Skills")
+        )
+    for field in _OAUTH_METADATA_FIELDS:
         for authority in evidence.values():
             metadata_path = authority.get(field)
             if metadata_path:
@@ -550,11 +560,14 @@ def _render_api_catalog(readiness: dict[str, Any]) -> str | None:
     linkset: dict[str, Any] = {"anchor": ".", "item": item_links}
     if describedby_links:
         linkset["describedby"] = describedby_links
-    return json.dumps(
-        {"linkset": [linkset], "profile": API_CATALOG_PROFILE},
-        indent=2,
-        sort_keys=True,
-    ) + "\n"
+    return (
+        json.dumps(
+            {"linkset": [linkset], "profile": API_CATALOG_PROFILE},
+            indent=2,
+            sort_keys=True,
+        )
+        + "\n"
+    )
 
 
 def _slug(value: str) -> str:
@@ -825,7 +838,12 @@ def _validate_input(root: Path, value: dict[str, Any]) -> dict[str, Any]:
                 *TRANSPORT_KEYS,
             }
         else:
-            allowed_keys = {"applicable", "artifact", "endpoint", *_OAUTH_METADATA_FIELDS}
+            allowed_keys = {
+                "applicable",
+                "artifact",
+                "endpoint",
+                *_OAUTH_METADATA_FIELDS,
+            }
         if set(entry) - allowed_keys:
             _fail("capability-entry-invalid")
         applicable = entry["applicable"]
@@ -955,7 +973,11 @@ def _page_records(
 
 
 def _render_curated(
-    config: dict[str, Any], readiness: dict[str, Any], sections: tuple[Section, ...]
+    config: dict[str, Any],
+    readiness: dict[str, Any],
+    sections: tuple[Section, ...],
+    *,
+    standards_reference: str | None = None,
 ) -> str:
     lines = [
         f"# {config.get('site_name', readiness['project']['name'])}",
@@ -970,9 +992,17 @@ def _render_curated(
             suffix = f" — {page.summary}" if page.summary else ""
             lines.append(f"- [{page.title}]({page.url}){suffix}")
         lines.append("")
-    lines.extend(["## Standards maturity", ""])
-    for standard in readiness["standards"]:
-        lines.append(f"- {standard['id']}: {standard['kind']} ({standard['level']})")
+    if standards_reference is None:
+        lines.extend(["## Standards maturity", ""])
+        for standard in readiness["standards"]:
+            lines.append(
+                f"- {standard['id']}: {standard['kind']} ({standard['level']})"
+            )
+    else:
+        lines.append(
+            "Standards maturity and scope: "
+            f"[root documentation index]({standards_reference})."
+        )
     lines.append("")
     output = "\n".join(lines).rstrip() + "\n"
     _scan_safe_text(output, "llms")
@@ -1251,6 +1281,7 @@ def generate(
             },
             readiness,
             (section,),
+            standards_reference="../../llms.txt",
         )
         section_payloads[f"llms-sections/{section.slug}/llms.txt"] = section_text
 

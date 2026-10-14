@@ -1,0 +1,132 @@
+{
+  "parent": "aed9229ad9e927b2abde229ddfb9011efa1de576",
+  "actual_pr_base": "1ca4d5cf89cb5a9c9d6cd0d3bd634b176c0a7867",
+  "checks": [
+    {
+      "check": "pre-commit",
+      "exit_code": 0,
+      "seconds": 23.88,
+      "log_sha256": "9f580ff264a484b666ba4f4446ba49fbac33785f80c236a17bb8332480a63164"
+    },
+    {
+      "check": "pre-push",
+      "exit_code": 0,
+      "seconds": 7.68,
+      "log_sha256": "6a7d364c9b847527ce35e68dfecc6249ea03f6b77f3aefb351ea209cf066924d"
+    },
+    {
+      "check": "structural-content",
+      "exit_code": 0,
+      "seconds": 0.06,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "check": "documentation-provenance",
+      "exit_code": 0,
+      "seconds": 0.16,
+      "log_sha256": "c78a77092f866d707d0dd725a749536cd02d74272aa964828f16a9dea5f8ab9a"
+    },
+    {
+      "check": "native-content",
+      "exit_code": 0,
+      "seconds": 9.49,
+      "log_sha256": "cd1af6fd776aed703df68631f06b7ab844b5b7299853351a3506818a5767a6c3"
+    },
+    {
+      "check": "mkdocs-strict",
+      "exit_code": 0,
+      "seconds": 0.87,
+      "log_sha256": "262ec3bedf7303ae7375c7ba585b5a1a97e96cab0f990b0f7913953b86f782c7"
+    }
+  ],
+  "seconds": 42.16,
+  "passed": true,
+  "hook_sources": [
+    {
+      "repo": "https://github.com/Knuckles-Team/pipelines",
+      "ref": "main",
+      "revision": "086337f211f0d2af5753bda1cb0f07cf23ac2cd2"
+    },
+    {
+      "repo": "https://github.com/pre-commit/pre-commit-hooks",
+      "ref": "3e8a8703264a2f4a69428a0aa4dcb512790b2c8c",
+      "revision": "3e8a8703264a2f4a69428a0aa4dcb512790b2c8c"
+    },
+    {
+      "repo": "https://github.com/astral-sh/ruff-pre-commit",
+      "ref": "6fec9b7edb08fd9989088709d864a7826dc74e80",
+      "revision": "6fec9b7edb08fd9989088709d864a7826dc74e80"
+    }
+  ],
+  "native_compilation": false,
+  "provider_calls": 0,
+  "graph_calls": 0,
+  "fleet_registration": false,
+  "tooling": "Actual pre-commit and pre-push wrappers with fresh isolated cache; binary-only tool dependencies; existing exact native scanners; reviewed SDK/EG source overlays rather than a lock-installed environment",
+  "status": "All configured ordinary local gates pass after explicit approval of shared pipelines main references. Full operation transport-parity proof and release acceptance remain separate.",
+  "previous_receipt": {
+    "commit": "aed9229ad9e927b2abde229ddfb9011efa1de576",
+    "path": "validation/final-quality-2026-10-12.json",
+    "sha256": "2372b4a5341eb1974fe659127f5e703d0da113e3b01873ba2853f4e564c3fb7b"
+  },
+  "approval": {
+    "scope": [
+      ".github/workflows/pages.yml",
+      ".github/workflows/pipeline.yml",
+      ".pre-commit-config.yaml"
+    ],
+    "prior_ref": "7b3d18d72b5622d455ece3bbe45a9482bc6e8b5e",
+    "approved_ref": "main",
+    "resolved_test_revision": "086337f211f0d2af5753bda1cb0f07cf23ac2cd2",
+    "context": "The user explicitly approved future shared pipeline and hook changes following main. The one authorized retry succeeded.",
+    "persistent_hook_cache": "pre-commit caches mutable refs after the first install; this validation used a fresh isolated cache."
+  },
+  "runtime_source_sha256": {
+    "immich_api/__init__.py": "6f6baae3fbe8d01c661421eba83ce5b168fa470f22e57ca991fcc1ade067f256",
+    "immich_api/__main__.py": "12095458babc08379990c9057906328adc04fb2a977921d48727883dac3bb130",
+    "immich_api/album_metadata.py": "5d7cc8373ae152e2028e7d099a99574cd48b74c8edf94faf98b7a2af66dee725",
+    "immich_api/api/__init__.py": "60c4220046512ee8606075ae97b3393bc301fb562f3c5cb9d19c3b51ec117544",
+    "immich_api/api/api_client_system.py": "66bd8a148df7a642372d3d87b3027ad9a8bdc8370b68be50ab4f353a5d679f94",
+    "immich_api/auth.py": "9dd131b00402ea6e791227df3b9430eeded74a4f4af68b8e98e14d13ad58427b",
+    "immich_api/connectors/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "immich_api/error_authority.py": "29b95a9fc715259c66e346eea03d4e2c693fe69ca9a72229830dcd0191260a2e",
+    "immich_api/error_rendering.py": "0d2748bfdbace11277460804c0a2826eaeff19d8967268e635a596fd9c699008",
+    "immich_api/immich_input_models.py": "383938cc6dd1c5e6c7cdad4cc72eff0058a45f5cd571aebd8394f2c97256dc5d",
+    "immich_api/immich_response_models.py": "8e4df3e72255d479f61410dbd222263b37dfa5f8d0d87a35f0958c32fa94eb65",
+    "immich_api/kg_ingest.py": "f43e00c99eb07e2069e3edf1d4b840f944f9b95d1ecda5b0abc0e67e14f7f329",
+    "immich_api/mcp/__init__.py": "fa045fdfa4938c33b8cb5d6a9e7ada5891f534288b6ad4164e4f6434ca3fdfa9",
+    "immich_api/mcp/album_sample.py": "f02516259f04b9ee93f40c8272d0a5eadadebd7c626d827edb1993423276393f",
+    "immich_api/mcp_server.py": "e8efb314b785d06fb57d9498bf9f514ec454ba448d8f6683739f782f327145f0",
+    "immich_api/ontology/__init__.py": "6a0710dfd5c89e6ea7f71343486c6fae9d1b7b96661d46885032a69bbedeb93c",
+    "immich_api/openapi_request.py": "d37f5f10a3fc3e08ee853e2fe5417b4da91eadb45f4b0365753a4570045628fc",
+    "immich_api/openapi_response.py": "0f459fb87c65787c02faf0334ef7b493195b0f75ba3d77f74b01801b7b025eb0",
+    "immich_api/openapi_runtime.py": "ca29fc548e308497c545465a54053e73b3617a9c1d216bb3417fb7980fe8ba83",
+    "immich_api/prompts/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "immich_api/skills/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "native_content": {
+    "tools": 42,
+    "prompts": 6,
+    "resources": 12,
+    "pack_entries": 55,
+    "sha256": "6227e9a0ec860ed2eaee3636274dd09dd62c542b02f475fb2952abc1b35233ac",
+    "provider_calls": 0,
+    "graph_calls": 0,
+    "fleet_registration": false
+  },
+  "source_dependencies": {
+    "sdk": "5babc4cc48ad73928468b243842f219f51e2cca1",
+    "eg": "d33abec1e09b63cdcde01f8e8e4fe810d91cd43d"
+  },
+  "suite": {
+    "passed": 58,
+    "evidence": "Configured pytest pre-push hook passed on unchanged runtime and test source. Prior receipt enumerates the same 58 collected cases."
+  },
+  "remaining_acceptance": [
+    "Complete pinned operation inventory and exhaustive API/MCP reachability evidence",
+    "Actual Windows import/unit execution: prior report-only job skipped both after EG fcntl build failure",
+    "Approved installable dependency artifacts and immutable source-built image",
+    "Credentialed least-privilege album read, explicit fleet composition, graph receipt and readback"
+  ],
+  "publication_followup": "After the normal batch, only README and this receipt were updated; runtime and tests are unchanged."
+}

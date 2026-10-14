@@ -17,7 +17,7 @@
 
 ## Installation
 
-- [Installation](https://knuckles-team.github.io/immich-api/installation/) — immich-api is a standard Python package and a prebuilt container image.
+- [Installation](https://knuckles-team.github.io/immich-api/installation/) — This pilot is available as source. A published Python distribution and prebuilt container image remain pending validation and release. Work from the connector repository; no separate template repository access is required.
 
 ## Deployment
 
@@ -25,7 +25,15 @@
 
 ## Usage (API / CLI / MCP)
 
-- [Usage (API / CLI / MCP)](https://knuckles-team.github.io/immich-api/usage/) — immich-api exposes the same capability three ways: as MCP tools an agent calls, as a Python API you import, and as a CLI.
+- [Usage (API / CLI / MCP)](https://knuckles-team.github.io/immich-api/usage/) — The pilot provides a Python client and the immich-mcp server entry point. Its OpenAPI domain tools take typed operation arguments, not a free-form URL or method. Read the capability and evidence guide first.
+
+## Immich capabilities and evidence
+
+- [Immich capabilities and evidence](https://knuckles-team.github.io/immich-api/immich-capabilities/) — This package binds the Immich 3.2.2 OpenAPI contract to 41 domain tools covering 276 declared operations. Inputs discriminate by the exact action enum, and the client uses that action's fixed HTTP method and route. There is no arbitrary URL or method dispatch. Writes are disabled by default, require MCP confirmation when enabled, and are never automatically retried.
+
+## OpenAPI parity
+
+- [OpenAPI parity](https://knuckles-team.github.io/immich-api/openapi-parity/) — The pinned Immich 3.2.2 source declares 276 operations across 192 paths and 41 domains. The source bytes are retained in api-spec/immich.openapi.json with SHA256 7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b. The complete method inventory is 123 GET, 66 POST, 42 PUT, 43 DELETE and 2 PATCH.
 
 ## Backing Platform (Immich Api)
 

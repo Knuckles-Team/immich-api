@@ -1,0 +1,14 @@
+{
+  "scanner_revision": "086337f211f0d2af5753bda1cb0f07cf23ac2cd2",
+  "max_scan_bytes": 8388608,
+  "catalog_bytes": 4581458,
+  "catalog_sha256": "f19ea69c42e42e5fc8161d854c06fc7f4d01a505c96a37bf936c1f71eb17a37e",
+  "repository_positive_passed": true,
+  "negative_control_detected": [
+    "Potential unmasked secret (GitHub PAT) detected in schemas/mcp_tools.json:1. If this is a reviewed synthetic fixture, mark that line '# sanitizer:ignore - <reason>'; do NOT rename or reword to evade the pattern."
+  ],
+  "negative_fixture": "/home/genius/Documents/Codex/2026-10-12/task-8/evidence/immich-sanitizer-negative-autkh9ss/mcp_tools.json",
+  "security_exemption_markers": false,
+  "provider_calls": 0,
+  "native_builds": false
+}
