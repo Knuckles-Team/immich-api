@@ -2,7 +2,7 @@
 
 > **Prefix**: `CONCEPT:IMMICH-*`
 > **Version**: 0.1.0
-> **Bridge**: [`CONCEPT:ECO-4.0`](https://github.com/Knuckles-Team/agent-utilities/blob/main/docs/concepts.md) (Unified Toolkit Ingestion)
+> **Bridge**: [`CONCEPT:ECO-4.0`](https://github.com/Knuckles-Team/agent-connector-sdk/blob/main/docs/concepts.md) (Unified Toolkit Ingestion)
 
 ---
 
@@ -12,10 +12,10 @@
 |------------|------|-------------|
 | `CONCEPT:IMMICH-001` | System Operations | MCP tool domain `system` — Action-routed dynamic tool registration |
 
-## Cross-Project References (from agent-utilities)
+## Cross-Project References (from agent-connector-sdk)
 
 | Concept ID | Name | Origin |
 |------------|------|--------|
-| `CONCEPT:ECO-4.0` | Unified Toolkit Ingestion | agent-utilities |
-| `CONCEPT:ORCH-1.2` | Confidence-Gated Router | agent-utilities |
-| `CONCEPT:OS-5.1` | Prompt Injection Defense | agent-utilities |
+| `CONCEPT:ECO-4.0` | Unified Toolkit Ingestion | agent-connector-sdk |
+| `CONCEPT:ORCH-1.2` | Confidence-Gated Router | agent-connector-sdk |
+| `CONCEPT:OS-5.1` | Prompt Injection Defense | agent-connector-sdk |

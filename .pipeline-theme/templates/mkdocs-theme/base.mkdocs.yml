@@ -66,11 +66,11 @@ extra:
         role: public runtime gateway
         url: https://knuckles-team.github.io/graph-os/
         repository: https://github.com/Knuckles-Team/graph-os
-      - slug: agent-utilities
+      - slug: agent-connector-sdk
         name: Agent Utilities
         role: agent control plane
-        url: https://knuckles-team.github.io/agent-utilities/
-        repository: https://github.com/Knuckles-Team/agent-utilities
+        url: https://knuckles-team.github.io/agent-connector-sdk/
+        repository: https://github.com/Knuckles-Team/agent-connector-sdk
       - slug: epistemic-graph
         name: Epistemic Graph
         role: durable multimodal knowledge and reasoning engine

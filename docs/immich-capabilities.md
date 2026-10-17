@@ -16,7 +16,7 @@ when enabled, and are never automatically retried.
 | `immich-person-record` | `people_operations`: `getPerson` | One explicitly requested person-record UUID and person-read authority |
 
 The corresponding native MCP prompts contain the complete instructions; they do
-not depend on an undeclared agent-utilities prompt-composition runtime. The SDK
+not depend on an undeclared agent-connector-sdk prompt-composition runtime. The SDK
 serves the skills, ontology, shapes and manifest as native MCP content. The
 specialist prompt performs health checks; `main_agent` chooses the narrowest
 read capability. User intent still limits use even when a credential has broader
