@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "immich-api"
-version = "0.1.0"
+version = "0.2.0"
 description = "Immich Api API + MCP Server"
 readme = "README.md"
 classifiers = [ "Development Status :: 4 - Beta", "License :: OSI Approved :: MIT License", "Environment :: Console", "Operating System :: POSIX :: Linux", "Programming Language :: Python :: 3",]
@@ -14,7 +14,7 @@ dependencies = [
     "rfc3339-validator>=0.1.4,<0.2",
     "jsonschema>=4.23,<5",
     "regex>=2026.9.29",
-    "agent-connector-sdk>=0.1.0,<1",
+    "agent-connector-sdk[mcp]>=0.3.0,<1.0.0",
 ]
 [[project.authors]]
 name = "Repository Maintainers"
@@ -23,9 +23,9 @@ name = "Repository Maintainers"
 text = "MIT"
 
 [project.optional-dependencies]
-mcp = [ "agent-connector-sdk>=0.1.0,<1",]
+mcp = [ "agent-connector-sdk[mcp]>=0.3.0,<1.0.0",]
 all = [
-    "agent-connector-sdk>=0.1.0,<1",
+    "agent-connector-sdk[mcp]>=0.3.0,<1.0.0",
 ]
 test = [
     "pytest-xdist>=3.6.0", "pytest", "pytest-asyncio", "pytest-cov",]
@@ -78,7 +78,7 @@ mcp_server = true
 
 [dependency-groups]
 dev = [
-    "epistemic-graph>=2.27.0,<3",
+    "epistemic-graph>=2.27.3,<3",
     "pytest-timeout>=2.4.0",
 ]
 
@@ -98,22 +98,3 @@ ignore_names = ["request", "config"]
 
 [tool.pipelines_hooks.stdout_writes]
 served_paths = ["immich_api"]
-
-[tool.uv.sources]
-agent-connector-sdk = { git = "https://github.com/Knuckles-Team/agent-connector-sdk.git", rev = "b9ee9ed0a82f6ecd5ed23d6226ca5ab503f74f9c" }
-epistemic-graph = { git = "https://github.com/Knuckles-Team/epistemic-graph.git", rev = "d33abec1e09b63cdcde01f8e8e4fe810d91cd43d" }
-
-# Static resolver metadata from the exact SDK Git revision above; avoids executing
-# its dynamic-version build backend during lock resolution. Runtime source remains pinned.
-[[tool.uv.dependency-metadata]]
-name = "agent-connector-sdk"
-version = "0.1.0"
-requires-python = ">=3.12,<3.15"
-requires-dist = ["fastmcp>=4.0.11,<5", "epistemic-graph>=2.27.0,<3", "mcp>=2.3.0,<3", "pydantic>=2.13.4,<3", "PyYAML>=6.0.3", "httpx>=0.28.1", "httpx2>=2.12.0", "anyio>=4.13.0", "cryptography>=50.0.1"]
-
-# Development resolution metadata from the exact tested EG source, not a PyPI release claim.
-[[tool.uv.dependency-metadata]]
-name = "epistemic-graph"
-version = "2.27.0"
-requires-python = ">=3.10"
-requires-dist = ["msgpack>=1.2.1", "pydantic>=2,<3", "pyoxigraph>=0.3.22", "httpx>=0.24.0"]

@@ -6,32 +6,28 @@ resolution-markers = [
     "python_full_version < '3.14'",
 ]
 
-[[manifest.dependency-metadata]]
-name = "agent-connector-sdk"
-version = "0.1.0"
-requires-dist = ["fastmcp>=4.0.11,<5", "epistemic-graph>=2.27.0,<3", "mcp>=2.3.0,<3", "pydantic>=2.13.4,<3", "pyyaml>=6.0.3", "httpx>=0.28.1", "httpx2>=2.12.0", "anyio>=4.13.0", "cryptography>=50.0.1"]
-requires-python = ">=3.12, <3.15"
-
-[[manifest.dependency-metadata]]
-name = "epistemic-graph"
-version = "2.27.0"
-requires-dist = ["msgpack>=1.2.1", "pydantic>=2,<3", "pyoxigraph>=0.3.22", "httpx>=0.24.0"]
-requires-python = ">=3.10"
-
 [[package]]
 name = "agent-connector-sdk"
-version = "0.1.0"
-source = { git = "https://github.com/Knuckles-Team/agent-connector-sdk.git?rev=b9ee9ed0a82f6ecd5ed23d6226ca5ab503f74f9c#b9ee9ed0a82f6ecd5ed23d6226ca5ab503f74f9c" }
+version = "0.3.0"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "anyio" },
     { name = "cryptography" },
     { name = "epistemic-graph" },
-    { name = "fastmcp" },
     { name = "httpx" },
     { name = "httpx2" },
-    { name = "mcp" },
+    { name = "mcp-types" },
     { name = "pydantic" },
     { name = "pyyaml" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/43/67/0bd17fcf77c53560aeda1a7801920e6783a8f2575080da72158e14833657/agent_connector_sdk-0.3.0-py3-none-any.whl", hash = "sha256:4bbbf66a04bff9b80dfa48d3cbb1c8697ebc78b562f1b8e3a859f9336943c18c", size = 714783, upload-time = "2026-10-18T05:05:24.058Z" },
+]
+
+[package.optional-dependencies]
+mcp = [
+    { name = "fastmcp" },
+    { name = "mcp" },
 ]
 
 [[package]]
@@ -79,15 +75,15 @@ wheels = [
 
 [[package]]
 name = "authlib"
-version = "1.8.0"
+version = "1.9.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "cryptography" },
     { name = "joserfc" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/f1/51/bc1729d3cfdc214b4935f4e886e4dd443c3065fd8e1e66423fe84b490f81/authlib-1.8.0.tar.gz", hash = "sha256:f3ecd5f1da737262fb53bf1a4d95c4ea1ad9dd509316587a255c99ab1838a4f0", size = 177759, upload-time = "2026-08-30T12:12:34.833Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/c9/dc/087c08741a98d234c9b98beef8a28d3c309f814d14b6156422c5815bf6d6/authlib-1.9.1.tar.gz", hash = "sha256:5c7d9848f47cac340f060f76ae0bc09b59f5c8e89cc1bb032d4370a0c55b5974", size = 182700, upload-time = "2026-10-14T14:17:52.307Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/b8/c6/6f124bcfbbfb20fba22c939b4e43a06dccfc0e1ca20e5634ca573cb1e271/authlib-1.8.0-py2.py3-none-any.whl", hash = "sha256:88aebbd9af6757e14e912d5dc007ae1dc1f3e27e3b2152ce7c552ee2c3b3c121", size = 260804, upload-time = "2026-08-30T12:12:33.162Z" },
+    { url = "https://files.pythonhosted.org/packages/39/44/a46089266de32a0d809023b6bf31b80a1f26a46954446a7ce695a565cbea/authlib-1.9.1-py2.py3-none-any.whl", hash = "sha256:8b9be8b1e5174dcbf5520e984f1a22dc2edae5b6e40a61d4cedbf86b97e9e69b", size = 266042, upload-time = "2026-10-14T14:17:50.695Z" },
 ]
 
 [[package]]
@@ -101,11 +97,11 @@ wheels = [
 
 [[package]]
 name = "cachetools"
-version = "7.2.1"
+version = "7.2.3"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/31/44/71476a5812da1ddf2c9a3efd31ae76d01480a1cf03ed13ac28aa8f2402e4/cachetools-7.2.1.tar.gz", hash = "sha256:b1a7537025c06abf96fcc1443e496af9a3fb95e774e70e1f0af226f73f7f2dcc", size = 41357, upload-time = "2026-10-05T18:40:06.361Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/09/88/27fe0785c7a9aa285c753db0b4ea967adbf76128fede66379c35a4b8d054/cachetools-7.2.3.tar.gz", hash = "sha256:e6fafd06de4a5bd915ff7d247588ea497e28c9a568c62db8678d9a5f11515a9a", size = 43727, upload-time = "2026-10-17T11:41:25.471Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/f0/c9/2a61d784caf0d869a3326728c57c7203f50cc53f3cca2ee76bf924769eb4/cachetools-7.2.1-py3-none-any.whl", hash = "sha256:63aa53dfe7473c10cccdd5a01dedf76ef2c4b73a58840d9396e7d0752cbdac3b", size = 17006, upload-time = "2026-10-05T18:40:04.827Z" },
+    { url = "https://files.pythonhosted.org/packages/fb/dd/044062b61d94c59c29ad0da6918e6a21106f5b115096e9c87081cdd96167/cachetools-7.2.3-py3-none-any.whl", hash = "sha256:85ef9d2703918bedf7f88caa0b06bb3bb7a71360eb0b05c20796b89fede6e30c", size = 18352, upload-time = "2026-10-17T11:41:24.161Z" },
 ]
 
 [[package]]
@@ -406,13 +402,20 @@ wheels = [
 
 [[package]]
 name = "epistemic-graph"
-version = "2.27.0"
-source = { git = "https://github.com/Knuckles-Team/epistemic-graph.git?rev=d33abec1e09b63cdcde01f8e8e4fe810d91cd43d#d33abec1e09b63cdcde01f8e8e4fe810d91cd43d" }
+version = "2.27.3"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "httpx" },
     { name = "msgpack" },
     { name = "pydantic" },
     { name = "pyoxigraph" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/d7/41/1d7c0efaff2768c538eeebbfee7667148007158b2012c40214071a0b6fe0/epistemic_graph-2.27.3.tar.gz", hash = "sha256:c6809bd900dd3fc49b88eee087f413bd8a1487d21199362309a08e8fddf74a19", size = 7506042, upload-time = "2026-10-17T17:29:01.558Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/3b/55/79078ecd1fc2d235cfdfdb96a1480b2f14a02c2bddd9236a47901684945d/epistemic_graph-2.27.3-cp39-abi3-macosx_11_0_arm64.whl", hash = "sha256:c70ba4a8d94ade15e682da8378620cf90d8abc2f0bb5225736969da08da70965", size = 7558709, upload-time = "2026-10-17T17:48:13.878Z" },
+    { url = "https://files.pythonhosted.org/packages/b5/38/17f1600e94d0988efc8f3c7a03dc7735cdc21db9612156985ab80289cf86/epistemic_graph-2.27.3-cp39-abi3-manylinux_2_28_aarch64.whl", hash = "sha256:01b0265fdcecc71409172c9da2a6a4836fb3bc3676dc23cca8e6991bd24d298f", size = 7755246, upload-time = "2026-10-17T17:56:16.995Z" },
+    { url = "https://files.pythonhosted.org/packages/b6/8c/0efdc2c6f6289d916d5dd564db562e045f9ee19c598cd1f5552dd31e62d1/epistemic_graph-2.27.3-cp39-abi3-manylinux_2_28_x86_64.whl", hash = "sha256:7e38d04234d87c969228a4bc9c53f9b53fbcf5c9c6871d354716fd7d80ded8e9", size = 8399255, upload-time = "2026-10-17T17:49:11.521Z" },
+    { url = "https://files.pythonhosted.org/packages/40/94/8dca70982ff6a6e88c988acb0983f2ed4b1ec70a372467e241e78c79a6ad/epistemic_graph-2.27.3-cp39-abi3-win_amd64.whl", hash = "sha256:7ddeddfb4d048cdeae1a670ff1b98477cb83898c300bf0c681ce619a14b21e2a", size = 8900833, upload-time = "2026-10-17T17:52:18.802Z" },
 ]
 
 [[package]]
@@ -438,19 +441,19 @@ wheels = [
 
 [[package]]
 name = "fastmcp"
-version = "4.1.0"
+version = "4.1.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "fastmcp-slim", extra = ["client", "server"] },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/c3/c4/fe4e24af2cb03f4701f45634873d87557c2b5d283d287412345345ad0ede/fastmcp-4.1.0.tar.gz", hash = "sha256:7a8bf4e58cc6c2f3a8552b5a7a17ba1e4682b6fd4cafb7f461920a66dbd2499f", size = 42686511, upload-time = "2026-10-08T22:57:05.652Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/35/82/6ee4c54b3d78c282c3766870e12a8cd802b0f360ed834463b63afe7d5cf8/fastmcp-4.1.1.tar.gz", hash = "sha256:23b8fa7cfc30779fdedbcb78c62f8c621d5d5708f3f29188b7a05e71f7c4a34a", size = 42689037, upload-time = "2026-10-18T02:14:16.792Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/5c/81/77610de5d79187455ec4a4eafdc17942365f1bc4e5850633e50159e9afdc/fastmcp-4.1.0-py3-none-any.whl", hash = "sha256:cf19fd603315b48ef1829c8579431e77793feafdcbed51f0dc5607af10a24e9b", size = 8154, upload-time = "2026-10-08T22:57:02.531Z" },
+    { url = "https://files.pythonhosted.org/packages/1d/5d/fc8bf50cb8907b2e9e82c91de81df453fa83d8775670a4775f61f2e0441b/fastmcp-4.1.1-py3-none-any.whl", hash = "sha256:a82721d40e2a2e49637f4e30ec5b6892d2ccc02d3684ca74429fef995d6d29b2", size = 8153, upload-time = "2026-10-18T02:14:14.302Z" },
 ]
 
 [[package]]
 name = "fastmcp-slim"
-version = "4.1.0"
+version = "4.1.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "mcp-types" },
@@ -461,9 +464,9 @@ dependencies = [
     { name = "rich" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/b8/88/85aafec43ec9940a360d75f2d8e9517eda01ac38b8b1610b0e9e125d61d3/fastmcp_slim-4.1.0.tar.gz", hash = "sha256:390b2b430195e0cdd0327aff80fe5dceb862b2421baf71de6d4eec92f80f99f8", size = 734647, upload-time = "2026-10-08T22:56:40.642Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/f7/15/ce19330e59e8a6b3aa9b077666e297940d059c9de6beb37069b76f8e6859/fastmcp_slim-4.1.1.tar.gz", hash = "sha256:5d23d2fb7df131097fe87b642f9ad27dde72ebbbd73369c512d96cbaf505e836", size = 735236, upload-time = "2026-10-18T02:12:34.305Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/54/6a/d61e1541f4c65872146a576c1379f6f32013fd8c636bcaf0f8e70a04e533/fastmcp_slim-4.1.0-py3-none-any.whl", hash = "sha256:6edb48a78e508ef5ac691bf2a68f3e5000403773655d859eceea1068b894df4a", size = 911585, upload-time = "2026-10-08T22:56:39.136Z" },
+    { url = "https://files.pythonhosted.org/packages/94/85/a609dc20e6cb67f11dcef8ef6c707d8f7783c84ff5256cc4c4ccdeb571cd/fastmcp_slim-4.1.1-py3-none-any.whl", hash = "sha256:64bd63e8222305ab1408d11d3498bcc94dc14629f4d55fe5399ccdb496509122", size = 912169, upload-time = "2026-10-18T02:12:32.709Z" },
 ]
 
 [package.optional-dependencies]
@@ -596,10 +599,10 @@ wheels = [
 
 [[package]]
 name = "immich-api"
-version = "0.1.0"
+version = "0.2.0"
 source = { editable = "." }
 dependencies = [
-    { name = "agent-connector-sdk" },
+    { name = "agent-connector-sdk", extra = ["mcp"] },
     { name = "jsonschema" },
     { name = "regex" },
     { name = "rfc3339-validator" },
@@ -608,10 +611,10 @@ dependencies = [
 
 [package.optional-dependencies]
 all = [
-    { name = "agent-connector-sdk" },
+    { name = "agent-connector-sdk", extra = ["mcp"] },
 ]
 mcp = [
-    { name = "agent-connector-sdk" },
+    { name = "agent-connector-sdk", extra = ["mcp"] },
 ]
 test = [
     { name = "pytest" },
@@ -628,9 +631,9 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "agent-connector-sdk", git = "https://github.com/Knuckles-Team/agent-connector-sdk.git?rev=b9ee9ed0a82f6ecd5ed23d6226ca5ab503f74f9c" },
-    { name = "agent-connector-sdk", marker = "extra == 'all'", git = "https://github.com/Knuckles-Team/agent-connector-sdk.git?rev=b9ee9ed0a82f6ecd5ed23d6226ca5ab503f74f9c" },
-    { name = "agent-connector-sdk", marker = "extra == 'mcp'", git = "https://github.com/Knuckles-Team/agent-connector-sdk.git?rev=b9ee9ed0a82f6ecd5ed23d6226ca5ab503f74f9c" },
+    { name = "agent-connector-sdk", extras = ["mcp"], specifier = ">=0.3.0,<1.0.0" },
+    { name = "agent-connector-sdk", extras = ["mcp"], marker = "extra == 'all'", specifier = ">=0.3.0,<1.0.0" },
+    { name = "agent-connector-sdk", extras = ["mcp"], marker = "extra == 'mcp'", specifier = ">=0.3.0,<1.0.0" },
     { name = "jsonschema", specifier = ">=4.23,<5" },
     { name = "pytest", marker = "extra == 'test'" },
     { name = "pytest-asyncio", marker = "extra == 'test'" },
@@ -644,7 +647,7 @@ provides-extras = ["mcp", "all", "test"]
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "epistemic-graph", git = "https://github.com/Knuckles-Team/epistemic-graph.git?rev=d33abec1e09b63cdcde01f8e8e4fe810d91cd43d" },
+    { name = "epistemic-graph", specifier = ">=2.27.3,<3" },
     { name = "pytest-timeout", specifier = ">=2.4.0" },
 ]
 
@@ -840,11 +843,11 @@ wheels = [
 
 [[package]]
 name = "more-itertools"
-version = "11.1.0"
+version = "11.2.1"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/de/1d/f4da6f02cdffe04d6362210b807146a26044c88d839208aec273bb0d9184/more_itertools-11.1.0.tar.gz", hash = "sha256:48e8f4d9e7e5878571ecf6f2b4e57634f93cd474cc8cfbd2376f2d11b396e30d", size = 145772, upload-time = "2026-05-22T14:14:29.909Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/52/b8/c63995bebbb9ac9c059350e0fb8c82c2420c85aeca7d34e40aecf3df9281/more_itertools-11.2.1.tar.gz", hash = "sha256:cbf08fd0af284dc69718b9b76a8e6203df624d70209ea511e4219d350c856f63", size = 154133, upload-time = "2026-10-14T18:50:30.407Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/e8/3d/1087453384dbde46a8c7f9356eead2c58be8a7bf156bca40243377c85715/more_itertools-11.1.0-py3-none-any.whl", hash = "sha256:4b65538ae22f6fed0ce4874efd317463a7489796a0939fa66824dd542125a192", size = 72226, upload-time = "2026-05-22T14:14:28.824Z" },
+    { url = "https://files.pythonhosted.org/packages/5d/57/3c4b1c6f2e0cc29ba023802458ea3d2a996f87085559e4a5f2192d549532/more_itertools-11.2.1-py3-none-any.whl", hash = "sha256:35a7377edd1dd6608dcb2cdf534ded55ea32d49448875ad042cd3f879fb1ded0", size = 74405, upload-time = "2026-10-14T18:50:29.116Z" },
 ]
 
 [[package]]
@@ -945,11 +948,11 @@ wheels = [
 
 [[package]]
 name = "platformdirs"
-version = "4.13.0"
+version = "4.13.4"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/80/a8/66d45abadff219e36e2a824181b8f6a67e7ed4572934d6252c71c29d5731/platformdirs-4.13.0.tar.gz", hash = "sha256:1aa0b0d3f224c1f07c295121e312a5a24a180d6ae5a8425ea1784b3e3863e9c0", size = 61094, upload-time = "2026-10-11T02:05:24.109Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/b7/89/dfd269de936e76319cf27787d9eaaca513491f635d49b0fbe7cdb6d3bf6f/platformdirs-4.13.4.tar.gz", hash = "sha256:dd96496961684a7f42041923f842ec7494e09f5e87aded99117e1109cd40570e", size = 62364, upload-time = "2026-10-17T19:31:53.69Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/8d/15/1633010b26e88e872c93b67c0b6c5e174fb74cb6fb5c1472b4d51d4a8f22/platformdirs-4.13.0-py3-none-any.whl", hash = "sha256:3dbcf4cd708f21cf876c4eaa90e58412bc4f033d87143f41b1493ff77c25b7e1", size = 32724, upload-time = "2026-10-11T02:05:22.776Z" },
+    { url = "https://files.pythonhosted.org/packages/58/51/5614d0537dd830ca64d95a2f254bd66bdf3ac61d41cffcccaec62121fcfd/platformdirs-4.13.4-py3-none-any.whl", hash = "sha256:502ce08e9d36cf90579ee44e1e764838842fa658e4975ef47344fd053011d2c8", size = 32782, upload-time = "2026-10-17T19:31:52.293Z" },
 ]
 
 [[package]]
@@ -1093,16 +1096,17 @@ wheels = [
 
 [[package]]
 name = "pydantic-settings"
-version = "2.15.0"
+version = "2.16.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pydantic" },
     { name = "python-dotenv" },
+    { name = "typing-extensions" },
     { name = "typing-inspection" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/68/ca/31c57507b13119d7d3cfa1576dad2911a4861e3be07b579395f4e9d393f9/pydantic_settings-2.15.0.tar.gz", hash = "sha256:694b793e84f766ba76a90ebdefc01d0a9a045dab0382bee70393da93712ad117", size = 261253, upload-time = "2026-08-07T09:24:57.419Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/2e/3b/a5d2294799b53b448319978cfb5bd139d5a9d45e862af91661614f14c922/pydantic_settings-2.16.0.tar.gz", hash = "sha256:5b6c578049ede4db0e2ef3b4eaa4ad4069cfa9211f83fb38df899dfade50a614", size = 301031, upload-time = "2026-10-14T12:44:09.998Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/30/a4/2bffa9f8e804325a09867f0e9d30795c80ea9f8d62560bd1b6ad6220eb2f/pydantic_settings-2.15.0-py3-none-any.whl", hash = "sha256:0ba092c291c94baceb5eff768aa0d56400a457585bc0175925a5a5510303da42", size = 69413, upload-time = "2026-08-07T09:24:55.839Z" },
+    { url = "https://files.pythonhosted.org/packages/53/f4/b987bf8c51e5b19a95fa66d1ee596074141e085d9c2ddf97920803c7029b/pydantic_settings-2.16.0-py3-none-any.whl", hash = "sha256:7e73acf7f61936a15e5a3b6eedaea29f133357faf7272f2607ba479b049dd7f2", size = 80364, upload-time = "2026-10-14T12:44:08.233Z" },
 ]
 
 [[package]]
@@ -1574,15 +1578,15 @@ wheels = [
 
 [[package]]
 name = "starlette"
-version = "1.7.0"
+version = "1.8.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "anyio" },
     { name = "typing-extensions", marker = "python_full_version < '3.13'" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/7b/2b/3850dc6bf7ef71b088962eba31dafc6cffd2f96e577ebb0bb316df96da3e/starlette-1.7.0.tar.gz", hash = "sha256:c79f74ea63cff761804fbbfb182f1e0b440c2d07b164d24700c5a1bab5d6ff5d", size = 2736246, upload-time = "2026-09-23T07:30:26.35Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/e9/0c/6efb252d091ecccd7d62048ae11f0ea35cd75a4fbaeea5e30f9c3bf91d10/starlette-1.8.0.tar.gz", hash = "sha256:1565dc0b35d5737a271ed1e0e04e949f4e81198799f216d2667b0a0fb9cf9522", size = 2730457, upload-time = "2026-10-13T07:54:39.53Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/4e/d6/1ec1b290f9e0fb067899b61e1d37a30c923068bad260b216dbe37a7d2967/starlette-1.7.0-py3-none-any.whl", hash = "sha256:67f8e99895493dd2911a03f11314af6ceebeae4e704bb9f43dfc6a9db151c93e", size = 78980, upload-time = "2026-09-23T07:30:24.567Z" },
+    { url = "https://files.pythonhosted.org/packages/c1/b0/5742e4ac7af5eb58ec3470a537a49d7aa507e5539413e504b3a65ef50ba8/starlette-1.8.0-py3-none-any.whl", hash = "sha256:dfdd6b29c26483288088d990eee59631dedadd66ce20d203402a7ca8e3c4656f", size = 79612, upload-time = "2026-10-13T07:54:38.019Z" },
 ]
 
 [[package]]
