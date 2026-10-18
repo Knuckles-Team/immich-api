@@ -8,7 +8,7 @@ from agent_connector_sdk.mcp.tool_surface import register_tool_surface
 
 from . import mcp as tool_modules
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 
 def get_mcp_instance(*, command_args=None):
