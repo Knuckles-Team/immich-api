@@ -32,7 +32,7 @@ def test_ingest_uses_scoped_binding_and_preserves_receipt():
     )
     assert result is fake.receipt
     binding, changes = fake.calls[0]
-    assert binding.connector == "immich-api"
+    assert binding.connector == "immich"
     assert binding.stream.startswith("album-metadata:")
     assert binding.strict_schema
     assert changes.mode is SourceIngestionMode.DELTA
@@ -131,4 +131,4 @@ def test_sdk_wire_payload_uses_actual_ontology_predicates():
     assert manifest["identity"]["id_field"]["ImmichAlbum"] == "immichAlbumId"
     shapes = (root / "ontology/shapes/immich.ttl").read_text()
     assert all("sh:path :" + key + " " in shapes for key in record.payload)
-    assert record.mapping_reference == "manifest:immich-api#schema_mappings/ImmichAlbum"
+    assert record.mapping_reference == "manifest:immich#schema_mappings/ImmichAlbum"

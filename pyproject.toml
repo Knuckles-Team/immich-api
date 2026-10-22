@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "immich-api"
-version = "0.2.0"
+version = "0.2.1"
 description = "Immich Api API + MCP Server"
 readme = "README.md"
 classifiers = [ "Development Status :: 4 - Beta", "License :: OSI Approved :: MIT License", "Environment :: Console", "Operating System :: POSIX :: Linux", "Programming Language :: Python :: 3",]
@@ -14,7 +14,7 @@ dependencies = [
     "rfc3339-validator>=0.1.4,<0.2",
     "jsonschema>=4.23,<5",
     "regex>=2026.9.29",
-    "agent-connector-sdk[mcp]>=0.3.0,<1.0.0",
+    "agent-connector-sdk[mcp]>=0.3.11,<1.0.0",
 ]
 [[project.authors]]
 name = "Repository Maintainers"
@@ -23,9 +23,9 @@ name = "Repository Maintainers"
 text = "MIT"
 
 [project.optional-dependencies]
-mcp = [ "agent-connector-sdk[mcp]>=0.3.0,<1.0.0",]
+mcp = [ "agent-connector-sdk[mcp]>=0.3.11,<1.0.0",]
 all = [
-    "agent-connector-sdk[mcp]>=0.3.0,<1.0.0",
+    "agent-connector-sdk[mcp]>=0.3.11,<1.0.0",
 ]
 test = [
     "pytest-xdist>=3.6.0", "pytest", "pytest-asyncio", "pytest-cov",]
@@ -48,6 +48,10 @@ immich-api = "immich_api.ontology"
 
 [project.entry-points."agent_utilities.source_connector_providers"]
 immich-api = "immich_api.connectors"
+
+# The one declared connector identity: the fleet name (SDK-CONNECTOR-CONTROL-R071).
+[project.entry-points."agent_connector_sdk.connector"]
+immich = "immich_api"
 
 [tool.uv.workspace]
 members = ["."]

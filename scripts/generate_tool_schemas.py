@@ -85,7 +85,7 @@ async def generate(check: bool) -> None:
     _write_or_check(
         PACKAGE / "connectors/tool_schema_fingerprints.json",
         {
-            "connector": "immich-api",
+            "connector": "immich",
             "algorithm": COMPATIBILITY_FINGERPRINT_ALGORITHM,
             "tools": pinned,
         },

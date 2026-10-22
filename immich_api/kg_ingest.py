@@ -41,7 +41,7 @@ async def ingest_album_metadata(
         raise ValueError("duplicate album identity")
     scope = hashlib.sha256(source_scope.encode()).hexdigest()
     binding = IngestBinding(
-        connector="immich-api",
+        connector="immich",
         stream=f"album-metadata:{scope}",
         server="Immich Api",
         tool="album_metadata_sample",

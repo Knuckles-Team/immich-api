@@ -1,5 +1,5 @@
 {
-  "connector": "immich-api",
+  "connector": "immich",
   "ontology_source": "immich",
   "schema_version": "1",
   "resources": [

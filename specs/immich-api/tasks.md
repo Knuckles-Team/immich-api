@@ -10,3 +10,4 @@ The owner must reconcile starter behavior with the external system before comple
 - [ ] `CONN-IMMICH-API-R004` — Implement native content contracts. `scripts/generate_tool_schemas.py --check` must validate live tool contracts. `tests/test_immich_content.py::test_native_prompt_skill_shapes_and_tool_discovery` must render prompts and read the declared content through the production SDK server.
 - [ ] `CONN-IMMICH-API-R005` — Implement typed source observations. `tests/test_kg_ingest.py::test_ingest_uses_scoped_binding_and_preserves_receipt` must observe typed changes at the submission boundary.
 - [ ] `CONN-IMMICH-API-R006` — Prove complete source parity with `tests/test_operation_parity.py`, canonical source inventory and native MCP confirmation. Retain remaining operation IDs and failures until every declared operation passes both surfaces.
+- [x] **CONN-IMMICH-API-R007:** File the pack, manifest and ingest binding under the fleet name `immich`.
