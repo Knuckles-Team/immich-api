@@ -49,6 +49,10 @@ immich-api = "immich_api.ontology"
 [project.entry-points."agent_utilities.source_connector_providers"]
 immich-api = "immich_api.connectors"
 
+# The one declared connector identity: the fleet name (SDK-CONNECTOR-CONTROL-R071).
+[project.entry-points."agent_connector_sdk.connector"]
+immich = "immich_api"
+
 [tool.uv.workspace]
 members = ["."]
 

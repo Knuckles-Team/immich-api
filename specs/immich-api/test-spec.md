@@ -26,3 +26,7 @@ replace configured API-key identity through shared API or native MCP clients.
 The [merged SDK acceptance receipt](../../validation/focused-merged-sdk-b9ee9ed-2026-10-13.json)
 records 21 passing cases. Normal pre-push tests provide the full candidate check;
 source-overlay imports do not establish full release installation or live effects.
+
+## CONN-IMMICH-API-R007
+
+`tests/test_fleet_name.py::test_connector_name_is_the_fleet_name` reads every connector name in the package. Each one is `immich`.

@@ -76,7 +76,7 @@ def test_native_prompt_skill_shapes_and_tool_discovery(monkeypatch):
             resources = {
                 str(resource.uri) for resource in await client.list_resources()
             }
-            assert "shapes://immich-api/immich.ttl" in resources
+            assert "shapes://immich/immich.ttl" in resources
             assert "skill://immich-health/SKILL.md" in resources
             assert (
                 load_tool_presets(PACKAGE / "connectors/mcp_source_presets.json") == {}
