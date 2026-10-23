@@ -86,13 +86,28 @@ def retain_pairs(pairs: dict, verified: dict) -> dict:
     }
 
 
-def scan(root: Path, ref: str | None, scratch: Path, executable: str) -> dict:
+def scan(
+    root: Path,
+    ref: str | None,
+    scratch: Path,
+    executable: str,
+    *,
+    baseline: bool = False,
+) -> dict:
     from pipelines_hooks.clones import jscpd_keys, jscpd_run, jscpd_snapshot
 
     if ref is None:
         return {}
     snapshot = jscpd_snapshot.materialize(root, ref, scratch)
-    verified = verified_artifacts(snapshot, root)
+    try:
+        verified = verified_artifacts(snapshot, root)
+    except ValueError as exc:
+        if not baseline:
+            raise
+        # A baseline whose receipts were already stale cannot prove any artifact
+        # generated, so it admits no exclusions: every pair stays in the baseline.
+        print(f"Baseline {ref[:12]} unverified, admitting no exclusions: {exc}")
+        verified = {}
     document = jscpd_run.run(executable, snapshot)
     pairs = jscpd_keys.keys(document, snapshot)
     retained = retain_pairs(pairs, verified)
@@ -126,7 +141,7 @@ def main() -> int:
                 print(jscpd_keys.render_pair(key, current[key]))
             return 0
         base = change_base(root, args.base_ref)
-        before = scan(root, base, scratch / "before", executable)
+        before = scan(root, base, scratch / "before", executable, baseline=True)
         after = scan(
             root, jscpd_gate._after_tree(root, base), scratch / "after", executable
         )
