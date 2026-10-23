@@ -10,6 +10,7 @@ Follow the [shared spec standard](https://github.com/Knuckles-Team/pipelines/blo
 | `IMMICH` | This repository's concept registry |
 
 - [`CONN-IMMICH-API`](immich-api/spec.md) — Integrate Immich Api through the shared connector contracts.
+- [`CONN-IMMICH-API-CONNECTOR-CONTENT`](connector-content/spec.md) — The connector serves its packaged content.
 
 The lifecycle generator owns delivery receipts in `status.json`.
 Run `pipelines-hook spec-status --write` after reviewed source changes enter Git history.
