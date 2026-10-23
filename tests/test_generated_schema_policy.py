@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+import os
 import shutil
 import sys
 from pathlib import Path
@@ -19,17 +20,46 @@ pytestmark = [
 ]
 
 
-@pytest.fixture
-def snapshot(tmp_path):
-    target = tmp_path / "snapshot"
-    shutil.copytree(
-        ROOT,
-        target,
-        ignore=shutil.ignore_patterns(
-            ".git", ".ci", ".pytest_cache", "__pycache__", ".ruff_cache", ".kiss"
-        ),
-    )
+IGNORED = shutil.ignore_patterns(
+    ".git",
+    ".ci",
+    ".pytest_cache",
+    "__pycache__",
+    ".ruff_cache",
+    ".kiss",
+    ".venv",
+    "node_modules",
+    "*.egg-info",
+)
+
+
+def _hardlink_or_copy(source, target):
+    try:
+        os.link(source, target)
+    except OSError:
+        shutil.copy2(source, target)
+
+
+@pytest.fixture(scope="module")
+def base_snapshot(tmp_path_factory):
+    """Copy the tree once; tests get cheap hardlinked views of it."""
+    target = tmp_path_factory.mktemp("base") / "snapshot"
+    shutil.copytree(ROOT, target, ignore=IGNORED)
     return target
+
+
+@pytest.fixture
+def snapshot(base_snapshot, tmp_path):
+    """Per-test tree of hardlinks. Tests must replace files, never write in place."""
+    target = tmp_path / "snapshot"
+    shutil.copytree(base_snapshot, target, copy_function=_hardlink_or_copy)
+    return target
+
+
+def replace_bytes(path, data):
+    """Unlink first so the shared hardlinked base file is never mutated."""
+    path.unlink()
+    path.write_bytes(data)
 
 
 def test_allowlist_is_exact_and_has_no_implementation_paths():
@@ -74,7 +104,7 @@ def test_policy_cannot_broaden_or_repin(snapshot, mutation):
         policy["artifacts"][verifier.INVENTORY] = "0" * 64
     else:
         policy["regenerated_schemas"].append("validation/new.json")
-    path.write_text(json.dumps(policy))
+    replace_bytes(path, json.dumps(policy).encode())
     with pytest.raises(ValueError, match="hash mismatch"):
         verifier.load_policy(snapshot)
 
@@ -82,7 +112,7 @@ def test_policy_cannot_broaden_or_repin(snapshot, mutation):
 @pytest.mark.parametrize("relative", list(verifier.load_policy(ROOT)["artifacts"]))
 def test_every_evidence_byte_pin_is_enforced(snapshot, relative):
     path = snapshot / relative
-    path.write_bytes(path.read_bytes() + b"\n")
+    replace_bytes(path, path.read_bytes() + b"\n")
     with pytest.raises(ValueError, match="hash mismatch"):
         verifier.load_policy(snapshot)
 
@@ -98,7 +128,7 @@ def test_every_evidence_byte_pin_is_enforced(snapshot, relative):
 def test_changed_source_compiler_or_native_writer_fails(snapshot, relative):
     policy = verifier.load_policy(snapshot)
     path = snapshot / relative
-    path.write_bytes(path.read_bytes() + b"\n")
+    replace_bytes(path, path.read_bytes() + b"\n")
     with pytest.raises(ValueError, match="hash mismatch"):
         verifier.verify_provenance(snapshot, policy)
 
@@ -107,7 +137,7 @@ def test_unlisted_provider_source_is_still_verified(snapshot):
     policy = verifier.load_policy(snapshot)
     relative = "api-spec/provider-source/server/src/controllers/oauth.controller.ts"
     path = snapshot / relative
-    path.write_bytes(path.read_bytes() + b"\n")
+    replace_bytes(path, path.read_bytes() + b"\n")
     with pytest.raises(ValueError):
         verifier.regenerated_inventory(snapshot, policy)
 
