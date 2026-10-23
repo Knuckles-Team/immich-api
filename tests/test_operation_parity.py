@@ -8,6 +8,7 @@ from pathlib import Path
 import pytest
 import pytest_asyncio
 from fastmcp.client.elicitation import ElicitResult
+from fastmcp.utilities import json_schema
 from mcp.shared.exceptions import MCPError
 
 import immich_api.auth as auth
@@ -83,6 +84,28 @@ def test_provider_evidence_must_be_reverified(mutation):
         source_inventory(**overrides[mutation])
 
 
+@pytest.fixture(scope="module", autouse=True)
+def memoized_schema_dereference():
+    """Memoize FastMCP's pure schema dereference across repeated tools/list calls.
+
+    Every client call re-lists tools to validate results, and each listing
+    re-dereferences the identical 41 large schemas. The function is pure, so
+    caching by canonical JSON leaves every served byte and assertion unchanged.
+    """
+    original = json_schema.dereference_refs
+    cache = {}
+
+    def cached(schema):
+        key = json.dumps(schema, sort_keys=True)
+        if key not in cache:
+            cache[key] = json.dumps(original(schema))
+        return json.loads(cache[key])
+
+    with pytest.MonkeyPatch.context() as patch:
+        patch.setattr(json_schema, "dereference_refs", cached)
+        yield
+
+
 @pytest.fixture
 def provider_factory(monkeypatch):
     monkeypatch.setenv("IMMICH_PARITY_FIXTURE_TOKEN", "local-mock-token")
@@ -121,18 +144,31 @@ def discovery():
     return {"retrievals": {}, "production_client_approval": False}
 
 
-@pytest_asyncio.fixture(loop_scope="module")
-async def native_session(native_server):
-    state = {"confirmations": [], "api": [], "mcp": [], "accept": True}
+@pytest_asyncio.fixture(loop_scope="module", scope="module")
+async def shared_native_client(native_server):
+    """One protocol session for the module; per-test state is swapped in below."""
+    holder = {}
 
     async def consent(message, response_type, params, context):
+        state = holder["state"]
         state["confirmations"].append(message)
         if "response" in state:
             return state["response"]
         return {"confirmed": state["accept"]}
 
     async with isolated_native_client(native_server, consent) as client:
+        yield client, holder
+
+
+@pytest_asyncio.fixture(loop_scope="module")
+async def native_session(shared_native_client):
+    client, holder = shared_native_client
+    state = {"confirmations": [], "api": [], "mcp": [], "accept": True}
+    holder["state"] = state
+    try:
         yield client, state
+    finally:
+        await client.cancel_pending()
 
 
 @pytest.mark.asyncio(loop_scope="module")
