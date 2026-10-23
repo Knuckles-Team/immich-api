@@ -18,7 +18,7 @@
     },
     "scripts/generate_tool_schemas.py": {
       "after": {
-        "sha256": "5b5832214a47719b8ae8bef096ce1e29190fdf4e4902680770ebcd9e4cbd1f81"
+        "sha256": "1c73b2237d5573e358a131ad7d16ada9bf2292ff54c6ec238fdc89d4e56e5c16"
       }
     },
     "scripts/select_python.py": {
