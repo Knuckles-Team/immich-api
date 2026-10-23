@@ -8,6 +8,7 @@ from pathlib import Path
 import pytest
 import pytest_asyncio
 from fastmcp.client.elicitation import ElicitResult
+from fastmcp.server.middleware.rate_limiting import RateLimitingMiddleware
 from fastmcp.utilities import json_schema
 from mcp.shared.exceptions import MCPError
 
@@ -160,9 +161,25 @@ async def shared_native_client(native_server):
         yield client, holder
 
 
+def reset_rate_limit_buckets(server):
+    """Refill every caller bucket; the limiter itself stays enabled and unchanged."""
+    limiters = [
+        item.limiters
+        for item in server.middleware
+        if isinstance(item, RateLimitingMiddleware)
+    ]
+    assert limiters, "the server must keep its rate-limiting middleware"
+    for buckets in limiters:
+        buckets.clear()
+
+
 @pytest_asyncio.fixture(loop_scope="module")
-async def native_session(shared_native_client):
+async def native_session(shared_native_client, native_server):
     client, holder = shared_native_client
+    # The shared session spans many tests; each starts with a fresh bucket so
+    # one test's traffic cannot starve the next. The dedicated rate-limit test
+    # still opens fresh sessions against the real, unreset limiter.
+    reset_rate_limit_buckets(native_server)
     state = {"confirmations": [], "api": [], "mcp": [], "accept": True}
     holder["state"] = state
     try:
