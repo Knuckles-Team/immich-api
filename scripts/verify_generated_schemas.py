@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 
 MANIFEST = ".config/generated-schema-policy.json"
-MANIFEST_SHA256 = "45e7d3189eaf67b5a3d17a360f6fb7f02db0fec2640fe07ce68ab802962317c4"
+MANIFEST_SHA256 = "dd1149e1c804a7684863c8e1ccd095ad19a3666d96199ac5b55007ce20487e96"
 INVENTORY = "immich_api/openapi_inventory.json"
 
 
