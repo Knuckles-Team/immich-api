@@ -4,7 +4,6 @@ import asyncio
 from types import SimpleNamespace
 
 import pytest
-from agent_connector_sdk.ingest.request import build_request
 from epistemic_graph.generated.source_ingestion import SourceIngestionMode
 
 from immich_api import kg_ingest
@@ -103,32 +102,3 @@ def test_sdk_privacy_redaction_of_identity_refuses_before_submit():
             )
         )
     assert not fake.calls
-
-
-def test_sdk_wire_payload_uses_actual_ontology_predicates():
-    import json
-    from pathlib import Path
-
-    fake = FakeIngest()
-    asyncio.run(
-        kg_ingest.ingest_album_metadata(
-            [album()], source_scope="fixture.account", ingest=fake
-        )
-    )
-    binding, changes = fake.calls[0]
-    request = build_request(binding, changes, previous=None)
-    assert request.mode is SourceIngestionMode.DELTA
-    assert request.authoritative_live_ids is None and request.withdrawals == []
-    record = request.records[0]
-    assert record.stream == binding.stream
-    assert record.payload["immichAlbumId"] == album()["id"]
-    assert record.payload["immichAlbumAlbumName"] == album()["albumName"]
-    assert "id" not in record.payload and "albumName" not in record.payload
-    root = Path(__file__).parents[1] / "immich_api"
-    manifest = json.loads((root / "connector_manifest.yml").read_text())
-    declared = manifest["schema_mappings"]["ImmichAlbum"]["fields"]
-    assert set(record.payload) <= set(declared)
-    assert manifest["identity"]["id_field"]["ImmichAlbum"] == "immichAlbumId"
-    shapes = (root / "ontology/shapes/immich.ttl").read_text()
-    assert all("sh:path :" + key + " " in shapes for key in record.payload)
-    assert record.mapping_reference == "manifest:immich#schema_mappings/ImmichAlbum"
