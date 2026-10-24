@@ -3,6 +3,7 @@
 import asyncio
 import copy
 import json
+import sys
 from pathlib import Path
 
 import pytest
@@ -94,16 +95,28 @@ def memoized_schema_dereference():
     caching by canonical JSON leaves every served byte and assertion unchanged.
     """
     original = json_schema.dereference_refs
-    cache = {}
+    by_content = {}
+    by_identity = {}
 
     def cached(schema):
+        # The dereferenced schema is only serialized or validated downstream, so
+        # one shared result per schema serves every listing without a JSON round
+        # trip. The identity tier keeps the source alive so its id cannot recycle.
+        hit = by_identity.get(id(schema))
+        if hit is not None and hit[0] is schema:
+            return hit[1]
         key = json.dumps(schema, sort_keys=True)
-        if key not in cache:
-            cache[key] = json.dumps(original(schema))
-        return json.loads(cache[key])
+        if key not in by_content:
+            by_content[key] = original(schema)
+        by_identity[id(schema)] = (schema, by_content[key])
+        return by_content[key]
 
     with pytest.MonkeyPatch.context() as patch:
-        patch.setattr(json_schema, "dereference_refs", cached)
+        # Modules imported earlier (by any test) hold their own binding of the
+        # function, so rebind every loaded reference, not just the defining module.
+        for module in list(sys.modules.values()):
+            if getattr(module, "dereference_refs", None) is original:
+                patch.setattr(module, "dereference_refs", cached)
         yield
 
 
@@ -229,6 +242,7 @@ async def test_pending_confirmation_cannot_reach_the_next_provider(
     async def consent(message, response_type, params, context):
         return {"confirmed": True}
 
+    reset_rate_limit_buckets(native_server)
     first = provider_factory("acceptClusterGroupRequest")
     monkeypatch.setattr(auth, "_client", first.client)
     async with isolated_native_client(native_server, delayed_consent) as client:
@@ -259,10 +273,12 @@ async def test_fresh_sessions_preserve_protocol_and_rate_limit(
         return {"confirmed": True}
 
     for _ in range(16):
+        # Refill instead of sleeping: wall-clock pacing made this depend on host
+        # speed. The limiter stays installed and enabled for every session.
+        reset_rate_limit_buckets(native_server)
         provider = provider_factory("getVersionCheck")
         monkeypatch.setattr(auth, "_client", provider.client)
-        async with isolated_native_client(native_server, consent) as client:
-            await asyncio.sleep(0.12)
+        async with isolated_native_client(native_server, consent, pace=0) as client:
             result = await client.call_tool("server_operations", provider.arguments)
         assert result.structured_content == provider.expected
         assert len(provider.requests) == 1
@@ -277,8 +293,7 @@ async def test_every_native_mcp_operation_dispatches(
     provider = provider_factory(action)
     monkeypatch.setattr(auth, "_client", provider.client)
     before = len(state["confirmations"])
-    # Modern write approval uses two MCP requests; preserve the SDK's 10/s limit.
-    await asyncio.sleep(0.12 if provider.operation["read_only"] else 0.22)
+    # native_session refills the caller buckets, so no pacing is needed here.
     result = await client.call_tool(
         provider.operation["domain"] + "_operations", provider.arguments
     )
@@ -338,7 +353,6 @@ async def test_native_asset_upload_requires_file_before_confirmation(
     provider = provider_factory("uploadAsset", arguments=arguments)
     monkeypatch.setattr(auth, "_client", provider.client)
     before = len(state["confirmations"])
-    await asyncio.sleep(0.12)
     with pytest.raises(MCPError):
         await client.call_tool("assets_operations", arguments)
     assert not provider.requests
@@ -368,7 +382,6 @@ async def test_write_confirmation_denial_prevents_dispatch(
     before = len(state["confirmations"])
     state["accept"] = False
     try:
-        await asyncio.sleep(0.22)
         with pytest.raises(MCPError, match="Write was not confirmed"):
             await client.call_tool(
                 "albums_operations", provider.arguments, raise_on_error=False
@@ -401,7 +414,6 @@ async def test_invalid_confirmation_prevents_dispatch(
     before = len(state["confirmations"])
     state["response"] = response
     try:
-        await asyncio.sleep(0.22)
         with pytest.raises(MCPError, match="Write was not confirmed"):
             await client.call_tool("faces_operations", provider.arguments)
         assert not provider.requests
@@ -442,7 +454,6 @@ async def test_native_errors_are_single_attempt(
     client, _ = native_session
     provider = provider_factory(action, status=status)
     monkeypatch.setattr(auth, "_client", provider.client)
-    await asyncio.sleep(0.12 if provider.operation["read_only"] else 0.22)
     with pytest.raises(MCPError):
         await client.call_tool(
             provider.operation["domain"] + "_operations",

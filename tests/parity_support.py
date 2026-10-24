@@ -61,7 +61,6 @@ async def native_initial_discovery(client):
 
 async def native_discovery(client, name):
     """Verify one complete tool so discovery has its own bounded test budget."""
-    await asyncio.sleep(0.12)
     result = await client.call_tool(
         "search_tools", {"pattern": "^" + re.escape(name) + r"(?:\s|$)"}
     )
@@ -113,11 +112,12 @@ class DiscoveredClient:
 
 
 @asynccontextmanager
-async def isolated_native_client(server, elicitation_handler):
+async def isolated_native_client(server, elicitation_handler, pace=0.22):
     """Drain outstanding calls and close the protocol before the next provider."""
     # Each fresh client adds server/discover and result-validation tools/list.
     # Reserve those two requests at the unchanged SDK limit of 10 requests/s.
-    await asyncio.sleep(0.22)
+    if pace:
+        await asyncio.sleep(pace)
     async with Client(
         server, elicitation_handler=elicitation_handler, timeout=10
     ) as native:
