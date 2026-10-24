@@ -4,7 +4,6 @@ import importlib.util
 import json
 from pathlib import Path
 
-
 from immich_api.mcp_server import build_server
 
 ROOT = Path(__file__).parents[1]
