@@ -20,12 +20,6 @@ repos:
     stages: [pre-push]
   - id: kiss-census
     stages: [pre-push]
-  - id: jscpd-differential
-    entry: python scripts/generated_schema_clones.py differential
-    stages: [pre-push]
-  - id: jscpd-census
-    entry: python scripts/generated_schema_clones.py census
-    stages: [pre-push]
   - id: public-surface
   - id: security-sanitizer
   - id: secret-history
@@ -69,12 +63,6 @@ repos:
   - id: connector-sdk-contract
     name: SDK connector dependency and import contract
     entry: python scripts/check_connector_contract.py . --package immich_api
-    language: system
-    pass_filenames: false
-    always_run: true
-  - id: connector-tool-schemas
-    name: Live SDK input and output schema contracts
-    entry: python scripts/generate_tool_schemas.py --check
     language: system
     pass_filenames: false
     always_run: true

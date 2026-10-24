@@ -8,7 +8,7 @@
 
 <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b> a prov:Entity ; rdfs:label "Immich 3.2.2 OpenAPI source bytes" .
 
-<http://knuckles.team/kg/immich> a owl:Ontology ; owl:imports <http://knuckles.team/kg> ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b> ; rdfs:comment "Selected structural DTO model. No live ingestion or identity equivalence is asserted." .
+<http://knuckles.team/kg/immich> a owl:Ontology ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b> ; rdfs:comment "Selected structural DTO model. No live ingestion or identity equivalence is asserted." .
 
 :ImmichAsset a owl:Class ; rdfs:comment "Structural projection of AssetResponseDto." ; prov:wasDerivedFrom <urn:sha256:7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b#/components/schemas/AssetResponseDto> .
 
