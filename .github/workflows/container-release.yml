@@ -1,0 +1,29 @@
+name: Publish released connector containers
+
+on:
+  push:
+    branches: [main]
+    paths: [docker/Dockerfile]
+
+permissions:
+  contents: read
+
+jobs:
+  verify-public-wheel:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Verify published wheel, source payload and Docker pin
+        run: python3 scripts/verify_container_release.py
+  publish-docker:
+    needs: verify-public-wheel
+    uses: Knuckles-Team/pipelines/.github/workflows/container_pipeline.yml@main
+    permissions:
+      contents: read
+    secrets:
+      DOCKER_REGISTRY: ${{ secrets.DOCKER_REGISTRY }}
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      DOCKER_REPOSITORY: ${{ secrets.DOCKER_REPOSITORY }}
