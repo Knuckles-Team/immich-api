@@ -45,6 +45,22 @@ def sync_commands(uv, python, bindings, *, root):
     ]
 
 
+def install_project(root, python, uv, *, env):
+    """Install editable project metadata without resolving source dependencies."""
+    command = [
+        uv,
+        "pip",
+        "install",
+        "--python",
+        str(python),
+        "--no-deps",
+        "--editable",
+        str(root),
+    ]
+    subprocess.run(command, cwd=root, env=env, check=True)
+    return command
+
+
 def add_source_paths(root, python, sources, *, env):
     purelib = Path(
         run(
@@ -79,6 +95,10 @@ def inspect_environment(root, python, *, bindings, sources, env):
     probe = """
 import importlib, importlib.metadata, json, pathlib, sys
 expected = json.loads(sys.argv[1])
+project = json.loads(sys.argv[3])
+distribution = importlib.metadata.distribution(project["name"])
+if distribution.version != project["version"]:
+    raise ValueError("Installed project metadata differs from reviewed pyproject.toml")
 prefix = pathlib.Path(sys.prefix).resolve()
 if prefix != pathlib.Path(sys.argv[2]).resolve():
     raise ValueError('Unexpected interpreter environment')
@@ -103,6 +123,9 @@ print(json.dumps({'executable': sys.executable, 'python': sys.version, 'source_i
                 probe,
                 json.dumps(expected),
                 str(root / ".ci/connector-venv"),
+                json.dumps(
+                    tomllib.loads((root / "pyproject.toml").read_text())["project"]
+                ),
             ],
             root=root,
             env=env,
@@ -189,6 +212,7 @@ def prepare(root, *, uv="uv", github=False):
         / "connector-venv"
         / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
     )
+    commands.append(install_project(root, python, uv, env=env))
     add_source_paths(root, python, sources, env=env)
     environment = inspect_environment(
         root, python, bindings=bindings, sources=sources, env=env
