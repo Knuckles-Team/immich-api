@@ -134,3 +134,65 @@ def test_sdk_floor_supports_content_identity_and_current_pack_protocol() -> None
     for requirement in sdk:
         assert requirement.specifier.contains("0.5.5")
         assert not requirement.specifier.contains("0.5.4")
+
+
+def test_sdk_owned_declaration_survives_resource_and_pack_capture() -> None:
+    import json
+
+    from agent_connector_sdk.artifacts.pack import build_content_pack
+    from agent_connector_sdk.artifacts.resources import ResourceArtifactKind
+    from agent_connector_sdk.ingest.live_declaration import load_declaration
+    from agent_connector_sdk.ports.session import TransportEndpoint
+    from agent_connector_sdk.transports.mcp import McpTransport
+
+    from immich_api import connector_sources
+
+    assert connector_sources.SOURCES == ()
+    expected = {
+        "connector": "immich",
+        "sources": [],
+        "schema_mappings": connector_sources.SCHEMA_MAPPINGS,
+        "resources": list(connector_sources.RESOURCES),
+    }
+    assert (
+        load_declaration(PACKAGE).model_dump(mode="json", exclude_unset=True)
+        == expected
+    )
+
+    async def capture():
+        server = _server()
+        async with Client(server) as client:
+            live = json.loads(
+                (await client.read_resource("connector://resources"))[0].text
+            )
+        async with McpTransport().session(
+            TransportEndpoint(in_process=server)
+        ) as session:
+            pack = await build_content_pack(
+                session, connector="immich", kinds=(ResourceArtifactKind(),)
+            )
+        entry = next(
+            e for e in pack.archive.entries if e.uri == "connector://resources"
+        )
+        section = entry.body
+        packed = json.loads(
+            pack.archive.data[section.offset : section.offset + section.length]
+        )
+        return live, packed
+
+    for declaration in asyncio.run(capture()):
+        for key, value in expected.items():
+            assert declaration[key] == value
+
+
+def test_declared_connector_preserves_the_production_tool_surface() -> None:
+    from agent_connector_sdk.connector import build_server
+
+    async def tools(server):
+        async with Client(server) as client:
+            return [tool.model_dump(mode="json") for tool in await client.list_tools()]
+
+    _, declared = build_server(
+        PACKAGE, command_args=["--transport", "stdio", "--auth-type", "none"]
+    )
+    assert asyncio.run(tools(declared)) == asyncio.run(tools(_server()))
