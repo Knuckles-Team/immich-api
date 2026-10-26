@@ -68,11 +68,11 @@
         "47656ecb1833"
       ],
       "verified_by": [
-        "tests/test_generated_schema_policy.py:18",
         "tests/test_oauth_redirect_response.py:26",
-        "tests/test_operation_parity.py:31",
+        "tests/test_operation_parity.py:34",
         "tests/test_reviewed_secret_history.py:13",
-        "tests/test_session_auth_isolation.py:17"
+        "tests/test_session_auth_isolation.py:17",
+        "tests/test_upstream_evidence.py:14"
       ]
     },
     {
@@ -84,7 +84,7 @@
         "f155d6a2ee97"
       ],
       "verified_by": [
-        "tests/test_fleet_name.py:35"
+        "tests/test_fleet_name.py:34"
       ]
     }
   ]

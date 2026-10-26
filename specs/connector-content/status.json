@@ -15,7 +15,7 @@
         "9c7f32a3d826"
       ],
       "verified_by": [
-        "tests/test_default_content_surfaces.py:15"
+        "tests/test_default_content_surfaces.py:17"
       ]
     }
   ]
