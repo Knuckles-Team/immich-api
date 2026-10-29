@@ -176,9 +176,11 @@ def test_sdk_owned_declaration_survives_resource_and_pack_capture() -> None:
         )
         return live, packed
 
+    # The served resource is the fully-normalised model dump (defaults filled).
+    normalised = load_declaration(PACKAGE).model_dump(mode="json")
     for declaration in asyncio.run(capture()):
-        for key, value in expected.items():
-            assert declaration[key] == value
+        for key in expected:
+            assert declaration[key] == normalised[key]
 
 
 def test_declared_connector_preserves_the_production_tool_surface() -> None:
