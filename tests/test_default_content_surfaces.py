@@ -125,15 +125,11 @@ def test_sdk_floor_supports_content_identity_and_current_pack_protocol() -> None
     declared = list(project.get("dependencies", []))
     for extra in project.get("optional-dependencies", {}).values():
         declared.extend(extra)
-    sdk = [
-        Requirement(value)
-        for value in declared
-        if value.startswith("agent-connector-sdk")
-    ]
+    sdk = [Requirement(value) for value in declared if value.startswith("scion-sdk")]
     assert sdk
     for requirement in sdk:
-        assert requirement.specifier.contains("0.5.5")
-        assert not requirement.specifier.contains("0.5.4")
+        assert requirement.specifier.contains("0.5.9")
+        assert not requirement.specifier.contains("0.5.8")
 
 
 def test_sdk_owned_declaration_survives_resource_and_pack_capture() -> None:
@@ -180,9 +176,11 @@ def test_sdk_owned_declaration_survives_resource_and_pack_capture() -> None:
         )
         return live, packed
 
+    # The served resource is the fully-normalised model dump (defaults filled).
+    normalised = load_declaration(PACKAGE).model_dump(mode="json")
     for declaration in asyncio.run(capture()):
-        for key, value in expected.items():
-            assert declaration[key] == value
+        for key in expected:
+            assert declaration[key] == normalised[key]
 
 
 def test_declared_connector_preserves_the_production_tool_surface() -> None:

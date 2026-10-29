@@ -71,8 +71,8 @@ def check_project(root: Path, package: str) -> list[str]:
         for value in dependencies
     }
     violations = []
-    if "agent-connector-sdk" not in names:
-        violations.append("pyproject.toml: connector requires agent-connector-sdk")
+    if "scion-sdk" not in names:
+        violations.append("pyproject.toml: connector requires scion-sdk")
     if "agent-utilities" in names:
         violations.append(
             "pyproject.toml: AU agent runtime must remain an optional agent extra"
