@@ -128,8 +128,8 @@ def test_sdk_floor_supports_content_identity_and_current_pack_protocol() -> None
     sdk = [Requirement(value) for value in declared if value.startswith("scion-sdk")]
     assert sdk
     for requirement in sdk:
-        assert requirement.specifier.contains("0.5.5")
-        assert not requirement.specifier.contains("0.5.4")
+        assert requirement.specifier.contains("0.5.9")
+        assert not requirement.specifier.contains("0.5.8")
 
 
 def test_sdk_owned_declaration_survives_resource_and_pack_capture() -> None:
