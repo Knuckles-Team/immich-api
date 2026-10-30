@@ -2,8 +2,8 @@ from unittest.mock import MagicMock, patch
 
 import httpx
 import pytest
-from agent_connector_sdk.auth.delegation import DelegatedTokenAuth
-from agent_connector_sdk.credentials.references import SecretReferenceError
+from scion_sdk.auth.delegation import DelegatedTokenAuth
+from scion_sdk.credentials.references import SecretReferenceError
 
 import immich_api.auth as auth_module
 

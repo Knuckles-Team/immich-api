@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1320 700" role="img" aria-labelledby="diagram-title diagram-description">
   <title id="diagram-title">Knuckles-Team agent ecosystem runtime architecture</title>
-  <desc id="diagram-description">People use Graph OS web UI, Agent Terminal UI, Geniusbot, or messaging channels. MCP, REST, and A2A clients also enter through Graph OS. Graph OS is the governed gateway and composition host, Agent Utilities is the agent control plane, and Epistemic Graph is the durable multimodal knowledge and reasoning engine. Source systems connect through Agent Connector SDK.</desc>
+  <desc id="diagram-description">People use Graph OS web UI, Agent Terminal UI, Geniusbot, or messaging channels. MCP, REST, and A2A clients also enter through Graph OS. Graph OS is the governed gateway and composition host, Agent Utilities is the agent control plane, and Epistemic Graph is the durable multimodal knowledge and reasoning engine. Source systems connect through Scion SDK.</desc>
   <defs>
     <linearGradient id="gateway-light" x1="0" x2="1"><stop stop-color="#e5f4ff"/><stop offset="1" stop-color="#e7fff5"/></linearGradient>
     <linearGradient id="core-light" x1="0" x2="1"><stop stop-color="#eef0ff"/><stop offset="1" stop-color="#f3eaff"/></linearGradient>
@@ -25,7 +25,7 @@
     <rect class="core" x="825" y="335" width="450" height="100" rx="18"/><text class="label" x="1050" y="376">Agent Utilities</text><text class="role" x="1050" y="405">agent control plane</text>
     <rect class="core" x="825" y="485" width="450" height="125" rx="18"/><text class="label" x="1050" y="528">Epistemic Graph</text><text class="role" x="1050" y="558">durable multimodal knowledge, evidence,</text><text class="role" x="1050" y="582">provenance, and reasoning engine</text>
     <rect class="box" x="35" y="520" width="220" height="90" rx="16"/><text class="label" x="145" y="557">Source systems</text><text class="role" x="145" y="583">governed external data</text>
-    <rect class="box" x="445" y="520" width="260" height="90" rx="16"/><text class="label" x="575" y="557">Agent Connector SDK</text><text class="role" x="575" y="583">typed source integration</text>
+    <rect class="box" x="445" y="520" width="260" height="90" rx="16"/><text class="label" x="575" y="557">Scion SDK</text><text class="role" x="575" y="583">typed source integration</text>
   </g>
   <g class="connections">
     <path class="bus" d="M120 90V100H692"/>

@@ -8,17 +8,17 @@ from pathlib import Path
 from typing import Any
 
 import regex
-from agent_connector_sdk.config import setting
-from agent_connector_sdk.http.client import create_http_client
-from agent_connector_sdk.http.options import HttpClientOptions
-from agent_connector_sdk.http.retry import RetryPolicy
-from agent_connector_sdk.mcp.concurrency import run_blocking
 from fastmcp.tools import Tool, ToolResult
 from jsonschema import Draft202012Validator, FormatChecker
 from jsonschema.exceptions import ValidationError
 from jsonschema.validators import extend
 from mcp.types import InputRequiredResult, ToolAnnotations
 from pydantic import Field
+from scion_sdk.config import setting
+from scion_sdk.http.client import create_http_client
+from scion_sdk.http.options import HttpClientOptions
+from scion_sdk.http.retry import RetryPolicy
+from scion_sdk.mcp.concurrency import run_blocking
 
 from .openapi_auth_scheme import credential_headers
 from .openapi_execution import confirm_write, require_origin

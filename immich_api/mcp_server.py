@@ -1,11 +1,11 @@
 import sys
 from pathlib import Path
 
-from agent_connector_sdk.config import load_config
-from agent_connector_sdk.connector_identity import connector_version
-from agent_connector_sdk.mcp.content import ConnectorContent
-from agent_connector_sdk.mcp.server import create_mcp_server
-from agent_connector_sdk.mcp.tool_surface import register_tool_surface
+from scion_sdk.config import load_config
+from scion_sdk.connector_identity import connector_version
+from scion_sdk.mcp.content import ConnectorContent
+from scion_sdk.mcp.server import create_mcp_server
+from scion_sdk.mcp.tool_surface import register_tool_surface
 
 from . import mcp as tool_modules
 

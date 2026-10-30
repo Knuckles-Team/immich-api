@@ -38,8 +38,8 @@ THEME_FILES = (
         "assets/brands/graph-os-logo-v1.png", "assets/brands/graph-os-logo-v1.png"
     ),
     ThemeFile(
-        "assets/brands/agent-connector-sdk-logo-v1.png",
-        "assets/brands/agent-connector-sdk-logo-v1.png",
+        "assets/brands/scion-sdk-logo-v1.png",
+        "assets/brands/scion-sdk-logo-v1.png",
     ),
     ThemeFile(
         "assets/brands/agent-webui-logo-v1.png",

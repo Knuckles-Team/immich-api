@@ -1,7 +1,7 @@
 # Connector architecture
 
 The `immich-api` package owns external-system operations and source mappings.
-The [shared connector SDK](https://github.com/Knuckles-Team/agent-connector-sdk/blob/5babc4cc48ad73928468b243842f219f51e2cca1/README.md) owns reusable runtime contracts.
+The [shared connector SDK](https://github.com/Knuckles-Team/scion-sdk/blob/5babc4cc48ad73928468b243842f219f51e2cca1/README.md) owns reusable runtime contracts.
 
 The `mcp-builder` skill owns the complete canonical scaffold. Its local code
 generates the repository tree, which is published through ordinary repository
