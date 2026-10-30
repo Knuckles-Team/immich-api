@@ -33,7 +33,7 @@ def test_generated_structure_is_fresh_and_reference_backed():
 
 
 def test_domain_registrar_retains_sdk_toggle(monkeypatch):
-    from agent_connector_sdk.mcp.tool_surface import registered_tools
+    from scion_sdk.mcp.tool_surface import registered_tools
 
     monkeypatch.setenv("MCP_FLEET_REGISTRATION", "false")
     monkeypatch.setenv("ALBUMSTOOL", "false")

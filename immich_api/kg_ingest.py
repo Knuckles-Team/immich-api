@@ -5,15 +5,15 @@ from __future__ import annotations
 import hashlib
 import re
 
-from agent_connector_sdk.ingest import (
+from epistemic_graph.generated.source_ingestion import SourceIngestionMode
+from scion_sdk.ingest import (
     ChangeSet,
     Entity,
     IngestBinding,
     KnowledgeIngest,
     current_ingest,
 )
-from agent_connector_sdk.ingest.request import build_request
-from epistemic_graph.generated.source_ingestion import SourceIngestionMode
+from scion_sdk.ingest.request import build_request
 
 from .album_metadata import album_graph_properties, project_album
 

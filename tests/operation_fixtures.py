@@ -8,7 +8,7 @@ from pathlib import Path
 from urllib.parse import parse_qsl, quote
 
 import httpx
-from agent_connector_sdk.auth.static import bearer_auth
+from scion_sdk.auth.static import bearer_auth
 
 from immich_api.api import ApiClientSystem
 from immich_api.openapi_runtime import CONTRACT

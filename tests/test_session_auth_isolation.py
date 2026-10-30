@@ -4,8 +4,8 @@ import copy
 
 import httpx
 import pytest
-from agent_connector_sdk.http.client import create_http_client as sdk_http_client
 from fastmcp import Client
+from scion_sdk.http.client import create_http_client as sdk_http_client
 
 import immich_api.auth as auth
 import immich_api.openapi_runtime as runtime

@@ -107,3 +107,6 @@ trace.txt
 
 # Canonical local dependency bootstrap workspace.
 .ci/
+
+# Spec status is computed at read time (pipelines-hook spec-status --write), never committed.
+specs/*/status.json

@@ -2,9 +2,9 @@
 
 from typing import Annotated
 
-from agent_connector_sdk.mcp.concurrency import run_blocking
 from fastmcp import FastMCP
 from pydantic import Field
+from scion_sdk.mcp.concurrency import run_blocking
 
 from ..album_metadata import AlbumSample, album_sample
 from ..auth import get_client

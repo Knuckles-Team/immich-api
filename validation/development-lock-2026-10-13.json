@@ -27,13 +27,13 @@
   "lock_sha256": "a7507377541c61c765dfc92176aa459f9f5dea8837a97761d8479c6ba9166bf4",
   "lock_log_sha256": "644c0b4e5b9a24fa072a1a7bde33d024b08cb6d271fee1af70e71a404f5502d0",
   "versions": {
-    "agent-connector-sdk": "0.1.0",
+    "scion-sdk": "0.1.0",
     "epistemic-graph": "2.27.0",
     "fastmcp": "4.1.0",
     "mcp": "2.3.0"
   },
   "sdk_lock_source": {
-    "git": "https://github.com/Knuckles-Team/agent-connector-sdk.git?rev=04a68087dbd3867bbb20e6ce286ffdd654028183#04a68087dbd3867bbb20e6ce286ffdd654028183"
+    "git": "https://github.com/Knuckles-Team/scion-sdk.git?rev=04a68087dbd3867bbb20e6ce286ffdd654028183#04a68087dbd3867bbb20e6ce286ffdd654028183"
   },
   "eg_lock_source": {
     "git": "https://github.com/Knuckles-Team/epistemic-graph.git?rev=d33abec1e09b63cdcde01f8e8e4fe810d91cd43d#d33abec1e09b63cdcde01f8e8e4fe810d91cd43d"

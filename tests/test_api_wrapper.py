@@ -4,9 +4,9 @@ import ssl
 
 import httpx
 import pytest
-from agent_connector_sdk.auth.static import bearer_auth
-from agent_connector_sdk.tls.errors import TransportSecurityError
-from agent_connector_sdk.tls.resolve import resolve_tls_profile
+from scion_sdk.auth.static import bearer_auth
+from scion_sdk.tls.errors import TransportSecurityError
+from scion_sdk.tls.resolve import resolve_tls_profile
 
 from immich_api import openapi_response, openapi_runtime
 from immich_api.api import ApiClientSystem
@@ -158,7 +158,7 @@ def test_plaintext_opt_in_does_not_downgrade_https(client_factory):
         except ssl.SSLCertVerificationError as exc:
             raise httpx.ConnectError("TLS handshake failed", request=request) from exc
 
-    from agent_connector_sdk.http.errors import TlsVerificationError
+    from scion_sdk.http.errors import TlsVerificationError
 
     client = client_factory(fail_tls, allow_plaintext=True)
     with pytest.raises(TlsVerificationError):
