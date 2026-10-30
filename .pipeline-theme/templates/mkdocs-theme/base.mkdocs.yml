@@ -76,11 +76,11 @@ extra:
         role: durable multimodal knowledge and reasoning engine
         url: https://knuckles-team.github.io/epistemic-graph/
         repository: https://github.com/Knuckles-Team/epistemic-graph
-      - slug: agent-connector-sdk
-        name: Agent Connector SDK
+      - slug: scion-sdk
+        name: Scion SDK
         role: governed source integration boundary
         url: https://knuckles-team.github.io/agent-connector-sdk/
-        repository: https://github.com/Knuckles-Team/agent-connector-sdk
+        repository: https://github.com/Knuckles-Team/scion-sdk
       - slug: pipelines
         name: Skill Graph
         role: cross-repo concept, component and man-page corpus

@@ -72,10 +72,10 @@ def test_publication_preserves_tools(monkeypatch) -> None:
 
 
 def test_production_pack_includes_packaged_ontology_and_shapes() -> None:
-    from agent_connector_sdk.artifacts.pack import build_content_pack
-    from agent_connector_sdk.artifacts.resources import ResourceArtifactKind
-    from agent_connector_sdk.ports.session import TransportEndpoint
-    from agent_connector_sdk.transports.mcp import McpTransport
+    from scion_sdk.artifacts.pack import build_content_pack
+    from scion_sdk.artifacts.resources import ResourceArtifactKind
+    from scion_sdk.ports.session import TransportEndpoint
+    from scion_sdk.transports.mcp import McpTransport
 
     async def capture():
         endpoint = TransportEndpoint(in_process=_server())
@@ -128,18 +128,18 @@ def test_sdk_floor_supports_content_identity_and_current_pack_protocol() -> None
     sdk = [Requirement(value) for value in declared if value.startswith("scion-sdk")]
     assert sdk
     for requirement in sdk:
-        assert requirement.specifier.contains("0.5.9")
-        assert not requirement.specifier.contains("0.5.8")
+        assert requirement.specifier.contains("0.6.2")
+        assert not requirement.specifier.contains("0.5.9")
 
 
 def test_sdk_owned_declaration_survives_resource_and_pack_capture() -> None:
     import json
 
-    from agent_connector_sdk.artifacts.pack import build_content_pack
-    from agent_connector_sdk.artifacts.resources import ResourceArtifactKind
-    from agent_connector_sdk.ingest.live_declaration import load_declaration
-    from agent_connector_sdk.ports.session import TransportEndpoint
-    from agent_connector_sdk.transports.mcp import McpTransport
+    from scion_sdk.artifacts.pack import build_content_pack
+    from scion_sdk.artifacts.resources import ResourceArtifactKind
+    from scion_sdk.ingest.live_declaration import load_declaration
+    from scion_sdk.ports.session import TransportEndpoint
+    from scion_sdk.transports.mcp import McpTransport
 
     from immich_api import connector_sources
 
@@ -184,7 +184,7 @@ def test_sdk_owned_declaration_survives_resource_and_pack_capture() -> None:
 
 
 def test_declared_connector_preserves_the_production_tool_surface() -> None:
-    from agent_connector_sdk.connector import build_server
+    from scion_sdk.connector import build_server
 
     async def tools(server):
         async with Client(server) as client:

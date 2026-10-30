@@ -56,7 +56,7 @@ private endpoints are never committed.
 - **Typed boundaries** — Pydantic request and response models keep provider data
   explicit and validate it before it reaches an agent or graph.
 - **One package, shared policy** — authentication, telemetry, action routing, and
-  error handling follow the `agent-connector-sdk` contracts.
+  error handling follow the `scion-sdk` contracts.
 - **Schema-grounded content** — read skills, prompts, ontology and shapes are packaged; extraction presets remain disabled pending
   provider/account stream binding. Graph capture remains unverified.
 - **Operational safety** — TLS profiles, bounded responses, loopback defaults, and

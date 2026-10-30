@@ -14,7 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-import agent_connector_sdk
+import scion_sdk
 from fastmcp import Client
 
 import immich_api.auth as auth
@@ -43,7 +43,7 @@ assert not options.output.exists(), "Preserve prior measurements"
 if options.fastmcp_version:
     assert importlib.metadata.version("fastmcp") == options.fastmcp_version
 PROJECT = Path(auth.__file__).resolve().parents[1]
-SDK_PACKAGE = Path(agent_connector_sdk.__file__).resolve().parent
+SDK_PACKAGE = Path(scion_sdk.__file__).resolve().parent
 
 
 class RunState:
