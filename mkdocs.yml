@@ -1,4 +1,3 @@
-INHERIT: .pipeline-theme/templates/mkdocs-theme/base.mkdocs.yml
 site_name: "immich-api"
 site_description: "Immich Api API + MCP Server"
 site_url: "https://knuckles-team.github.io/immich-api/"
