@@ -2,7 +2,7 @@
   "schema_version": 2,
   "spec_id": "CONN-IMMICH-API",
   "owner_repo": "immich-api",
-  "delivery_state": "LANDED",
+  "delivery_state": "SPECIFIED",
   "requirement_ids": [
     "CONN-IMMICH-API-R001",
     "CONN-IMMICH-API-R002",
@@ -10,7 +10,16 @@
     "CONN-IMMICH-API-R004",
     "CONN-IMMICH-API-R005",
     "CONN-IMMICH-API-R006",
-    "CONN-IMMICH-API-R007"
+    "CONN-IMMICH-API-R007",
+    "CONN-IMMICH-API-R008",
+    "CONN-IMMICH-API-R009",
+    "CONN-IMMICH-API-R009.1",
+    "CONN-IMMICH-API-R009.2",
+    "CONN-IMMICH-API-R009.3",
+    "CONN-IMMICH-API-R009.4",
+    "CONN-IMMICH-API-R009.5",
+    "CONN-IMMICH-API-R009.6",
+    "CONN-IMMICH-API-R009.7"
   ],
   "requirements": [
     {
@@ -86,6 +95,78 @@
       "verified_by": [
         "tests/test_fleet_name.py:34"
       ]
+    },
+    {
+      "id": "CONN-IMMICH-API-R008",
+      "title": "Asset tag producer tool",
+      "delivery_state": "SPECIFIED",
+      "landed_in": [],
+      "verified_by": []
+    },
+    {
+      "id": "CONN-IMMICH-API-R009",
+      "title": "Pilot phases I0 to I6 (rollup)",
+      "delivery_state": "SPECIFIED",
+      "landed_in": [],
+      "verified_by": [],
+      "rollup_of": [
+        "CONN-IMMICH-API-R009.1",
+        "CONN-IMMICH-API-R009.2",
+        "CONN-IMMICH-API-R009.3",
+        "CONN-IMMICH-API-R009.4",
+        "CONN-IMMICH-API-R009.5",
+        "CONN-IMMICH-API-R009.6",
+        "CONN-IMMICH-API-R009.7"
+      ]
+    },
+    {
+      "id": "CONN-IMMICH-API-R009.1",
+      "title": "Phase I0: version-pinned OpenAPI client",
+      "delivery_state": "SPECIFIED",
+      "landed_in": [],
+      "verified_by": []
+    },
+    {
+      "id": "CONN-IMMICH-API-R009.2",
+      "title": "Phase I1: read-first tools",
+      "delivery_state": "SPECIFIED",
+      "landed_in": [],
+      "verified_by": []
+    },
+    {
+      "id": "CONN-IMMICH-API-R009.3",
+      "title": "Phase I2: approval-gated writes",
+      "delivery_state": "SPECIFIED",
+      "landed_in": [],
+      "verified_by": []
+    },
+    {
+      "id": "CONN-IMMICH-API-R009.4",
+      "title": "Phase I3: incremental ingest by cursor",
+      "delivery_state": "SPECIFIED",
+      "landed_in": [],
+      "verified_by": []
+    },
+    {
+      "id": "CONN-IMMICH-API-R009.5",
+      "title": "Phase I4: no-op replay",
+      "delivery_state": "SPECIFIED",
+      "landed_in": [],
+      "verified_by": []
+    },
+    {
+      "id": "CONN-IMMICH-API-R009.6",
+      "title": "Phase I5: health check tool",
+      "delivery_state": "SPECIFIED",
+      "landed_in": [],
+      "verified_by": []
+    },
+    {
+      "id": "CONN-IMMICH-API-R009.7",
+      "title": "Phase I6: upgrade digest check",
+      "delivery_state": "SPECIFIED",
+      "landed_in": [],
+      "verified_by": []
     }
   ]
 }
