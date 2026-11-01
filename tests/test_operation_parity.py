@@ -382,10 +382,11 @@ async def test_write_confirmation_denial_prevents_dispatch(
     before = len(state["confirmations"])
     state["accept"] = False
     try:
-        with pytest.raises(MCPError, match="Write was not confirmed"):
-            await client.call_tool(
-                "albums_operations", provider.arguments, raise_on_error=False
-            )
+        result = await client.call_tool(
+            "albums_operations", provider.arguments, raise_on_error=False
+        )
+        assert not result.is_error
+        assert result.structured_content["cancelled"] is True
         assert not provider.requests
         assert len(state["confirmations"]) == before + 1
     finally:
@@ -414,8 +415,9 @@ async def test_invalid_confirmation_prevents_dispatch(
     before = len(state["confirmations"])
     state["response"] = response
     try:
-        with pytest.raises(MCPError, match="Write was not confirmed"):
-            await client.call_tool("faces_operations", provider.arguments)
+        result = await client.call_tool("faces_operations", provider.arguments)
+        assert not result.is_error
+        assert result.structured_content["cancelled"] is True
         assert not provider.requests
         assert len(state["confirmations"]) == before + 1
     finally:

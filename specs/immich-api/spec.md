@@ -30,3 +30,29 @@ An existing repository must reconcile this capability with its current owner bef
 
 See [requirements.md](requirements.md), [plan.md](plan.md), and [test-spec.md](test-spec.md).
 Existing test references identify verification targets. They do not establish delivery.
+
+## User Scenarios & Testing
+
+### User Story 1 - Confirm a write from any client (Priority: P1)
+
+An operator using any MCP client wants to confirm a destructive Immich write, so that a client that cannot be asked still reaches a defined outcome instead of a connection failure.
+
+**Acceptance Scenarios**:
+
+1. **Given** a client that cannot elicit, **When** it calls a write action without confirmation, **Then** it receives a cancelled refusal naming `confirm=true` and no upstream request is sent.
+2. **Given** the same client, **When** it repeats the call with `confirm=true`, **Then** the write is performed once.
+3. **Given** a client that can elicit, **When** it calls a write action, **Then** it is asked and the write runs only on acceptance.
+
+### Edge Cases
+
+- A read action never asks for confirmation.
+- The `confirm` argument is never forwarded to the Immich API.
+- A deployment with writes disabled refuses every write regardless of confirmation.
+
+### Success Criteria
+
+- **SC-001**: (CONN-IMMICH-API-R009.3) Every write action is refused or performed in a single call, with zero upstream requests when refused.
+
+### Assumptions
+
+- The shared connector SDK owns the elicitation and refusal behaviour; this connector only calls it.

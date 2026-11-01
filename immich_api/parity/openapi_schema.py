@@ -90,6 +90,13 @@ def _operation(document, operation, *, route, domain, shared, response_correctio
     method, path = route
     inputs, parameters, content_type = input_schema(document, shared, operation)
     check_path_parameters(path, parameters)
+    if method not in {"get", "head", "options"}:
+        # The SDK convention: writes accept an explicit, never-forwarded confirm.
+        inputs["properties"]["confirm"] = {
+            "type": "boolean",
+            "default": False,
+            "description": "Set true to confirm this write when the client cannot be asked",
+        }
     responses, response_modes = _responses(document, operation)
     action = operation["operationId"]
     return {
@@ -173,6 +180,17 @@ def domain_schemas(contract, domain):
                     ["action", "status", "content_type", "data"],
                 )
             )
+    if not all(operation["read_only"] for operation in operations):
+        outputs.append(
+            object_schema(
+                {
+                    "cancelled": {"const": True, "type": "boolean"},
+                    "operation": {"type": "string"},
+                    "reason": {"type": "string"},
+                },
+                ["cancelled", "operation"],
+            )
+        )
     return trim_definitions(inputs), trim_definitions(
         {"type": "object", "anyOf": outputs, "$defs": contract["definitions"]}
     )
