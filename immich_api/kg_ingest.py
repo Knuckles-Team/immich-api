@@ -5,7 +5,7 @@ from __future__ import annotations
 import hashlib
 import re
 
-from epistemic_graph.generated.source_ingestion import SourceIngestionMode
+from medulla.generated.source_ingestion import SourceIngestionMode
 from scion_sdk.ingest import (
     ChangeSet,
     Entity,

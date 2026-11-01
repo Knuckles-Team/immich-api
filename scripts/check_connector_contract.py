@@ -78,7 +78,7 @@ def check_project(root: Path, package: str) -> list[str]:
             "pyproject.toml: AU agent runtime must remain an optional agent extra"
         )
     if any(
-        re.match(r"epistemic[-_]graph\[[^]]*\bfull\b", value.lower())
+        re.match(r"medulla\[[^]]*\bfull\b", value.lower())
         for value in dependencies
     ):
         violations.append(
