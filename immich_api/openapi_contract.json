@@ -16981,6 +16981,11 @@
             ],
             "type": "string"
           },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
+          },
           "path": {
             "additionalProperties": false,
             "properties": {
@@ -17051,6 +17056,11 @@
           },
           "body": {
             "$ref": "#/$defs/BulkIdsDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -17132,6 +17142,11 @@
           },
           "body": {
             "$ref": "#/$defs/AlbumsAddAssetsDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -17184,6 +17199,11 @@
           },
           "body": {
             "$ref": "#/$defs/BulkIdsDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -17266,6 +17286,11 @@
           "body": {
             "$ref": "#/$defs/AssetIdsDto"
           },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
+          },
           "path": {
             "additionalProperties": false,
             "properties": {
@@ -17347,6 +17372,11 @@
           "body": {
             "$ref": "#/$defs/AddUsersDto"
           },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
+          },
           "path": {
             "additionalProperties": false,
             "properties": {
@@ -17424,6 +17454,11 @@
           },
           "body": {
             "$ref": "#/$defs/TagBulkAssetsDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -17476,6 +17511,11 @@
           },
           "body": {
             "$ref": "#/$defs/ChangePasswordDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -17528,6 +17568,11 @@
           },
           "body": {
             "$ref": "#/$defs/PinCodeChangeDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -17574,6 +17619,11 @@
           },
           "body": {
             "$ref": "#/$defs/AssetBulkUploadCheckDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -17623,6 +17673,11 @@
               "clusterGroupRegeneratePeople"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -17694,6 +17749,11 @@
           },
           "body": {
             "$ref": "#/$defs/AssetCopyDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -17740,6 +17800,11 @@
           },
           "body": {
             "$ref": "#/$defs/ActivityCreateDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -17792,6 +17857,11 @@
           },
           "body": {
             "$ref": "#/$defs/CreateAlbumDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -17844,6 +17914,11 @@
           },
           "body": {
             "$ref": "#/$defs/ApiKeyCreateDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -17896,6 +17971,11 @@
           },
           "body": {
             "$ref": "#/$defs/ClusterGroupRequestCreateDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -17974,6 +18054,11 @@
           },
           "body": {
             "$ref": "#/$defs/AssetFaceCreateDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -18020,6 +18105,11 @@
           },
           "body": {
             "$ref": "#/$defs/JobCreateDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -18066,6 +18156,11 @@
           },
           "body": {
             "$ref": "#/$defs/CreateLibraryDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -18118,6 +18213,11 @@
           },
           "body": {
             "$ref": "#/$defs/MemoryCreateDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -18170,6 +18270,11 @@
           },
           "body": {
             "$ref": "#/$defs/NotificationCreateDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -18222,6 +18327,11 @@
           },
           "body": {
             "$ref": "#/$defs/PartnerCreateDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -18271,6 +18381,11 @@
               "createPartnerDeprecated"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -18348,6 +18463,11 @@
           },
           "body": {
             "$ref": "#/$defs/PersonCreateDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -18400,6 +18520,11 @@
           },
           "body": {
             "$ref": "#/$defs/CreateProfileImageDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -18452,6 +18577,11 @@
           },
           "body": {
             "$ref": "#/$defs/SessionCreateDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -18504,6 +18634,11 @@
           },
           "body": {
             "$ref": "#/$defs/SharedLinkCreateDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -18556,6 +18691,11 @@
           },
           "body": {
             "$ref": "#/$defs/StackCreateDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -18608,6 +18748,11 @@
           },
           "body": {
             "$ref": "#/$defs/TagCreateDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -18660,6 +18805,11 @@
           },
           "body": {
             "$ref": "#/$defs/UserAdminCreateDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -18712,6 +18862,11 @@
           },
           "body": {
             "$ref": "#/$defs/WorkflowCreateDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -18761,6 +18916,11 @@
               "deleteActivity"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -18830,6 +18990,11 @@
             ],
             "type": "string"
           },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
+          },
           "path": {
             "additionalProperties": false,
             "properties": {
@@ -18897,6 +19062,11 @@
               "deleteAllSessions"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -18939,6 +19109,11 @@
               "deleteApiKey"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -19008,6 +19183,11 @@
             ],
             "type": "string"
           },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
+          },
           "path": {
             "additionalProperties": false,
             "properties": {
@@ -19075,6 +19255,11 @@
               "deleteAssetMetadata"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -19160,6 +19345,11 @@
           },
           "body": {
             "$ref": "#/$defs/AssetBulkDeleteDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -19206,6 +19396,11 @@
           },
           "body": {
             "$ref": "#/$defs/AssetMetadataBulkDeleteDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -19249,6 +19444,11 @@
               "deleteClusterGroupRequest"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -19320,6 +19520,11 @@
           },
           "body": {
             "$ref": "#/$defs/DatabaseBackupDeleteDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -19363,6 +19568,11 @@
               "deleteDuplicate"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -19434,6 +19644,11 @@
           },
           "body": {
             "$ref": "#/$defs/BulkIdsDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -19480,6 +19695,11 @@
           },
           "body": {
             "$ref": "#/$defs/AssetFaceDeleteDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -19550,6 +19770,11 @@
             ],
             "type": "string"
           },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
+          },
           "path": {
             "additionalProperties": false,
             "properties": {
@@ -19617,6 +19842,11 @@
               "deleteLibrary"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -19686,6 +19916,11 @@
             ],
             "type": "string"
           },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
+          },
           "path": {
             "additionalProperties": false,
             "properties": {
@@ -19753,6 +19988,11 @@
               "deleteNotification"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -19824,6 +20064,11 @@
           },
           "body": {
             "$ref": "#/$defs/NotificationDeleteAllDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -19870,6 +20115,11 @@
           },
           "body": {
             "$ref": "#/$defs/BulkIdsDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -19913,6 +20163,11 @@
               "deletePerson"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -19981,6 +20236,11 @@
               "deleteProfileImage"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -20023,6 +20283,11 @@
               "deleteServerLicense"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -20065,6 +20330,11 @@
               "deleteSession"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -20133,6 +20403,11 @@
               "deleteStack"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -20204,6 +20479,11 @@
           },
           "body": {
             "$ref": "#/$defs/BulkIdsDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -20250,6 +20530,11 @@
           },
           "body": {
             "$ref": "#/$defs/SyncAckDeleteDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -20293,6 +20578,11 @@
               "deleteTag"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -20364,6 +20654,11 @@
           },
           "body": {
             "$ref": "#/$defs/UserAdminDeleteDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -20439,6 +20734,11 @@
               "deleteUserLicense"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -20481,6 +20781,11 @@
               "deleteUserOnboarding"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -20523,6 +20828,11 @@
               "deleteWorkflow"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -20642,6 +20952,11 @@
           },
           "body": {
             "$ref": "#/$defs/DownloadArchiveDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "query": {
             "additionalProperties": false,
@@ -20994,6 +21309,11 @@
           "body": {
             "$ref": "#/$defs/AssetEditsCreateDto"
           },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
+          },
           "path": {
             "additionalProperties": false,
             "properties": {
@@ -21072,6 +21392,11 @@
           "body": {
             "$ref": "#/$defs/QueueDeleteDto"
           },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
+          },
           "path": {
             "additionalProperties": false,
             "properties": {
@@ -21136,6 +21461,11 @@
               "emptyTrash"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -21184,6 +21514,11 @@
               "endSession"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -21300,6 +21635,11 @@
           },
           "body": {
             "$ref": "#/$defs/OAuthCallbackDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -23758,6 +24098,11 @@
           "body": {
             "$ref": "#/$defs/DownloadInfoDto"
           },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
+          },
           "query": {
             "additionalProperties": false,
             "properties": {
@@ -25331,6 +25676,11 @@
           },
           "body": {
             "$ref": "#/$defs/TemplateDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -27277,6 +27627,11 @@
           },
           "body": {
             "$ref": "#/$defs/SyncStreamDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -29180,6 +29535,11 @@
             ],
             "type": "string"
           },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
+          },
           "path": {
             "additionalProperties": false,
             "properties": {
@@ -29250,6 +29610,11 @@
           },
           "body": {
             "$ref": "#/$defs/OAuthCallbackDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -29347,6 +29712,11 @@
               "lockAuthSession"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -29389,6 +29759,11 @@
               "lockSession"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -29460,6 +29835,11 @@
           },
           "body": {
             "$ref": "#/$defs/LoginCredentialDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -29499,6 +29879,11 @@
               "logout"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -29550,6 +29935,11 @@
           },
           "body": {
             "$ref": "#/$defs/OAuthBackchannelLogoutDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -29586,6 +29976,11 @@
           },
           "body": {
             "$ref": "#/$defs/MaintenanceLoginDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -29808,6 +30203,11 @@
           },
           "body": {
             "$ref": "#/$defs/MergePersonDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -29863,6 +30263,11 @@
           },
           "body": {
             "$ref": "#/$defs/MergePersonDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -30088,6 +30493,11 @@
           "body": {
             "$ref": "#/$defs/AssetFaceUpdateDto"
           },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
+          },
           "path": {
             "additionalProperties": false,
             "properties": {
@@ -30168,6 +30578,11 @@
           },
           "body": {
             "$ref": "#/$defs/FaceDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -30294,6 +30709,11 @@
             ],
             "type": "string"
           },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
+          },
           "path": {
             "additionalProperties": false,
             "properties": {
@@ -30364,6 +30784,11 @@
           },
           "body": {
             "$ref": "#/$defs/BulkIdsDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -30442,6 +30867,11 @@
               "removeAssetFromStack"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -30530,6 +30960,11 @@
           "body": {
             "$ref": "#/$defs/BulkIdsDto"
           },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
+          },
           "path": {
             "additionalProperties": false,
             "properties": {
@@ -30608,6 +31043,11 @@
             ],
             "type": "string"
           },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
+          },
           "path": {
             "additionalProperties": false,
             "properties": {
@@ -30675,6 +31115,11 @@
               "removeSharedLink"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -30746,6 +31191,11 @@
           },
           "body": {
             "$ref": "#/$defs/AssetIdsDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -30824,6 +31274,11 @@
               "removeUserFromAlbum"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -30916,6 +31371,11 @@
           },
           "body": {
             "$ref": "#/$defs/PinCodeResetDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -30962,6 +31422,11 @@
           },
           "body": {
             "$ref": "#/$defs/DuplicateResolveDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -31017,6 +31482,11 @@
           },
           "body": {
             "$ref": "#/$defs/BulkIdsDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -31066,6 +31536,11 @@
               "restoreTrash"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -31114,6 +31589,11 @@
               "restoreUserAdmin"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -31280,6 +31760,11 @@
             ],
             "type": "string"
           },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
+          },
           "path": {
             "additionalProperties": false,
             "properties": {
@@ -31356,6 +31841,11 @@
           },
           "body": {
             "$ref": "#/$defs/AssetJobsDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -31402,6 +31892,11 @@
           },
           "body": {
             "$ref": "#/$defs/QueueCommandDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -31473,6 +31968,11 @@
               "scanLibrary"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -31670,6 +32170,11 @@
           },
           "body": {
             "$ref": "#/$defs/StatisticsSearchDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -31722,6 +32227,11 @@
           },
           "body": {
             "$ref": "#/$defs/MetadataSearchDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "query": {
             "additionalProperties": false,
@@ -31801,6 +32311,11 @@
               "searchLargeAssets"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "query": {
             "additionalProperties": false,
@@ -33552,6 +34067,11 @@
           },
           "body": {
             "$ref": "#/$defs/RandomSearchDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -33607,6 +34127,11 @@
           },
           "body": {
             "$ref": "#/$defs/SmartSearchDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -34007,6 +34532,11 @@
           },
           "body": {
             "$ref": "#/$defs/SyncAckSetDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -34053,6 +34583,11 @@
           },
           "body": {
             "$ref": "#/$defs/AdminConfigSmtpDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -34105,6 +34640,11 @@
           },
           "body": {
             "$ref": "#/$defs/SetMaintenanceModeDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -34151,6 +34691,11 @@
           },
           "body": {
             "$ref": "#/$defs/LicenseKeyDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -34203,6 +34748,11 @@
           },
           "body": {
             "$ref": "#/$defs/LicenseKeyDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -34255,6 +34805,11 @@
           },
           "body": {
             "$ref": "#/$defs/OnboardingDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -34307,6 +34862,11 @@
           },
           "body": {
             "$ref": "#/$defs/PinCodeSetupDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -34353,6 +34913,11 @@
           },
           "body": {
             "$ref": "#/$defs/SharedLinkLoginDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "query": {
             "additionalProperties": false,
@@ -34435,6 +35000,11 @@
           },
           "body": {
             "$ref": "#/$defs/SignUpDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -34474,6 +35044,11 @@
               "startDatabaseRestoreFlow"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -34509,6 +35084,11 @@
           },
           "body": {
             "$ref": "#/$defs/OAuthConfigDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -34551,6 +35131,11 @@
           },
           "body": {
             "$ref": "#/$defs/BulkIdsDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -34629,6 +35214,11 @@
               "unlinkAllOAuthAccountsAdmin"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -34671,6 +35261,11 @@
               "unlinkOAuthAccount"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -34722,6 +35317,11 @@
           },
           "body": {
             "$ref": "#/$defs/SessionUnlockDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -34768,6 +35368,11 @@
           },
           "body": {
             "$ref": "#/$defs/BulkIdsDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -34849,6 +35454,11 @@
           },
           "body": {
             "$ref": "#/$defs/AdminConfigDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -34901,6 +35511,11 @@
           },
           "body": {
             "$ref": "#/$defs/AdminOnboardingUpdateDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -34947,6 +35562,11 @@
           },
           "body": {
             "$ref": "#/$defs/UpdateAlbumDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -35025,6 +35645,11 @@
           },
           "body": {
             "$ref": "#/$defs/UpdateAlbumUserDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -35119,6 +35744,11 @@
           "body": {
             "$ref": "#/$defs/ApiKeyUpdateDto"
           },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
+          },
           "path": {
             "additionalProperties": false,
             "properties": {
@@ -35197,6 +35827,11 @@
           "body": {
             "$ref": "#/$defs/UpdateAssetDto"
           },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
+          },
           "path": {
             "additionalProperties": false,
             "properties": {
@@ -35274,6 +35909,11 @@
           },
           "body": {
             "$ref": "#/$defs/AssetMetadataUpsertDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -35355,6 +35995,11 @@
           },
           "body": {
             "$ref": "#/$defs/AssetBulkUpdateDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -35401,6 +36046,11 @@
           },
           "body": {
             "$ref": "#/$defs/AssetMetadataBulkUpsertDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -35456,6 +36106,11 @@
           },
           "body": {
             "$ref": "#/$defs/AdminConfigDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -35508,6 +36163,11 @@
           },
           "body": {
             "$ref": "#/$defs/UpdateLibraryDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -35587,6 +36247,11 @@
           "body": {
             "$ref": "#/$defs/MemoryUpdateDto"
           },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
+          },
           "path": {
             "additionalProperties": false,
             "properties": {
@@ -35664,6 +36329,11 @@
           },
           "body": {
             "$ref": "#/$defs/UserPreferencesUpdateDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -35716,6 +36386,11 @@
           },
           "body": {
             "$ref": "#/$defs/UserUpdateMeDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -35768,6 +36443,11 @@
           },
           "body": {
             "$ref": "#/$defs/NotificationUpdateDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -35846,6 +36526,11 @@
           },
           "body": {
             "$ref": "#/$defs/NotificationUpdateAllDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -35892,6 +36577,11 @@
           },
           "body": {
             "$ref": "#/$defs/PartnerUpdateDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -35970,6 +36660,11 @@
           },
           "body": {
             "$ref": "#/$defs/PeopleUpdateDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -36025,6 +36720,11 @@
           },
           "body": {
             "$ref": "#/$defs/PersonUpdateDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -36104,6 +36804,11 @@
           "body": {
             "$ref": "#/$defs/QueueUpdateDto"
           },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
+          },
           "path": {
             "additionalProperties": false,
             "properties": {
@@ -36177,6 +36882,11 @@
           },
           "body": {
             "$ref": "#/$defs/SessionUpdateDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -36256,6 +36966,11 @@
           "body": {
             "$ref": "#/$defs/SharedLinkEditDto"
           },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
+          },
           "path": {
             "additionalProperties": false,
             "properties": {
@@ -36333,6 +37048,11 @@
           },
           "body": {
             "$ref": "#/$defs/StackUpdateDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -36412,6 +37132,11 @@
           "body": {
             "$ref": "#/$defs/TagUpdateDto"
           },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
+          },
           "path": {
             "additionalProperties": false,
             "properties": {
@@ -36489,6 +37214,11 @@
           },
           "body": {
             "$ref": "#/$defs/UserAdminUpdateDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -36568,6 +37298,11 @@
           "body": {
             "$ref": "#/$defs/UserPreferencesUpdateDto"
           },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
+          },
           "path": {
             "additionalProperties": false,
             "properties": {
@@ -36646,6 +37381,11 @@
           "body": {
             "$ref": "#/$defs/WorkflowUpdateDto"
           },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
+          },
           "path": {
             "additionalProperties": false,
             "properties": {
@@ -36723,6 +37463,11 @@
           },
           "body": {
             "$ref": "#/$defs/AssetMediaCreateDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "header": {
             "additionalProperties": false,
@@ -36832,6 +37577,11 @@
           },
           "body": {
             "$ref": "#/$defs/DatabaseBackupUploadDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -36878,6 +37628,11 @@
           },
           "body": {
             "$ref": "#/$defs/TagUpsertDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -36933,6 +37688,11 @@
           },
           "body": {
             "$ref": "#/$defs/ValidateLibraryDto"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           },
           "path": {
             "additionalProperties": false,
@@ -37008,6 +37768,11 @@
               "validateAccessToken"
             ],
             "type": "string"
+          },
+          "confirm": {
+            "default": false,
+            "description": "Set true to confirm this write when the client cannot be asked",
+            "type": "boolean"
           }
         },
         "required": [
@@ -37817,6 +38582,11 @@
               },
               "body": {
                 "$ref": "#/$defs/ActivityCreateDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -37833,6 +38603,11 @@
                   "deleteActivity"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -38194,6 +38969,26 @@
               "status"
             ],
             "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
+            ],
+            "type": "object"
           }
         ],
         "type": "object"
@@ -38439,6 +39234,11 @@
               "body": {
                 "$ref": "#/$defs/BulkIdsDto"
               },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
+              },
               "path": {
                 "additionalProperties": false,
                 "properties": {
@@ -38472,6 +39272,11 @@
               },
               "body": {
                 "$ref": "#/$defs/AlbumsAddAssetsDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -38491,6 +39296,11 @@
               },
               "body": {
                 "$ref": "#/$defs/AddUsersDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -38525,6 +39335,11 @@
               },
               "body": {
                 "$ref": "#/$defs/CreateAlbumDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -38541,6 +39356,11 @@
                   "deleteAlbum"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -38717,6 +39537,11 @@
               "body": {
                 "$ref": "#/$defs/BulkIdsDto"
               },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
+              },
               "path": {
                 "additionalProperties": false,
                 "properties": {
@@ -38747,6 +39572,11 @@
                   "removeUserFromAlbum"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -38785,6 +39615,11 @@
               "body": {
                 "$ref": "#/$defs/UpdateAlbumDto"
               },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
+              },
               "path": {
                 "additionalProperties": false,
                 "properties": {
@@ -38818,6 +39653,11 @@
               },
               "body": {
                 "$ref": "#/$defs/UpdateAlbumUserDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -39581,6 +40421,26 @@
               "status"
             ],
             "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
+            ],
+            "type": "object"
           }
         ],
         "type": "object"
@@ -39813,6 +40673,11 @@
               },
               "body": {
                 "$ref": "#/$defs/ApiKeyCreateDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -39829,6 +40694,11 @@
                   "deleteApiKey"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -39920,6 +40790,11 @@
                 ],
                 "type": "string"
               },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
+              },
               "path": {
                 "additionalProperties": false,
                 "properties": {
@@ -39952,6 +40827,11 @@
               },
               "body": {
                 "$ref": "#/$defs/ApiKeyUpdateDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -40457,6 +41337,26 @@
               "status"
             ],
             "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
+            ],
+            "type": "object"
           }
         ],
         "type": "object"
@@ -40486,6 +41386,11 @@
                   "deleteAssetFile"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -40792,6 +41697,26 @@
               "content_type",
               "data",
               "status"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
             ],
             "type": "object"
           }
@@ -41430,6 +42355,11 @@
               },
               "body": {
                 "$ref": "#/$defs/AssetBulkUploadCheckDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -41449,6 +42379,11 @@
               },
               "body": {
                 "$ref": "#/$defs/AssetCopyDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -41465,6 +42400,11 @@
                   "deleteAssetMetadata"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -41502,6 +42442,11 @@
               },
               "body": {
                 "$ref": "#/$defs/AssetBulkDeleteDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -41521,6 +42466,11 @@
               },
               "body": {
                 "$ref": "#/$defs/AssetMetadataBulkDeleteDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -41587,6 +42537,11 @@
               "body": {
                 "$ref": "#/$defs/AssetEditsCreateDto"
               },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
+              },
               "path": {
                 "additionalProperties": false,
                 "properties": {
@@ -41617,6 +42572,11 @@
                   "endSession"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -42089,6 +43049,11 @@
                 ],
                 "type": "string"
               },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
+              },
               "path": {
                 "additionalProperties": false,
                 "properties": {
@@ -42121,6 +43086,11 @@
               },
               "body": {
                 "$ref": "#/$defs/AssetJobsDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -42140,6 +43110,11 @@
               },
               "body": {
                 "$ref": "#/$defs/UpdateAssetDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -42175,6 +43150,11 @@
               "body": {
                 "$ref": "#/$defs/AssetMetadataUpsertDto"
               },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
+              },
               "path": {
                 "additionalProperties": false,
                 "properties": {
@@ -42208,6 +43188,11 @@
               },
               "body": {
                 "$ref": "#/$defs/AssetBulkUpdateDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -42227,6 +43212,11 @@
               },
               "body": {
                 "$ref": "#/$defs/AssetMetadataBulkUpsertDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -42246,6 +43236,11 @@
               },
               "body": {
                 "$ref": "#/$defs/AssetMediaCreateDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "header": {
                 "additionalProperties": false,
@@ -44261,6 +45256,26 @@
               "status"
             ],
             "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
+            ],
+            "type": "object"
           }
         ],
         "type": "object"
@@ -44478,6 +45493,11 @@
               },
               "body": {
                 "$ref": "#/$defs/ChangePasswordDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -44497,6 +45517,11 @@
               },
               "body": {
                 "$ref": "#/$defs/PinCodeChangeDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -44516,6 +45541,11 @@
               },
               "body": {
                 "$ref": "#/$defs/OAuthCallbackDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -44550,6 +45580,11 @@
               },
               "body": {
                 "$ref": "#/$defs/OAuthCallbackDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -44566,6 +45601,11 @@
                   "lockAuthSession"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -44584,6 +45624,11 @@
               },
               "body": {
                 "$ref": "#/$defs/LoginCredentialDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -44600,6 +45645,11 @@
                   "logout"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -44618,6 +45668,11 @@
               },
               "body": {
                 "$ref": "#/$defs/OAuthBackchannelLogoutDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -44652,6 +45707,11 @@
               },
               "body": {
                 "$ref": "#/$defs/PinCodeResetDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -44671,6 +45731,11 @@
               },
               "body": {
                 "$ref": "#/$defs/PinCodeSetupDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -44690,6 +45755,11 @@
               },
               "body": {
                 "$ref": "#/$defs/SignUpDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -44709,6 +45779,11 @@
               },
               "body": {
                 "$ref": "#/$defs/OAuthConfigDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -44725,6 +45800,11 @@
                   "unlinkOAuthAccount"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -44743,6 +45823,11 @@
               },
               "body": {
                 "$ref": "#/$defs/SessionUnlockDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -44759,6 +45844,11 @@
                   "validateAccessToken"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -45576,6 +46666,26 @@
               "status"
             ],
             "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
+            ],
+            "type": "object"
           }
         ],
         "type": "object"
@@ -45593,6 +46703,11 @@
                   "unlinkAllOAuthAccountsAdmin"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -45632,6 +46747,26 @@
               "status"
             ],
             "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
+            ],
+            "type": "object"
           }
         ],
         "type": "object"
@@ -45665,6 +46800,11 @@
                 ],
                 "type": "string"
               },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
+              },
               "path": {
                 "additionalProperties": false,
                 "properties": {
@@ -45694,6 +46834,11 @@
                   "clusterGroupRegeneratePeople"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -45728,6 +46873,11 @@
               "body": {
                 "$ref": "#/$defs/ClusterGroupRequestCreateDto"
               },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
+              },
               "path": {
                 "additionalProperties": false,
                 "properties": {
@@ -45758,6 +46908,11 @@
                   "deleteClusterGroupRequest"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -45863,6 +47018,11 @@
                   "leaveClusterGroup"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -46207,6 +47367,26 @@
               "content_type",
               "data",
               "status"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
             ],
             "type": "object"
           }
@@ -47602,6 +48782,11 @@
               },
               "body": {
                 "$ref": "#/$defs/AdminConfigDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -49039,6 +50224,26 @@
               "status"
             ],
             "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
+            ],
+            "type": "object"
           }
         ],
         "type": "object"
@@ -49744,6 +50949,11 @@
               },
               "body": {
                 "$ref": "#/$defs/DatabaseBackupDeleteDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -49804,6 +51014,11 @@
                   "startDatabaseRestoreFlow"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -49822,6 +51037,11 @@
               },
               "body": {
                 "$ref": "#/$defs/DatabaseBackupUploadDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -50012,6 +51232,26 @@
               "status"
             ],
             "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
+            ],
+            "type": "object"
           }
         ],
         "type": "object"
@@ -50091,6 +51331,11 @@
               "body": {
                 "$ref": "#/$defs/DownloadArchiveDto"
               },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
+              },
               "query": {
                 "additionalProperties": false,
                 "properties": {
@@ -50122,6 +51367,11 @@
               },
               "body": {
                 "$ref": "#/$defs/DownloadInfoDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "query": {
                 "additionalProperties": false,
@@ -50251,6 +51501,26 @@
               "status"
             ],
             "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
+            ],
+            "type": "object"
           }
         ],
         "type": "object"
@@ -50336,6 +51606,11 @@
                 ],
                 "type": "string"
               },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
+              },
               "path": {
                 "additionalProperties": false,
                 "properties": {
@@ -50368,6 +51643,11 @@
               },
               "body": {
                 "$ref": "#/$defs/BulkIdsDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -50402,6 +51682,11 @@
               },
               "body": {
                 "$ref": "#/$defs/DuplicateResolveDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -51389,6 +52674,26 @@
               "status"
             ],
             "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
+            ],
+            "type": "object"
           }
         ],
         "type": "object"
@@ -51499,6 +52804,11 @@
               },
               "body": {
                 "$ref": "#/$defs/AssetFaceCreateDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -51518,6 +52828,11 @@
               },
               "body": {
                 "$ref": "#/$defs/AssetFaceDeleteDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -51582,6 +52897,11 @@
               },
               "body": {
                 "$ref": "#/$defs/FaceDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -51894,6 +53214,26 @@
               "status"
             ],
             "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
+            ],
+            "type": "object"
           }
         ],
         "type": "object"
@@ -51998,6 +53338,11 @@
               },
               "body": {
                 "$ref": "#/$defs/JobCreateDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -52032,6 +53377,11 @@
               },
               "body": {
                 "$ref": "#/$defs/QueueCommandDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -52304,6 +53654,26 @@
               "status"
             ],
             "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
+            ],
+            "type": "object"
           }
         ],
         "type": "object"
@@ -52407,6 +53777,11 @@
               },
               "body": {
                 "$ref": "#/$defs/CreateLibraryDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -52423,6 +53798,11 @@
                   "deleteLibrary"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -52529,6 +53909,11 @@
                 ],
                 "type": "string"
               },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
+              },
               "path": {
                 "additionalProperties": false,
                 "properties": {
@@ -52561,6 +53946,11 @@
               },
               "body": {
                 "$ref": "#/$defs/UpdateLibraryDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -52595,6 +53985,11 @@
               },
               "body": {
                 "$ref": "#/$defs/ValidateLibraryDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -52991,6 +54386,26 @@
               "status"
             ],
             "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
+            ],
+            "type": "object"
           }
         ],
         "type": "object"
@@ -53052,6 +54467,11 @@
                   "deleteIntegrityReport"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -53225,6 +54645,11 @@
               },
               "body": {
                 "$ref": "#/$defs/MaintenanceLoginDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -53244,6 +54669,11 @@
               },
               "body": {
                 "$ref": "#/$defs/SetMaintenanceModeDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -53678,6 +55108,26 @@
               "status"
             ],
             "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
+            ],
+            "type": "object"
           }
         ],
         "type": "object"
@@ -54109,6 +55559,11 @@
               "body": {
                 "$ref": "#/$defs/BulkIdsDto"
               },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
+              },
               "path": {
                 "additionalProperties": false,
                 "properties": {
@@ -54142,6 +55597,11 @@
               },
               "body": {
                 "$ref": "#/$defs/MemoryCreateDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -54158,6 +55618,11 @@
                   "deleteMemory"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -54280,6 +55745,11 @@
               "body": {
                 "$ref": "#/$defs/BulkIdsDto"
               },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
+              },
               "path": {
                 "additionalProperties": false,
                 "properties": {
@@ -54371,6 +55841,11 @@
               },
               "body": {
                 "$ref": "#/$defs/MemoryUpdateDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -55580,6 +57055,26 @@
               "status"
             ],
             "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
+            ],
+            "type": "object"
           }
         ],
         "type": "object"
@@ -55691,6 +57186,11 @@
                 ],
                 "type": "string"
               },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
+              },
               "path": {
                 "additionalProperties": false,
                 "properties": {
@@ -55723,6 +57223,11 @@
               },
               "body": {
                 "$ref": "#/$defs/NotificationDeleteAllDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -55809,6 +57314,11 @@
               "body": {
                 "$ref": "#/$defs/NotificationUpdateDto"
               },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
+              },
               "path": {
                 "additionalProperties": false,
                 "properties": {
@@ -55842,6 +57352,11 @@
               },
               "body": {
                 "$ref": "#/$defs/NotificationUpdateAllDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -56095,6 +57610,26 @@
               "status"
             ],
             "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
+            ],
+            "type": "object"
           }
         ],
         "type": "object"
@@ -56271,6 +57806,11 @@
               },
               "body": {
                 "$ref": "#/$defs/NotificationCreateDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -56290,6 +57830,11 @@
               },
               "body": {
                 "$ref": "#/$defs/TemplateDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -56322,6 +57867,11 @@
               },
               "body": {
                 "$ref": "#/$defs/AdminConfigSmtpDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -56520,6 +58070,26 @@
               "status"
             ],
             "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
+            ],
+            "type": "object"
           }
         ],
         "type": "object"
@@ -56575,6 +58145,11 @@
               },
               "body": {
                 "$ref": "#/$defs/PartnerCreateDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -56591,6 +58166,11 @@
                   "createPartnerDeprecated"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -56650,6 +58230,11 @@
                 ],
                 "type": "string"
               },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
+              },
               "path": {
                 "additionalProperties": false,
                 "properties": {
@@ -56682,6 +58267,11 @@
               },
               "body": {
                 "$ref": "#/$defs/PartnerUpdateDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -56909,6 +58499,26 @@
               "content_type",
               "data",
               "status"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
             ],
             "type": "object"
           }
@@ -57161,6 +58771,11 @@
               },
               "body": {
                 "$ref": "#/$defs/PersonCreateDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -57180,6 +58795,11 @@
               },
               "body": {
                 "$ref": "#/$defs/BulkIdsDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -57196,6 +58816,11 @@
                   "deletePerson"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -57366,6 +58991,11 @@
               },
               "body": {
                 "$ref": "#/$defs/MergePersonDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -57385,6 +59015,11 @@
               },
               "body": {
                 "$ref": "#/$defs/MergePersonDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -57420,6 +59055,11 @@
               "body": {
                 "$ref": "#/$defs/AssetFaceUpdateDto"
               },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
+              },
               "path": {
                 "additionalProperties": false,
                 "properties": {
@@ -57453,6 +59093,11 @@
               },
               "body": {
                 "$ref": "#/$defs/PeopleUpdateDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -57472,6 +59117,11 @@
               },
               "body": {
                 "$ref": "#/$defs/PersonUpdateDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -58019,6 +59669,26 @@
               "content_type",
               "data",
               "status"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
             ],
             "type": "object"
           }
@@ -58599,6 +60269,11 @@
               "body": {
                 "$ref": "#/$defs/QueueDeleteDto"
               },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
+              },
               "path": {
                 "additionalProperties": false,
                 "properties": {
@@ -58714,6 +60389,11 @@
               },
               "body": {
                 "$ref": "#/$defs/QueueUpdateDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -59074,6 +60754,26 @@
               "content_type",
               "data",
               "status"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
             ],
             "type": "object"
           }
@@ -63039,6 +64739,11 @@
               },
               "body": {
                 "$ref": "#/$defs/StatisticsSearchDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -63058,6 +64763,11 @@
               },
               "body": {
                 "$ref": "#/$defs/MetadataSearchDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "query": {
                 "additionalProperties": false,
@@ -63087,6 +64797,11 @@
                   "searchLargeAssets"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "query": {
                 "additionalProperties": false,
@@ -63375,6 +65090,11 @@
               },
               "body": {
                 "$ref": "#/$defs/RandomSearchDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -63394,6 +65114,11 @@
               },
               "body": {
                 "$ref": "#/$defs/SmartSearchDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -64916,6 +66641,26 @@
               "status"
             ],
             "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
+            ],
+            "type": "object"
           }
         ],
         "type": "object"
@@ -64952,6 +66697,11 @@
                   "deleteServerLicense"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -65150,6 +66900,11 @@
               },
               "body": {
                 "$ref": "#/$defs/LicenseKeyDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -66176,6 +67931,26 @@
               "status"
             ],
             "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
+            ],
+            "type": "object"
           }
         ],
         "type": "object"
@@ -66225,6 +68000,11 @@
               },
               "body": {
                 "$ref": "#/$defs/SessionCreateDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -66241,6 +68021,11 @@
                   "deleteAllSessions"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -66256,6 +68041,11 @@
                   "deleteSession"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -66302,6 +68092,11 @@
                 ],
                 "type": "string"
               },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
+              },
               "path": {
                 "additionalProperties": false,
                 "properties": {
@@ -66334,6 +68129,11 @@
               },
               "body": {
                 "$ref": "#/$defs/SessionUpdateDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -66653,6 +68453,26 @@
               "status"
             ],
             "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
+            ],
+            "type": "object"
           }
         ],
         "type": "object"
@@ -66864,6 +68684,11 @@
               "body": {
                 "$ref": "#/$defs/AssetIdsDto"
               },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
+              },
               "path": {
                 "additionalProperties": false,
                 "properties": {
@@ -66897,6 +68722,11 @@
               },
               "body": {
                 "$ref": "#/$defs/SharedLinkCreateDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -67004,6 +68834,11 @@
                 ],
                 "type": "string"
               },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
+              },
               "path": {
                 "additionalProperties": false,
                 "properties": {
@@ -67036,6 +68871,11 @@
               },
               "body": {
                 "$ref": "#/$defs/AssetIdsDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -67071,6 +68911,11 @@
               "body": {
                 "$ref": "#/$defs/SharedLinkLoginDto"
               },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
+              },
               "query": {
                 "additionalProperties": false,
                 "properties": {
@@ -67102,6 +68947,11 @@
               },
               "body": {
                 "$ref": "#/$defs/SharedLinkEditDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -68497,6 +70347,26 @@
               "status"
             ],
             "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
+            ],
+            "type": "object"
           }
         ],
         "type": "object"
@@ -68564,6 +70434,11 @@
               },
               "body": {
                 "$ref": "#/$defs/StackCreateDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -68580,6 +70455,11 @@
                   "deleteStack"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -68613,6 +70493,11 @@
               },
               "body": {
                 "$ref": "#/$defs/BulkIdsDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -68659,6 +70544,11 @@
                   "removeAssetFromStack"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -68725,6 +70615,11 @@
               },
               "body": {
                 "$ref": "#/$defs/StackUpdateDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -69766,6 +71661,26 @@
               "status"
             ],
             "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
+            ],
+            "type": "object"
           }
         ],
         "type": "object"
@@ -69932,6 +71847,11 @@
               },
               "body": {
                 "$ref": "#/$defs/SyncAckDeleteDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -69966,6 +71886,11 @@
               },
               "body": {
                 "$ref": "#/$defs/SyncStreamDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -69985,6 +71910,11 @@
               },
               "body": {
                 "$ref": "#/$defs/SyncAckSetDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -70189,6 +72119,26 @@
               "content_type",
               "data",
               "status"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
             ],
             "type": "object"
           }
@@ -71599,6 +73549,11 @@
               },
               "body": {
                 "$ref": "#/$defs/AdminConfigDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -73134,6 +75089,26 @@
               "status"
             ],
             "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
+            ],
+            "type": "object"
           }
         ],
         "type": "object"
@@ -73212,6 +75187,11 @@
               },
               "body": {
                 "$ref": "#/$defs/AdminOnboardingUpdateDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -73408,6 +75388,26 @@
               "status"
             ],
             "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
+            ],
+            "type": "object"
           }
         ],
         "type": "object"
@@ -73548,6 +75548,11 @@
               },
               "body": {
                 "$ref": "#/$defs/TagBulkAssetsDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -73567,6 +75572,11 @@
               },
               "body": {
                 "$ref": "#/$defs/TagCreateDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -73583,6 +75593,11 @@
                   "deleteTag"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -73662,6 +75677,11 @@
               "body": {
                 "$ref": "#/$defs/BulkIdsDto"
               },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
+              },
               "path": {
                 "additionalProperties": false,
                 "properties": {
@@ -73695,6 +75715,11 @@
               },
               "body": {
                 "$ref": "#/$defs/BulkIdsDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -73730,6 +75755,11 @@
               "body": {
                 "$ref": "#/$defs/TagUpdateDto"
               },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
+              },
               "path": {
                 "additionalProperties": false,
                 "properties": {
@@ -73763,6 +75793,11 @@
               },
               "body": {
                 "$ref": "#/$defs/TagUpsertDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -74124,6 +76159,26 @@
               "content_type",
               "data",
               "status"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
             ],
             "type": "object"
           }
@@ -74678,6 +76733,11 @@
                   "emptyTrash"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -74696,6 +76756,11 @@
               },
               "body": {
                 "$ref": "#/$defs/BulkIdsDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -74712,6 +76777,11 @@
                   "restoreTrash"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -74818,6 +76888,26 @@
               "content_type",
               "data",
               "status"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
             ],
             "type": "object"
           }
@@ -75161,6 +77251,11 @@
               },
               "body": {
                 "$ref": "#/$defs/CreateProfileImageDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -75177,6 +77272,11 @@
                   "deleteProfileImage"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -75192,6 +77292,11 @@
                   "deleteUserLicense"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -75207,6 +77312,11 @@
                   "deleteUserOnboarding"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -75402,6 +77512,11 @@
               },
               "body": {
                 "$ref": "#/$defs/LicenseKeyDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -75421,6 +77536,11 @@
               },
               "body": {
                 "$ref": "#/$defs/OnboardingDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -75440,6 +77560,11 @@
               },
               "body": {
                 "$ref": "#/$defs/UserPreferencesUpdateDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -75459,6 +77584,11 @@
               },
               "body": {
                 "$ref": "#/$defs/UserUpdateMeDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -76519,6 +78649,26 @@
               "status"
             ],
             "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
+            ],
+            "type": "object"
           }
         ],
         "type": "object"
@@ -76966,6 +79116,11 @@
               },
               "body": {
                 "$ref": "#/$defs/UserAdminCreateDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -76985,6 +79140,11 @@
               },
               "body": {
                 "$ref": "#/$defs/UserAdminDeleteDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -77210,6 +79370,11 @@
                 ],
                 "type": "string"
               },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
+              },
               "path": {
                 "additionalProperties": false,
                 "properties": {
@@ -77273,6 +79438,11 @@
               "body": {
                 "$ref": "#/$defs/UserAdminUpdateDto"
               },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
+              },
               "path": {
                 "additionalProperties": false,
                 "properties": {
@@ -77306,6 +79476,11 @@
               },
               "body": {
                 "$ref": "#/$defs/UserPreferencesUpdateDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -78250,6 +80425,26 @@
               "content_type",
               "data",
               "status"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
             ],
             "type": "object"
           }
@@ -79333,6 +81528,11 @@
               },
               "body": {
                 "$ref": "#/$defs/WorkflowCreateDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               }
             },
             "required": [
@@ -79349,6 +81549,11 @@
                   "deleteWorkflow"
                 ],
                 "type": "string"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -79551,6 +81756,11 @@
               },
               "body": {
                 "$ref": "#/$defs/WorkflowUpdateDto"
+              },
+              "confirm": {
+                "default": false,
+                "description": "Set true to confirm this write when the client cannot be asked",
+                "type": "boolean"
               },
               "path": {
                 "additionalProperties": false,
@@ -80091,6 +82301,26 @@
               "content_type",
               "data",
               "status"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cancelled": {
+                "const": true,
+                "type": "boolean"
+              },
+              "operation": {
+                "type": "string"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "cancelled",
+              "operation"
             ],
             "type": "object"
           }

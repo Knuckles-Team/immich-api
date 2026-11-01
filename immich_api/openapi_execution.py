@@ -4,7 +4,7 @@ from urllib.parse import urlsplit
 
 from fastmcp.server.dependencies import get_context
 from mcp.types import InputRequiredResult
-from scion_sdk.mcp.context import ctx_confirm_destructive
+from scion_sdk.mcp.context import confirmation_refusal, ctx_confirm_destructive
 
 
 def require_origin(base_url, *, credential_scheme, allow_plaintext):
@@ -16,15 +16,20 @@ def require_origin(base_url, *, credential_scheme, allow_plaintext):
 
 
 async def confirm_write(operation, arguments, client):
+    """Return None to proceed, an InputRequiredResult, or a clean refusal dict."""
     if operation["read_only"]:
         return None
     if not client.allow_writes:
         raise PermissionError("Writes require explicit operator enablement")
+    context = get_context()
     confirmation = await ctx_confirm_destructive(
-        get_context(), operation["action"], confirmation_arguments=arguments
+        context,
+        operation["action"],
+        confirmation_arguments=arguments,
+        explicit_confirm=arguments.get("confirm") is True,
     )
     if isinstance(confirmation, InputRequiredResult):
         return confirmation
     if confirmation is not True:
-        raise PermissionError("Write was not confirmed")
+        return confirmation_refusal(context, operation["action"])
     return None

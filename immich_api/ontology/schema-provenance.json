@@ -1,5 +1,5 @@
 {
-  "contract_sha256": "62d0741d6fe3063d6e0970664958df5f001d803655ba9667ee362b08f4799b62",
+  "contract_sha256": "31a55081b73c9efbdb204f042c6ede45e5990ecb2c685e560c05f948047dd678",
   "excluded_by_policy": [
     "paths",
     "email",

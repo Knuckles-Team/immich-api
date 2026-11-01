@@ -172,6 +172,9 @@ class OpenApiTool(Tool):
         confirmation = await confirm_write(operation, arguments, client)
         if isinstance(confirmation, InputRequiredResult):
             return confirmation
+        if isinstance(confirmation, dict):
+            return ToolResult(structured_content=confirmation)
+        arguments = {k: v for k, v in arguments.items() if k != "confirm"}
         result = await run_blocking(client.execute, self.domain, arguments)
         return ToolResult(structured_content=result)
 
