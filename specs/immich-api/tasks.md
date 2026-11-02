@@ -1,14 +1,22 @@
 # CONN-IMMICH-API — Implementation tasks
 
-Governing specification: [spec.md](spec.md).
+Governing spec: [spec.md](spec.md). Design: [plan.md](plan.md). Rows: [requirements.md](requirements.md).
 
-The owner must reconcile starter behavior with the external system before completing these tasks.
+Each task line reads `- [ ] T001 [P] [US1] <ID>-R012.4 description`. Order is producer first.
 
-- [ ] T001 [P] CONN-IMMICH-API-R001 Implement credential references. `tests/test_auth.py::test_client_resolves_reference_and_cleans_up` must observe reference resolution and resource cleanup.
-- [ ] T002 [P] CONN-IMMICH-API-R002 Implement bounded api requests. `tests/test_api_wrapper.py` must exercise rejected origins, redirects, deadlines, and oversized responses through the real client.
-- [ ] T003 [P] CONN-IMMICH-API-R003 Implement mcp registration. `tests/test_immich_mcp_validation.py::test_mcp_instance_registration` must construct the production server without vendor requests.
-- [ ] T004 [P] CONN-IMMICH-API-R004 Implement native content contracts. `scripts/generate_tool_schemas.py --check` must validate live tool contracts. `tests/test_immich_content.py::test_native_prompt_skill_shapes_and_tool_discovery` must render prompts and read the declared content through the production SDK server.
-- [ ] T005 [P] CONN-IMMICH-API-R005 Implement typed source observations. `tests/test_kg_ingest.py::test_ingest_uses_scoped_binding_and_preserves_receipt` must observe typed changes at the submission boundary.
-- [ ] T006 [P] CONN-IMMICH-API-R006 Prove complete source parity with `tests/test_operation_parity.py`, canonical source inventory and native MCP confirmation. Retain remaining operation IDs and failures until every declared operation passes both surfaces.
-- [x] T007 [P] CONN-IMMICH-API-R007 File the pack, manifest and ingest binding under the fleet name `immich`.
-- [x] T008 [P] CONN-IMMICH-API-R009.3 Write actions accept confirm=true and refuse cleanly; `tests/test_destructive_confirmation_transports.py::test_stdio_no_auth_destructive_call` proves it over real transports.
+- [ ] T001 [US1] CONN-IMMICH-API-R001 Credential references.
+- [ ] T002 [US1] CONN-IMMICH-API-R002 Bounded API requests.
+- [ ] T003 [US1] CONN-IMMICH-API-R003 MCP registration.
+- [ ] T004 [US1] CONN-IMMICH-API-R004 Native content contracts.
+- [ ] T005 [US1] CONN-IMMICH-API-R005 Typed source observations.
+- [ ] T006 [US1] CONN-IMMICH-API-R006 Complete source parity.
+- [x] T007 [US1] CONN-IMMICH-API-R007 Fleet name.
+- [ ] T008 [US1] CONN-IMMICH-API-R008 Asset tag producer tool.
+- [ ] T009 [US1] CONN-IMMICH-API-R009 Pilot phases I0 to I6 (rollup).
+- [ ] T010 [US1] CONN-IMMICH-API-R009.1 Phase I0: version-pinned OpenAPI client.
+- [ ] T011 [US1] CONN-IMMICH-API-R009.2 Phase I1: read-first tools.
+- [x] T012 [US1] CONN-IMMICH-API-R009.3 Phase I2: approval-gated writes.
+- [ ] T013 [US1] CONN-IMMICH-API-R009.4 Phase I3: incremental ingest by cursor.
+- [ ] T014 [US1] CONN-IMMICH-API-R009.5 Phase I4: no-op replay.
+- [ ] T015 [US1] CONN-IMMICH-API-R009.6 Phase I5: health check tool.
+- [ ] T016 [US1] CONN-IMMICH-API-R009.7 Phase I6: upgrade digest check.
