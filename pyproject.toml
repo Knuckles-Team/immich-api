@@ -14,7 +14,7 @@ dependencies = [
     "rfc3339-validator>=0.1.4,<0.2",
     "jsonschema>=4.23,<5",
     "regex>=2026.9.29",
-    "scion-sdk[mcp]>=0.6.5,<0.7.0",
+    "scion-sdk[mcp]>=0.7.0,<0.8.0",
 ]
 [[project.authors]]
 name = "Repository Maintainers"
@@ -24,9 +24,9 @@ email = "maintainers@knuckles.team"
 text = "MIT"
 
 [project.optional-dependencies]
-mcp = [ "scion-sdk[mcp]>=0.6.5,<0.7.0",]
+mcp = [ "scion-sdk[mcp]>=0.7.0,<0.8.0",]
 all = [
-    "scion-sdk[mcp]>=0.6.5,<0.7.0",
+    "scion-sdk[mcp]>=0.7.0,<0.8.0",
 ]
 test = [
     "pytest-xdist>=3.6.0", "pytest", "pytest-asyncio", "pytest-cov",]
@@ -80,7 +80,6 @@ mcp_server = true
 
 [dependency-groups]
 dev = [
-    "medulla>=2.27.10,<3",
     "pytest-timeout>=2.4.0",
 ]
 

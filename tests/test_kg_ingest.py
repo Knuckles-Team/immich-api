@@ -4,7 +4,7 @@ import asyncio
 from types import SimpleNamespace
 
 import pytest
-from epistemic_graph.generated.source_ingestion import SourceIngestionMode
+from medulla.generated.source_ingestion import SourceIngestionMode
 
 from immich_api import kg_ingest
 from tests.test_album_metadata import album
