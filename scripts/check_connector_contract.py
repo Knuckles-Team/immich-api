@@ -78,8 +78,7 @@ def check_project(root: Path, package: str) -> list[str]:
             "pyproject.toml: AU agent runtime must remain an optional agent extra"
         )
     if any(
-        re.match(r"medulla\[[^]]*\bfull\b", value.lower())
-        for value in dependencies
+        re.match(r"medulla\[[^]]*\bfull\b", value.lower()) for value in dependencies
     ):
         violations.append(
             "pyproject.toml: connector must not require the full engine extra"
