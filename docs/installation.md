@@ -29,7 +29,7 @@ and EG Python commit `d33abec1e09b63cdcde01f8e8e4fe810d91cd43d`. The `uv.lock`
 file is a resolver-generated development lock for those immutable Git sources.
 Their static resolution metadata is copied from those exact package declarations
 so lock resolution does not execute a native build. EG is an explicit development
-dependency; the SDK runtime requirement remains `epistemic-graph>=2.27.0,<3`.
+dependency; the SDK runtime requirement remains `medulla>=2.27.0,<3`.
 
 Resolution is not installation certification: the checked index only provided EG
 through 2.23.0, and the SDK was unpublished there. Do not lower the requirement.
