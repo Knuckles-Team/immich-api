@@ -20,3 +20,4 @@ Each task line reads `- [ ] T001 [P] [US1] <ID>-R012.4 description`. Order is pr
 - [ ] T014 [US1] CONN-IMMICH-API-R009.5 Phase I4: no-op replay.
 - [ ] T015 [US1] CONN-IMMICH-API-R009.6 Phase I5: health check tool.
 - [ ] T016 [US1] CONN-IMMICH-API-R009.7 Phase I6: upgrade digest check.
+- [ ] T017 [US1] CONN-IMMICH-API-R010 Adopt scion-sdk 0.10.0 import paths. Size: S, 1 PR, 30 minutes.
