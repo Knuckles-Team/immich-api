@@ -39,3 +39,9 @@ source-overlay imports do not establish full release installation or live effect
 - `CONN-IMMICH-API-R009.5`: planned proof `tests/test_incremental_ingest.py::test_replay_of_unchanged_page_submits_nothing`. Expected: Replaying one unchanged page submits zero changes and leaves the cursor; editing one field submits exactly one change.. Refusal: A replay with unchanged digests never calls submit with a changed record..
 - `CONN-IMMICH-API-R009.6`: planned proof `tests/test_health_tool.py::test_health_reports_versions_and_refuses_unreachable`. Expected: Against a recorded library the tool returns ok, server_version, pinned_version and schema_digest.. Refusal: A dead address refuses with LIBRARY_UNREACHABLE..
 - `CONN-IMMICH-API-R009.7`: planned proof `tests/test_upgrade_digest.py::test_mismatch_lists_added_and_removed_operations`. Expected: A recorded newer schema returns mismatch with the added and removed operation ids and both counts.. Refusal: An identical schema returns match; the pin file is unchanged after either call..
+
+## Adoption of scion-sdk 0.10.0 (`CONN-IMMICH-API-R010`)
+
+| Requirement | Test | Observation |
+|---|---|---|
+| `CONN-IMMICH-API-R010` | `tests/test_scion_sdk_0_10_imports.py::test_every_scion_sdk_import_resolves_on_the_pinned_release` | Every `scion_sdk` import resolves on the pinned release; a removed path fails the test. |
