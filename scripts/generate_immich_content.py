@@ -35,7 +35,7 @@ POLICY = {
     "TagResponseDto": ("ImmichTag", "id name createdAt updatedAt"),
     "AssetStackResponseDto": ("ImmichAssetStack", "id assetCount primaryAssetId"),
 }
-PREFIXES = """@prefix : <http://knuckles.team/kg#> .
+PREFIXES = """@prefix : <https://knuckles-team.github.io/ontology/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -81,7 +81,7 @@ def artifacts():
         f'<{source}> a prov:Entity ; rdfs:label "Immich 3.2.2 OpenAPI source bytes" .\n',
     ]
     ontology.append(
-        f'<http://knuckles.team/kg/immich> a owl:Ontology ; prov:wasDerivedFrom <{source}> ; rdfs:comment "Selected structural DTO model. No live ingestion or identity equivalence is asserted." .\n'
+        f'<https://knuckles-team.github.io/ontology/connector/immich> a owl:Ontology ; prov:wasDerivedFrom <{source}> ; rdfs:comment "Selected structural DTO model. No live ingestion or identity equivalence is asserted." .\n'
     )
     shapes = [PREFIXES]
     resources, mappings, provenance = [], {}, []
