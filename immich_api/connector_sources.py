@@ -8,9 +8,21 @@ from __future__ import annotations
 
 from typing import Any
 
+from scion_sdk.ingest.live_declaration import source_meta
+
 CONNECTOR: str = "immich"
 
-SOURCES: tuple[Any, ...] = ()
+SOURCES: tuple[Any, ...] = (
+    source_meta(
+        tool="album_metadata_sample",
+        source_id="immich-album-metadata",
+        record_type="ImmichAlbum",
+        id_field="id",
+        records_path="records",
+        title_field="albumName",
+        server="Immich Api",
+    ),
+)
 
 SCHEMA_MAPPINGS: dict[str, Any] = {
     "ImmichAlbum": {

@@ -11,7 +11,9 @@
   "agent": {
     "business_role": "immich administrator",
     "data": {
-      "reads": [],
+      "reads": [
+        "immich-album-metadata"
+      ],
       "writes": []
     },
     "guardrails": {

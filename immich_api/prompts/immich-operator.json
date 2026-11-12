@@ -1,7 +1,9 @@
 {
   "agent": {
     "data": {
-      "reads": [],
+      "reads": [
+        "immich-album-metadata"
+      ],
       "writes": []
     },
     "guardrails": {

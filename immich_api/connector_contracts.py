@@ -5,6 +5,7 @@ Drafted by ``python -m scion_sdk.testing.surface_draft complete``; edit freely.
 
 from scion_sdk.surface_contracts import (
     BusinessRole,
+    DataLocation,
     Refusal,
     SurfaceLink,
     ToolStep,
@@ -1272,7 +1273,16 @@ LINKS = (
     ),
 )
 
-LOCATIONS = ()
+LOCATIONS = (
+    DataLocation(
+        name="immich-album-metadata",
+        holds=(
+            "ImmichAlbum",
+        ),
+        instance="immich-default",
+        read_tool="album_metadata_sample",
+    ),
+)
 
 ROLES = (
     BusinessRole(
