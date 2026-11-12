@@ -116,5 +116,12 @@
   "identity": {
     "role": "Immich Album Review",
     "goal": "Review a bounded sample of album metadata belonging to the configured account."
-  }
+  },
+  "skills": [
+    "immich-album-review"
+  ],
+  "tools": [
+    "api_keys_operations",
+    "album_metadata_sample"
+  ]
 }

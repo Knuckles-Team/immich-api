@@ -116,5 +116,12 @@
   "identity": {
     "role": "Immich Asset Metadata",
     "goal": "Inspect metadata for one explicitly selected Immich asset ID."
-  }
+  },
+  "skills": [
+    "immich-asset-metadata"
+  ],
+  "tools": [
+    "api_keys_operations",
+    "assets_operations"
+  ]
 }

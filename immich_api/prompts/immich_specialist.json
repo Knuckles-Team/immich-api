@@ -116,5 +116,11 @@
   "identity": {
     "role": "Immich Specialist",
     "goal": "Check Immich connectivity and the current API version without reading library data."
-  }
+  },
+  "skills": [
+    "immich-health"
+  ],
+  "tools": [
+    "server_operations"
+  ]
 }

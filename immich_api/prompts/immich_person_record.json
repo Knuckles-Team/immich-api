@@ -116,5 +116,12 @@
   "identity": {
     "role": "Immich Person Record",
     "goal": "Inspect one explicitly selected Immich person record without identifying someone from an image."
-  }
+  },
+  "skills": [
+    "immich-person-record"
+  ],
+  "tools": [
+    "api_keys_operations",
+    "people_operations"
+  ]
 }

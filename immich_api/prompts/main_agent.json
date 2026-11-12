@@ -116,5 +116,18 @@
   "identity": {
     "role": "Main Agent",
     "goal": "Choose the least-scoped Immich read capability."
-  }
+  },
+  "skills": [
+    "immich-health",
+    "immich-album-review",
+    "immich-asset-metadata",
+    "immich-person-record"
+  ],
+  "tools": [
+    "album_metadata_sample",
+    "api_keys_operations",
+    "assets_operations",
+    "people_operations",
+    "server_operations"
+  ]
 }
