@@ -8,7 +8,7 @@
   "requires_python": ">=3.12,<3.15",
   "requires_dist": [
     "fastmcp>=4.0.11,<5",
-    "epistemic-graph>=2.27.0,<3",
+    "medulla>=2.27.0,<3",
     "mcp>=2.3.0,<3",
     "pydantic>=2.13.4,<3",
     "PyYAML>=6.0.3",
@@ -28,7 +28,7 @@
   "lock_log_sha256": "644c0b4e5b9a24fa072a1a7bde33d024b08cb6d271fee1af70e71a404f5502d0",
   "versions": {
     "scion-sdk": "0.1.0",
-    "epistemic-graph": "2.27.0",
+    "medulla": "2.27.0",
     "fastmcp": "4.1.0",
     "mcp": "2.3.0"
   },
@@ -36,7 +36,7 @@
     "git": "https://github.com/Knuckles-Team/scion-sdk.git?rev=04a68087dbd3867bbb20e6ce286ffdd654028183#04a68087dbd3867bbb20e6ce286ffdd654028183"
   },
   "eg_lock_source": {
-    "git": "https://github.com/Knuckles-Team/epistemic-graph.git?rev=d33abec1e09b63cdcde01f8e8e4fe810d91cd43d#d33abec1e09b63cdcde01f8e8e4fe810d91cd43d"
+    "git": "https://github.com/Knuckles-Team/medulla.git?rev=d33abec1e09b63cdcde01f8e8e4fe810d91cd43d#d33abec1e09b63cdcde01f8e8e4fe810d91cd43d"
   },
   "lock_freshness_check_run": false,
   "tests_run": false,

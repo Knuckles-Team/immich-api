@@ -17,8 +17,8 @@
     "cargo_sha256": "b3d20267d563cb3c4d4508a96275ba22527bc87ca57c579f892c49898d1c5678"
   },
   "metadata_scope": "Exact base dependencies and Python requirements; no SDK/EG extras requested",
-  "runtime_requirement_unchanged": "epistemic-graph>=2.27.0,<3",
-  "index_resolution_blocker": "Checked package index offers only epistemic-graph<=2.23.0 and no SDK release",
+  "runtime_requirement_unchanged": "medulla>=2.27.0,<3",
+  "index_resolution_blocker": "Checked package index offers only medulla<=2.23.0 and no SDK release",
   "native_builds": false,
   "dependency_installation_verified": false,
   "image_built": false

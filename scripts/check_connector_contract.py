@@ -44,7 +44,7 @@ def _module_violations(path: Path, root: Path) -> list[str]:
     violations = []
     for node in ast.walk(tree):
         for name in _imports(node):
-            if name == "agent_utilities" or name.startswith("agent_utilities."):
+            if name == "meristem" or name.startswith("meristem."):
                 violations.append(
                     f"{relative}:{node.lineno}: retired connector import {name}"
                 )
@@ -73,7 +73,7 @@ def check_project(root: Path, package: str) -> list[str]:
     violations = []
     if "scion-sdk" not in names:
         violations.append("pyproject.toml: connector requires scion-sdk")
-    if "agent-utilities" in names:
+    if "meristem" in names:
         violations.append(
             "pyproject.toml: AU agent runtime must remain an optional agent extra"
         )

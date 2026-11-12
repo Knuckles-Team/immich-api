@@ -392,7 +392,7 @@
       "mode": "0o644",
       "sha256": "d5e3c011066e2241c09c885f65d9a07c6ff32f4244b00dbe8e7550a3bab20dc8"
     },
-    "universal_skills/agent-tools/mcp-builder/scripts/templates/pipelines-theme/templates/mkdocs-theme/assets/brands/agent-utilities-logo-v1.png": {
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/pipelines-theme/templates/mkdocs-theme/assets/brands/meristem-logo-v1.png": {
       "mode": "0o644",
       "sha256": "923319a3b89fa1fbd14ca14c27cf49d2e2d9f85bc45456e05b788692700f0103"
     },
@@ -400,7 +400,7 @@
       "mode": "0o644",
       "sha256": "3939a7324f134c520fd544aadd2a37c99abba9db78dd2bf3fd5003ffd62502ff"
     },
-    "universal_skills/agent-tools/mcp-builder/scripts/templates/pipelines-theme/templates/mkdocs-theme/assets/brands/epistemic-graph-logo-v1.png": {
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/pipelines-theme/templates/mkdocs-theme/assets/brands/medulla-logo-v1.png": {
       "mode": "0o644",
       "sha256": "26671aef2c3b78ecdcca2ad13adfd266cebf8d7e666e614c2d83d166b853d272"
     },
@@ -408,7 +408,7 @@
       "mode": "0o644",
       "sha256": "c4a17404f234f677496197ac202ca8fb30b136c5a69243811bbfa6e5d5352b28"
     },
-    "universal_skills/agent-tools/mcp-builder/scripts/templates/pipelines-theme/templates/mkdocs-theme/assets/brands/graph-os-logo-v1.png": {
+    "universal_skills/agent-tools/mcp-builder/scripts/templates/pipelines-theme/templates/mkdocs-theme/assets/brands/arbora-logo-v1.png": {
       "mode": "0o644",
       "sha256": "bba183368e42927edea91013639311a5d64f5a9910ec2f1bdcc7f4cd32f9d230"
     },
