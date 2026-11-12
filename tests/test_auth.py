@@ -86,7 +86,7 @@ def test_delegation_uses_per_request_auth(monkeypatch):
     tls = MagicMock()
     with (
         patch.object(auth_module, "resolve_tls_profile", return_value=tls),
-        patch.object(auth_module, "create_http_client", return_value=token_client),
+        patch.object(auth_module, "build_http_client", return_value=token_client),
         patch.object(auth_module, "ApiClientSystem") as client_cls,
         patch.object(auth_module, "bearer_auth") as fixed_auth,
     ):
