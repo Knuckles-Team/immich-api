@@ -1046,7 +1046,7 @@ CONTRACTS = (
 
 LINKS = (
     SurfaceLink(
-        task="immich-immich-administrator",
+        task="immich_album_review",
         tools=(
             "activities_operations",
             "album_metadata_sample",
@@ -1091,9 +1091,7 @@ LINKS = (
             "views_operations",
             "workflows_operations",
         ),
-        prompts=(
-            "immich-immich-administrator",
-        ),
+        prompts=("immich_album_review",),
     ),
     SurfaceLink(
         task="immich-operator",
@@ -1141,9 +1139,7 @@ LINKS = (
             "views_operations",
             "workflows_operations",
         ),
-        prompts=(
-            "immich-operator",
-        ),
+        prompts=("immich-operator",),
     ),
     SurfaceLink(
         task="immich_album_review",
@@ -1151,36 +1147,28 @@ LINKS = (
             "album_metadata_sample",
             "api_keys_operations",
         ),
-        prompts=(
-            "immich_album_review",
-        ),
+        prompts=("immich_album_review",),
     ),
     SurfaceLink(
         task="immich_asset_metadata",
         tools=(
             "assets_operations",
         ),
-        prompts=(
-            "immich_asset_metadata",
-        ),
+        prompts=("immich_asset_metadata",),
     ),
     SurfaceLink(
         task="immich_person_record",
         tools=(
             "people_operations",
         ),
-        prompts=(
-            "immich_person_record",
-        ),
+        prompts=("immich_person_record",),
     ),
     SurfaceLink(
         task="immich_specialist",
         tools=(
             "server_operations",
         ),
-        prompts=(
-            "immich_specialist",
-        ),
+        prompts=("immich_specialist",),
     ),
     SurfaceLink(
         task="main_agent",
@@ -1228,9 +1216,7 @@ LINKS = (
             "views_operations",
             "workflows_operations",
         ),
-        prompts=(
-            "main_agent",
-        ),
+        prompts=("main_agent",),
     ),
     SurfaceLink(
         task="immich-album-review",
