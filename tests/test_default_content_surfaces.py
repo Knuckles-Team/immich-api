@@ -30,7 +30,7 @@ async def _listings():
         resources = {str(r.uri) for r in await client.list_resources()}
         prompts = {p.name for p in await client.list_prompts()}
         for uri in resources:
-            if uri.startswith(("ontology://", "shapes://")):
+            if uri.startswith(("ontology://", "shapes://")) and not uri.rsplit("/", 1)[-1].startswith("contracts"):
                 relative = uri.split("/", 3)[-1]
                 directory = (
                     ROOT
@@ -88,7 +88,8 @@ def test_production_pack_includes_packaged_ontology_and_shapes() -> None:
     assert pack.server_package_version == version("immich-api")
     uris = {str(entry.uri) for entry in pack.archive.entries}
     for entry in pack.archive.entries:
-        if entry.uri.startswith(("ontology://", "shapes://")):
+        # contracts.ttl is rendered from connector_contracts.py, not read from the ontology directory
+        if entry.uri.startswith(("ontology://", "shapes://")) and not entry.uri.rsplit("/", 1)[-1].startswith("contracts"):
             name = entry.uri.rsplit("/", 1)[-1]
             directory = (
                 ROOT
@@ -128,7 +129,7 @@ def test_sdk_floor_supports_content_identity_and_current_pack_protocol() -> None
     sdk = [Requirement(value) for value in declared if value.startswith("scion-sdk")]
     assert sdk
     for requirement in sdk:
-        assert requirement.specifier.contains("0.7.0")
+        assert requirement.specifier.contains("0.11.0")
         assert not requirement.specifier.contains("0.6.9")
 
 
@@ -143,10 +144,14 @@ def test_sdk_owned_declaration_survives_resource_and_pack_capture() -> None:
 
     from immich_api import connector_sources
 
-    assert connector_sources.SOURCES == ()
+    assert len(connector_sources.SOURCES) == 1
+    declared = load_declaration(PACKAGE).model_dump(mode="json", exclude_unset=True)
+    assert [source["source_id"] for source in declared["sources"]] == [
+        "immich-album-metadata"
+    ]
     expected = {
         "connector": "immich",
-        "sources": [],
+        "sources": declared["sources"],
         "schema_mappings": connector_sources.SCHEMA_MAPPINGS,
         "resources": list(connector_sources.RESOURCES),
     }
