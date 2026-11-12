@@ -5,7 +5,7 @@ import copy
 import httpx
 import pytest
 from fastmcp import Client
-from scion_sdk.http.client import create_http_client as sdk_http_client
+from scion_sdk.http.client import build_http_client as sdk_http_client
 
 import immich_api.auth as auth
 import immich_api.openapi_runtime as runtime
@@ -66,7 +66,7 @@ def shared_provider(monkeypatch):
     provider = SessionProvider()
     monkeypatch.setattr(
         runtime,
-        "create_http_client",
+        "build_http_client",
         lambda options, **kwargs: sdk_http_client(
             options, transport=httpx.MockTransport(provider.respond)
         ),

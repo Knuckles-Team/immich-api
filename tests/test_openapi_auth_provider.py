@@ -5,7 +5,7 @@ from unittest.mock import MagicMock
 import httpx
 import pytest
 from scion_sdk.credentials.references import SecretReferenceError
-from scion_sdk.http.client import create_http_client as sdk_http_client
+from scion_sdk.http.client import build_http_client as sdk_http_client
 
 import immich_api.auth as auth
 import immich_api.openapi_runtime as runtime
@@ -43,7 +43,7 @@ def vendor(monkeypatch):
 
     monkeypatch.setattr(
         runtime,
-        "create_http_client",
+        "build_http_client",
         lambda options, **kwargs: sdk_http_client(
             options, transport=httpx.MockTransport(handler)
         ),
@@ -114,7 +114,7 @@ def test_failed_delegated_factory_closes_all_resources(monkeypatch):
         "resolve_tls_profile",
         lambda name: token_tls if name == "oidc" else vendor_tls,
     )
-    monkeypatch.setattr(auth, "create_http_client", lambda options: token_client)
+    monkeypatch.setattr(auth, "build_http_client", lambda options: token_client)
 
     def fail(**kwargs):
         raise ValueError("factory failure")
