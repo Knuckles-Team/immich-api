@@ -18,7 +18,7 @@ Tool-neutral rules for any AI agent or human working in this repository. This bl
 The connector SDK owns HTTP, credential references, TLS, server policy,
 registration, content publication and ingestion transport. The graph engine
 owns durable storage and semantics. Optional orchestration belongs to
-agent-utilities and must not become an MCP dependency.
+meristem and must not become an MCP dependency.
 
 ## Setup and commands
 
