@@ -16,6 +16,18 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PACKAGE = ROOT / "immich_api"
 SCHEMA_HASH = "7db8383741eeb5c5c8c87a6221cd1cdd1206c8b1190b83363c64223a00bb020b"
+# The core class each connector class rolls up to (every class extends a core class with rdfs:subClassOf).
+CORE_PARENTS = {
+    "ImmichAsset": "AssetOccurrence",
+    "ImmichAlbum": "Album",
+    "ImmichPersonRecord": "SourceRecord",
+    "ImmichUser": "IdentityUser",
+    "ImmichLibrary": "MediaLibrary",
+    "ImmichAlbumMembership": "ObjectRelationship",
+    "ImmichTag": "Tag",
+    "ImmichAssetStack": "AssetStack",
+}
+
 POLICY = {
     "AssetResponseDto": (
         "ImmichAsset",
@@ -35,7 +47,8 @@ POLICY = {
     "TagResponseDto": ("ImmichTag", "id name createdAt updatedAt"),
     "AssetStackResponseDto": ("ImmichAssetStack", "id assetCount primaryAssetId"),
 }
-PREFIXES = """@prefix : <http://knuckles.team/kg#> .
+PREFIXES = """@prefix : <https://knuckles-team.github.io/ontology/connector/immich#> .
+@prefix core: <https://knuckles-team.github.io/ontology/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -81,7 +94,7 @@ def artifacts():
         f'<{source}> a prov:Entity ; rdfs:label "Immich 3.2.2 OpenAPI source bytes" .\n',
     ]
     ontology.append(
-        f'<http://knuckles.team/kg/immich> a owl:Ontology ; prov:wasDerivedFrom <{source}> ; rdfs:comment "Selected structural DTO model. No live ingestion or identity equivalence is asserted." .\n'
+        f'<https://knuckles-team.github.io/ontology/connector/immich> a owl:Ontology ; prov:wasDerivedFrom <{source}> ; rdfs:comment "Selected structural DTO model. No live ingestion or identity equivalence is asserted." .\n'
     )
     shapes = [PREFIXES]
     resources, mappings, provenance = [], {}, []
@@ -92,7 +105,7 @@ def artifacts():
         if schema_name == "PersonResponseDto":
             class_comment += " A vendor person record; no equivalence to a verified real-world Person is inferred."
         ontology.append(
-            f":{class_name} a owl:Class ; rdfs:comment {literal(class_comment)} ; prov:wasDerivedFrom <{source}{pointer}> .\n"
+            f":{class_name} a owl:Class ; rdfs:subClassOf core:{CORE_PARENTS[class_name]} ; rdfs:comment {literal(class_comment)} ; prov:wasDerivedFrom <{source}{pointer}> .\n"
         )
         shape_fields, relations, fields = [], [], {}
         for field in selection.split():
