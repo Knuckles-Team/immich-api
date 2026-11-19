@@ -30,7 +30,9 @@ async def _listings():
         resources = {str(r.uri) for r in await client.list_resources()}
         prompts = {p.name for p in await client.list_prompts()}
         for uri in resources:
-            if uri.startswith(("ontology://", "shapes://")) and not uri.rsplit("/", 1)[-1].startswith("contracts"):
+            if uri.startswith(("ontology://", "shapes://")) and not uri.rsplit("/", 1)[
+                -1
+            ].startswith("contracts"):
                 relative = uri.split("/", 3)[-1]
                 directory = (
                     ROOT
@@ -89,7 +91,9 @@ def test_production_pack_includes_packaged_ontology_and_shapes() -> None:
     uris = {str(entry.uri) for entry in pack.archive.entries}
     for entry in pack.archive.entries:
         # contracts.ttl is rendered from connector_contracts.py, not read from the ontology directory
-        if entry.uri.startswith(("ontology://", "shapes://")) and not entry.uri.rsplit("/", 1)[-1].startswith("contracts"):
+        if entry.uri.startswith(("ontology://", "shapes://")) and not entry.uri.rsplit(
+            "/", 1
+        )[-1].startswith("contracts"):
             name = entry.uri.rsplit("/", 1)[-1]
             directory = (
                 ROOT

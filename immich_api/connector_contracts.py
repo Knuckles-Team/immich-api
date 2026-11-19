@@ -18,9 +18,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="activities_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -43,9 +41,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="album_metadata_sample",
-                params=(
-                    "limit",
-                ),
+                params=("limit",),
                 result=(
                     "authoritative",
                     "complete",
@@ -71,9 +67,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="albums_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -96,9 +90,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="api_keys_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -121,9 +113,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="asset_files_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -146,9 +136,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="assets_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -171,9 +159,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="authentication_admin_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -196,9 +182,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="authentication_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -221,9 +205,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="cluster_groups_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -246,9 +228,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="config_admin_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -271,9 +251,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="config_public_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -292,9 +270,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="config_user_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -313,9 +289,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="database_backups_admin_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -338,9 +312,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="download_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -363,9 +335,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="duplicates_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -388,9 +358,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="faces_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -413,9 +381,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="jobs_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -438,9 +404,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="libraries_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -463,9 +427,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="maintenance_admin_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -488,9 +450,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="map_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -509,9 +469,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="memories_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -534,9 +492,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="notifications_admin_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -559,9 +515,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="notifications_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -584,9 +538,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="partners_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -609,9 +561,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="people_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -634,9 +584,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="plugins_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -655,9 +603,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="queues_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -680,9 +626,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="search_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -705,9 +649,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="server_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -730,9 +672,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="sessions_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -755,9 +695,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="shared_links_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -780,9 +718,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="stacks_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -805,9 +741,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="sync_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -830,9 +764,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="system_config_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -855,9 +787,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="system_metadata_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -880,9 +810,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="tags_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -905,9 +833,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="timeline_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -926,9 +852,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="trash_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -951,9 +875,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="users_admin_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -976,9 +898,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="users_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -1001,9 +921,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="views_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -1022,9 +940,7 @@ CONTRACTS = (
         steps=(
             ToolStep(
                 tool="workflows_operations",
-                result=(
-                    "result",
-                ),
+                result=("result",),
                 refusals=(
                     Refusal(
                         code="ACCESS_DENIED",
@@ -1151,23 +1067,17 @@ LINKS = (
     ),
     SurfaceLink(
         task="immich_asset_metadata",
-        tools=(
-            "assets_operations",
-        ),
+        tools=("assets_operations",),
         prompts=("immich_asset_metadata",),
     ),
     SurfaceLink(
         task="immich_person_record",
-        tools=(
-            "people_operations",
-        ),
+        tools=("people_operations",),
         prompts=("immich_person_record",),
     ),
     SurfaceLink(
         task="immich_specialist",
-        tools=(
-            "server_operations",
-        ),
+        tools=("server_operations",),
         prompts=("immich_specialist",),
     ),
     SurfaceLink(
@@ -1224,9 +1134,7 @@ LINKS = (
             "album_metadata_sample",
             "api_keys_operations",
         ),
-        skills=(
-            "immich-album-review",
-        ),
+        skills=("immich-album-review",),
     ),
     SurfaceLink(
         task="immich-asset-metadata",
@@ -1234,18 +1142,12 @@ LINKS = (
             "api_keys_operations",
             "assets_operations",
         ),
-        skills=(
-            "immich-asset-metadata",
-        ),
+        skills=("immich-asset-metadata",),
     ),
     SurfaceLink(
         task="immich-health",
-        tools=(
-            "server_operations",
-        ),
-        skills=(
-            "immich-health",
-        ),
+        tools=("server_operations",),
+        skills=("immich-health",),
     ),
     SurfaceLink(
         task="immich-person-record",
@@ -1253,18 +1155,14 @@ LINKS = (
             "api_keys_operations",
             "people_operations",
         ),
-        skills=(
-            "immich-person-record",
-        ),
+        skills=("immich-person-record",),
     ),
 )
 
 LOCATIONS = (
     DataLocation(
         name="immich-album-metadata",
-        holds=(
-            "ImmichAlbum",
-        ),
+        holds=("ImmichAlbum",),
         instance="immich-default",
         read_tool="album_metadata_sample",
     ),
