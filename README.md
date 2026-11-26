@@ -1,3 +1,29 @@
+# Immich Api
+## MCP
+
+![PyPI - Version](https://img.shields.io/pypi/v/immich-api)
+![MCP Server](https://badge.mcpx.dev?type=server 'MCP Server')
+![PyPI - Downloads](https://img.shields.io/pypi/dd/immich-api)
+![GitHub Repo stars](https://img.shields.io/github/stars/Knuckles-Team/immich-api)
+![GitHub forks](https://img.shields.io/github/forks/Knuckles-Team/immich-api)
+![GitHub contributors](https://img.shields.io/github/contributors/Knuckles-Team/immich-api)
+![PyPI - License](https://img.shields.io/pypi/l/immich-api)
+![GitHub](https://img.shields.io/github/license/Knuckles-Team/immich-api)
+![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/Knuckles-Team/immich-api)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/Knuckles-Team/immich-api)
+![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/Knuckles-Team/immich-api)
+![GitHub issues](https://img.shields.io/github/issues/Knuckles-Team/immich-api)
+![GitHub top language](https://img.shields.io/github/languages/top/Knuckles-Team/immich-api)
+![GitHub language count](https://img.shields.io/github/languages/count/Knuckles-Team/immich-api)
+![GitHub repo size](https://img.shields.io/github/repo-size/Knuckles-Team/immich-api)
+![GitHub repo file count (file type)](https://img.shields.io/github/directory-file-count/Knuckles-Team/immich-api)
+![PyPI - Wheel](https://img.shields.io/pypi/wheel/immich-api)
+![PyPI - Implementation](https://img.shields.io/pypi/implementation/immich-api)
+
+> **Documentation** — Installation, deployment, and usage across the API, CLI, MCP,
+> and A2A agent interfaces are maintained in the
+> [official documentation](https://knuckles-team.github.io/immich-api/).
+
 > **Work in progress — not released or deployment-ready.**
 >
 > Immich 3.2.2 supplies 276 operations in 41 domain tools plus the bounded album
@@ -17,26 +43,9 @@
 > and EG from immutable source checkouts; it is not full release installation
 > certification. No deployment, image build, live write or graph receipt is claimed.
 
-# Immich Api
+---
 
-![GitHub Repo stars](https://img.shields.io/github/stars/Knuckles-Team/immich-api)
-![GitHub forks](https://img.shields.io/github/forks/Knuckles-Team/immich-api)
-![GitHub contributors](https://img.shields.io/github/contributors/Knuckles-Team/immich-api)
-![GitHub license](https://img.shields.io/github/license/Knuckles-Team/immich-api)
-![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/Knuckles-Team/immich-api)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/Knuckles-Team/immich-api)
-![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/Knuckles-Team/immich-api)
-![GitHub issues](https://img.shields.io/github/issues/Knuckles-Team/immich-api)
-![GitHub top language](https://img.shields.io/github/languages/top/Knuckles-Team/immich-api)
-![GitHub language count](https://img.shields.io/github/languages/count/Knuckles-Team/immich-api)
-![GitHub repo size](https://img.shields.io/github/repo-size/Knuckles-Team/immich-api)
-![GitHub repo file count (file type)](https://img.shields.io/github/directory-file-count/Knuckles-Team/immich-api)
-![PyPI - Version](https://img.shields.io/pypi/v/immich-api)
-![PyPI - Downloads](https://img.shields.io/pypi/dd/immich-api)
-![PyPI - License](https://img.shields.io/pypi/l/immich-api)
-![PyPI - Wheel](https://img.shields.io/pypi/wheel/immich-api)
-![PyPI - Implementation](https://img.shields.io/pypi/implementation/immich-api)
-![MCP Server](https://badge.mcpx.dev?type=server 'MCP Server')
+## Overview
 
 Immich Api API + MCP Server
 
@@ -45,13 +54,13 @@ planned API, deployment, security, and operational reference. Pages publication 
 not configured yet; use the local documentation links below for this pilot. This README is the concise
 entry point for installation and the supported runtime surfaces.
 
-## Overview
-
 `immich-api` is a typed provider package for the agent ecosystem. It combines a
 small Python client with a governed MCP entry point. Configuration uses runtime credential references; resolved credentials and
 private endpoints are never committed.
 
-## Key capabilities
+---
+
+## Key Features
 
 - **Typed boundaries** — Pydantic request and response models keep provider data
   explicit and validate it before it reaches an agent or graph.
@@ -61,6 +70,8 @@ private endpoints are never committed.
   provider/account stream binding. Graph capture remains unverified.
 - **Operational safety** — TLS profiles, bounded responses, loopback defaults, and
   immutable container references are part of the generated deployment contract.
+
+---
 
 ## Quick start
 
@@ -109,6 +120,8 @@ docker build --file docker/Dockerfile --target mcp -t immich-api:mcp-local .
 See [deployment](docs/deployment.md) for an exact-commit build context and the
 remaining dependency-closure requirements. No image build is claimed here.
 
+---
+
 ## Architecture
 
 The provider keeps the boundary between transport and domain code explicit:
@@ -126,7 +139,11 @@ after changing a tool contract, and keep the examples below aligned with that sc
 <!-- MCP-TOOLS-TABLE:START -->
 <!-- MCP-TOOLS-TABLE:END -->
 
-## MCP configuration
+---
+
+## MCP
+
+### MCP configuration
 
 The server supports local `stdio` and authenticated `streamable-http` deployments.
 Keep endpoint, credential, selector, and TLS references in SDK configuration; do not put
@@ -179,6 +196,8 @@ Deploy reviewed images by digest (`immich-api@sha256:<digest>`) and include
 `--cap-drop=ALL` in the runtime policy. The [deployment guide](https://knuckles-team.github.io/immich-api/deployment/)
 contains the complete transport and container examples.
 
+---
+
 ## Documentation
 
 Use the [Pages documentation](https://knuckles-team.github.io/immich-api/) for
@@ -191,6 +210,8 @@ and the concept registry. The concise local references remain available at:
 - [Deployment](docs/deployment.md)
 - [Platform](docs/platform.md)
 - [Concept registry](docs/concepts.md)
+
+---
 
 ## Development
 
@@ -206,7 +227,28 @@ Keep MCP examples and environment documentation aligned with the implemented set
 Add focused positive and adversarial tests for every behavior change. See
 `AGENTS.md` for the current module ownership and release checks.
 
+---
+
 ## License
 
 This project is distributed under the MIT license. See [LICENSE](LICENSE) for the
 complete terms.
+
+---
+
+## Repository Owners
+
+<img width="100%" height="180em" src="https://github-readme-stats.vercel.app/api?username=example&show_icons=true&hide_border=true&&count_private=true&include_all_commits=true" />
+
+![GitHub followers](https://img.shields.io/github/followers/example)
+![GitHub User's stars](https://img.shields.io/github/stars/example)
+
+---
+
+## Contribute
+
+Contributions are welcome! Please ensure code quality by running local checks before submitting pull requests:
+- Format code using `ruff format .`
+- Lint code using `ruff check .`
+- Validate type-safety with `mypy .`
+- Run test suites using `pytest`
